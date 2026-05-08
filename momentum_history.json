@@ -1,0 +1,866 @@
+{
+    "2025-06": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2408.TW",
+                "momentum": 21.99
+            },
+            {
+                "symbol": "2357.TW",
+                "momentum": 21.17
+            },
+            {
+                "symbol": "3231.TW",
+                "momentum": 19.19
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00635U.TW",
+                "momentum": 18.37
+            },
+            {
+                "symbol": "00738U.TW",
+                "momentum": 8.89
+            },
+            {
+                "symbol": "00757.TW",
+                "momentum": 8.12
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "AVGO",
+                "momentum": 51.37
+            },
+            {
+                "symbol": "META",
+                "momentum": 31.35
+            },
+            {
+                "symbol": "JPM",
+                "momentum": 30.45
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "UGL",
+                "momentum": 47.94
+            },
+            {
+                "symbol": "GDXJ",
+                "momentum": 47.04
+            },
+            {
+                "symbol": "SIL",
+                "momentum": 41.58
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "TON-USD",
+                "momentum": 315.16
+            },
+            {
+                "symbol": "XRP-USD",
+                "momentum": 102.24
+            },
+            {
+                "symbol": "WBT-USD",
+                "momentum": 87.71
+            }
+        ]
+    },
+    "2025-07": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2308.TW",
+                "momentum": 46.02
+            },
+            {
+                "symbol": "2345.TW",
+                "momentum": 45.91
+            },
+            {
+                "symbol": "2357.TW",
+                "momentum": 23.53
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00757.TW",
+                "momentum": 14.11
+            },
+            {
+                "symbol": "00635U.TW",
+                "momentum": 13.62
+            },
+            {
+                "symbol": "00881.TW",
+                "momentum": 12.07
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "AVGO",
+                "momentum": 64.6
+            },
+            {
+                "symbol": "NVDA",
+                "momentum": 55.53
+            },
+            {
+                "symbol": "META",
+                "momentum": 40.72
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "YINN",
+                "momentum": 59.52
+            },
+            {
+                "symbol": "TECL",
+                "momentum": 44.42
+            },
+            {
+                "symbol": "NLR",
+                "momentum": 42.11
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "TON-USD",
+                "momentum": 606.13
+            },
+            {
+                "symbol": "XRP-USD",
+                "momentum": 68.71
+            },
+            {
+                "symbol": "HBAR-USD",
+                "momentum": 56.17
+            }
+        ]
+    },
+    "2025-08": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2308.TW",
+                "momentum": 85.07
+            },
+            {
+                "symbol": "2345.TW",
+                "momentum": 65.15
+            },
+            {
+                "symbol": "6669.TW",
+                "momentum": 45.38
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00881.TW",
+                "momentum": 20.93
+            },
+            {
+                "symbol": "00738U.TW",
+                "momentum": 19.05
+            },
+            {
+                "symbol": "0053.TW",
+                "momentum": 18.46
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "AVGO",
+                "momentum": 53.14
+            },
+            {
+                "symbol": "NVDA",
+                "momentum": 34.72
+            },
+            {
+                "symbol": "GOOGL",
+                "momentum": 26.46
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "SIL",
+                "momentum": 59.55
+            },
+            {
+                "symbol": "MJ",
+                "momentum": 57.08
+            },
+            {
+                "symbol": "SILJ",
+                "momentum": 55.5
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "CRO-USD",
+                "momentum": 191.17
+            },
+            {
+                "symbol": "ETH-USD",
+                "momentum": 84.78
+            },
+            {
+                "symbol": "LINK-USD",
+                "momentum": 44.58
+            }
+        ]
+    },
+    "2025-09": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2308.TW",
+                "momentum": 118.72
+            },
+            {
+                "symbol": "6669.TW",
+                "momentum": 73.88
+            },
+            {
+                "symbol": "2345.TW",
+                "momentum": 71.19
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00738U.TW",
+                "momentum": 32.54
+            },
+            {
+                "symbol": "00881.TW",
+                "momentum": 31.82
+            },
+            {
+                "symbol": "0053.TW",
+                "momentum": 31.34
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "AVGO",
+                "momentum": 69.91
+            },
+            {
+                "symbol": "TSLA",
+                "momentum": 64.81
+            },
+            {
+                "symbol": "GOOGL",
+                "momentum": 48.65
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "SIL",
+                "momentum": 75.44
+            },
+            {
+                "symbol": "SILJ",
+                "momentum": 75.42
+            },
+            {
+                "symbol": "GDXJ",
+                "momentum": 72.7
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "CRO-USD",
+                "momentum": 60.01
+            },
+            {
+                "symbol": "ZEC-USD",
+                "momentum": 59.36
+            },
+            {
+                "symbol": "RAIN-USD",
+                "momentum": 45.78
+            }
+        ]
+    },
+    "2025-10": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2408.TW",
+                "momentum": 223.09
+            },
+            {
+                "symbol": "2308.TW",
+                "momentum": 148.57
+            },
+            {
+                "symbol": "6669.TW",
+                "momentum": 109.81
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00830.TW",
+                "momentum": 44.28
+            },
+            {
+                "symbol": "0053.TW",
+                "momentum": 42.39
+            },
+            {
+                "symbol": "00935.TW",
+                "momentum": 42.22
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "AVGO",
+                "momentum": 71.62
+            },
+            {
+                "symbol": "GOOGL",
+                "momentum": 60.85
+            },
+            {
+                "symbol": "TSLA",
+                "momentum": 60.84
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "SOXL",
+                "momentum": 126.31
+            },
+            {
+                "symbol": "TECL",
+                "momentum": 81.97
+            },
+            {
+                "symbol": "LABU",
+                "momentum": 75.22
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "ZEC-USD",
+                "momentum": 969.14
+            },
+            {
+                "symbol": "M-USD",
+                "momentum": 105.97
+            },
+            {
+                "symbol": "BNB-USD",
+                "momentum": 54.34
+            }
+        ]
+    },
+    "2025-11": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2408.TW",
+                "momentum": 248.3
+            },
+            {
+                "symbol": "2308.TW",
+                "momentum": 110.52
+            },
+            {
+                "symbol": "6669.TW",
+                "momentum": 89.58
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00738U.TW",
+                "momentum": 53.39
+            },
+            {
+                "symbol": "00935.TW",
+                "momentum": 37.39
+            },
+            {
+                "symbol": "00830.TW",
+                "momentum": 35.29
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "AVGO",
+                "momentum": 83.25
+            },
+            {
+                "symbol": "GOOGL",
+                "momentum": 76.39
+            },
+            {
+                "symbol": "LLY",
+                "momentum": 45.62
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "LABU",
+                "momentum": 138.51
+            },
+            {
+                "symbol": "SILJ",
+                "momentum": 94.14
+            },
+            {
+                "symbol": "SOXL",
+                "momentum": 85.51
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "ZEC-USD",
+                "momentum": 934.27
+            },
+            {
+                "symbol": "XMR-USD",
+                "momentum": 61.95
+            },
+            {
+                "symbol": "WBT-USD",
+                "momentum": 56.43
+            }
+        ]
+    },
+    "2025-12": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2408.TW",
+                "momentum": 325.48
+            },
+            {
+                "symbol": "2308.TW",
+                "momentum": 93.46
+            },
+            {
+                "symbol": "1303.TW",
+                "momentum": 88.22
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00738U.TW",
+                "momentum": 90.78
+            },
+            {
+                "symbol": "00935.TW",
+                "momentum": 33.94
+            },
+            {
+                "symbol": "00635U.TW",
+                "momentum": 31.83
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "GOOGL",
+                "momentum": 55.46
+            },
+            {
+                "symbol": "LLY",
+                "momentum": 35.68
+            },
+            {
+                "symbol": "AVGO",
+                "momentum": 25.72
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "LABU",
+                "momentum": 100.21
+            },
+            {
+                "symbol": "SILJ",
+                "momentum": 95.96
+            },
+            {
+                "symbol": "SLV",
+                "momentum": 94.89
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "ZEC-USD",
+                "momentum": 852.53
+            },
+            {
+                "symbol": "XMR-USD",
+                "momentum": 58.35
+            },
+            {
+                "symbol": "WBT-USD",
+                "momentum": 53.64
+            }
+        ]
+    },
+    "2026-01": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2408.TW",
+                "momentum": 617.28
+            },
+            {
+                "symbol": "2308.TW",
+                "momentum": 117.23
+            },
+            {
+                "symbol": "1303.TW",
+                "momentum": 113.79
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00738U.TW",
+                "momentum": 180.76
+            },
+            {
+                "symbol": "00635U.TW",
+                "momentum": 54.09
+            },
+            {
+                "symbol": "00935.TW",
+                "momentum": 47.25
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "GOOGL",
+                "momentum": 57.75
+            },
+            {
+                "symbol": "LLY",
+                "momentum": 32.76
+            },
+            {
+                "symbol": "AVGO",
+                "momentum": 20.4
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "SLVR",
+                "momentum": 128.04
+            },
+            {
+                "symbol": "SILJ",
+                "momentum": 123.54
+            },
+            {
+                "symbol": "SLV",
+                "momentum": 123.45
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "ZEC-USD",
+                "momentum": 308.49
+            },
+            {
+                "symbol": "XMR-USD",
+                "momentum": 29.7
+            },
+            {
+                "symbol": "WBT-USD",
+                "momentum": 20.01
+            }
+        ]
+    },
+    "2026-02": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2408.TW",
+                "momentum": 498.66
+            },
+            {
+                "symbol": "2308.TW",
+                "momentum": 143.55
+            },
+            {
+                "symbol": "3711.TW",
+                "momentum": 128.35
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00738U.TW",
+                "momentum": 119.78
+            },
+            {
+                "symbol": "00935.TW",
+                "momentum": 67.77
+            },
+            {
+                "symbol": "0053.TW",
+                "momentum": 57.55
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "GOOGL",
+                "momentum": 42.71
+            },
+            {
+                "symbol": "XLE",
+                "momentum": 28.15
+            },
+            {
+                "symbol": "XLI",
+                "momentum": 22.19
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "SLVR",
+                "momentum": 177.81
+            },
+            {
+                "symbol": "SILJ",
+                "momentum": 160.81
+            },
+            {
+                "symbol": "SLV",
+                "momentum": 139.56
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "ZEC-USD",
+                "momentum": 126.94
+            },
+            {
+                "symbol": "WBT-USD",
+                "momentum": 3.25
+            },
+            {
+                "symbol": "LEO-USD",
+                "momentum": 1.69
+            }
+        ]
+    },
+    "2026-03": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2408.TW",
+                "momentum": 190.41
+            },
+            {
+                "symbol": "2308.TW",
+                "momentum": 125.15
+            },
+            {
+                "symbol": "3711.TW",
+                "momentum": 86.08
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00642U.TW",
+                "momentum": 77.45
+            },
+            {
+                "symbol": "00738U.TW",
+                "momentum": 56.26
+            },
+            {
+                "symbol": "00892.TW",
+                "momentum": 50.68
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "XLE",
+                "momentum": 37.58
+            },
+            {
+                "symbol": "GOOGL",
+                "momentum": 32.25
+            },
+            {
+                "symbol": "AVGO",
+                "momentum": 22.68
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "SOXL",
+                "momentum": 83.36
+            },
+            {
+                "symbol": "LABU",
+                "momentum": 75.33
+            },
+            {
+                "symbol": "USO",
+                "momentum": 74.53
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "ZEC-USD",
+                "momentum": 124.98
+            },
+            {
+                "symbol": "LEO-USD",
+                "momentum": 8.32
+            },
+            {
+                "symbol": "TRX-USD",
+                "momentum": 6.6
+            }
+        ]
+    },
+    "2026-04": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2308.TW",
+                "momentum": 265.85
+            },
+            {
+                "symbol": "2408.TW",
+                "momentum": 214.53
+            },
+            {
+                "symbol": "2345.TW",
+                "momentum": 192.52
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00642U.TW",
+                "momentum": 117.92
+            },
+            {
+                "symbol": "00935.TW",
+                "momentum": 109.67
+            },
+            {
+                "symbol": "00892.TW",
+                "momentum": 106.27
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "GOOGL",
+                "momentum": 66.33
+            },
+            {
+                "symbol": "AVGO",
+                "momentum": 52.99
+            },
+            {
+                "symbol": "XLE",
+                "momentum": 35.44
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "SOXL",
+                "momentum": 408.31
+            },
+            {
+                "symbol": "USO",
+                "momentum": 105.09
+            },
+            {
+                "symbol": "LABU",
+                "momentum": 82.83
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "ZEC-USD",
+                "momentum": 251.43
+            },
+            {
+                "symbol": "LUNC-USD",
+                "momentum": 68.39
+            },
+            {
+                "symbol": "WBT-USD",
+                "momentum": 16.77
+            }
+        ]
+    },
+    "2026-05": {
+        "TW_STOCKS_0050": [
+            {
+                "symbol": "2308.TW",
+                "momentum": 254.67
+            },
+            {
+                "symbol": "2408.TW",
+                "momentum": 244.66
+            },
+            {
+                "symbol": "2345.TW",
+                "momentum": 209.32
+            }
+        ],
+        "TW_ETFS": [
+            {
+                "symbol": "00892.TW",
+                "momentum": 122.26
+            },
+            {
+                "symbol": "00935.TW",
+                "momentum": 121.82
+            },
+            {
+                "symbol": "00881.TW",
+                "momentum": 99.34
+            }
+        ],
+        "US_STOCKS_SP100": [
+            {
+                "symbol": "GOOGL",
+                "momentum": 69.5
+            },
+            {
+                "symbol": "AVGO",
+                "momentum": 52.9
+            },
+            {
+                "symbol": "NVDA",
+                "momentum": 38.61
+            }
+        ],
+        "US_ETFS": [
+            {
+                "symbol": "SOXL",
+                "momentum": 516.16
+            },
+            {
+                "symbol": "LABU",
+                "momentum": 126.35
+            },
+            {
+                "symbol": "TECL",
+                "momentum": 113.22
+            }
+        ],
+        "CRYPTOCURRENCY": [
+            {
+                "symbol": "ZEC-USD",
+                "momentum": 472.49
+            },
+            {
+                "symbol": "LUNC-USD",
+                "momentum": 99.16
+            },
+            {
+                "symbol": "XMR-USD",
+                "momentum": 18.08
+            }
+        ]
+    }
+}
