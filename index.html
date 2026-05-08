@@ -29,23 +29,23 @@
     <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
         
         <!-- Header -->
-        <header class="mb-8 border-b pb-4 flex justify-between items-end">
+        <header class="mb-8 border-b pb-4 flex flex-col md:flex-row justify-between items-start md:items-end">
             <div>
                 <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Papa Bear <span class="text-blue-600">動能策略監控</span></h1>
                 <p class="text-gray-500 mt-2 text-sm">基於 3, 6, 12 個月平均報酬率的汰弱留強系統 (日曆天統一基準)</p>
             </div>
-            <div class="text-sm text-gray-400 pb-1" id="last-updated">
+            <div class="text-sm text-gray-400 mt-4 md:mt-0 pb-1 font-mono" id="last-updated">
                 自動更新狀態：載入中...
             </div>
         </header>
 
         <!-- Tabs Navigation -->
-        <div class="flex flex-wrap border-b border-gray-200 mb-6" id="tabs-nav">
-            <button class="tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 rounded-t-lg transition-colors" data-target="TW_STOCKS_0050">台灣股票</button>
-            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-t-lg transition-colors" data-target="TW_ETFS">台灣 ETF</button>
-            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-t-lg transition-colors" data-target="US_STOCKS_SP100">美國股票</button>
-            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-t-lg transition-colors" data-target="US_ETFS">美國 ETF</button>
-            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-t-lg transition-colors" data-target="CRYPTOCURRENCY">虛擬貨幣</button>
+        <div class="flex flex-wrap border-b border-gray-200 mb-6 gap-2" id="tabs-nav">
+            <button class="tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 transition-colors" data-target="TW_STOCKS_0050">台灣股票</button>
+            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="TW_ETFS">台灣 ETF</button>
+            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="US_STOCKS_SP100">美國股票</button>
+            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="US_ETFS">美國 ETF</button>
+            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="CRYPTOCURRENCY">虛擬貨幣</button>
         </div>
 
         <div id="loading" class="text-center py-10 text-gray-500">
@@ -56,9 +56,21 @@
             正在載入動能數據...
         </div>
 
+        <!-- 錯誤提示區塊 -->
+        <div id="error-message" class="hidden bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-md">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-sm font-medium text-red-800">資料讀取異常</h3>
+                    <div class="mt-2 text-sm text-red-700" id="error-text"></div>
+                </div>
+            </div>
+        </div>
+
         <!-- 內容顯示區 -->
         <div id="content-container" style="display: none;">
-            
             <!-- 上半部：歷史前三名 -->
             <div class="bg-white shadow rounded-lg p-6 mb-8">
                 <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
@@ -79,7 +91,6 @@
                     <!-- 當月所有標的將會被注入這裡 -->
                 </div>
             </div>
-
         </div>
 
     </div>
@@ -90,20 +101,29 @@
         const getColorClass = (val) => val >= 0 ? 'momentum-positive' : 'momentum-negative';
         const formatVal = (val) => val !== 0 ? `${val.toFixed(2)}%` : '-';
 
-        // 1. 抓取 JSON 資料
+        // 1. 抓取 JSON 資料 (加入快取清除參數 ?t=timestamp)
         async function fetchData() {
             try {
-                const response = await fetch('./momentum_history.json');
-                if (!response.ok) throw new Error('無法讀取資料檔案');
-                fullData = await response.json();
+                const timestamp = new Date().getTime();
+                const response = await fetch(`./momentum_history.json?t=${timestamp}`);
                 
+                if (!response.ok) throw new Error('無法讀取資料檔案');
+                
+                fullData = await response.json();
                 document.getElementById('loading').style.display = 'none';
+                
+                // 檢查資料是否為空 (例如 yfinance 在 GitHub 被擋住)
+                if (!fullData.history || Object.keys(fullData.history).length === 0) {
+                    showError("讀取到的資料是空的！這通常代表 GitHub Actions 在抓取資料時被 Yahoo Finance 暫時擋住了。請稍後再到 GitHub 重新執行一次 Workflow。");
+                    return;
+                }
+
                 document.getElementById('content-container').style.display = 'block';
                 
                 // 顯示最新更新月份
                 const months = Object.keys(fullData.history).sort().reverse();
                 if(months.length > 0) {
-                    document.getElementById('last-updated').innerText = `資料基準：${months[0]}`;
+                    document.getElementById('last-updated').innerHTML = `資料基準：<span class="text-gray-800 font-bold">${months[0]}</span>`;
                     document.getElementById('current-month-label').innerText = `(截至 ${months[0]})`;
                 }
 
@@ -111,14 +131,18 @@
                 renderView('TW_STOCKS_0050');
             } catch (error) {
                 console.error("Error fetching data:", error);
-                document.getElementById('loading').innerHTML = `
-                    <div class="text-red-500">
-                        讀取資料失敗。請確認 Python 程式已執行，並產生了新的 <code>momentum_history.json</code>。
-                    </div>`;
+                document.getElementById('loading').style.display = 'none';
+                showError(`讀取資料失敗：${error.message}。請確認 <code>momentum_history.json</code> 是否存在。`);
             }
         }
 
-        // 2. 渲染特定類別的畫面 (包含歷史表格與當月網格)
+        function showError(message) {
+            const errorDiv = document.getElementById('error-message');
+            document.getElementById('error-text').innerHTML = message;
+            errorDiv.classList.remove('hidden');
+        }
+
+        // 2. 渲染特定類別的畫面
         function renderView(categoryKey) {
             renderHistoryTable(categoryKey);
             renderCurrentAllGrid(categoryKey);
@@ -129,8 +153,16 @@
             const historyData = fullData.history || {};
             const months = Object.keys(historyData).sort().reverse();
             
-            if (months.length === 0) {
-                container.innerHTML = "<p class='text-gray-500'>沒有可用的歷史數據。</p>";
+            // 檢查該類別是否有資料
+            let hasData = false;
+            for (let m of months) {
+                if (historyData[m][categoryKey] && historyData[m][categoryKey].length > 0) {
+                    hasData = true; break;
+                }
+            }
+
+            if (!hasData) {
+                container.innerHTML = "<p class='text-gray-500 py-4'>此類別沒有可用的歷史數據。</p>";
                 return;
             }
 
@@ -150,6 +182,8 @@
 
             months.forEach(month => {
                 const categoryData = historyData[month][categoryKey] || [];
+                if (categoryData.length === 0) return; // 略過無資料的月份
+
                 const top1 = categoryData[0] || { symbol: '-', momentum: 0 };
                 const top2 = categoryData[1] || { symbol: '-', momentum: 0 };
                 const top3 = categoryData[2] || { symbol: '-', momentum: 0 };
@@ -182,7 +216,7 @@
             const currentDataList = fullData.current_all[categoryKey] || [];
             
             if (currentDataList.length === 0) {
-                container.innerHTML = "<p class='text-gray-500 col-span-full'>無當月詳細資料。</p>";
+                container.innerHTML = "<p class='text-gray-500 col-span-full py-2'>無當月詳細資料。</p>";
                 return;
             }
 
@@ -226,6 +260,7 @@
             });
         });
 
+        // 啟動
         fetchData();
     </script>
 </body>
