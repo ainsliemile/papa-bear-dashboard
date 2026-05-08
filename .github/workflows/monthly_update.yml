@@ -1,0 +1,47 @@
+name: Monthly Papa Bear Data Update
+
+# 設定觸發條件
+on:
+  schedule:
+    # 這裡使用 Cron 語法：每個月的 1 號凌晨 00:00 (UTC 時間) 執行
+    # 相當於台灣時間每個月 1 號早上 08:00
+    - cron: '0 0 1 * *'
+  # 允許手動點擊按鈕觸發執行 (方便你測試)
+  workflow_dispatch:
+
+# 定義工作流程
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. 取得儲存庫的程式碼
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. 設定 Python 環境
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # 3. 安裝依賴套件
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # 4. 執行你的爬蟲與動能計算程式
+      - name: Run Data Fetching Script
+        run: python backend.py
+
+      # 5. 將新產生的 JSON 檔案 Commit 並 Push 回 GitHub
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          # 將產生的 JSON 檔案加入 git
+          git add momentum_history.json
+          # 如果檔案有變動才 Commit
+          git commit -m "Automated data update: $(date +'%Y-%m-%d')" || echo "No changes to commit"
+          git push
