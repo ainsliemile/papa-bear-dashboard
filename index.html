@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papa Bear 跨市場動能儀表板</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* 自訂一些簡單的過場動畫與表格樣式 */
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .momentum-positive { color: #16a34a; font-weight: bold; } /* Tailwind green-600 */
+        .momentum-negative { color: #dc2626; font-weight: bold; } /* Tailwind red-600 */
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <div class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8">
+        
+        <!-- Header -->
+        <header class="mb-8 border-b pb-4">
+            <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Papa Bear <span class="text-blue-600">動能策略監控</span></h1>
+            <p class="text-gray-500 mt-2">基於 3, 6, 12 個月平均報酬率的汰弱留強系統</p>
+        </header>
+
+        <!-- Tabs Navigation -->
+        <div class="flex flex-wrap border-b border-gray-200 mb-6" id="tabs-nav">
+            <button class="tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 rounded-t-lg transition-colors" data-target="TW_STOCKS_0050">台灣股票</button>
+            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-t-lg transition-colors" data-target="TW_ETFS">台灣 ETF</button>
+            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-t-lg transition-colors" data-target="US_STOCKS_SP100">美國股票</button>
+            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-t-lg transition-colors" data-target="US_ETFS">美國 ETF</button>
+            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 rounded-t-lg transition-colors" data-target="CRYPTOCURRENCY">虛擬貨幣</button>
+        </div>
+
+        <!-- Content Area -->
+        <div id="content-area" class="bg-white shadow rounded-lg p-6">
+            <div id="loading" class="text-center py-10 text-gray-500">
+                <svg class="animate-spin h-8 w-8 text-blue-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                正在載入動能數據...
+            </div>
+            <!-- Tables will be injected here by JS -->
+        </div>
+
+    </div>
+
+    <script>
+        let momentumData = {};
+
+        // 1. 抓取 JSON 資料
+        async function fetchData() {
+            try {
+                // 在本地端測試時，若遇到 CORS 問題，可能需要使用 Live Server 擴充功能
+                const response = await fetch('./momentum_history.json');
+                if (!response.ok) throw new Error('無法讀取資料檔案');
+                momentumData = await response.json();
+                
+                document.getElementById('loading').style.display = 'none';
+                
+                // 預設渲染第一個 Tab 的內容
+                renderTable('TW_STOCKS_0050');
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                document.getElementById('loading').innerHTML = `
+                    <div class="text-red-500">
+                        讀取資料失敗。請確認 <code>momentum_history.json</code> 是否與此網頁在同一資料夾，<br>
+                        並且您正在透過本地伺服器 (如 VS Code 的 Live Server) 開啟此網頁。
+                    </div>`;
+            }
+        }
+
+        // 2. 渲染特定類別的表格
+        function renderTable(categoryKey) {
+            const contentArea = document.getElementById('content-area');
+            
+            // 取得所有月份並排序 (最新的月份在最上面)
+            const months = Object.keys(momentumData).sort().reverse();
+            
+            if (months.length === 0) {
+                contentArea.innerHTML = "<p>沒有可用的數據。</p>";
+                return;
+            }
+
+            let html = `
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">時間 (月底)</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">第一名 (動能 %)</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">第二名 (動能 %)</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">第三名 (動能 %)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+            `;
+
+            months.forEach(month => {
+                const categoryData = momentumData[month][categoryKey] || [];
+                
+                // 確保就算資料不足 3 筆也能正常顯示
+                const top1 = categoryData[0] || { symbol: '-', momentum: 0 };
+                const top2 = categoryData[1] || { symbol: '-', momentum: 0 };
+                const top3 = categoryData[2] || { symbol: '-', momentum: 0 };
+
+                // 判斷顏色的 Helper
+                const getColorClass = (val) => val >= 0 ? 'momentum-positive' : 'momentum-negative';
+                const formatVal = (val) => val !== 0 ? `${val.toFixed(2)}%` : '-';
+
+                html += `
+                    <tr class="hover:bg-gray-50">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${month}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <span class="font-bold text-gray-800">${top1.symbol}</span> 
+                            <span class="${getColorClass(top1.momentum)}">(${formatVal(top1.momentum)})</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <span class="font-bold text-gray-800">${top2.symbol}</span> 
+                            <span class="${getColorClass(top2.momentum)}">(${formatVal(top2.momentum)})</span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                            <span class="font-bold text-gray-800">${top3.symbol}</span> 
+                            <span class="${getColorClass(top3.momentum)}">(${formatVal(top3.momentum)})</span>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            html += `
+                        </tbody>
+                    </table>
+                </div>
+            `;
+            
+            contentArea.innerHTML = html;
+        }
+
+        // 3. 處理 Tab 點擊切換
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                // 重設所有按鈕樣式
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active', 'text-blue-600', 'border-b-2', 'border-blue-600', 'bg-blue-50');
+                    btn.classList.add('text-gray-500', 'hover:text-gray-700', 'hover:bg-gray-100');
+                });
+                
+                // 啟動被點擊的按鈕
+                const targetBtn = e.currentTarget;
+                targetBtn.classList.remove('text-gray-500', 'hover:text-gray-700', 'hover:bg-gray-100');
+                targetBtn.classList.add('active', 'text-blue-600', 'border-b-2', 'border-blue-600', 'bg-blue-50');
+                
+                // 讀取對應資料並渲染
+                const categoryKey = targetBtn.getAttribute('data-target');
+                renderTable(categoryKey);
+            });
+        });
+
+        // 啟動程式
+        fetchData();
+    </script>
+</body>
+</html>
