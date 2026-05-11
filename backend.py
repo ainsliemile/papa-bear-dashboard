@@ -3,6 +3,8 @@ import pandas as pd
 import requests
 import json
 import warnings
+import io
+import os
 from bs4 import BeautifulSoup
 from datetime import datetime
 warnings.filterwarnings('ignore')
@@ -10,7 +12,6 @@ warnings.filterwarnings('ignore')
 # ==========================================
 # 1. 動態抓取與靜態清單定義區
 # ==========================================
-# (保留原本的 get_0050_tickers, get_sp100_tickers, get_crypto_tickers 等函數)
 
 def get_0050_tickers():
     try:
@@ -61,6 +62,71 @@ def get_crypto_tickers():
         tickers.append("LUNC-USD")
     return tickers
 
+def get_tickers_from_local_excel():
+    """直接從 GitHub 儲存庫內的 TrackingList.xlsx 讀取標的清單"""
+    file_path = "TrackingList.xlsx"
+    print(f"\n=== 正在嘗試從本地檔案 {file_path} 讀取 A 欄標的 ===")
+    
+    categories_map = {
+        "TW_STOCKS_0050": "台灣股票",
+        "TW_ETFS": "台灣ETF",
+        "US_STOCKS_SP100": "美國股票",
+        "US_ETFS": "美國ETF",
+        "CRYPTOCURRENCY": "虛擬貨幣"
+    }
+    
+    result = {k: [] for k in categories_map.keys()}
+    
+    if not os.path.exists(file_path):
+        print(f"⚠️ 找不到檔案: {file_path}，將使用備用清單機制。")
+        return result
+
+    try:
+        # 使用 pandas 讀取 Excel 檔案，讀取所有工作表
+        excel_data = pd.read_excel(file_path, sheet_name=None, header=None)
+        
+        for cat_key, sheet_name in categories_map.items():
+            if sheet_name in excel_data:
+                df = excel_data[sheet_name]
+                
+                # 因為 A1 通常是標題，我們從 A 欄讀取所有資料，稍後再過濾
+                # 假設資料在第一欄 (index 0)
+                if len(df.columns) > 0:
+                    raw_tickers = df.iloc[:, 0].astype(str).tolist()
+                else:
+                    raw_tickers = []
+                    
+                cleaned_tickers = []
+                for val in raw_tickers:
+                    val = str(val).strip().upper()
+                    
+                    # 排除空值與無效字串 (包含可能為標題的 "NAN")
+                    if val in ['NAN', '', 'NONE']: continue
+                    # 排除任何含有中文字的欄位 (過濾掉 A1 的標題或註解)
+                    if any('\u4e00' <= char <= '\u9fff' for char in val): continue
+                    
+                    # 依據不同類別做代碼正規化 (自動補後綴)
+                    if cat_key in ['TW_STOCKS_0050', 'TW_ETFS']:
+                        if not val.endswith('.TW') and not val.endswith('.TWO'):
+                            val = f"{val}.TW"
+                    elif cat_key == 'CRYPTOCURRENCY':
+                        if not val.endswith('-USD'):
+                            val = f"{val}-USD"
+                            
+                    cleaned_tickers.append(val)
+                    
+                # 去除重複項
+                result[cat_key] = list(set(cleaned_tickers))
+                print(f"[{sheet_name}] 成功從本地 Excel A 欄載入 {len(result[cat_key])} 檔標的")
+            else:
+                 print(f"⚠️ 在 {file_path} 中找不到名為 '{sheet_name}' 的工作表。")
+
+    except Exception as e:
+        print(f"讀取本地 Excel {file_path} 時發生錯誤: {e}")
+            
+    return result
+
+# 備用清單
 TW_ETFS = ["006208.TW", "0051.TW", "00692.TW", "00850.TW", "00922.TW", "00923.TW", "00646.TW", "0052.TW", "0053.TW", "00830.TW", "00891.TW", "00892.TW", "00927.TW", "00757.TW", "00662.TW", "00935.TW", "00881.TW", "00713.TW", "00878.TW", "00919.TW", "00929.TW", "00915.TW", "0056.TW", "00934.TW", "00940.TW", "00642U.TW", "00763U.TW", "00635U.TW", "00738U.TW", "00730.TW", "00938.TW", "00679B.TW", "00751B.TW", "00720B.TW", "00712.TW", "00937B.TW", "00687B.TW", "00661.TW", "00652.TW", "00660.TW"]
 US_SECTORS = ["XLK", "XLF", "XLV", "XLY", "XLP", "XLE", "XLI", "XLB", "XLU", "XLRE", "XLC"]
 US_ETFS = ["VOO", "VTI", "QQQ", "VTV", "VUG", "IWM", "VIOV", "VIOG", "VEA", "VWO", "VGK", "EWJ", "MCHI", "AAXJ", "DIA", "SMH", "IBB", "KRE", "XHB", "VNQ", "XME", "PICK", "LIT", "TAN", "BOTZ", "CLOU", "CIBR", "WCLD", "HACK", "MJ", "UTES", "GRID", "NLR", "URNM", "GDX", "GDXJ", "SIL", "SILJ", "SLVR", "IAU", "SLV", "PDBC", "USO", "DBA", "BND", "TLT", "IEF", "TIP", "BIL", "TQQQ", "UPRO", "SOXL", "TNA", "TECL", "FNGU", "UGL", "YINN", "TMF", "LABU"]
@@ -106,13 +172,26 @@ def calculate_historical_momentum(tickers, category_name):
 def main():
     print("=== Papa Bear 跨市場動能監控系統開始執行 ===")
     
-    categories = {
+    # 優先嘗試從本地 Excel 檔案讀取
+    excel_data = get_tickers_from_local_excel()
+    
+    # 備用機制 (Fallback) 的預設爬蟲與名單
+    fallback_categories = {
         "TW_STOCKS_0050": get_0050_tickers(),
         "TW_ETFS": TW_ETFS,
         "US_STOCKS_SP100": get_sp100_tickers() + US_SECTORS,
         "US_ETFS": US_ETFS,
         "CRYPTOCURRENCY": get_crypto_tickers()
     }
+    
+    categories = {}
+    for cat_key in fallback_categories.keys():
+        # 如果 Excel 有成功抓到該類別資料 (>0)，就使用 Excel；否則使用備用機制
+        if excel_data and len(excel_data.get(cat_key, [])) > 0:
+            categories[cat_key] = excel_data[cat_key]
+        else:
+            print(f"使用備用機制載入 [{cat_key}]")
+            categories[cat_key] = fallback_categories[cat_key]
     
     final_json_data = {"history": {}, "current_all": {}}
     tickers_list_data = {} # 儲存標的清單用
