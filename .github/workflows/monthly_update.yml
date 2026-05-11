@@ -40,8 +40,7 @@ jobs:
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          # 將產生的 JSON 檔案加入 git
-          git add momentum_history.json
-          # 如果檔案有變動才 Commit
+          # 將產生的兩個 JSON 檔案加入 git
+          git add momentum_history.json all_tickers.json
           git commit -m "Automated data update: $(date +'%Y-%m-%d')" || echo "No changes to commit"
           git push
