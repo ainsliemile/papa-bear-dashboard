@@ -1,227 +1,231 @@
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Papa Bear 跨市場動能儀表板</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .momentum-positive { color: #16a34a; font-weight: bold; } 
-        .momentum-negative { color: #dc2626; font-weight: bold; } 
-        .rank-badge {
-            display: inline-block; width: 24px; height: 24px; line-height: 24px;
-            text-align: center; border-radius: 50%; font-size: 0.75rem; font-weight: bold;
-        }
-        .rank-1 { background-color: #fef08a; color: #854d0e; }
-        .rank-2 { background-color: #e5e7eb; color: #374151; }
-        .rank-3 { background-color: #fed7aa; color: #9a3412; }
-        .rank-other { background-color: #f3f4f6; color: #6b7280; }
-        .view-section { display: none; }
-        .view-section.active { display: block; }
-    </style>
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+import yfinance as yf
+import pandas as pd
+import requests
+import json
+import warnings
+import io
+import os
+import time
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+from bs4 import BeautifulSoup
+from datetime import datetime
 
-    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+warnings.filterwarnings('ignore')
+
+# 建立給一般網頁用的 Session
+session = requests.Session()
+retry = Retry(connect=3, backoff_factor=0.5)
+adapter = HTTPAdapter(max_retries=retry)
+session.mount('http://', adapter)
+session.mount('https://', adapter)
+session.headers.update({
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+})
+
+# ==========================================
+# 1. 抓取邏輯
+# ==========================================
+def get_0050_tickers():
+    try:
+        url = "https://www.yuantaetfs.com/product/detail/0050/ratio"
+        res = session.get(url, timeout=10)
+        tables = pd.read_html(res.text)
+        for t in tables:
+            if '商品代碼' in t.columns:
+                tickers = t['商品代碼'].astype(str).tolist()
+                return [f"{t}.TW" for t in tickers if len(t) == 4 and t.isdigit()]
+    except Exception as e:
+        print(f"動態抓取 0050 失敗: {e}")
+    return ["2330.TW", "2317.TW", "2454.TW", "2382.TW", "2308.TW"]
+
+def get_sp100_tickers():
+    try:
+        url = 'https://en.wikipedia.org/wiki/S%26P_100'
+        tables = pd.read_html(url)
+        for t in tables:
+            if 'Symbol' in t.columns:
+                return t['Symbol'].str.replace('.', '-', regex=False).tolist()
+    except Exception as e:
+        print(f"動態抓取 S&P 100 失敗: {e}")
+    return ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA"]
+
+def get_crypto_tickers():
+    stablecoins = ['usdt', 'usdc', 'dai', 'fdusd', 'pyusd', 'usds', 'tusd', 'ustc']
+    tickers = []
+    try:
+        url = "https://api.coingecko.com/api/v3/coins/markets"
+        params = {'vs_currency': 'usd', 'order': 'market_cap_desc', 'per_page': 50}
+        data = session.get(url, params=params, timeout=10).json()
+        for coin in data:
+            if coin['symbol'].lower() not in stablecoins:
+                tickers.append(f"{coin['symbol'].upper()}-USD")
+            if len(tickers) == 30: break
+    except Exception as e:
+        print(f"動態抓取虛擬貨幣失敗: {e}")
+        tickers = ["BTC-USD", "ETH-USD", "SOL-USD"]
+    if "LUNC-USD" not in tickers:
+        tickers.append("LUNC-USD")
+    return tickers
+
+def get_tickers_from_local_excel():
+    file_path = "TrackingList.xlsx"
+    print(f"\n=== 正在嘗試從本地檔案 {file_path} 讀取 A 欄標的 ===")
+    categories_map = {
+        "TW_STOCKS_0050": "台灣股票", "TW_ETFS": "台灣ETF",
+        "US_STOCKS_SP100": "美國股票", "US_ETFS": "美國ETF", "CRYPTOCURRENCY": "虛擬貨幣"
+    }
+    result = {k: [] for k in categories_map.keys()}
+    if not os.path.exists(file_path):
+        print(f"⚠️ 找不到檔案: {file_path}，將使用備用清單。")
+        return result
+    try:
+        excel_data = pd.read_excel(file_path, sheet_name=None, header=None)
+        for cat_key, sheet_name in categories_map.items():
+            if sheet_name in excel_data:
+                df = excel_data[sheet_name]
+                raw_tickers = df.iloc[:, 0].astype(str).tolist() if len(df.columns) > 0 else []
+                cleaned_tickers = []
+                for val in raw_tickers:
+                    val = str(val).strip().upper()
+                    if val in ['NAN', '', 'NONE']: continue
+                    if any('\u4e00' <= char <= '\u9fff' for char in val): continue
+                    if cat_key in ['TW_STOCKS_0050', 'TW_ETFS']:
+                        if not val.endswith('.TW') and not val.endswith('.TWO'): val = f"{val}.TW"
+                    elif cat_key == 'CRYPTOCURRENCY':
+                        if not val.endswith('-USD'): val = f"{val}-USD"
+                    cleaned_tickers.append(val)
+                result[cat_key] = list(set(cleaned_tickers))
+                print(f"[{sheet_name}] 成功從 Excel 載入 {len(result[cat_key])} 檔")
+    except Exception as e:
+        print(f"讀取 Excel 發生錯誤: {e}")
+    return result
+
+# 備用清單
+TW_ETFS = ["0050.TW", "0056.TW"]
+US_SECTORS = ["XLK"]
+US_ETFS = ["VOO", "QQQ"]
+
+# ==========================================
+# 2. 核心技術：分批下載模組 (繞過 Yahoo 封鎖)
+# ==========================================
+def download_in_batches(tickers, batch_size=10):
+    all_prices = []
+    total_batches = (len(tickers) // batch_size) + 1
+    
+    for i in range(0, len(tickers), batch_size):
+        batch = tickers[i:i+batch_size]
+        current_batch = (i // batch_size) + 1
+        print(f"   -> 下載批次 {current_batch}/{total_batches} (共 {len(batch)} 檔)...", end=" ")
         
-        <header class="mb-8 border-b pb-4 flex flex-col md:flex-row justify-between items-start md:items-end">
-            <div>
-                <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Papa Bear <span class="text-blue-600">動能策略監控</span></h1>
-                <p class="text-gray-500 mt-2 text-sm">自適應多重週期系統 (ETF: 3/6/12月 | 股票: 1/3/6月 | 幣圈: 14天/1月/3月)</p>
-            </div>
-            <div class="text-sm text-gray-400 mt-4 md:mt-0 pb-1 font-mono" id="last-updated">
-                自動更新狀態：載入中...
-            </div>
-        </header>
-
-        <div class="flex space-x-4 mb-6">
-            <button onclick="switchMainTab('dashboard')" id="btn-dashboard" class="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition">動能儀表板</button>
-            <button onclick="switchMainTab('tickers')" id="btn-tickers" class="px-4 py-2 bg-white border text-gray-700 rounded shadow hover:bg-gray-50 transition flex items-center">
-                <svg class="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                驗證與匯出標的清單
-            </button>
-        </div>
-
-        <!-- 錯誤提示區塊 (如果抓不到資料會顯示) -->
-        <div id="error-message" class="hidden bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-md shadow-sm">
-            <div class="flex items-center">
-                <svg class="h-6 w-6 text-red-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-                <div>
-                    <h3 class="text-md font-bold text-red-800">系統警告：資料庫異常或為空</h3>
-                    <p class="text-sm text-red-700 mt-1" id="error-text">無法解析動能數據。請至 GitHub Actions 檢查是否被 Yahoo Finance 暫時阻擋，或確認 TrackingList.xlsx 格式是否正確。</p>
-                </div>
-            </div>
-        </div>
-
-        <div id="loading" class="text-center py-10 text-gray-500">
-            <svg class="animate-spin h-8 w-8 text-blue-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-            正在載入數據...
-        </div>
-
-        <div id="view-dashboard" class="view-section active">
-            <div class="flex flex-wrap border-b border-gray-200 mb-6 gap-2" id="tabs-nav">
-                <button class="tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 transition-colors" data-target="TW_STOCKS_0050">台灣股票</button>
-                <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="TW_ETFS">台灣 ETF</button>
-                <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="US_STOCKS_SP100">美國股票</button>
-                <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="US_ETFS">美國 ETF</button>
-                <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="CRYPTOCURRENCY">虛擬貨幣</button>
-            </div>
-
-            <div id="content-container" style="display: none;">
-                <div class="bg-white shadow rounded-lg p-6 mb-8">
-                    <h2 class="text-lg font-bold text-gray-800 mb-4">歷史回測排名</h2>
-                    <div id="history-area"></div>
-                </div>
-                <div class="bg-white shadow rounded-lg p-6">
-                    <h2 class="text-lg font-bold text-gray-800 mb-2">當月完整動能排行 <span id="current-month-label" class="text-sm font-normal text-gray-500"></span></h2>
-                    <div id="current-all-area" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4"></div>
-                </div>
-            </div>
-        </div>
-
-        <div id="view-tickers" class="view-section">
-            <div class="bg-white shadow rounded-lg p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-xl font-bold text-gray-800">目前監控中的標的清單</h2>
-                    <button onclick="copyCSV()" class="px-3 py-1 bg-green-50 text-green-700 border border-green-200 rounded hover:bg-green-100 text-sm font-medium transition">
-                        複製為 CSV 格式 (供 Excel 使用)
-                    </button>
-                </div>
-                <textarea id="csv-output" class="hidden"></textarea>
-                <div id="tickers-list-area" class="space-y-6"></div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        let fullData = {};
-        let tickersData = {};
-
-        const getColorClass = (val) => val >= 0 ? 'momentum-positive' : 'momentum-negative';
-        const formatVal = (val) => val !== 0 ? `${val.toFixed(2)}%` : '-';
-
-        function switchMainTab(tab) {
-            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
-            document.getElementById(`view-${tab}`).classList.add('active');
+        try:
+            data = yf.download(batch, period="2y", progress=False)
+            if not data.empty:
+                if isinstance(data.columns, pd.MultiIndex):
+                    p = data['Adj Close'] if 'Adj Close' in data.columns.levels[0] else data['Close']
+                else:
+                    p_col = 'Adj Close' if 'Adj Close' in data.columns else 'Close'
+                    p = pd.DataFrame(data[p_col], columns=[batch[0]])
+                all_prices.append(p)
+                print("✅ 成功")
+            else:
+                print("⚠️ 無資料")
+        except Exception as e:
+            print(f"❌ 失敗 ({e})")
             
-            if(tab === 'dashboard') {
-                document.getElementById('btn-dashboard').className = "px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition";
-                document.getElementById('btn-tickers').className = "px-4 py-2 bg-white border text-gray-700 rounded shadow hover:bg-gray-50 transition flex items-center";
-            } else {
-                document.getElementById('btn-tickers').className = "px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition flex items-center";
-                document.getElementById('btn-dashboard').className = "px-4 py-2 bg-white border text-gray-700 rounded shadow hover:bg-gray-50 transition";
-                renderTickersList();
-            }
-        }
+        time.sleep(1.5) 
+        
+    if not all_prices:
+        return pd.DataFrame()
+        
+    final_prices = pd.concat(all_prices, axis=1)
+    final_prices = final_prices.loc[:, ~final_prices.columns.duplicated()]
+    return final_prices
 
-        async function fetchData() {
-            try {
-                // 強制清除快取的 timestamp
-                const timestamp = new Date().getTime();
-                const [resMom, resTickers] = await Promise.all([
-                    fetch(`./momentum_history.json?t=${timestamp}`),
-                    fetch(`./all_tickers.json?t=${timestamp}`).catch(() => null)
-                ]);
-                
-                fullData = await resMom.json();
-                if(resTickers) tickersData = await resTickers.json();
-                
-                document.getElementById('loading').style.display = 'none';
+# ==========================================
+# 3. 動能計算核心演算法
+# ==========================================
+def calculate_historical_momentum(tickers, category_name):
+    print(f"\n[{category_name}] 開始處理 (共 {len(tickers)} 檔)...")
+    
+    prices = download_in_batches(tickers)
+    
+    if prices.empty or prices.shape[0] == 0:
+        print(f"⚠️ 警告：{category_name} 抓不到任何價格資料！")
+        return {}, []
+    
+    prices = prices.apply(pd.to_numeric, errors='coerce')
+    prices.dropna(axis=1, how='all', inplace=True) 
+    prices = prices.ffill().resample('D').ffill()
+    
+    if category_name in ["TW_ETFS", "US_ETFS"]: p1, p2, p3 = 90, 180, 365
+    elif category_name in ["TW_STOCKS_0050", "US_STOCKS_SP100"]: p1, p2, p3 = 30, 90, 180
+    elif category_name == "CRYPTOCURRENCY": p1, p2, p3 = 14, 30, 90
+    else: p1, p2, p3 = 90, 180, 365
 
-                // 🌟 新增防呆：檢查 JSON 內部是否真的有資料
-                if (!fullData.history || Object.keys(fullData.history).length === 0) {
-                    document.getElementById('error-message').classList.remove('hidden');
-                    return; // 停止渲染空畫面
-                }
-                
-                document.getElementById('content-container').style.display = 'block';
-                
-                const months = Object.keys(fullData.history).sort().reverse();
-                if(months.length > 0) {
-                    document.getElementById('last-updated').innerHTML = `資料基準：<span class="text-gray-800 font-bold">${months[0]}</span>`;
-                    document.getElementById('current-month-label').innerText = `(截至 ${months[0]})`;
-                }
-                renderView('TW_STOCKS_0050');
-            } catch (error) {
-                console.error("Error fetching data:", error);
-                document.getElementById('loading').style.display = 'none';
-                document.getElementById('error-message').classList.remove('hidden');
-                document.getElementById('error-text').innerText = `連線或讀取 JSON 失敗。請確認 GitHub Actions 是否執行成功。錯誤詳情：${error.message}`;
-            }
-        }
+    m1 = prices.pct_change(periods=p1)
+    m2 = prices.pct_change(periods=p2)
+    m3 = prices.pct_change(periods=p3)
+    
+    avg_momentum = (m1 + m2 + m3) / 3
+    monthly_momentum = avg_momentum.resample('ME').last()
+    last_12_months = monthly_momentum.tail(12)
+    
+    history_result = {}
+    for date, row in last_12_months.iterrows():
+        month_str = date.strftime('%Y-%m')
+        valid_ranks = row.dropna().sort_values(ascending=False)
+        top3 = valid_ranks.head(3)
+        history_result[month_str] = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in top3.items()]
+        
+    latest_row = avg_momentum.iloc[-1].dropna().sort_values(ascending=False)
+    current_all = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in latest_row.items()]
+        
+    return history_result, current_all
 
-        function renderView(categoryKey) {
-            const historyContainer = document.getElementById('history-area');
-            const months = Object.keys(fullData.history || {}).sort().reverse();
-            let html = `<div class="overflow-x-auto"><table class="min-w-full divide-y divide-gray-200"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">時間</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">第一名</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">第二名</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">第三名</th></tr></thead><tbody class="bg-white divide-y divide-gray-200">`;
-            
-            let hasData = false;
-            months.forEach(month => {
-                const row = fullData.history[month][categoryKey] || [];
-                if(row.length === 0) return;
-                hasData = true;
-                const t1=row[0]||{symbol:'-',momentum:0}, t2=row[1]||{symbol:'-',momentum:0}, t3=row[2]||{symbol:'-',momentum:0};
-                html += `<tr><td class="px-6 py-4 text-sm font-medium text-gray-900">${month}</td><td class="px-6 py-4 text-sm"><span class="font-bold">${t1.symbol}</span> <span class="${getColorClass(t1.momentum)}">(${formatVal(t1.momentum)})</span></td><td class="px-6 py-4 text-sm"><span class="font-bold">${t2.symbol}</span> <span class="${getColorClass(t2.momentum)}">(${formatVal(t2.momentum)})</span></td><td class="px-6 py-4 text-sm"><span class="font-bold">${t3.symbol}</span> <span class="${getColorClass(t3.momentum)}">(${formatVal(t3.momentum)})</span></td></tr>`;
-            });
+# ==========================================
+# 4. 主程式整合
+# ==========================================
+def main():
+    print("=== Papa Bear 跨市場動能監控系統 (分批下載防阻擋版) ===")
+    
+    excel_data = get_tickers_from_local_excel()
+    fallback_categories = {
+        "TW_STOCKS_0050": get_0050_tickers(),
+        "TW_ETFS": TW_ETFS,
+        "US_STOCKS_SP100": get_sp100_tickers() + US_SECTORS,
+        "US_ETFS": US_ETFS,
+        "CRYPTOCURRENCY": get_crypto_tickers()
+    }
+    
+    categories = {}
+    for cat_key in fallback_categories.keys():
+        if excel_data and len(excel_data.get(cat_key, [])) > 0:
+            categories[cat_key] = excel_data[cat_key]
+        else:
+            categories[cat_key] = fallback_categories[cat_key]
+    
+    final_json_data = {"history": {}, "current_all": {}}
+    tickers_list_data = {}
+    
+    for cat_key, tickers in categories.items():
+        unique_tickers = sorted(list(set(tickers)))
+        tickers_list_data[cat_key] = unique_tickers
+        
+        history_res, current_all_res = calculate_historical_momentum(unique_tickers, cat_key)
+        final_json_data["current_all"][cat_key] = current_all_res
+        
+        for month, top3_list in history_res.items():
+            if month not in final_json_data["history"]: final_json_data["history"][month] = {}
+            final_json_data["history"][month][cat_key] = top3_list
 
-            if (!hasData) {
-                historyContainer.innerHTML = "<p class='text-gray-500 py-4'>此類別本月沒有足夠的歷史回測數據。</p>";
-            } else {
-                historyContainer.innerHTML = html + "</tbody></table></div>";
-            }
+    with open("momentum_history.json", 'w', encoding='utf-8') as f:
+        json.dump(final_json_data, f, ensure_ascii=False, indent=4)
+        
+    with open("all_tickers.json", 'w', encoding='utf-8') as f:
+        json.dump(tickers_list_data, f, ensure_ascii=False, indent=4)
+        
+    print("\n=== 執行完畢！資料已成功儲存 ===")
 
-            const currentContainer = document.getElementById('current-all-area');
-            const currentData = fullData.current_all[categoryKey] || [];
-            
-            if (currentData.length === 0) {
-                currentContainer.innerHTML = "<p class='text-gray-500 col-span-full py-2'>無當月詳細資料。</p>";
-                return;
-            }
-
-            let currentHtml = '';
-            currentData.forEach((item, index) => {
-                const rank = index + 1;
-                const badge = rank===1?'rank-1':rank===2?'rank-2':rank===3?'rank-3':'rank-other';
-                currentHtml += `<div class="border rounded-md p-3 flex flex-col items-center bg-gray-50"><div class="flex items-center w-full justify-between mb-2"><span class="rank-badge ${badge}">${rank}</span><span class="text-sm font-bold truncate">${item.symbol}</span></div><div class="text-lg ${getColorClass(item.momentum)}">${formatVal(item.momentum)}</div></div>`;
-            });
-            currentContainer.innerHTML = currentHtml;
-        }
-
-        function renderTickersList() {
-            const container = document.getElementById('tickers-list-area');
-            if(Object.keys(tickersData).length === 0) {
-                container.innerHTML = "<p class='text-gray-500'>尚未產生標的清單資料。</p>";
-                return;
-            }
-            let html = '', csvContent = "大類別,標的代碼\n";
-            for(const [category, tickers] of Object.entries(tickersData)) {
-                html += `<div><h3 class="text-md font-bold text-gray-700 border-b pb-2 mb-3">${category} <span class="text-xs font-normal text-gray-400">(${tickers.length} 檔)</span></h3><div class="flex flex-wrap gap-2">`;
-                tickers.forEach(t => {
-                    html += `<span class="px-2 py-1 bg-gray-100 border border-gray-200 rounded text-sm font-mono text-gray-600">${t}</span>`;
-                    csvContent += `${category},${t}\n`;
-                });
-                html += `</div></div>`;
-            }
-            container.innerHTML = html;
-            document.getElementById('csv-output').value = csvContent;
-        }
-
-        function copyCSV() {
-            const csvText = document.getElementById('csv-output').value;
-            navigator.clipboard.writeText(csvText).then(() => alert("✅ 已成功複製 CSV 內容！"));
-        }
-
-        document.querySelectorAll('.tab-btn').forEach(button => {
-            button.addEventListener('click', (e) => {
-                document.querySelectorAll('.tab-btn').forEach(btn => btn.className = "tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors");
-                e.currentTarget.className = "tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 transition-colors";
-                renderView(e.currentTarget.getAttribute('data-target'));
-            });
-        });
-
-        fetchData();
-    </script>
-</body>
-</html>
+if __name__ == "__main__":
+    main()
