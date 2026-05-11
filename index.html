@@ -42,6 +42,19 @@
             </button>
         </div>
 
+        <!-- 錯誤提示區塊 (如果抓不到資料會顯示) -->
+        <div id="error-message" class="hidden bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-md shadow-sm">
+            <div class="flex items-center">
+                <svg class="h-6 w-6 text-red-500 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+                <div>
+                    <h3 class="text-md font-bold text-red-800">系統警告：資料庫異常或為空</h3>
+                    <p class="text-sm text-red-700 mt-1" id="error-text">無法解析動能數據。請至 GitHub Actions 檢查是否被 Yahoo Finance 暫時阻擋，或確認 TrackingList.xlsx 格式是否正確。</p>
+                </div>
+            </div>
+        </div>
+
         <div id="loading" class="text-center py-10 text-gray-500">
             <svg class="animate-spin h-8 w-8 text-blue-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
             正在載入數據...
@@ -58,7 +71,7 @@
 
             <div id="content-container" style="display: none;">
                 <div class="bg-white shadow rounded-lg p-6 mb-8">
-                    <h2 class="text-lg font-bold text-gray-800 mb-4">過去 12 個月前三名回測</h2>
+                    <h2 class="text-lg font-bold text-gray-800 mb-4">歷史回測排名</h2>
                     <div id="history-area"></div>
                 </div>
                 <div class="bg-white shadow rounded-lg p-6">
@@ -105,6 +118,7 @@
 
         async function fetchData() {
             try {
+                // 強制清除快取的 timestamp
                 const timestamp = new Date().getTime();
                 const [resMom, resTickers] = await Promise.all([
                     fetch(`./momentum_history.json?t=${timestamp}`),
@@ -115,6 +129,13 @@
                 if(resTickers) tickersData = await resTickers.json();
                 
                 document.getElementById('loading').style.display = 'none';
+
+                // 🌟 新增防呆：檢查 JSON 內部是否真的有資料
+                if (!fullData.history || Object.keys(fullData.history).length === 0) {
+                    document.getElementById('error-message').classList.remove('hidden');
+                    return; // 停止渲染空畫面
+                }
+                
                 document.getElementById('content-container').style.display = 'block';
                 
                 const months = Object.keys(fullData.history).sort().reverse();
@@ -125,7 +146,9 @@
                 renderView('TW_STOCKS_0050');
             } catch (error) {
                 console.error("Error fetching data:", error);
-                document.getElementById('loading').innerHTML = `<div class="text-red-500">讀取資料失敗，請確認資料檔存在。</div>`;
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error-message').classList.remove('hidden');
+                document.getElementById('error-text').innerText = `連線或讀取 JSON 失敗。請確認 GitHub Actions 是否執行成功。錯誤詳情：${error.message}`;
             }
         }
 
@@ -133,16 +156,30 @@
             const historyContainer = document.getElementById('history-area');
             const months = Object.keys(fullData.history || {}).sort().reverse();
             let html = `<div class="overflow-x-auto"><table class="min-w-full divide-y divide-gray-200"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">時間</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">第一名</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">第二名</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">第三名</th></tr></thead><tbody class="bg-white divide-y divide-gray-200">`;
+            
+            let hasData = false;
             months.forEach(month => {
                 const row = fullData.history[month][categoryKey] || [];
                 if(row.length === 0) return;
+                hasData = true;
                 const t1=row[0]||{symbol:'-',momentum:0}, t2=row[1]||{symbol:'-',momentum:0}, t3=row[2]||{symbol:'-',momentum:0};
                 html += `<tr><td class="px-6 py-4 text-sm font-medium text-gray-900">${month}</td><td class="px-6 py-4 text-sm"><span class="font-bold">${t1.symbol}</span> <span class="${getColorClass(t1.momentum)}">(${formatVal(t1.momentum)})</span></td><td class="px-6 py-4 text-sm"><span class="font-bold">${t2.symbol}</span> <span class="${getColorClass(t2.momentum)}">(${formatVal(t2.momentum)})</span></td><td class="px-6 py-4 text-sm"><span class="font-bold">${t3.symbol}</span> <span class="${getColorClass(t3.momentum)}">(${formatVal(t3.momentum)})</span></td></tr>`;
             });
-            historyContainer.innerHTML = html + "</tbody></table></div>";
+
+            if (!hasData) {
+                historyContainer.innerHTML = "<p class='text-gray-500 py-4'>此類別本月沒有足夠的歷史回測數據。</p>";
+            } else {
+                historyContainer.innerHTML = html + "</tbody></table></div>";
+            }
 
             const currentContainer = document.getElementById('current-all-area');
             const currentData = fullData.current_all[categoryKey] || [];
+            
+            if (currentData.length === 0) {
+                currentContainer.innerHTML = "<p class='text-gray-500 col-span-full py-2'>無當月詳細資料。</p>";
+                return;
+            }
+
             let currentHtml = '';
             currentData.forEach((item, index) => {
                 const rank = index + 1;
@@ -154,7 +191,10 @@
 
         function renderTickersList() {
             const container = document.getElementById('tickers-list-area');
-            if(Object.keys(tickersData).length === 0) return;
+            if(Object.keys(tickersData).length === 0) {
+                container.innerHTML = "<p class='text-gray-500'>尚未產生標的清單資料。</p>";
+                return;
+            }
             let html = '', csvContent = "大類別,標的代碼\n";
             for(const [category, tickers] of Object.entries(tickersData)) {
                 html += `<div><h3 class="text-md font-bold text-gray-700 border-b pb-2 mb-3">${category} <span class="text-xs font-normal text-gray-400">(${tickers.length} 檔)</span></h3><div class="flex flex-wrap gap-2">`;
