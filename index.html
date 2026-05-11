@@ -9,26 +9,21 @@
         .momentum-positive { color: #16a34a; font-weight: bold; } 
         .momentum-negative { color: #dc2626; font-weight: bold; } 
         .rank-badge {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            line-height: 24px;
-            text-align: center;
-            border-radius: 50%;
-            font-size: 0.75rem;
-            font-weight: bold;
+            display: inline-block; width: 24px; height: 24px; line-height: 24px;
+            text-align: center; border-radius: 50%; font-size: 0.75rem; font-weight: bold;
         }
-        .rank-1 { background-color: #fef08a; color: #854d0e; } /* Gold */
-        .rank-2 { background-color: #e5e7eb; color: #374151; } /* Silver */
-        .rank-3 { background-color: #fed7aa; color: #9a3412; } /* Bronze */
+        .rank-1 { background-color: #fef08a; color: #854d0e; }
+        .rank-2 { background-color: #e5e7eb; color: #374151; }
+        .rank-3 { background-color: #fed7aa; color: #9a3412; }
         .rank-other { background-color: #f3f4f6; color: #6b7280; }
+        .view-section { display: none; }
+        .view-section.active { display: block; }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
     <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
         
-        <!-- Header -->
         <header class="mb-8 border-b pb-4 flex flex-col md:flex-row justify-between items-start md:items-end">
             <div>
                 <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Papa Bear <span class="text-blue-600">動能策略監控</span></h1>
@@ -39,57 +34,57 @@
             </div>
         </header>
 
-        <!-- Tabs Navigation -->
-        <div class="flex flex-wrap border-b border-gray-200 mb-6 gap-2" id="tabs-nav">
-            <button class="tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 transition-colors" data-target="TW_STOCKS_0050">台灣股票</button>
-            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="TW_ETFS">台灣 ETF</button>
-            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="US_STOCKS_SP100">美國股票</button>
-            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="US_ETFS">美國 ETF</button>
-            <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="CRYPTOCURRENCY">虛擬貨幣</button>
+        <!-- 頂部主導覽 (儀表板 / 標的清單) -->
+        <div class="flex space-x-4 mb-6">
+            <button onclick="switchMainTab('dashboard')" id="btn-dashboard" class="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition">動能儀表板</button>
+            <button onclick="switchMainTab('tickers')" id="btn-tickers" class="px-4 py-2 bg-white border text-gray-700 rounded shadow hover:bg-gray-50 transition flex items-center">
+                <svg class="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                驗證與匯出標的清單
+            </button>
         </div>
 
         <div id="loading" class="text-center py-10 text-gray-500">
-            <svg class="animate-spin h-8 w-8 text-blue-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
-            正在載入動能數據...
+            <svg class="animate-spin h-8 w-8 text-blue-500 mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+            正在載入數據...
         </div>
 
-        <!-- 錯誤提示區塊 -->
-        <div id="error-message" class="hidden bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-md">
-            <div class="flex">
-                <div class="flex-shrink-0">
-                    <svg class="h-5 w-5 text-red-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" /></svg>
+        <!-- 視圖 1: 動能儀表板 -->
+        <div id="view-dashboard" class="view-section active">
+            <div class="flex flex-wrap border-b border-gray-200 mb-6 gap-2" id="tabs-nav">
+                <button class="tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 transition-colors" data-target="TW_STOCKS_0050">台灣股票</button>
+                <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="TW_ETFS">台灣 ETF</button>
+                <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="US_STOCKS_SP100">美國股票</button>
+                <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="US_ETFS">美國 ETF</button>
+                <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="CRYPTOCURRENCY">虛擬貨幣</button>
+            </div>
+
+            <div id="content-container" style="display: none;">
+                <!-- 歷史前三名 -->
+                <div class="bg-white shadow rounded-lg p-6 mb-8">
+                    <h2 class="text-lg font-bold text-gray-800 mb-4">過去 12 個月前三名回測</h2>
+                    <div id="history-area"></div>
                 </div>
-                <div class="ml-3">
-                    <h3 class="text-sm font-medium text-red-800">資料讀取異常</h3>
-                    <div class="mt-2 text-sm text-red-700" id="error-text"></div>
+
+                <!-- 當月完整名單 -->
+                <div class="bg-white shadow rounded-lg p-6">
+                    <h2 class="text-lg font-bold text-gray-800 mb-2">當月完整動能排行 <span id="current-month-label" class="text-sm font-normal text-gray-500"></span></h2>
+                    <div id="current-all-area" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mt-4"></div>
                 </div>
             </div>
         </div>
 
-        <!-- 內容顯示區 -->
-        <div id="content-container" style="display: none;">
-            <!-- 上半部：歷史前三名 -->
-            <div class="bg-white shadow rounded-lg p-6 mb-8">
-                <h2 class="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                    過去 12 個月前三名回測
-                </h2>
-                <div id="history-area"></div>
-            </div>
-
-            <!-- 下半部：當月完整名單 -->
+        <!-- 視圖 2: 標的清單驗證 -->
+        <div id="view-tickers" class="view-section">
             <div class="bg-white shadow rounded-lg p-6">
-                <h2 class="text-lg font-bold text-gray-800 mb-2 flex items-center">
-                    <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
-                    當月完整動能排行 <span id="current-month-label" class="ml-2 text-sm font-normal text-gray-500"></span>
-                </h2>
-                <p class="text-sm text-gray-500 mb-4">這份名單可用於驗證所有標的的動能計算結果，確保策略汰弱留強的正確性。</p>
-                <div id="current-all-area" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-                    <!-- 當月所有標的將會被注入這裡 -->
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-xl font-bold text-gray-800">目前監控中的標的清單</h2>
+                    <button onclick="copyCSV()" class="px-3 py-1 bg-green-50 text-green-700 border border-green-200 rounded hover:bg-green-100 text-sm font-medium transition">
+                        複製為 CSV 格式 (供 Excel/試算表使用)
+                    </button>
                 </div>
+                <p class="text-sm text-gray-500 mb-6">這份清單由 Python 程式在每次更新時自動產生，包含動態爬取的成分股。</p>
+                <textarea id="csv-output" class="hidden"></textarea>
+                <div id="tickers-list-area" class="space-y-6"></div>
             </div>
         </div>
 
@@ -97,170 +92,124 @@
 
     <script>
         let fullData = {};
+        let tickersData = {};
 
         const getColorClass = (val) => val >= 0 ? 'momentum-positive' : 'momentum-negative';
         const formatVal = (val) => val !== 0 ? `${val.toFixed(2)}%` : '-';
 
-        // 1. 抓取 JSON 資料 (加入快取清除參數 ?t=timestamp)
+        // 切換主分頁
+        function switchMainTab(tab) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.getElementById(`view-${tab}`).classList.add('active');
+            
+            if(tab === 'dashboard') {
+                document.getElementById('btn-dashboard').className = "px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition";
+                document.getElementById('btn-tickers').className = "px-4 py-2 bg-white border text-gray-700 rounded shadow hover:bg-gray-50 transition flex items-center";
+            } else {
+                document.getElementById('btn-tickers').className = "px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition flex items-center";
+                document.getElementById('btn-dashboard').className = "px-4 py-2 bg-white border text-gray-700 rounded shadow hover:bg-gray-50 transition";
+                renderTickersList();
+            }
+        }
+
+        // 1. 抓取 JSON 資料
         async function fetchData() {
             try {
                 const timestamp = new Date().getTime();
-                const response = await fetch(`./momentum_history.json?t=${timestamp}`);
+                // 同時抓取動能數據與標的清單
+                const [resMom, resTickers] = await Promise.all([
+                    fetch(`./momentum_history.json?t=${timestamp}`),
+                    fetch(`./all_tickers.json?t=${timestamp}`).catch(() => null) // 容錯
+                ]);
                 
-                if (!response.ok) throw new Error('無法讀取資料檔案');
+                fullData = await resMom.json();
+                if(resTickers) tickersData = await resTickers.json();
                 
-                fullData = await response.json();
                 document.getElementById('loading').style.display = 'none';
-                
-                // 檢查資料是否為空 (例如 yfinance 在 GitHub 被擋住)
-                if (!fullData.history || Object.keys(fullData.history).length === 0) {
-                    showError("讀取到的資料是空的！這通常代表 GitHub Actions 在抓取資料時被 Yahoo Finance 暫時擋住了。請稍後再到 GitHub 重新執行一次 Workflow。");
-                    return;
-                }
-
                 document.getElementById('content-container').style.display = 'block';
                 
-                // 顯示最新更新月份
                 const months = Object.keys(fullData.history).sort().reverse();
                 if(months.length > 0) {
                     document.getElementById('last-updated').innerHTML = `資料基準：<span class="text-gray-800 font-bold">${months[0]}</span>`;
                     document.getElementById('current-month-label').innerText = `(截至 ${months[0]})`;
                 }
 
-                // 預設渲染第一個 Tab
                 renderView('TW_STOCKS_0050');
             } catch (error) {
                 console.error("Error fetching data:", error);
-                document.getElementById('loading').style.display = 'none';
-                showError(`讀取資料失敗：${error.message}。請確認 <code>momentum_history.json</code> 是否存在。`);
+                document.getElementById('loading').innerHTML = `<div class="text-red-500">讀取資料失敗，請確認資料檔存在。</div>`;
             }
         }
 
-        function showError(message) {
-            const errorDiv = document.getElementById('error-message');
-            document.getElementById('error-text').innerHTML = message;
-            errorDiv.classList.remove('hidden');
-        }
-
-        // 2. 渲染特定類別的畫面
+        // --- 儀表板渲染邏輯 ---
         function renderView(categoryKey) {
-            renderHistoryTable(categoryKey);
-            renderCurrentAllGrid(categoryKey);
-        }
-
-        function renderHistoryTable(categoryKey) {
-            const container = document.getElementById('history-area');
-            const historyData = fullData.history || {};
-            const months = Object.keys(historyData).sort().reverse();
-            
-            // 檢查該類別是否有資料
-            let hasData = false;
-            for (let m of months) {
-                if (historyData[m][categoryKey] && historyData[m][categoryKey].length > 0) {
-                    hasData = true; break;
-                }
-            }
-
-            if (!hasData) {
-                container.innerHTML = "<p class='text-gray-500 py-4'>此類別沒有可用的歷史數據。</p>";
-                return;
-            }
-
-            let html = `
-                <div class="overflow-x-auto">
-                    <table class="min-w-full divide-y divide-gray-200">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">時間 (月底/最新)</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">第一名</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">第二名</th>
-                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">第三名</th>
-                            </tr>
-                        </thead>
-                        <tbody class="bg-white divide-y divide-gray-200">
-            `;
-
+            // ... (與前一版相同的渲染表格與網格邏輯，為節省空間簡略，請直接使用)
+            const historyContainer = document.getElementById('history-area');
+            const months = Object.keys(fullData.history || {}).sort().reverse();
+            let html = `<div class="overflow-x-auto"><table class="min-w-full divide-y divide-gray-200"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">時間</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">第一名</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">第二名</th><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">第三名</th></tr></thead><tbody class="bg-white divide-y divide-gray-200">`;
             months.forEach(month => {
-                const categoryData = historyData[month][categoryKey] || [];
-                if (categoryData.length === 0) return; // 略過無資料的月份
-
-                const top1 = categoryData[0] || { symbol: '-', momentum: 0 };
-                const top2 = categoryData[1] || { symbol: '-', momentum: 0 };
-                const top3 = categoryData[2] || { symbol: '-', momentum: 0 };
-
-                html += `
-                    <tr class="hover:bg-gray-50">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">${month}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            <span class="font-bold text-gray-800">${top1.symbol}</span> 
-                            <span class="${getColorClass(top1.momentum)}">(${formatVal(top1.momentum)})</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            <span class="font-bold text-gray-800">${top2.symbol}</span> 
-                            <span class="${getColorClass(top2.momentum)}">(${formatVal(top2.momentum)})</span>
-                        </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                            <span class="font-bold text-gray-800">${top3.symbol}</span> 
-                            <span class="${getColorClass(top3.momentum)}">(${formatVal(top3.momentum)})</span>
-                        </td>
-                    </tr>
-                `;
+                const row = fullData.history[month][categoryKey] || [];
+                if(row.length === 0) return;
+                const t1=row[0]||{symbol:'-',momentum:0}, t2=row[1]||{symbol:'-',momentum:0}, t3=row[2]||{symbol:'-',momentum:0};
+                html += `<tr><td class="px-6 py-4 text-sm font-medium text-gray-900">${month}</td><td class="px-6 py-4 text-sm"><span class="font-bold">${t1.symbol}</span> <span class="${getColorClass(t1.momentum)}">(${formatVal(t1.momentum)})</span></td><td class="px-6 py-4 text-sm"><span class="font-bold">${t2.symbol}</span> <span class="${getColorClass(t2.momentum)}">(${formatVal(t2.momentum)})</span></td><td class="px-6 py-4 text-sm"><span class="font-bold">${t3.symbol}</span> <span class="${getColorClass(t3.momentum)}">(${formatVal(t3.momentum)})</span></td></tr>`;
             });
+            historyContainer.innerHTML = html + "</tbody></table></div>";
 
-            html += `</tbody></table></div>`;
-            container.innerHTML = html;
+            const currentContainer = document.getElementById('current-all-area');
+            const currentData = fullData.current_all[categoryKey] || [];
+            let currentHtml = '';
+            currentData.forEach((item, index) => {
+                const rank = index + 1;
+                const badge = rank===1?'rank-1':rank===2?'rank-2':rank===3?'rank-3':'rank-other';
+                currentHtml += `<div class="border rounded-md p-3 flex flex-col items-center bg-gray-50"><div class="flex items-center w-full justify-between mb-2"><span class="rank-badge ${badge}">${rank}</span><span class="text-sm font-bold truncate">${item.symbol}</span></div><div class="text-lg ${getColorClass(item.momentum)}">${formatVal(item.momentum)}</div></div>`;
+            });
+            currentContainer.innerHTML = currentHtml;
         }
 
-        function renderCurrentAllGrid(categoryKey) {
-            const container = document.getElementById('current-all-area');
-            const currentDataList = fullData.current_all[categoryKey] || [];
-            
-            if (currentDataList.length === 0) {
-                container.innerHTML = "<p class='text-gray-500 col-span-full py-2'>無當月詳細資料。</p>";
+        // --- 標的清單渲染與 CSV 匯出邏輯 ---
+        function renderTickersList() {
+            const container = document.getElementById('tickers-list-area');
+            if(Object.keys(tickersData).length === 0) {
+                container.innerHTML = "<p class='text-red-500'>尚未產生標的清單資料，請等待 GitHub Actions 執行完畢。</p>";
                 return;
             }
 
             let html = '';
-            currentDataList.forEach((item, index) => {
-                const rank = index + 1;
-                let badgeClass = 'rank-other';
-                if (rank === 1) badgeClass = 'rank-1';
-                else if (rank === 2) badgeClass = 'rank-2';
-                else if (rank === 3) badgeClass = 'rank-3';
+            let csvContent = "大類別,標的代碼\n";
 
+            for(const [category, tickers] of Object.entries(tickersData)) {
                 html += `
-                    <div class="border rounded-md p-3 flex flex-col justify-center items-center hover:shadow-md transition-shadow bg-gray-50">
-                        <div class="flex items-center w-full justify-between mb-2">
-                            <span class="rank-badge ${badgeClass}">${rank}</span>
-                            <span class="text-sm font-bold text-gray-700 truncate ml-2" title="${item.symbol}">${item.symbol}</span>
-                        </div>
-                        <div class="text-lg ${getColorClass(item.momentum)}">
-                            ${formatVal(item.momentum)}
-                        </div>
-                    </div>
+                    <div>
+                        <h3 class="text-md font-bold text-gray-700 border-b pb-2 mb-3">${category} <span class="text-xs font-normal text-gray-400">(${tickers.length} 檔)</span></h3>
+                        <div class="flex flex-wrap gap-2">
                 `;
-            });
+                tickers.forEach(t => {
+                    html += `<span class="px-2 py-1 bg-gray-100 border border-gray-200 rounded text-sm font-mono text-gray-600">${t}</span>`;
+                    csvContent += `${category},${t}\n`;
+                });
+                html += `</div></div>`;
+            }
             container.innerHTML = html;
+            document.getElementById('csv-output').value = csvContent;
         }
 
-        // 3. 處理 Tab 點擊切換
+        function copyCSV() {
+            const csvText = document.getElementById('csv-output').value;
+            navigator.clipboard.writeText(csvText).then(() => {
+                alert("✅ 已成功複製 CSV 內容！\n\n你可以直接到 Excel 點選儲存格 A1，然後貼上 (Ctrl+V)。");
+            });
+        }
+
         document.querySelectorAll('.tab-btn').forEach(button => {
             button.addEventListener('click', (e) => {
                 document.querySelectorAll('.tab-btn').forEach(btn => {
-                    btn.classList.remove('active', 'text-blue-600', 'border-b-2', 'border-blue-600', 'bg-blue-50');
-                    btn.classList.add('text-gray-500', 'hover:text-gray-700', 'hover:bg-gray-100');
+                    btn.className = "tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors";
                 });
-                
-                const targetBtn = e.currentTarget;
-                targetBtn.classList.remove('text-gray-500', 'hover:text-gray-700', 'hover:bg-gray-100');
-                targetBtn.classList.add('active', 'text-blue-600', 'border-b-2', 'border-blue-600', 'bg-blue-50');
-                
-                const categoryKey = targetBtn.getAttribute('data-target');
-                renderView(categoryKey);
+                e.currentTarget.className = "tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 transition-colors";
+                renderView(e.currentTarget.getAttribute('data-target'));
             });
         });
 
-        // 啟動
         fetchData();
     </script>
 </body>
