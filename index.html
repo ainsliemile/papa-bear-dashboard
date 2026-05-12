@@ -29,7 +29,6 @@
                 <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Papa Bear <span class="text-blue-600">動能策略監控</span></h1>
                 <p class="text-gray-500 mt-2 text-sm">自適應多重週期系統 (ETF: 3/6/12月 | 股票: 1/3/6月 | 幣圈: 14天/1月/3月)</p>
             </div>
-            <!-- 右上角顯示最後更新時間 -->
             <div class="text-sm text-gray-400 mt-4 md:mt-0 pb-1 font-mono" id="last-updated">
                 自動更新狀態：載入中...
             </div>
@@ -38,12 +37,13 @@
         <div class="flex space-x-4 mb-6">
             <button onclick="switchMainTab('dashboard')" id="btn-dashboard" class="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition">動能儀表板</button>
             <button onclick="switchMainTab('tickers')" id="btn-tickers" class="px-4 py-2 bg-white border text-gray-700 rounded shadow hover:bg-gray-50 transition flex items-center">
+                <svg class="w-4 h-4 mr-2 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                 驗證與匯出標的清單
             </button>
         </div>
 
         <div id="loading" class="text-center py-10 text-gray-500">
-            正在載入最新數據...
+            正在載入數據...
         </div>
 
         <div id="view-dashboard" class="view-section active">
@@ -69,12 +69,17 @@
 
         <div id="view-tickers" class="view-section">
             <div class="bg-white shadow rounded-lg p-6">
-                <h2 class="text-xl font-bold text-gray-800 mb-4">目前監控中的標的清單</h2>
-                <div id="tickers-list-area" class="space-y-6"></div>
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="text-xl font-bold text-gray-800">目前監控中的標的與動能數據</h2>
+                    <button onclick="exportFullDataCSV()" class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 shadow-sm font-medium transition flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16a2 2 0 012-2h4a2 2 0 012 2v2H8v-2z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        複製完整數據 (CSV)
+                    </button>
+                </div>
+                <div id="tickers-list-area" class="space-y-8"></div>
             </div>
         </div>
 
-        <!-- 頁尾提醒事項 -->
         <footer class="mt-12 pt-8 border-t border-gray-200 text-center">
             <div class="bg-yellow-50 border border-yellow-100 rounded-lg p-4 inline-block max-w-2xl">
                 <p class="text-yellow-800 text-sm leading-relaxed text-left">
@@ -124,11 +129,8 @@
                 
                 const months = Object.keys(fullData.history || {}).sort().reverse();
                 if(months.length > 0) {
-                    // 顯示系統更新時間
                     if (fullData.update_time) {
                         document.getElementById('last-updated').innerHTML = `最新運算完成：<span class="text-blue-600 font-bold">${fullData.update_time}</span>`;
-                    } else {
-                        document.getElementById('last-updated').innerHTML = `資料基準：${months[0]}`;
                     }
                     document.getElementById('current-month-label').innerText = `(截至 ${months[0]})`;
                 }
@@ -166,14 +168,32 @@
         function renderTickersList() {
             const container = document.getElementById('tickers-list-area');
             let html = '';
-            for(const [category, tickers] of Object.entries(tickersData)) {
-                html += `<div><h3 class="text-md font-bold text-gray-700 border-b pb-2 mb-3">${category} (${tickers.length} 檔)</h3><div class="flex flex-wrap gap-2">`;
-                tickers.forEach(t => {
-                    html += `<span class="px-2 py-1 bg-gray-100 border border-gray-200 rounded text-sm font-mono text-gray-600">${t}</span>`;
+            // 使用 fullData.current_all 以獲得包含動能的標的名單
+            for(const [category, items] of Object.entries(fullData.current_all || {})) {
+                html += `<div><h3 class="text-md font-bold text-gray-700 border-b pb-2 mb-3">${category} (${items.length} 檔)</h3><div class="flex flex-wrap gap-2">`;
+                items.forEach(item => {
+                    html += `<span class="px-2 py-1 bg-white border border-gray-200 rounded text-sm font-mono text-gray-600 shadow-sm">${item.symbol} <span class="ml-1 text-xs ${getColorClass(item.momentum)}">(${formatVal(item.momentum)})</span></span>`;
                 });
                 html += `</div></div>`;
             }
             container.innerHTML = html;
+        }
+
+        // 🚀 核心匯出功能：整理成使用者要求的 CSV 格式
+        function exportFullDataCSV() {
+            let csv = "大類別,標的代碼,動能值\n";
+            for(const [category, items] of Object.entries(fullData.current_all || {})) {
+                items.forEach(item => {
+                    csv += `${category},${item.symbol},${formatVal(item.momentum)}\n`;
+                });
+            }
+            
+            navigator.clipboard.writeText(csv).then(() => {
+                alert("✅ 已成功複製完整動能數據 CSV！\n請直接在 Excel 中貼上即可。");
+            }).catch(err => {
+                console.error("複製失敗", err);
+                alert("複製失敗，請手動選取內容");
+            });
         }
 
         document.querySelectorAll('.tab-btn').forEach(button => {
