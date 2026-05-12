@@ -4,8 +4,10 @@ name: Monthly Papa Bear Data Update
 on:
   schedule:
     # 這裡使用 Cron 語法：每個月的 1 號凌晨 00:00 (UTC 時間) 執行
-    # 相當於台灣時間每個月 1 號早上 08:00
-    - cron: '0 0 1 * *'
+    # cron: '0 0 1 * *'相當於台灣時間每個月 1 號早上 08:00
+    # cron: '0 0 * * *'相當於台灣時間每天早上 8 點更新
+    # cron: '0 0 * * 1'相當於台灣時間每週一早上 8 點更新：
+    - cron: '0 0 * * 1'
   # 允許手動點擊按鈕觸發執行 (方便你測試)
   workflow_dispatch:
 
