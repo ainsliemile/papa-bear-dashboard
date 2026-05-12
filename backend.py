@@ -1,5 +1,6 @@
 import yfinance as yf
 import pandas as pd
+import numpy as np
 import requests
 import json
 import warnings
@@ -107,7 +108,7 @@ US_SECTORS = ["XLK"]
 US_ETFS = ["VOO", "QQQ"]
 
 # ==========================================
-# 2. 核心技術：分批下載模組 (繞過 Yahoo 封鎖)
+# 2. 核心技術：無敵分批下載模組
 # ==========================================
 def download_in_batches(tickers, batch_size=10):
     all_prices = []
@@ -121,13 +122,33 @@ def download_in_batches(tickers, batch_size=10):
         try:
             data = yf.download(batch, period="2y", progress=False)
             if not data.empty:
+                # 🚀 升級 1：無敵解析器，解決 yfinance 新舊版本欄位顛倒的問題
                 if isinstance(data.columns, pd.MultiIndex):
-                    p = data['Adj Close'] if 'Adj Close' in data.columns.levels[0] else data['Close']
+                    if 'Adj Close' in data.columns.get_level_values(0):
+                        p = data['Adj Close']
+                    elif 'Close' in data.columns.get_level_values(0):
+                        p = data['Close']
+                    elif 'Adj Close' in data.columns.get_level_values(1):
+                        p = data.xs('Adj Close', axis=1, level=1)
+                    elif 'Close' in data.columns.get_level_values(1):
+                        p = data.xs('Close', axis=1, level=1)
+                    else:
+                        p = pd.DataFrame()
                 else:
+                    # 如果只有單一檔標的，yfinance 會回傳沒有 MultiIndex 的資料
                     p_col = 'Adj Close' if 'Adj Close' in data.columns else 'Close'
-                    p = pd.DataFrame(data[p_col], columns=[batch[0]])
-                all_prices.append(p)
-                print("✅ 成功")
+                    if isinstance(data[p_col], pd.Series):
+                        p = pd.DataFrame(data[p_col].values, index=data.index, columns=[batch[0]])
+                    else:
+                        p = pd.DataFrame(data[p_col])
+                        
+                if not p.empty:
+                    # 確保所有欄位名稱都是字串
+                    p.columns = [str(c) for c in p.columns]
+                    all_prices.append(p)
+                    print("✅ 成功")
+                else:
+                    print("⚠️ 無價格資料")
             else:
                 print("⚠️ 無資料")
         except Exception as e:
@@ -143,7 +164,7 @@ def download_in_batches(tickers, batch_size=10):
     return final_prices
 
 # ==========================================
-# 3. 動能計算核心演算法
+# 3. 動能計算核心演算法 (智能容錯版)
 # ==========================================
 def calculate_historical_momentum(tickers, category_name):
     print(f"\n[{category_name}] 開始處理 (共 {len(tickers)} 檔)...")
@@ -167,7 +188,13 @@ def calculate_historical_momentum(tickers, category_name):
     m2 = prices.pct_change(periods=p2)
     m3 = prices.pct_change(periods=p3)
     
-    avg_momentum = (m1 + m2 + m3) / 3
+    # 🚀 升級 2：使用 np.nanmean，容許新上市標的資料不足仍能算動能！
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=RuntimeWarning)
+        avg_momentum_values = np.nanmean([m1.values, m2.values, m3.values], axis=0)
+        
+    avg_momentum = pd.DataFrame(avg_momentum_values, index=prices.index, columns=prices.columns)
+    
     monthly_momentum = avg_momentum.resample('ME').last()
     last_12_months = monthly_momentum.tail(12)
     
@@ -187,7 +214,7 @@ def calculate_historical_momentum(tickers, category_name):
 # 4. 主程式整合
 # ==========================================
 def main():
-    print("=== Papa Bear 跨市場動能監控系統 (分批下載防阻擋版) ===")
+    print("=== Papa Bear 跨市場動能監控系統 (智能防遺漏版) ===")
     
     excel_data = get_tickers_from_local_excel()
     fallback_categories = {
