@@ -7,6 +7,7 @@ import warnings
 import io
 import os
 import re
+import time
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from datetime import datetime
@@ -95,20 +96,18 @@ US_SECTORS = ["XLK"]
 US_ETFS = ["VOO", "QQQ"]
 
 # ==========================================
-# 2. 核心技術：一次性批次下載 (Bulk Download) 避開阻擋
+# 2. 核心技術：雙引擎下載模組 (批次 + 備用逐檔)
 # ==========================================
 def download_robustly(tickers):
-    print(f"   -> 準備「一次性批次下載」 {len(tickers)} 檔標的資料...")
+    print(f"   -> 準備下載 {len(tickers)} 檔標的資料...")
     try:
-        # yf.download 支援一次傳入 list，Yahoo 只會算 1 次請求，能完美避開防機器人阻擋
-        data = yf.download(tickers, period="2y", progress=False)
+        # 引擎 A：批次下載。加入 threads=False 完美避開 yfinance 最新的 KeyError: 'shortName' 崩潰蟲
+        data = yf.download(tickers, period="2y", progress=False, threads=False)
         
         if data.empty:
-            print("      ⚠️ 無資料回傳")
-            return pd.DataFrame()
+            raise Exception("無資料回傳")
             
         if isinstance(data.columns, pd.MultiIndex):
-            # 取出 Adj Close 或是 Close 欄位
             if 'Adj Close' in data.columns.get_level_values(0):
                 p = data['Adj Close']
             elif 'Close' in data.columns.get_level_values(0):
@@ -116,7 +115,6 @@ def download_robustly(tickers):
             else:
                 p = data.iloc[:, data.columns.get_level_values(0) == data.columns.get_level_values(0)[0]]
         else:
-            # 如果只有單一檔，yfinance 不會給 MultiIndex
             p_col = 'Adj Close' if 'Adj Close' in data.columns else 'Close'
             if p_col in data.columns:
                 p = pd.DataFrame(data[p_col])
@@ -124,20 +122,40 @@ def download_robustly(tickers):
             else:
                 p = data
 
-        # 確保取出來的是 DataFrame 並且數值正確
         if isinstance(p, pd.Series):
             p = pd.DataFrame(p)
             p.columns = [tickers[0]]
 
-        # 強制轉為數值，並過濾掉全部都是 NaN 的無效標的（例如打錯代碼的）
         p = p.apply(pd.to_numeric, errors='coerce')
         p.dropna(axis=1, how='all', inplace=True)
-        print(f"      ✅ 成功下載 {len(p.columns)} 檔有效歷史數據！")
+        print(f"      ✅ 批次下載成功！共取得 {len(p.columns)} 檔有效歷史數據。")
         return p
         
     except Exception as e:
-        print(f"      ❌ 批次下載失敗 ({e})")
-        return pd.DataFrame()
+        # 引擎 B：如果批次下載還是失敗，自動切換為逐檔安全下載
+        print(f"      ⚠️ 批次下載受阻 ({e})，系統自動切換為「安全逐檔下載模式」...")
+        all_prices = {}
+        for i, ticker in enumerate(tickers, 1):
+            try:
+                # 逐檔下載一樣要加上 threads=False 避免報錯
+                data = yf.download(ticker, period="2y", progress=False, threads=False)
+                if not data.empty:
+                    p_col = 'Adj Close' if 'Adj Close' in data.columns else 'Close'
+                    p = data[p_col]
+                    if isinstance(p, pd.DataFrame):
+                        p = p.iloc[:, 0]
+                    all_prices[ticker] = p
+                    print(f"         [{i}/{len(tickers)}] {ticker} ✅")
+                else:
+                    print(f"         [{i}/{len(tickers)}] {ticker} ⚠️ 無資料")
+            except Exception as err:
+                print(f"         [{i}/{len(tickers)}] {ticker} ❌ 失敗")
+            time.sleep(0.4) # 小歇一下避免被封鎖
+            
+        if not all_prices:
+            return pd.DataFrame()
+        final_prices = pd.DataFrame(all_prices)
+        return final_prices
 
 # ==========================================
 # 3. 動能計算核心演算法 (智能容錯版)
@@ -187,7 +205,7 @@ def calculate_historical_momentum(tickers, category_name):
 # 4. 主程式整合
 # ==========================================
 def main():
-    print("=== Papa Bear 跨市場動能監控系統 (終極批次下載版) ===")
+    print("=== Papa Bear 跨市場動能監控系統 (雙引擎無敵版) ===")
     
     excel_data = get_tickers_from_local_excel()
     fallback_categories = {
