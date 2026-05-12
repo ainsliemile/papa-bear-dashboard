@@ -54,8 +54,7 @@
         "6640.TW",
         "6669.TW",
         "6919.TW",
-        "7769.TW",
-        "LIST.TW"
+        "7769.TW"
     ],
     "TW_ETFS": [
         "0050.TW",
@@ -199,8 +198,7 @@
         "09816.TW",
         "09818.TW",
         "09819.TW",
-        "09820.TW",
-        "LIST.TW"
+        "09820.TW"
     ],
     "US_STOCKS_SP100": [
         "AAPL",
@@ -272,7 +270,6 @@
         "KO",
         "LI",
         "LIN",
-        "LIST",
         "LLY",
         "LMT",
         "LNVGY",
@@ -361,7 +358,6 @@
         "IWM",
         "KRE",
         "LABU",
-        "LIST",
         "LIT",
         "MCHI",
         "MJ",
@@ -429,7 +425,6 @@
         "HYPE-USD",
         "LEO-USD",
         "LINK-USD",
-        "LIST-USD",
         "LTC-USD",
         "LUNC-USD",
         "M-USD",
