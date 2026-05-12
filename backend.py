@@ -14,7 +14,6 @@ from datetime import datetime
 
 warnings.filterwarnings('ignore')
 
-# 建立給一般網頁用的 Session
 session = requests.Session()
 retry = Retry(connect=3, backoff_factor=0.5)
 adapter = HTTPAdapter(max_retries=retry)
@@ -25,7 +24,7 @@ session.headers.update({
 })
 
 # ==========================================
-# 1. 抓取邏輯 (強化 Excel 解析)
+# 1. 抓取邏輯 (信任 Excel 版)
 # ==========================================
 def get_0050_tickers():
     return ["2330.TW", "2317.TW", "2454.TW", "2382.TW", "2308.TW"]
@@ -50,7 +49,7 @@ def get_tickers_from_local_excel():
     result = {k: [] for k in categories_map.keys()}
     
     if not os.path.exists(file_path):
-        print(f"⚠️ 找不到檔案: {file_path}，將使用備用清單。")
+        print(f"⚠️ 找不到檔案: {file_path}")
         return result
         
     try:
@@ -70,23 +69,25 @@ def get_tickers_from_local_excel():
                 
                 for val in raw_tickers:
                     val = str(val).strip().upper()
-                    if val in ['NAN', '', 'NONE', 'NULL']: continue
+                    if val in ['NAN', '', 'NONE', 'NULL', 'LIST', 'NOTE', '代碼', '標的']: continue
                     
                     match = re.search(r'[A-Z0-9\.\-]+', val)
                     if not match: continue
                     ticker = match.group(0)
                     
+                    if ticker in ['LIST', 'NOTE']: continue
+                    
                     if cat_key in ['TW_STOCKS_0050', 'TW_ETFS']:
-                        if not ticker.endswith('.TW') and not ticker.endswith('.TWO'): ticker = f"{ticker}.TW"
+                        if not ticker.endswith('.TW') and not ticker.endswith('.TWO'): 
+                            ticker = f"{ticker}.TW"
                     elif cat_key == 'CRYPTOCURRENCY':
-                        if not ticker.endswith('-USD'): ticker = f"{ticker}-USD"
+                        if not ticker.endswith('-USD'): 
+                            ticker = f"{ticker}-USD"
                         
                     cleaned_tickers.append(ticker)
                     
                 result[cat_key] = list(set(cleaned_tickers))
                 print(f"[{matched_sheet}] 成功從 Excel 載入 {len(result[cat_key])} 檔")
-            else:
-                print(f"⚠️ 找不到符合 {allowed_names[0]} 的工作表")
     except Exception as e:
         print(f"讀取 Excel 發生錯誤: {e}")
     return result
@@ -96,7 +97,7 @@ US_SECTORS = ["XLK"]
 US_ETFS = ["VOO", "QQQ"]
 
 # ==========================================
-# 2. 核心技術：超穩定 Ticker.history 下載模組
+# 2. 核心技術：超穩定 Ticker.history (加入智能上櫃與美股容錯)
 # ==========================================
 def download_robustly(tickers):
     print(f"   -> 準備「超穩定安全下載」 {len(tickers)} 檔標的資料...")
@@ -104,37 +105,63 @@ def download_robustly(tickers):
     
     for i, ticker in enumerate(tickers, 1):
         try:
-            # 🚀 升級：使用 Ticker().history() 完全避開 yf.download() 的 Categorical Bug
             tkr = yf.Ticker(ticker)
-            data = tkr.history(period="2y")
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                data = tkr.history(period="2y")
             
+            # 🚀 智能備用引擎：如果抓不到資料，自動轉換代碼再試一次
+            if data.empty or 'Close' not in data.columns:
+                fallback_ticker = None
+                
+                # 台股陷阱：如果是 .TW (上市) 失敗，自動改成 .TWO (上櫃) 再試一次
+                if ticker.endswith('.TW'):
+                    fallback_ticker = ticker.replace('.TW', '.TWO')
+                
+                # 美股陷阱：如果有 . (例如 BRK.B)，自動改成 - (BRK-B) 再試一次
+                elif not ticker.endswith('.TW') and not ticker.endswith('.TWO') and '.' in ticker:
+                    fallback_ticker = ticker.replace('.', '-')
+
+                if fallback_ticker:
+                    tkr_fallback = yf.Ticker(fallback_ticker)
+                    with warnings.catch_warnings():
+                        warnings.simplefilter("ignore")
+                        data = tkr_fallback.history(period="2y")
+                    
+                    # 如果備用代碼成功了，就把顯示的名字換成對的
+                    if not data.empty and 'Close' in data.columns:
+                        ticker = fallback_ticker
+
+            # 最終確認有無資料
             if not data.empty and 'Close' in data.columns:
                 p = data['Close']
                 if isinstance(p, pd.DataFrame):
                     p = p.iloc[:, 0]
                 
-                # 移除時區資訊，確保不同市場的日期能完美對齊
-                p.index = p.index.tz_localize(None)
+                if p.index.tz is not None:
+                    p.index = p.index.tz_localize(None)
+                    
                 all_prices[ticker] = p
-                print(f"      [{i}/{len(tickers)}] {ticker} ✅")
             else:
-                print(f"      [{i}/{len(tickers)}] {ticker} ⚠️ 無價格資料")
-        except Exception as e:
-            print(f"      [{i}/{len(tickers)}] {ticker} ❌ 失敗 ({e})")
+                pass # Yahoo 真的沒有這檔資料 (例如 TAO-USD)，安靜跳過
+                
+        except Exception:
+            pass 
             
-        time.sleep(0.2) # 小歇一下避免被封鎖
+        time.sleep(0.1) 
         
     if not all_prices:
         return pd.DataFrame()
         
     final_prices = pd.DataFrame(all_prices)
+    print(f"      ✅ 成功下載 {len(final_prices.columns)} 檔有效歷史數據！")
     return final_prices
 
 # ==========================================
-# 3. 動能計算核心演算法 (智能容錯版)
+# 3. 動能計算核心演算法
 # ==========================================
 def calculate_historical_momentum(tickers, category_name):
-    print(f"\n[{category_name}] 開始處理 (清單共 {len(tickers)} 檔)...")
+    print(f"\n[{category_name}] 開始處理...")
     
     prices = download_robustly(tickers)
     
@@ -178,7 +205,7 @@ def calculate_historical_momentum(tickers, category_name):
 # 4. 主程式整合
 # ==========================================
 def main():
-    print("=== Papa Bear 跨市場動能監控系統 (超穩定時間戳記版) ===")
+    print("=== Papa Bear 跨市場動能監控系統 (智能尋找版) ===")
     
     excel_data = get_tickers_from_local_excel()
     fallback_categories = {
@@ -196,7 +223,6 @@ def main():
         else:
             categories[cat_key] = fallback_categories[cat_key]
     
-    # 🚀 升級：加入「更新時間戳記」，強迫 GitHub 每次都必須儲存檔案！
     final_json_data = {
         "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "history": {}, 
