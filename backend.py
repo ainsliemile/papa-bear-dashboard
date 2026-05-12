@@ -108,7 +108,8 @@ def download_robustly(tickers):
             tkr = yf.Ticker(ticker)
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore")
-                data = tkr.history(period="2y")
+                # 🚀 關鍵修改：強制加入 auto_adjust=True 來還原股票分割與除權息
+                data = tkr.history(period="2y", auto_adjust=True)
             
             # 🚀 智能備用引擎：如果抓不到資料，自動轉換代碼再試一次
             if data.empty or 'Close' not in data.columns:
@@ -126,7 +127,8 @@ def download_robustly(tickers):
                     tkr_fallback = yf.Ticker(fallback_ticker)
                     with warnings.catch_warnings():
                         warnings.simplefilter("ignore")
-                        data = tkr_fallback.history(period="2y")
+                        # 🚀 關鍵修改：備用引擎也要加上 auto_adjust=True
+                        data = tkr_fallback.history(period="2y", auto_adjust=True)
                     
                     # 如果備用代碼成功了，就把顯示的名字換成對的
                     if not data.empty and 'Close' in data.columns:
@@ -143,7 +145,7 @@ def download_robustly(tickers):
                     
                 all_prices[ticker] = p
             else:
-                pass # Yahoo 真的沒有這檔資料 (例如 TAO-USD)，安靜跳過
+                pass # Yahoo 真的沒有這檔資料，安靜跳過
                 
         except Exception:
             pass 
