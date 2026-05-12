@@ -10,12 +10,10 @@ import re
 import time
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from bs4 import BeautifulSoup
 from datetime import datetime
 
 warnings.filterwarnings('ignore')
 
-# 建立給一般網頁(如 CoinGecko, 元大)用的 Session
 session = requests.Session()
 retry = Retry(connect=3, backoff_factor=0.5)
 adapter = HTTPAdapter(max_retries=retry)
@@ -26,143 +24,153 @@ session.headers.update({
 })
 
 # ==========================================
-# 1. 抓取邏輯
+# 1. 抓取邏輯 (信任 Excel 版)
 # ==========================================
 def get_0050_tickers():
-    try:
-        url = "https://www.yuantaetfs.com/product/detail/0050/ratio"
-        res = session.get(url, timeout=10)
-        tables = pd.read_html(res.text)
-        for t in tables:
-            if '商品代碼' in t.columns:
-                tickers = t['商品代碼'].astype(str).tolist()
-                return [f"{t}.TW" for t in tickers if len(t) == 4 and t.isdigit()]
-    except Exception as e:
-        print(f"動態抓取 0050 失敗: {e}")
     return ["2330.TW", "2317.TW", "2454.TW", "2382.TW", "2308.TW"]
 
 def get_sp100_tickers():
-    try:
-        url = 'https://en.wikipedia.org/wiki/S%26P_100'
-        tables = pd.read_html(url)
-        for t in tables:
-            if 'Symbol' in t.columns:
-                return t['Symbol'].str.replace('.', '-', regex=False).tolist()
-    except Exception as e:
-        print(f"動態抓取 S&P 100 失敗: {e}")
     return ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA"]
 
 def get_crypto_tickers():
-    stablecoins = ['usdt', 'usdc', 'dai', 'fdusd', 'pyusd', 'usds', 'tusd', 'ustc']
-    tickers = []
-    try:
-        url = "https://api.coingecko.com/api/v3/coins/markets"
-        params = {'vs_currency': 'usd', 'order': 'market_cap_desc', 'per_page': 50}
-        data = session.get(url, params=params, timeout=10).json()
-        for coin in data:
-            if coin['symbol'].lower() not in stablecoins:
-                tickers.append(f"{coin['symbol'].upper()}-USD")
-            if len(tickers) == 30: break
-    except Exception as e:
-        print(f"動態抓取虛擬貨幣失敗: {e}")
-        tickers = ["BTC-USD", "ETH-USD", "SOL-USD"]
-    if "LUNC-USD" not in tickers:
-        tickers.append("LUNC-USD")
-    return tickers
+    return ["BTC-USD", "ETH-USD", "SOL-USD"]
 
 def get_tickers_from_local_excel():
-    """直接從 GitHub 儲存庫內的 TrackingList.xlsx 讀取標的清單"""
     file_path = "TrackingList.xlsx"
     print(f"\n=== 正在嘗試從本地檔案 {file_path} 讀取 A 欄標的 ===")
+    
     categories_map = {
-        "TW_STOCKS_0050": "台灣股票", "TW_ETFS": "台灣ETF",
-        "US_STOCKS_SP100": "美國股票", "US_ETFS": "美國ETF", "CRYPTOCURRENCY": "虛擬貨幣"
+        "TW_STOCKS_0050": ["台灣股票", "台股", "台灣50"],
+        "TW_ETFS": ["台灣ETF", "台股ETF"],
+        "US_STOCKS_SP100": ["美國股票", "美股"],
+        "US_ETFS": ["美國ETF", "美股ETF"],
+        "CRYPTOCURRENCY": ["虛擬貨幣", "加密貨幣", "加密幣"]
     }
     result = {k: [] for k in categories_map.keys()}
+    
     if not os.path.exists(file_path):
-        print(f"⚠️ 找不到檔案: {file_path}，將使用備用清單。")
+        print(f"⚠️ 找不到檔案: {file_path}")
         return result
+        
     try:
         excel_data = pd.read_excel(file_path, sheet_name=None, header=None)
-        for cat_key, sheet_name in categories_map.items():
-            if sheet_name in excel_data:
-                df = excel_data[sheet_name]
+        
+        for cat_key, allowed_names in categories_map.items():
+            matched_sheet = None
+            for sheet in excel_data.keys():
+                if any(name in str(sheet).replace(" ", "") for name in allowed_names):
+                    matched_sheet = sheet
+                    break
+                    
+            if matched_sheet:
+                df = excel_data[matched_sheet]
                 raw_tickers = df.iloc[:, 0].astype(str).tolist() if len(df.columns) > 0 else []
                 cleaned_tickers = []
+                
                 for val in raw_tickers:
                     val = str(val).strip().upper()
-                    if val in ['NAN', '', 'NONE']: continue
-                    if any('\u4e00' <= char <= '\u9fff' for char in val): continue
+                    if val in ['NAN', '', 'NONE', 'NULL', 'LIST', 'NOTE', '代碼', '標的']: continue
+                    
+                    match = re.search(r'[A-Z0-9\.\-]+', val)
+                    if not match: continue
+                    ticker = match.group(0)
+                    
+                    if ticker in ['LIST', 'NOTE']: continue
+                    
                     if cat_key in ['TW_STOCKS_0050', 'TW_ETFS']:
-                        if not val.endswith('.TW') and not val.endswith('.TWO'): val = f"{val}.TW"
+                        if not ticker.endswith('.TW') and not ticker.endswith('.TWO'): 
+                            ticker = f"{ticker}.TW"
                     elif cat_key == 'CRYPTOCURRENCY':
-                        if not val.endswith('-USD'): val = f"{val}-USD"
-                    cleaned_tickers.append(val)
+                        if not ticker.endswith('-USD'): 
+                            ticker = f"{ticker}-USD"
+                        
+                    cleaned_tickers.append(ticker)
+                    
                 result[cat_key] = list(set(cleaned_tickers))
-                print(f"[{sheet_name}] 成功從 Excel 載入 {len(result[cat_key])} 檔")
+                print(f"[{matched_sheet}] 成功從 Excel 載入 {len(result[cat_key])} 檔")
     except Exception as e:
         print(f"讀取 Excel 發生錯誤: {e}")
     return result
 
-# 備用清單
 TW_ETFS = ["0050.TW", "0056.TW"]
 US_SECTORS = ["XLK"]
 US_ETFS = ["VOO", "QQQ"]
 
 # ==========================================
-# 2. 核心技術：分批下載模組 (繞過 Yahoo 封鎖)
+# 2. 核心技術：超穩定 Ticker.history (加入智能上櫃與美股容錯)
 # ==========================================
-def download_in_batches(tickers, batch_size=10):
-    all_prices = []
-    total_batches = (len(tickers) // batch_size) + 1
+def download_robustly(tickers):
+    print(f"   -> 準備「超穩定安全下載」 {len(tickers)} 檔標的資料...")
+    all_prices = {}
     
-    for i in range(0, len(tickers), batch_size):
-        batch = tickers[i:i+batch_size]
-        current_batch = (i // batch_size) + 1
-        print(f"   -> 下載批次 {current_batch}/{total_batches} (共 {len(batch)} 檔)...", end=" ")
-        
+    for i, ticker in enumerate(tickers, 1):
         try:
-            # 🌟 核心修正：加入 auto_adjust=True，強制讓程式自己計算並還原所有分割與除息
-            data = yf.download(batch, period="2y", progress=False, auto_adjust=True)
-            if not data.empty:
-                if isinstance(data.columns, pd.MultiIndex):
-                    # 因為啟用了 auto_adjust，Close 已經是完美的「還原權息/分割後價格」了
-                    p = data['Close']
-                else:
-                    p = pd.DataFrame(data['Close'], columns=[batch[0]])
-                all_prices.append(p)
-                print("✅ 成功")
-            else:
-                print("⚠️ 無資料")
-        except Exception as e:
-            print(f"❌ 失敗 ({e})")
+            tkr = yf.Ticker(ticker)
+            with warnings.catch_warnings():
+                warnings.simplefilter("ignore")
+                data = tkr.history(period="2y")
             
-        time.sleep(1.5) 
+            # 🚀 智能備用引擎：如果抓不到資料，自動轉換代碼再試一次
+            if data.empty or 'Close' not in data.columns:
+                fallback_ticker = None
+                
+                # 台股陷阱：如果是 .TW (上市) 失敗，自動改成 .TWO (上櫃) 再試一次
+                if ticker.endswith('.TW'):
+                    fallback_ticker = ticker.replace('.TW', '.TWO')
+                
+                # 美股陷阱：如果有 . (例如 BRK.B)，自動改成 - (BRK-B) 再試一次
+                elif not ticker.endswith('.TW') and not ticker.endswith('.TWO') and '.' in ticker:
+                    fallback_ticker = ticker.replace('.', '-')
+
+                if fallback_ticker:
+                    tkr_fallback = yf.Ticker(fallback_ticker)
+                    with warnings.catch_warnings():
+                        warnings.simplefilter("ignore")
+                        data = tkr_fallback.history(period="2y")
+                    
+                    # 如果備用代碼成功了，就把顯示的名字換成對的
+                    if not data.empty and 'Close' in data.columns:
+                        ticker = fallback_ticker
+
+            # 最終確認有無資料
+            if not data.empty and 'Close' in data.columns:
+                p = data['Close']
+                if isinstance(p, pd.DataFrame):
+                    p = p.iloc[:, 0]
+                
+                if p.index.tz is not None:
+                    p.index = p.index.tz_localize(None)
+                    
+                all_prices[ticker] = p
+            else:
+                pass # Yahoo 真的沒有這檔資料 (例如 TAO-USD)，安靜跳過
+                
+        except Exception:
+            pass 
+            
+        time.sleep(0.1) 
         
     if not all_prices:
         return pd.DataFrame()
         
-    final_prices = pd.concat(all_prices, axis=1)
-    final_prices = final_prices.loc[:, ~final_prices.columns.duplicated()]
+    final_prices = pd.DataFrame(all_prices)
+    print(f"      ✅ 成功下載 {len(final_prices.columns)} 檔有效歷史數據！")
     return final_prices
 
 # ==========================================
 # 3. 動能計算核心演算法
 # ==========================================
 def calculate_historical_momentum(tickers, category_name):
-    print(f"\n[{category_name}] 開始處理 (共 {len(tickers)} 檔)...")
+    print(f"\n[{category_name}] 開始處理...")
     
-    prices = download_in_batches(tickers)
+    prices = download_robustly(tickers)
     
-    if prices.empty or prices.shape[0] == 0:
+    if prices.empty or prices.shape[1] == 0:
         print(f"⚠️ 警告：{category_name} 抓不到任何價格資料！")
         return {}, []
     
-    prices = prices.apply(pd.to_numeric, errors='coerce')
-    prices.dropna(axis=1, how='all', inplace=True) 
     prices = prices.ffill().resample('D').ffill()
     
-    # 動態時間週期設定
     if category_name in ["TW_ETFS", "US_ETFS"]: p1, p2, p3 = 90, 180, 365
     elif category_name in ["TW_STOCKS_0050", "US_STOCKS_SP100"]: p1, p2, p3 = 30, 90, 180
     elif category_name == "CRYPTOCURRENCY": p1, p2, p3 = 14, 30, 90
@@ -172,8 +180,12 @@ def calculate_historical_momentum(tickers, category_name):
     m2 = prices.pct_change(periods=p2)
     m3 = prices.pct_change(periods=p3)
     
-    # 計算平均動能
-    avg_momentum = (m1 + m2 + m3) / 3
+    with warnings.catch_warnings():
+        warnings.simplefilter("ignore", category=RuntimeWarning)
+        avg_momentum_values = np.nanmean([m1.values, m2.values, m3.values], axis=0)
+        
+    avg_momentum = pd.DataFrame(avg_momentum_values, index=prices.index, columns=prices.columns)
+    
     monthly_momentum = avg_momentum.resample('ME').last()
     last_12_months = monthly_momentum.tail(12)
     
@@ -211,7 +223,6 @@ def main():
         else:
             categories[cat_key] = fallback_categories[cat_key]
     
-    # 加入更新時間 (方便前端顯示)
     final_json_data = {
         "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "history": {}, 
