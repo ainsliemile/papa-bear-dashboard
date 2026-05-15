@@ -1,5 +1,5 @@
 {
-    "update_time": "2026-05-14 09:03:18",
+    "update_time": "2026-05-15 06:30:01",
     "history": {
         "2025-06": {
             "TW_STOCKS_0050": [
@@ -32,16 +32,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
+                    "symbol": "CRDO",
+                    "momentum": 70.53
+                },
+                {
                     "symbol": "CCJ",
                     "momentum": 49.62
                 },
                 {
                     "symbol": "PLTR",
                     "momentum": 48.22
-                },
-                {
-                    "symbol": "GEV",
-                    "momentum": 46.88
                 }
             ],
             "US_ETFS": [
@@ -104,16 +104,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
+                    "symbol": "BE",
+                    "momentum": 84.99
+                },
+                {
+                    "symbol": "CRDO",
+                    "momentum": 72.6
+                },
+                {
                     "symbol": "GEV",
                     "momentum": 58.17
-                },
-                {
-                    "symbol": "AMD",
-                    "momentum": 53.35
-                },
-                {
-                    "symbol": "PLTR",
-                    "momentum": 46.85
                 }
             ],
             "US_ETFS": [
@@ -176,16 +176,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
-                    "symbol": "DQ",
-                    "momentum": 47.38
+                    "symbol": "BE",
+                    "momentum": 122.33
                 },
                 {
-                    "symbol": "CCJ",
-                    "momentum": 41.29
+                    "symbol": "CRDO",
+                    "momentum": 79.12
                 },
                 {
-                    "symbol": "GEV",
-                    "momentum": 38.6
+                    "symbol": "AXTI",
+                    "momentum": 74.28
                 }
             ],
             "US_ETFS": [
@@ -248,16 +248,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
-                    "symbol": "MU",
-                    "momentum": 67.82
+                    "symbol": "BE",
+                    "momentum": 223.96
                 },
                 {
-                    "symbol": "LRCX",
-                    "momentum": 58.65
+                    "symbol": "AXTI",
+                    "momentum": 131.24
                 },
                 {
-                    "symbol": "PLTR",
-                    "momentum": 57.56
+                    "symbol": "CRDO",
+                    "momentum": 124.44
                 }
             ],
             "US_ETFS": [
@@ -320,16 +320,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
-                    "symbol": "MU",
-                    "momentum": 104.69
+                    "symbol": "BE",
+                    "momentum": 336.78
                 },
                 {
-                    "symbol": "LSRCY",
-                    "momentum": 90.46
+                    "symbol": "AXTI",
+                    "momentum": 282.64
                 },
                 {
-                    "symbol": "AMD",
-                    "momentum": 88.19
+                    "symbol": "CRDO",
+                    "momentum": 130.89
                 }
             ],
             "US_ETFS": [
@@ -392,16 +392,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
-                    "symbol": "CSIQ",
-                    "momentum": 118.93
+                    "symbol": "AXTI",
+                    "momentum": 274.02
                 },
                 {
-                    "symbol": "MU",
-                    "momentum": 78.72
+                    "symbol": "LITE",
+                    "momentum": 174.97
                 },
                 {
-                    "symbol": "INTC",
-                    "momentum": 55.97
+                    "symbol": "BE",
+                    "momentum": 174.74
                 }
             ],
             "US_ETFS": [
@@ -464,16 +464,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
-                    "symbol": "MU",
-                    "momentum": 69.36
+                    "symbol": "AXTI",
+                    "momentum": 321.14
                 },
                 {
-                    "symbol": "CSIQ",
-                    "momentum": 43.93
+                    "symbol": "LITE",
+                    "momentum": 143.49
                 },
                 {
-                    "symbol": "GM",
-                    "momentum": 34.47
+                    "symbol": "CIEN",
+                    "momentum": 85.66
                 }
             ],
             "US_ETFS": [
@@ -536,16 +536,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
+                    "symbol": "AXTI",
+                    "momentum": 308.43
+                },
+                {
                     "symbol": "MU",
                     "momentum": 138.74
                 },
                 {
-                    "symbol": "LRCX",
-                    "momentum": 74.33
-                },
-                {
-                    "symbol": "INTC",
-                    "momentum": 60.15
+                    "symbol": "BE",
+                    "momentum": 136.02
                 }
             ],
             "US_ETFS": [
@@ -608,16 +608,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
-                    "symbol": "MU",
-                    "momentum": 105.31
+                    "symbol": "AXTI",
+                    "momentum": 530.83
                 },
                 {
-                    "symbol": "AMAT",
-                    "momentum": 63.1
+                    "symbol": "LITE",
+                    "momentum": 209.02
                 },
                 {
-                    "symbol": "LRCX",
-                    "momentum": 59.6
+                    "symbol": "CIEN",
+                    "momentum": 126.46
                 }
             ],
             "US_ETFS": [
@@ -680,16 +680,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
-                    "symbol": "XOM",
-                    "momentum": 35.99
+                    "symbol": "AXTI",
+                    "momentum": 470.39
                 },
                 {
-                    "symbol": "COP",
-                    "momentum": 34.08
+                    "symbol": "LITE",
+                    "momentum": 134.97
                 },
                 {
-                    "symbol": "CVX",
-                    "momentum": 28.54
+                    "symbol": "CIEN",
+                    "momentum": 77.22
                 }
             ],
             "US_ETFS": [
@@ -752,16 +752,16 @@
             ],
             "US_STOCKS_SP100": [
                 {
+                    "symbol": "AXTI",
+                    "momentum": 420.93
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 168.78
+                },
+                {
                     "symbol": "INTC",
                     "momentum": 117.89
-                },
-                {
-                    "symbol": "MU",
-                    "momentum": 69.7
-                },
-                {
-                    "symbol": "AMD",
-                    "momentum": 54.14
                 }
             ],
             "US_ETFS": [
@@ -797,71 +797,71 @@
             "TW_STOCKS_0050": [
                 {
                     "symbol": "2383.TW",
-                    "momentum": 139.05
+                    "momentum": 121.93
                 },
                 {
                     "symbol": "2454.TW",
-                    "momentum": 121.24
+                    "momentum": 109.35
                 },
                 {
                     "symbol": "2360.TW",
-                    "momentum": 108.65
+                    "momentum": 103.19
                 }
             ],
             "TW_ETFS": [
                 {
                     "symbol": "00715L.TW",
-                    "momentum": 392.23
+                    "momentum": 406.36
                 },
                 {
                     "symbol": "00674R.TW",
-                    "momentum": 334.05
+                    "momentum": 341.99
                 },
                 {
-                    "symbol": "00685L.TW",
-                    "momentum": 138.3
+                    "symbol": "00631L.TW",
+                    "momentum": 133.11
                 }
             ],
             "US_STOCKS_SP100": [
                 {
+                    "symbol": "AXTI",
+                    "momentum": 482.18
+                },
+                {
                     "symbol": "INTC",
-                    "momentum": 160.67
+                    "momentum": 151.94
                 },
                 {
-                    "symbol": "MU",
-                    "momentum": 136.15
-                },
-                {
-                    "symbol": "AMD",
-                    "momentum": 92.44
+                    "symbol": "LITE",
+                    "momentum": 142.34
                 }
             ],
             "US_ETFS": [
                 {
                     "symbol": "BWET",
-                    "momentum": 839.15
+                    "momentum": 826.07
                 },
                 {
                     "symbol": "USD",
-                    "momentum": 146.14
+                    "momentum": 153.4
                 },
                 {
                     "symbol": "HYDR",
-                    "momentum": 144.53
+                    "momentum": 145.12
                 }
             ],
             "CRYPTOCURRENCY": [
                 {
                     "symbol": "LUNC-USD",
-                    "momentum": 80.23
+                    "momentum": 64.93
                 },
                 {
                     "symbol": "ZEC-USD",
-                    "momentum": 64.06
+                    "momentum": 55.07
                 },
                 {
                     "symbol": "ONDO-USD",
-                    "momentum": 48.82
+                    "momentum": 39.37
                 }
             ]
         }
@@ -870,2146 +870,2182 @@
         "TW_STOCKS_0050": [
             {
                 "symbol": "2383.TW",
-                "momentum": 139.05
+                "momentum": 121.93
             },
             {
                 "symbol": "2454.TW",
-                "momentum": 121.24
+                "momentum": 109.35
             },
             {
                 "symbol": "2360.TW",
-                "momentum": 108.65
-            },
-            {
-                "symbol": "2345.TW",
-                "momentum": 99.38
+                "momentum": 103.19
             },
             {
                 "symbol": "2303.TW",
-                "momentum": 99.17
+                "momentum": 100.48
             },
             {
-                "symbol": "2368.TW",
-                "momentum": 86.57
-            },
-            {
-                "symbol": "7769.TW",
-                "momentum": 77.32
+                "symbol": "2345.TW",
+                "momentum": 84.92
             },
             {
                 "symbol": "3711.TW",
-                "momentum": 76.71
-            },
-            {
-                "symbol": "2308.TW",
-                "momentum": 75.97
+                "momentum": 74.22
             },
             {
                 "symbol": "2327.TW",
-                "momentum": 75.47
+                "momentum": 71.49
+            },
+            {
+                "symbol": "2308.TW",
+                "momentum": 68.66
+            },
+            {
+                "symbol": "2368.TW",
+                "momentum": 67.82
             },
             {
                 "symbol": "6640.TWO",
-                "momentum": 74.94
-            },
-            {
-                "symbol": "2344.TW",
-                "momentum": 64.79
+                "momentum": 64.53
             },
             {
                 "symbol": "3131.TWO",
-                "momentum": 64.62
+                "momentum": 61.56
+            },
+            {
+                "symbol": "2344.TW",
+                "momentum": 60.95
+            },
+            {
+                "symbol": "7769.TW",
+                "momentum": 60.27
             },
             {
                 "symbol": "2408.TW",
-                "momentum": 64.27
-            },
-            {
-                "symbol": "3017.TW",
-                "momentum": 49.91
+                "momentum": 51.95
             },
             {
                 "symbol": "2395.TW",
-                "momentum": 49.23
+                "momentum": 46.96
+            },
+            {
+                "symbol": "3008.TW",
+                "momentum": 45.29
             },
             {
                 "symbol": "2059.TW",
-                "momentum": 48.54
+                "momentum": 44.17
             },
             {
-                "symbol": "3661.TW",
+                "symbol": "3017.TW",
                 "momentum": 43.81
             },
             {
                 "symbol": "8996.TW",
-                "momentum": 42.69
+                "momentum": 39.76
+            },
+            {
+                "symbol": "3661.TW",
+                "momentum": 36.97
             },
             {
                 "symbol": "6669.TW",
-                "momentum": 39.02
-            },
-            {
-                "symbol": "3008.TW",
-                "momentum": 34.3
+                "momentum": 31.26
             },
             {
                 "symbol": "2885.TW",
-                "momentum": 31.38
+                "momentum": 29.1
             },
             {
                 "symbol": "2330.TW",
-                "momentum": 29.73
+                "momentum": 29.0
             },
             {
                 "symbol": "2301.TW",
-                "momentum": 26.16
-            },
-            {
-                "symbol": "2883.TW",
-                "momentum": 19.64
+                "momentum": 24.23
             },
             {
                 "symbol": "1303.TW",
-                "momentum": 19.17
+                "momentum": 19.35
             },
             {
-                "symbol": "2357.TW",
-                "momentum": 18.05
-            },
-            {
-                "symbol": "2382.TW",
-                "momentum": 13.4
-            },
-            {
-                "symbol": "2891.TW",
-                "momentum": 12.17
+                "symbol": "2883.TW",
+                "momentum": 18.46
             },
             {
                 "symbol": "2449.TW",
-                "momentum": 11.57
+                "momentum": 14.03
             },
             {
-                "symbol": "2603.TW",
-                "momentum": 10.98
+                "symbol": "2891.TW",
+                "momentum": 12.37
+            },
+            {
+                "symbol": "2357.TW",
+                "momentum": 11.2
             },
             {
                 "symbol": "2317.TW",
-                "momentum": 9.0
-            },
-            {
-                "symbol": "1514.TW",
-                "momentum": 7.34
+                "momentum": 10.78
             },
             {
                 "symbol": "3653.TW",
-                "momentum": 6.51
+                "momentum": 8.6
             },
             {
                 "symbol": "2882.TW",
-                "momentum": 6.35
-            },
-            {
-                "symbol": "3045.TW",
-                "momentum": 6.17
-            },
-            {
-                "symbol": "4904.TW",
-                "momentum": 6.0
-            },
-            {
-                "symbol": "1519.TW",
-                "momentum": 5.1
+                "momentum": 7.92
             },
             {
                 "symbol": "2887.TW",
-                "momentum": 4.32
+                "momentum": 7.28
             },
             {
-                "symbol": "1503.TW",
-                "momentum": 3.61
+                "symbol": "1514.TW",
+                "momentum": 6.84
             },
             {
-                "symbol": "2412.TW",
-                "momentum": 3.27
+                "symbol": "4904.TW",
+                "momentum": 5.85
+            },
+            {
+                "symbol": "3045.TW",
+                "momentum": 5.71
+            },
+            {
+                "symbol": "2382.TW",
+                "momentum": 5.22
+            },
+            {
+                "symbol": "2603.TW",
+                "momentum": 4.88
             },
             {
                 "symbol": "2881.TW",
-                "momentum": 2.92
+                "momentum": 4.59
             },
             {
-                "symbol": "2892.TW",
-                "momentum": 2.83
+                "symbol": "2412.TW",
+                "momentum": 3.52
             },
             {
                 "symbol": "1216.TW",
-                "momentum": 1.71
+                "momentum": 2.69
+            },
+            {
+                "symbol": "2892.TW",
+                "momentum": 1.84
             },
             {
                 "symbol": "3231.TW",
-                "momentum": 1.42
+                "momentum": 0.45
             },
             {
                 "symbol": "2890.TW",
-                "momentum": 1.18
+                "momentum": 0.09
             },
             {
-                "symbol": "3324.TWO",
-                "momentum": 1.0
-            },
-            {
-                "symbol": "2880.TW",
-                "momentum": -0.07
-            },
-            {
-                "symbol": "1513.TW",
-                "momentum": -0.21
-            },
-            {
-                "symbol": "6505.TW",
-                "momentum": -0.98
+                "symbol": "1503.TW",
+                "momentum": -0.15
             },
             {
                 "symbol": "2884.TW",
-                "momentum": -1.06
+                "momentum": -0.99
             },
             {
                 "symbol": "2886.TW",
-                "momentum": -1.17
+                "momentum": -1.04
+            },
+            {
+                "symbol": "3324.TWO",
+                "momentum": -1.23
+            },
+            {
+                "symbol": "2880.TW",
+                "momentum": -1.59
+            },
+            {
+                "symbol": "1513.TW",
+                "momentum": -1.95
+            },
+            {
+                "symbol": "6505.TW",
+                "momentum": -2.05
             },
             {
                 "symbol": "1301.TW",
-                "momentum": -2.54
+                "momentum": -2.31
+            },
+            {
+                "symbol": "1519.TW",
+                "momentum": -2.35
             },
             {
                 "symbol": "5880.TW",
-                "momentum": -5.08
+                "momentum": -4.59
             },
             {
                 "symbol": "2002.TW",
-                "momentum": -7.17
+                "momentum": -7.34
             },
             {
                 "symbol": "2207.TW",
-                "momentum": -14.43
+                "momentum": -14.59
             },
             {
                 "symbol": "6919.TW",
-                "momentum": -23.18
+                "momentum": -24.21
             }
         ],
         "TW_ETFS": [
             {
                 "symbol": "00715L.TW",
-                "momentum": 392.23
+                "momentum": 406.36
             },
             {
                 "symbol": "00674R.TW",
-                "momentum": 334.05
-            },
-            {
-                "symbol": "00685L.TW",
-                "momentum": 138.3
+                "momentum": 341.99
             },
             {
                 "symbol": "00631L.TW",
-                "momentum": 137.65
+                "momentum": 133.11
+            },
+            {
+                "symbol": "00685L.TW",
+                "momentum": 132.72
             },
             {
                 "symbol": "00675L.TW",
-                "momentum": 136.91
+                "momentum": 131.23
             },
             {
                 "symbol": "00735.TW",
-                "momentum": 130.62
+                "momentum": 123.36
             },
             {
                 "symbol": "00947.TW",
-                "momentum": 122.09
+                "momentum": 114.79
             },
             {
                 "symbol": "00928.TWO",
-                "momentum": 118.53
+                "momentum": 110.68
             },
             {
                 "symbol": "00892.TW",
-                "momentum": 116.28
+                "momentum": 109.0
             },
             {
                 "symbol": "00935.TW",
-                "momentum": 112.48
-            },
-            {
-                "symbol": "00894.TW",
-                "momentum": 101.98
+                "momentum": 106.88
             },
             {
                 "symbol": "00910.TW",
-                "momentum": 99.76
-            },
-            {
-                "symbol": "00904.TW",
-                "momentum": 97.86
-            },
-            {
-                "symbol": "00830.TW",
-                "momentum": 93.44
+                "momentum": 102.0
             },
             {
                 "symbol": "00642U.TW",
-                "momentum": 93.18
+                "momentum": 96.95
+            },
+            {
+                "symbol": "00894.TW",
+                "momentum": 95.67
+            },
+            {
+                "symbol": "00904.TW",
+                "momentum": 94.43
+            },
+            {
+                "symbol": "00830.TW",
+                "momentum": 90.83
             },
             {
                 "symbol": "00891.TW",
-                "momentum": 89.1
+                "momentum": 85.96
             },
             {
                 "symbol": "00927.TW",
-                "momentum": 87.42
+                "momentum": 84.9
             },
             {
                 "symbol": "00881.TW",
-                "momentum": 87.09
+                "momentum": 83.75
             },
             {
                 "symbol": "00876.TW",
-                "momentum": 86.96
+                "momentum": 83.29
             },
             {
                 "symbol": "00901.TW",
-                "momentum": 86.08
+                "momentum": 81.72
             },
             {
                 "symbol": "00690.TW",
-                "momentum": 85.75
+                "momentum": 81.61
             },
             {
                 "symbol": "00888.TWO",
-                "momentum": 78.49
-            },
-            {
-                "symbol": "00738U.TW",
-                "momentum": 72.8
+                "momentum": 75.8
             },
             {
                 "symbol": "009803.TW",
-                "momentum": 72.48
+                "momentum": 69.39
             },
             {
                 "symbol": "00728.TW",
-                "momentum": 70.12
-            },
-            {
-                "symbol": "00861.TW",
-                "momentum": 67.92
+                "momentum": 68.84
             },
             {
                 "symbol": "00923.TW",
-                "momentum": 67.73
-            },
-            {
-                "symbol": "00706L.TW",
-                "momentum": 67.04
-            },
-            {
-                "symbol": "00951.TW",
-                "momentum": 65.79
-            },
-            {
-                "symbol": "0050.TW",
-                "momentum": 65.6
-            },
-            {
-                "symbol": "006208.TW",
-                "momentum": 65.55
-            },
-            {
-                "symbol": "00954.TW",
                 "momentum": 65.28
             },
             {
-                "symbol": "009802.TW",
-                "momentum": 65.24
+                "symbol": "00861.TW",
+                "momentum": 64.99
+            },
+            {
+                "symbol": "00706L.TW",
+                "momentum": 64.75
+            },
+            {
+                "symbol": "0050.TW",
+                "momentum": 64.64
+            },
+            {
+                "symbol": "006208.TW",
+                "momentum": 64.05
             },
             {
                 "symbol": "006203.TW",
-                "momentum": 65.04
+                "momentum": 63.11
             },
             {
                 "symbol": "009804.TW",
-                "momentum": 64.95
+                "momentum": 62.29
             },
             {
-                "symbol": "00952.TW",
-                "momentum": 64.54
+                "symbol": "009802.TW",
+                "momentum": 62.16
             },
             {
                 "symbol": "00922.TW",
-                "momentum": 63.45
+                "momentum": 61.59
             },
             {
-                "symbol": "00905.TW",
-                "momentum": 63.13
+                "symbol": "00952.TW",
+                "momentum": 61.36
+            },
+            {
+                "symbol": "00738U.TW",
+                "momentum": 61.1
             },
             {
                 "symbol": "00850.TW",
-                "momentum": 62.8
+                "momentum": 60.64
+            },
+            {
+                "symbol": "00905.TW",
+                "momentum": 60.57
             },
             {
                 "symbol": "00692.TW",
-                "momentum": 60.71
+                "momentum": 59.29
             },
             {
-                "symbol": "00912.TW",
-                "momentum": 58.61
+                "symbol": "00951.TW",
+                "momentum": 57.35
             },
             {
                 "symbol": "00893.TW",
-                "momentum": 58.3
+                "momentum": 56.84
             },
             {
-                "symbol": "00733.TW",
-                "momentum": 56.75
+                "symbol": "00954.TW",
+                "momentum": 56.84
+            },
+            {
+                "symbol": "00912.TW",
+                "momentum": 56.46
             },
             {
                 "symbol": "00941.TW",
-                "momentum": 56.47
+                "momentum": 54.18
             },
             {
                 "symbol": "00896.TW",
-                "momentum": 54.78
+                "momentum": 52.52
             },
             {
-                "symbol": "0051.TW",
-                "momentum": 53.92
+                "symbol": "00733.TW",
+                "momentum": 50.87
             },
             {
                 "symbol": "00902.TW",
-                "momentum": 52.91
+                "momentum": 50.66
             },
             {
-                "symbol": "00929.TW",
-                "momentum": 47.31
+                "symbol": "0051.TW",
+                "momentum": 49.98
             },
             {
                 "symbol": "00909.TW",
-                "momentum": 46.8
+                "momentum": 49.13
+            },
+            {
+                "symbol": "00929.TW",
+                "momentum": 45.27
             },
             {
                 "symbol": "00762.TW",
-                "momentum": 45.52
+                "momentum": 43.98
             },
             {
                 "symbol": "00670L.TW",
-                "momentum": 44.72
-            },
-            {
-                "symbol": "009808.TW",
-                "momentum": 42.39
-            },
-            {
-                "symbol": "00895.TW",
-                "momentum": 42.26
+                "momentum": 43.09
             },
             {
                 "symbol": "009805.TW",
-                "momentum": 42.05
+                "momentum": 42.27
+            },
+            {
+                "symbol": "00895.TW",
+                "momentum": 42.25
+            },
+            {
+                "symbol": "009808.TW",
+                "momentum": 40.36
             },
             {
                 "symbol": "00640L.TW",
-                "momentum": 41.83
+                "momentum": 40.27
             },
             {
                 "symbol": "00946.TW",
-                "momentum": 41.24
+                "momentum": 38.5
             },
             {
                 "symbol": "00903.TW",
-                "momentum": 37.98
-            },
-            {
-                "symbol": "00663L.TW",
-                "momentum": 37.04
-            },
-            {
-                "symbol": "00643.TW",
-                "momentum": 36.84
+                "momentum": 38.17
             },
             {
                 "symbol": "00770.TW",
-                "momentum": 35.62
+                "momentum": 35.61
+            },
+            {
+                "symbol": "00643.TW",
+                "momentum": 34.7
             },
             {
                 "symbol": "00639.TW",
-                "momentum": 35.05
+                "momentum": 33.86
             },
             {
-                "symbol": "00934.TW",
-                "momentum": 34.73
+                "symbol": "00663L.TW",
+                "momentum": 33.78
             },
             {
                 "symbol": "00878.TW",
-                "momentum": 34.15
+                "momentum": 33.17
             },
             {
                 "symbol": "00944.TW",
-                "momentum": 33.69
-            },
-            {
-                "symbol": "00661.TW",
-                "momentum": 33.05
+                "momentum": 31.61
             },
             {
                 "symbol": "00938.TW",
-                "momentum": 31.78
-            },
-            {
-                "symbol": "0056.TW",
-                "momentum": 31.5
+                "momentum": 31.23
             },
             {
                 "symbol": "00885.TW",
-                "momentum": 30.83
+                "momentum": 30.67
             },
             {
-                "symbol": "00900.TW",
-                "momentum": 30.04
+                "symbol": "00661.TW",
+                "momentum": 30.56
+            },
+            {
+                "symbol": "00934.TW",
+                "momentum": 30.32
+            },
+            {
+                "symbol": "0056.TW",
+                "momentum": 29.53
             },
             {
                 "symbol": "00939.TW",
-                "momentum": 29.99
+                "momentum": 28.86
+            },
+            {
+                "symbol": "00900.TW",
+                "momentum": 26.83
             },
             {
                 "symbol": "009816.TW",
-                "momentum": 28.23
-            },
-            {
-                "symbol": "00936.TW",
-                "momentum": 27.09
+                "momentum": 26.75
             },
             {
                 "symbol": "00662.TW",
-                "momentum": 27.04
-            },
-            {
-                "symbol": "00960.TW",
-                "momentum": 26.47
+                "momentum": 26.43
             },
             {
                 "symbol": "009800.TW",
-                "momentum": 26.3
+                "momentum": 25.92
             },
             {
-                "symbol": "00921.TW",
-                "momentum": 26.26
+                "symbol": "00936.TW",
+                "momentum": 24.84
             },
             {
-                "symbol": "00930.TW",
-                "momentum": 26.0
-            },
-            {
-                "symbol": "00708L.TW",
-                "momentum": 25.2
+                "symbol": "00960.TW",
+                "momentum": 24.51
             },
             {
                 "symbol": "00897.TW",
-                "momentum": 25.03
+                "momentum": 24.18
             },
             {
-                "symbol": "00730.TW",
-                "momentum": 24.2
+                "symbol": "00930.TW",
+                "momentum": 23.96
+            },
+            {
+                "symbol": "00921.TW",
+                "momentum": 23.66
+            },
+            {
+                "symbol": "00708L.TW",
+                "momentum": 22.62
             },
             {
                 "symbol": "00919.TW",
-                "momentum": 23.22
-            },
-            {
-                "symbol": "00940.TW",
-                "momentum": 22.52
-            },
-            {
-                "symbol": "00763U.TW",
-                "momentum": 21.81
+                "momentum": 22.37
             },
             {
                 "symbol": "00924.TW",
-                "momentum": 21.63
+                "momentum": 22.31
             },
             {
-                "symbol": "00918.TW",
-                "momentum": 21.6
-            },
-            {
-                "symbol": "00637L.TW",
-                "momentum": 21.31
+                "symbol": "00730.TW",
+                "momentum": 20.62
             },
             {
                 "symbol": "009801.TW",
-                "momentum": 20.49
+                "momentum": 20.53
+            },
+            {
+                "symbol": "00940.TW",
+                "momentum": 20.06
             },
             {
                 "symbol": "00645.TW",
-                "momentum": 20.34
-            },
-            {
-                "symbol": "00965.TW",
-                "momentum": 20.26
-            },
-            {
-                "symbol": "00655L.TW",
-                "momentum": 20.07
+                "momentum": 19.81
             },
             {
                 "symbol": "00915.TW",
-                "momentum": 19.68
+                "momentum": 19.16
             },
             {
-                "symbol": "00633L.TW",
-                "momentum": 19.37
+                "symbol": "00918.TW",
+                "momentum": 19.05
             },
             {
-                "symbol": "00961.TW",
-                "momentum": 19.34
+                "symbol": "00763U.TW",
+                "momentum": 18.99
             },
             {
                 "symbol": "00926.TW",
-                "momentum": 18.76
+                "momentum": 18.85
+            },
+            {
+                "symbol": "00637L.TW",
+                "momentum": 18.57
             },
             {
                 "symbol": "00757.TW",
-                "momentum": 18.46
+                "momentum": 18.41
+            },
+            {
+                "symbol": "00965.TW",
+                "momentum": 18.08
+            },
+            {
+                "symbol": "00961.TW",
+                "momentum": 18.05
             },
             {
                 "symbol": "00963.TW",
-                "momentum": 17.84
-            },
-            {
-                "symbol": "00932.TW",
-                "momentum": 17.76
+                "momentum": 18.02
             },
             {
                 "symbol": "00646.TW",
-                "momentum": 17.31
+                "momentum": 17.79
             },
             {
                 "symbol": "00701.TW",
-                "momentum": 17.26
+                "momentum": 17.11
+            },
+            {
+                "symbol": "00655L.TW",
+                "momentum": 16.94
+            },
+            {
+                "symbol": "00633L.TW",
+                "momentum": 16.24
             },
             {
                 "symbol": "00898.TW",
-                "momentum": 16.42
-            },
-            {
-                "symbol": "00636.TW",
-                "momentum": 16.03
+                "momentum": 15.6
             },
             {
                 "symbol": "00971.TW",
-                "momentum": 15.48
+                "momentum": 15.58
             },
             {
-                "symbol": "00882.TW",
-                "momentum": 14.92
+                "symbol": "00932.TW",
+                "momentum": 15.24
             },
             {
                 "symbol": "00917.TW",
-                "momentum": 14.56
+                "momentum": 14.69
             },
             {
-                "symbol": "006205.TW",
-                "momentum": 14.33
+                "symbol": "00636.TW",
+                "momentum": 14.67
+            },
+            {
+                "symbol": "00882.TW",
+                "momentum": 14.15
             },
             {
                 "symbol": "0055.TW",
-                "momentum": 13.79
+                "momentum": 13.5
             },
             {
-                "symbol": "00635U.TW",
-                "momentum": 13.02
-            },
-            {
-                "symbol": "00949.TW",
-                "momentum": 12.0
+                "symbol": "006205.TW",
+                "momentum": 12.42
             },
             {
                 "symbol": "009811.TW",
-                "momentum": 11.76
+                "momentum": 12.11
+            },
+            {
+                "symbol": "00949.TW",
+                "momentum": 11.92
+            },
+            {
+                "symbol": "00635U.TW",
+                "momentum": 11.5
             },
             {
                 "symbol": "00713.TW",
-                "momentum": 11.74
+                "momentum": 11.18
             },
             {
                 "symbol": "00731.TW",
-                "momentum": 11.47
-            },
-            {
-                "symbol": "00916.TW",
-                "momentum": 9.83
+                "momentum": 11.17
             },
             {
                 "symbol": "009813.TW",
-                "momentum": 9.65
+                "momentum": 9.84
+            },
+            {
+                "symbol": "00916.TW",
+                "momentum": 9.31
             },
             {
                 "symbol": "006206.TW",
-                "momentum": 9.43
-            },
-            {
-                "symbol": "00693U.TW",
-                "momentum": 6.26
-            },
-            {
-                "symbol": "00717.TW",
-                "momentum": 5.84
-            },
-            {
-                "symbol": "00650L.TW",
-                "momentum": 5.83
+                "momentum": 7.73
             },
             {
                 "symbol": "00945B.TW",
-                "momentum": 5.49
+                "momentum": 5.59
+            },
+            {
+                "symbol": "00717.TW",
+                "momentum": 5.45
             },
             {
                 "symbol": "00953B.TW",
-                "momentum": 4.94
-            },
-            {
-                "symbol": "00712.TW",
-                "momentum": 4.53
+                "momentum": 5.0
             },
             {
                 "symbol": "00710B.TW",
-                "momentum": 4.44
+                "momentum": 4.47
             },
             {
-                "symbol": "00711B.TW",
-                "momentum": 4.11
+                "symbol": "00693U.TW",
+                "momentum": 4.23
+            },
+            {
+                "symbol": "00712.TW",
+                "momentum": 4.23
             },
             {
                 "symbol": "00865B.TW",
-                "momentum": 4.1
+                "momentum": 4.15
+            },
+            {
+                "symbol": "00711B.TW",
+                "momentum": 4.03
             },
             {
                 "symbol": "00775B.TW",
-                "momentum": 3.25
+                "momentum": 3.81
+            },
+            {
+                "symbol": "00650L.TW",
+                "momentum": 2.33
             },
             {
                 "symbol": "00985B.TW",
-                "momentum": 1.38
+                "momentum": 1.29
             },
             {
                 "symbol": "00907.TW",
-                "momentum": -0.53
-            },
-            {
-                "symbol": "00752.TW",
-                "momentum": -4.13
+                "momentum": -1.68
             },
             {
                 "symbol": "00669R.TW",
-                "momentum": -5.91
+                "momentum": -5.75
             },
             {
-                "symbol": "00665L.TW",
-                "momentum": -6.12
+                "symbol": "00752.TW",
+                "momentum": -5.95
             },
             {
                 "symbol": "00680L.TW",
-                "momentum": -6.72
+                "momentum": -7.22
             },
             {
                 "symbol": "00688L.TW",
-                "momentum": -6.87
+                "momentum": -7.32
+            },
+            {
+                "symbol": "00665L.TW",
+                "momentum": -9.58
             },
             {
                 "symbol": "00753L.TW",
-                "momentum": -8.25
+                "momentum": -12.2
             },
             {
                 "symbol": "00652.TW",
-                "momentum": -13.64
+                "momentum": -12.45
             },
             {
                 "symbol": "00673R.TW",
-                "momentum": -15.56
+                "momentum": -17.82
             },
             {
                 "symbol": "00671R.TW",
-                "momentum": -19.22
+                "momentum": -18.64
             },
             {
                 "symbol": "00632R.TW",
-                "momentum": -35.21
+                "momentum": -34.46
             },
             {
                 "symbol": "00676R.TW",
-                "momentum": -35.29
+                "momentum": -34.51
             },
             {
                 "symbol": "00664R.TW",
-                "momentum": -35.56
+                "momentum": -34.59
             },
             {
                 "symbol": "0052.TW",
-                "momentum": -39.39
+                "momentum": -40.03
             }
         ],
         "US_STOCKS_SP100": [
             {
+                "symbol": "AXTI",
+                "momentum": 482.18
+            },
+            {
                 "symbol": "INTC",
-                "momentum": 160.67
+                "momentum": 151.94
+            },
+            {
+                "symbol": "LITE",
+                "momentum": 142.34
             },
             {
                 "symbol": "MU",
-                "momentum": 136.15
+                "momentum": 123.29
+            },
+            {
+                "symbol": "CIEN",
+                "momentum": 109.95
+            },
+            {
+                "symbol": "BE",
+                "momentum": 108.94
+            },
+            {
+                "symbol": "COHR",
+                "momentum": 102.08
             },
             {
                 "symbol": "AMD",
-                "momentum": 92.44
+                "momentum": 91.81
+            },
+            {
+                "symbol": "NOK",
+                "momentum": 86.75
+            },
+            {
+                "symbol": "GLW",
+                "momentum": 77.05
             },
             {
                 "symbol": "TXN",
-                "momentum": 58.22
-            },
-            {
-                "symbol": "QCOM",
-                "momentum": 47.1
-            },
-            {
-                "symbol": "LRCX",
-                "momentum": 46.08
-            },
-            {
-                "symbol": "AMAT",
-                "momentum": 45.75
-            },
-            {
-                "symbol": "GEV",
-                "momentum": 40.47
-            },
-            {
-                "symbol": "GOOGL",
-                "momentum": 33.85
-            },
-            {
-                "symbol": "LNVGY",
-                "momentum": 33.54
-            },
-            {
-                "symbol": "GOOG",
-                "momentum": 32.78
-            },
-            {
-                "symbol": "CAT",
-                "momentum": 32.32
-            },
-            {
-                "symbol": "UNH",
-                "momentum": 32.26
+                "momentum": 58.05
             },
             {
                 "symbol": "CSCO",
-                "momentum": 30.76
+                "momentum": 46.9
+            },
+            {
+                "symbol": "LRCX",
+                "momentum": 46.44
+            },
+            {
+                "symbol": "GEV",
+                "momentum": 45.1
+            },
+            {
+                "symbol": "AMAT",
+                "momentum": 43.73
+            },
+            {
+                "symbol": "QCOM",
+                "momentum": 36.69
             },
             {
                 "symbol": "PANW",
-                "momentum": 30.35
+                "momentum": 35.39
             },
             {
-                "symbol": "LSRCY",
-                "momentum": 29.37
+                "symbol": "CAT",
+                "momentum": 33.99
             },
             {
-                "symbol": "CVS",
-                "momentum": 27.33
+                "symbol": "GOOGL",
+                "momentum": 32.35
+            },
+            {
+                "symbol": "CRDO",
+                "momentum": 31.49
+            },
+            {
+                "symbol": "GOOG",
+                "momentum": 31.2
+            },
+            {
+                "symbol": "UNH",
+                "momentum": 30.0
+            },
+            {
+                "symbol": "LNVGY",
+                "momentum": 29.75
             },
             {
                 "symbol": "CRWD",
-                "momentum": 27.07
-            },
-            {
-                "symbol": "ASML",
-                "momentum": 25.31
-            },
-            {
-                "symbol": "FCX",
-                "momentum": 25.15
-            },
-            {
-                "symbol": "BIDU",
-                "momentum": 24.29
-            },
-            {
-                "symbol": "JD",
-                "momentum": 21.03
-            },
-            {
-                "symbol": "AMZN",
-                "momentum": 21.01
-            },
-            {
-                "symbol": "GDS",
-                "momentum": 20.35
-            },
-            {
-                "symbol": "NVDA",
-                "momentum": 19.62
+                "momentum": 29.47
             },
             {
                 "symbol": "AVGO",
-                "momentum": 19.35
+                "momentum": 26.66
             },
             {
-                "symbol": "BK",
-                "momentum": 15.36
+                "symbol": "CVS",
+                "momentum": 26.04
             },
             {
-                "symbol": "SBUX",
-                "momentum": 14.89
+                "symbol": "ASML",
+                "momentum": 25.13
             },
             {
-                "symbol": "TSLA",
-                "momentum": 14.41
+                "symbol": "NVDA",
+                "momentum": 24.3
             },
             {
-                "symbol": "MS",
-                "momentum": 14.37
+                "symbol": "FCX",
+                "momentum": 22.68
             },
             {
-                "symbol": "MO",
-                "momentum": 14.31
+                "symbol": "LSRCY",
+                "momentum": 21.47
             },
             {
-                "symbol": "VNET",
-                "momentum": 14.08
+                "symbol": "AMZN",
+                "momentum": 18.53
             },
             {
-                "symbol": "AAPL",
-                "momentum": 13.21
+                "symbol": "GDS",
+                "momentum": 17.15
             },
             {
-                "symbol": "FDX",
-                "momentum": 13.11
+                "symbol": "ILMN",
+                "momentum": 17.08
+            },
+            {
+                "symbol": "BIDU",
+                "momentum": 16.44
             },
             {
                 "symbol": "PM",
-                "momentum": 12.96
+                "momentum": 16.41
             },
             {
-                "symbol": "C",
-                "momentum": 11.96
+                "symbol": "MO",
+                "momentum": 16.22
             },
             {
-                "symbol": "GS",
-                "momentum": 11.82
+                "symbol": "SBUX",
+                "momentum": 15.94
+            },
+            {
+                "symbol": "FDX",
+                "momentum": 15.93
+            },
+            {
+                "symbol": "JD",
+                "momentum": 15.55
+            },
+            {
+                "symbol": "BK",
+                "momentum": 14.89
             },
             {
                 "symbol": "COP",
-                "momentum": 11.63
+                "momentum": 14.24
             },
             {
-                "symbol": "CCJ",
-                "momentum": 11.47
+                "symbol": "AAPL",
+                "momentum": 13.9
+            },
+            {
+                "symbol": "MS",
+                "momentum": 13.65
+            },
+            {
+                "symbol": "GS",
+                "momentum": 12.63
+            },
+            {
+                "symbol": "TSLA",
+                "momentum": 12.52
+            },
+            {
+                "symbol": "C",
+                "momentum": 11.86
             },
             {
                 "symbol": "WMT",
-                "momentum": 11.19
-            },
-            {
-                "symbol": "BA",
-                "momentum": 10.84
-            },
-            {
-                "symbol": "LIN",
-                "momentum": 10.62
-            },
-            {
-                "symbol": "ORCL",
-                "momentum": 9.77
+                "momentum": 11.83
             },
             {
                 "symbol": "XOM",
-                "momentum": 9.43
+                "momentum": 11.41
             },
             {
                 "symbol": "UNP",
-                "momentum": 8.97
+                "momentum": 10.95
             },
             {
-                "symbol": "SMFG",
-                "momentum": 8.7
+                "symbol": "ORCL",
+                "momentum": 10.3
+            },
+            {
+                "symbol": "LIN",
+                "momentum": 10.28
+            },
+            {
+                "symbol": "CCJ",
+                "momentum": 9.86
             },
             {
                 "symbol": "ETN",
-                "momentum": 7.4
+                "momentum": 7.92
             },
             {
                 "symbol": "KO",
-                "momentum": 7.23
-            },
-            {
-                "symbol": "COST",
-                "momentum": 7.1
-            },
-            {
-                "symbol": "NEE",
-                "momentum": 7.09
+                "momentum": 7.86
             },
             {
                 "symbol": "CVX",
-                "momentum": 6.82
+                "momentum": 7.76
+            },
+            {
+                "symbol": "NEE",
+                "momentum": 7.7
+            },
+            {
+                "symbol": "COST",
+                "momentum": 7.5
             },
             {
                 "symbol": "VZ",
-                "momentum": 6.52
+                "momentum": 6.43
             },
             {
                 "symbol": "SPG",
-                "momentum": 6.1
+                "momentum": 5.93
             },
             {
-                "symbol": "CSIQ",
-                "momentum": 6.03
-            },
-            {
-                "symbol": "MDLZ",
-                "momentum": 5.7
-            },
-            {
-                "symbol": "DE",
-                "momentum": 5.45
+                "symbol": "SMFG",
+                "momentum": 5.86
             },
             {
                 "symbol": "BMY",
-                "momentum": 5.29
+                "momentum": 5.52
             },
             {
-                "symbol": "BLK",
-                "momentum": 5.2
-            },
-            {
-                "symbol": "MUFG",
-                "momentum": 4.96
-            },
-            {
-                "symbol": "LI",
-                "momentum": 4.79
-            },
-            {
-                "symbol": "MRK",
-                "momentum": 4.77
+                "symbol": "BA",
+                "momentum": 4.87
             },
             {
                 "symbol": "CL",
-                "momentum": 3.73
+                "momentum": 4.64
+            },
+            {
+                "symbol": "BLK",
+                "momentum": 4.58
+            },
+            {
+                "symbol": "DE",
+                "momentum": 4.48
+            },
+            {
+                "symbol": "MDLZ",
+                "momentum": 4.27
+            },
+            {
+                "symbol": "MRK",
+                "momentum": 4.22
+            },
+            {
+                "symbol": "MUFG",
+                "momentum": 4.14
             },
             {
                 "symbol": "JNJ",
-                "momentum": 3.51
+                "momentum": 3.54
             },
             {
-                "symbol": "LLY",
-                "momentum": 2.17
-            },
-            {
-                "symbol": "DIS",
-                "momentum": 1.99
-            },
-            {
-                "symbol": "SO",
-                "momentum": 0.96
-            },
-            {
-                "symbol": "GM",
-                "momentum": 0.57
-            },
-            {
-                "symbol": "ITOCY",
-                "momentum": 0.55
-            },
-            {
-                "symbol": "JKS",
-                "momentum": 0.35
-            },
-            {
-                "symbol": "GD",
-                "momentum": 0.28
-            },
-            {
-                "symbol": "BABA",
-                "momentum": 0.19
+                "symbol": "VNET",
+                "momentum": 3.49
             },
             {
                 "symbol": "V",
-                "momentum": 0.07
+                "momentum": 1.61
+            },
+            {
+                "symbol": "GM",
+                "momentum": 1.57
+            },
+            {
+                "symbol": "LI",
+                "momentum": 1.56
+            },
+            {
+                "symbol": "USB",
+                "momentum": 1.5
+            },
+            {
+                "symbol": "LLY",
+                "momentum": 1.43
+            },
+            {
+                "symbol": "DIS",
+                "momentum": 1.02
+            },
+            {
+                "symbol": "SO",
+                "momentum": 0.68
             },
             {
                 "symbol": "SVA",
                 "momentum": 0.0
             },
             {
-                "symbol": "USB",
-                "momentum": -0.1
+                "symbol": "GD",
+                "momentum": -0.51
             },
             {
                 "symbol": "PFE",
-                "momentum": -0.12
+                "momentum": -0.78
             },
             {
                 "symbol": "EMR",
-                "momentum": -0.29
+                "momentum": -1.02
             },
             {
-                "symbol": "DUK",
-                "momentum": -1.36
+                "symbol": "ITOCY",
+                "momentum": -1.23
             },
             {
                 "symbol": "JPM",
-                "momentum": -1.57
+                "momentum": -1.41
             },
             {
-                "symbol": "NTES",
-                "momentum": -1.71
+                "symbol": "DUK",
+                "momentum": -1.69
             },
             {
                 "symbol": "HON",
-                "momentum": -1.78
+                "momentum": -2.03
             },
             {
                 "symbol": "BRK-B",
-                "momentum": -2.13
+                "momentum": -2.08
             },
             {
                 "symbol": "META",
-                "momentum": -2.17
-            },
-            {
-                "symbol": "NOAH",
-                "momentum": -2.61
-            },
-            {
-                "symbol": "NTTYY",
-                "momentum": -2.62
-            },
-            {
-                "symbol": "GILD",
-                "momentum": -2.81
-            },
-            {
-                "symbol": "WB",
-                "momentum": -2.98
-            },
-            {
-                "symbol": "PEP",
-                "momentum": -3.3
-            },
-            {
-                "symbol": "AMGN",
-                "momentum": -3.33
-            },
-            {
-                "symbol": "NSANY",
-                "momentum": -3.34
+                "momentum": -2.75
             },
             {
                 "symbol": "UBER",
-                "momentum": -3.44
+                "momentum": -3.11
             },
             {
-                "symbol": "SCHW",
-                "momentum": -3.88
+                "symbol": "BABA",
+                "momentum": -3.4
             },
             {
-                "symbol": "PAYP",
+                "symbol": "PEP",
+                "momentum": -3.43
+            },
+            {
+                "symbol": "NTTYY",
+                "momentum": -3.49
+            },
+            {
+                "symbol": "NOAH",
+                "momentum": -3.92
+            },
+            {
+                "symbol": "JKS",
+                "momentum": -3.93
+            },
+            {
+                "symbol": "AMGN",
                 "momentum": -3.95
             },
             {
-                "symbol": "AMT",
-                "momentum": -4.35
-            },
-            {
-                "symbol": "UPS",
-                "momentum": -4.38
-            },
-            {
                 "symbol": "PG",
-                "momentum": -4.52
+                "momentum": -4.18
             },
             {
                 "symbol": "MSFT",
-                "momentum": -4.58
+                "momentum": -4.34
             },
             {
-                "symbol": "GE",
-                "momentum": -4.75
+                "symbol": "GILD",
+                "momentum": -4.45
             },
             {
                 "symbol": "ABBV",
-                "momentum": -4.86
+                "momentum": -4.98
+            },
+            {
+                "symbol": "UPS",
+                "momentum": -5.06
             },
             {
                 "symbol": "BAC",
                 "momentum": -5.13
             },
             {
-                "symbol": "SONY",
-                "momentum": -5.47
+                "symbol": "NTES",
+                "momentum": -5.37
+            },
+            {
+                "symbol": "SCHW",
+                "momentum": -5.86
             },
             {
                 "symbol": "T",
-                "momentum": -5.92
+                "momentum": -6.16
             },
             {
-                "symbol": "CBAT",
-                "momentum": -6.22
+                "symbol": "BX",
+                "momentum": -6.2
+            },
+            {
+                "symbol": "AMT",
+                "momentum": -6.33
+            },
+            {
+                "symbol": "NSANY",
+                "momentum": -6.53
             },
             {
                 "symbol": "MA",
-                "momentum": -6.72
+                "momentum": -6.59
             },
             {
-                "symbol": "RTX",
-                "momentum": -6.85
-            },
-            {
-                "symbol": "NFLX",
-                "momentum": -6.99
+                "symbol": "GE",
+                "momentum": -6.62
             },
             {
                 "symbol": "LMT",
-                "momentum": -7.01
+                "momentum": -7.19
             },
             {
-                "symbol": "TMUS",
-                "momentum": -7.71
-            },
-            {
-                "symbol": "CEG",
-                "momentum": -8.23
-            },
-            {
-                "symbol": "PDD",
-                "momentum": -8.58
+                "symbol": "CSIQ",
+                "momentum": -7.28
             },
             {
                 "symbol": "PLTR",
-                "momentum": -8.77
+                "momentum": -7.61
             },
             {
                 "symbol": "AXP",
-                "momentum": -8.89
+                "momentum": -7.78
             },
             {
-                "symbol": "ZH",
-                "momentum": -9.93
+                "symbol": "RTX",
+                "momentum": -8.16
             },
             {
-                "symbol": "MMM",
-                "momentum": -10.31
+                "symbol": "WB",
+                "momentum": -8.17
             },
             {
-                "symbol": "CMCSA",
-                "momentum": -10.93
+                "symbol": "SONY",
+                "momentum": -8.53
             },
             {
-                "symbol": "COF",
-                "momentum": -11.13
+                "symbol": "TMUS",
+                "momentum": -8.95
             },
             {
-                "symbol": "LOW",
-                "momentum": -11.71
-            },
-            {
-                "symbol": "MCD",
-                "momentum": -11.71
-            },
-            {
-                "symbol": "ISRG",
-                "momentum": -12.28
-            },
-            {
-                "symbol": "TCEHY",
-                "momentum": -12.87
-            },
-            {
-                "symbol": "ADBE",
-                "momentum": -13.48
+                "symbol": "NFLX",
+                "momentum": -8.98
             },
             {
                 "symbol": "HMC",
-                "momentum": -13.57
+                "momentum": -9.2
+            },
+            {
+                "symbol": "COF",
+                "momentum": -9.48
+            },
+            {
+                "symbol": "CMCSA",
+                "momentum": -9.99
+            },
+            {
+                "symbol": "CEG",
+                "momentum": -10.04
+            },
+            {
+                "symbol": "CBAT",
+                "momentum": -10.53
+            },
+            {
+                "symbol": "LOW",
+                "momentum": -10.78
+            },
+            {
+                "symbol": "ZH",
+                "momentum": -10.84
+            },
+            {
+                "symbol": "PAYP",
+                "momentum": -10.86
+            },
+            {
+                "symbol": "MMM",
+                "momentum": -11.14
+            },
+            {
+                "symbol": "MCD",
+                "momentum": -11.44
             },
             {
                 "symbol": "WFC",
-                "momentum": -13.86
+                "momentum": -12.05
             },
             {
-                "symbol": "BKNG",
-                "momentum": -14.01
+                "symbol": "PDD",
+                "momentum": -12.69
+            },
+            {
+                "symbol": "ADBE",
+                "momentum": -12.7
             },
             {
                 "symbol": "TM",
-                "momentum": -14.18
+                "momentum": -13.29
             },
             {
-                "symbol": "CRM",
-                "momentum": -15.35
+                "symbol": "ISRG",
+                "momentum": -14.13
             },
             {
-                "symbol": "TMO",
-                "momentum": -16.16
-            },
-            {
-                "symbol": "HD",
-                "momentum": -16.22
+                "symbol": "BKNG",
+                "momentum": -14.8
             },
             {
                 "symbol": "INTU",
-                "momentum": -16.43
+                "momentum": -14.82
             },
             {
-                "symbol": "BILI",
-                "momentum": -16.54
+                "symbol": "CRM",
+                "momentum": -14.86
             },
             {
-                "symbol": "LU",
-                "momentum": -17.29
+                "symbol": "HD",
+                "momentum": -15.91
             },
             {
-                "symbol": "IBM",
-                "momentum": -18.21
+                "symbol": "TMO",
+                "momentum": -16.18
+            },
+            {
+                "symbol": "TCEHY",
+                "momentum": -16.47
             },
             {
                 "symbol": "SAP",
-                "momentum": -18.81
+                "momentum": -16.88
+            },
+            {
+                "symbol": "IBM",
+                "momentum": -17.41
             },
             {
                 "symbol": "MDT",
-                "momentum": -18.83
+                "momentum": -17.71
             },
             {
-                "symbol": "DHR",
-                "momentum": -20.85
-            },
-            {
-                "symbol": "NKE",
-                "momentum": -21.58
+                "symbol": "LU",
+                "momentum": -19.49
             },
             {
                 "symbol": "NOW",
-                "momentum": -22.27
+                "momentum": -19.73
             },
             {
-                "symbol": "ABT",
-                "momentum": -25.21
+                "symbol": "DHR",
+                "momentum": -21.65
             },
             {
-                "symbol": "DQ",
-                "momentum": -25.67
+                "symbol": "NKE",
+                "momentum": -23.86
             },
             {
                 "symbol": "ACN",
-                "momentum": -26.22
+                "momentum": -24.22
+            },
+            {
+                "symbol": "ABT",
+                "momentum": -24.63
+            },
+            {
+                "symbol": "BILI",
+                "momentum": -24.9
+            },
+            {
+                "symbol": "DQ",
+                "momentum": -26.77
             }
         ],
         "US_ETFS": [
             {
                 "symbol": "BWET",
-                "momentum": 839.15
+                "momentum": 826.07
             },
             {
                 "symbol": "USD",
-                "momentum": 146.14
+                "momentum": 153.4
             },
             {
                 "symbol": "HYDR",
-                "momentum": 144.53
+                "momentum": 145.12
             },
             {
                 "symbol": "EWY",
-                "momentum": 126.98
+                "momentum": 127.17
             },
             {
                 "symbol": "FLKR",
-                "momentum": 122.32
+                "momentum": 122.01
             },
             {
                 "symbol": "FTXL",
-                "momentum": 115.76
+                "momentum": 113.88
             },
             {
                 "symbol": "PSI",
-                "momentum": 112.78
-            },
-            {
-                "symbol": "SLVR",
-                "momentum": 97.56
+                "momentum": 113.23
             },
             {
                 "symbol": "USO",
-                "momentum": 96.36
+                "momentum": 98.67
             },
             {
                 "symbol": "SOXX",
-                "momentum": 94.2
+                "momentum": 93.99
             },
             {
                 "symbol": "XSD",
-                "momentum": 93.59
+                "momentum": 92.88
+            },
+            {
+                "symbol": "SLVR",
+                "momentum": 90.82
             },
             {
                 "symbol": "SOXQ",
                 "momentum": 90.17
             },
             {
-                "symbol": "SLV",
-                "momentum": 84.98
-            },
-            {
-                "symbol": "REMX",
-                "momentum": 82.31
-            },
-            {
-                "symbol": "SILJ",
-                "momentum": 82.02
-            },
-            {
-                "symbol": "SLVP",
-                "momentum": 81.8
+                "symbol": "UFO",
+                "momentum": 83.1
             },
             {
                 "symbol": "SMH",
-                "momentum": 80.42
-            },
-            {
-                "symbol": "UFO",
-                "momentum": 79.75
+                "momentum": 81.32
             },
             {
                 "symbol": "SHOC",
-                "momentum": 78.46
+                "momentum": 79.83
             },
             {
-                "symbol": "SIL",
-                "momentum": 72.79
+                "symbol": "SLV",
+                "momentum": 76.92
             },
             {
-                "symbol": "BBC",
-                "momentum": 70.85
+                "symbol": "SILJ",
+                "momentum": 75.63
+            },
+            {
+                "symbol": "SLVP",
+                "momentum": 75.16
             },
             {
                 "symbol": "ROM",
-                "momentum": 70.83
+                "momentum": 74.65
             },
             {
                 "symbol": "XTL",
-                "momentum": 70.79
+                "momentum": 73.71
+            },
+            {
+                "symbol": "REMX",
+                "momentum": 70.59
+            },
+            {
+                "symbol": "BBC",
+                "momentum": 69.83
             },
             {
                 "symbol": "AIVC",
-                "momentum": 69.3
-            },
-            {
-                "symbol": "IGPT",
-                "momentum": 68.87
+                "momentum": 68.31
             },
             {
                 "symbol": "TINY",
-                "momentum": 67.34
+                "momentum": 67.37
             },
             {
-                "symbol": "LIT",
-                "momentum": 65.24
+                "symbol": "SIL",
+                "momentum": 67.19
             },
             {
-                "symbol": "PBW",
-                "momentum": 64.87
+                "symbol": "IGPT",
+                "momentum": 66.67
             },
             {
                 "symbol": "PTF",
-                "momentum": 64.4
-            },
-            {
-                "symbol": "COPX",
-                "momentum": 63.59
-            },
-            {
-                "symbol": "CARZ",
-                "momentum": 63.48
+                "momentum": 65.65
             },
             {
                 "symbol": "ROKT",
-                "momentum": 62.14
-            },
-            {
-                "symbol": "XES",
-                "momentum": 61.96
-            },
-            {
-                "symbol": "FLTW",
-                "momentum": 60.52
-            },
-            {
-                "symbol": "CNXT",
-                "momentum": 60.01
-            },
-            {
-                "symbol": "SGDJ",
-                "momentum": 59.55
+                "momentum": 65.13
             },
             {
                 "symbol": "MNRS",
-                "momentum": 59.2
+                "momentum": 64.94
+            },
+            {
+                "symbol": "PBW",
+                "momentum": 63.65
+            },
+            {
+                "symbol": "XES",
+                "momentum": 62.83
+            },
+            {
+                "symbol": "CARZ",
+                "momentum": 61.56
+            },
+            {
+                "symbol": "FLTW",
+                "momentum": 61.3
+            },
+            {
+                "symbol": "LIT",
+                "momentum": 59.77
+            },
+            {
+                "symbol": "COPX",
+                "momentum": 59.58
+            },
+            {
+                "symbol": "SGDJ",
+                "momentum": 57.69
             },
             {
                 "symbol": "EWT",
-                "momentum": 56.4
+                "momentum": 56.56
             },
             {
-                "symbol": "QCLN",
-                "momentum": 55.53
-            },
-            {
-                "symbol": "EET",
-                "momentum": 55.09
+                "symbol": "CNXT",
+                "momentum": 56.27
             },
             {
                 "symbol": "CTEC",
-                "momentum": 54.88
+                "momentum": 55.84
             },
             {
                 "symbol": "OIH",
-                "momentum": 54.72
+                "momentum": 55.26
+            },
+            {
+                "symbol": "QCLN",
+                "momentum": 54.89
             },
             {
                 "symbol": "PXJ",
-                "momentum": 54.52
+                "momentum": 54.61
             },
             {
-                "symbol": "GOEX",
-                "momentum": 52.85
-            },
-            {
-                "symbol": "GDXJ",
-                "momentum": 52.62
-            },
-            {
-                "symbol": "QQQA",
-                "momentum": 52.34
-            },
-            {
-                "symbol": "CTEX",
-                "momentum": 51.72
-            },
-            {
-                "symbol": "KSTR",
-                "momentum": 51.35
-            },
-            {
-                "symbol": "KNCT",
-                "momentum": 51.21
-            },
-            {
-                "symbol": "IEZ",
-                "momentum": 50.51
-            },
-            {
-                "symbol": "QLD",
-                "momentum": 50.17
-            },
-            {
-                "symbol": "AIA",
-                "momentum": 50.05
+                "symbol": "EET",
+                "momentum": 54.56
             },
             {
                 "symbol": "TRFK",
-                "momentum": 49.56
+                "momentum": 52.84
             },
             {
-                "symbol": "PICK",
-                "momentum": 49.36
+                "symbol": "CTEX",
+                "momentum": 52.59
             },
             {
-                "symbol": "XME",
-                "momentum": 49.34
+                "symbol": "QQQA",
+                "momentum": 52.48
             },
             {
-                "symbol": "DTCR",
-                "momentum": 49.33
+                "symbol": "KNCT",
+                "momentum": 52.42
             },
             {
-                "symbol": "DRIV",
-                "momentum": 49.1
+                "symbol": "QLD",
+                "momentum": 51.49
+            },
+            {
+                "symbol": "IEZ",
+                "momentum": 51.01
+            },
+            {
+                "symbol": "AIA",
+                "momentum": 50.02
+            },
+            {
+                "symbol": "GOEX",
+                "momentum": 49.89
             },
             {
                 "symbol": "FPA",
-                "momentum": 48.95
-            },
-            {
-                "symbol": "PSCT",
-                "momentum": 47.92
-            },
-            {
-                "symbol": "RING",
-                "momentum": 47.89
-            },
-            {
-                "symbol": "QTUM",
-                "momentum": 47.58
-            },
-            {
-                "symbol": "PBD",
-                "momentum": 47.36
+                "momentum": 49.52
             },
             {
                 "symbol": "ERX",
-                "momentum": 47.34
+                "momentum": 49.44
+            },
+            {
+                "symbol": "PSCT",
+                "momentum": 49.39
             },
             {
                 "symbol": "DIG",
-                "momentum": 46.74
+                "momentum": 49.24
             },
             {
-                "symbol": "FRDM",
-                "momentum": 46.34
+                "symbol": "GDXJ",
+                "momentum": 48.75
             },
             {
-                "symbol": "VLUE",
-                "momentum": 46.33
+                "symbol": "DTCR",
+                "momentum": 48.27
             },
             {
                 "symbol": "DAPP",
-                "momentum": 45.15
+                "momentum": 48.21
             },
             {
-                "symbol": "PRN",
-                "momentum": 44.72
+                "symbol": "DRIV",
+                "momentum": 48.19
+            },
+            {
+                "symbol": "QTUM",
+                "momentum": 47.89
             },
             {
                 "symbol": "BITQ",
-                "momentum": 44.58
+                "momentum": 47.55
             },
             {
-                "symbol": "GDX",
-                "momentum": 44.48
+                "symbol": "PICK",
+                "momentum": 46.94
             },
             {
-                "symbol": "SBIO",
-                "momentum": 44.44
+                "symbol": "PBD",
+                "momentum": 46.9
             },
             {
-                "symbol": "QQQS",
-                "momentum": 44.03
+                "symbol": "XME",
+                "momentum": 46.77
             },
             {
-                "symbol": "SGDM",
-                "momentum": 43.77
+                "symbol": "VLUE",
+                "momentum": 46.61
+            },
+            {
+                "symbol": "FRDM",
+                "momentum": 46.4
+            },
+            {
+                "symbol": "KSTR",
+                "momentum": 46.33
+            },
+            {
+                "symbol": "PRN",
+                "momentum": 45.47
             },
             {
                 "symbol": "IBLC",
-                "momentum": 43.6
+                "momentum": 44.83
             },
             {
-                "symbol": "CSD",
-                "momentum": 43.37
+                "symbol": "RING",
+                "momentum": 44.4
             },
             {
-                "symbol": "URA",
-                "momentum": 42.82
+                "symbol": "SBIO",
+                "momentum": 44.24
             },
             {
-                "symbol": "BIB",
-                "momentum": 42.25
-            },
-            {
-                "symbol": "SLX",
-                "momentum": 42.08
-            },
-            {
-                "symbol": "NXTG",
-                "momentum": 41.84
-            },
-            {
-                "symbol": "EPU",
-                "momentum": 41.67
-            },
-            {
-                "symbol": "FRNW",
-                "momentum": 41.64
-            },
-            {
-                "symbol": "TAN",
-                "momentum": 41.63
+                "symbol": "QQQS",
+                "momentum": 43.4
             },
             {
                 "symbol": "UWM",
-                "momentum": 41.54
+                "momentum": 43.38
             },
             {
-                "symbol": "AUMI",
-                "momentum": 41.39
+                "symbol": "CSD",
+                "momentum": 42.88
             },
             {
-                "symbol": "PDBC",
-                "momentum": 41.2
+                "symbol": "NXTG",
+                "momentum": 42.87
             },
             {
-                "symbol": "CNRG",
-                "momentum": 40.97
+                "symbol": "TAN",
+                "momentum": 42.51
             },
             {
-                "symbol": "ICLN",
-                "momentum": 40.85
-            },
-            {
-                "symbol": "PSCE",
-                "momentum": 40.07
-            },
-            {
-                "symbol": "KEMX",
-                "momentum": 39.69
-            },
-            {
-                "symbol": "EMXC",
-                "momentum": 39.37
-            },
-            {
-                "symbol": "PIE",
-                "momentum": 38.73
-            },
-            {
-                "symbol": "AIRR",
-                "momentum": 38.65
+                "symbol": "BIB",
+                "momentum": 42.39
             },
             {
                 "symbol": "STCE",
-                "momentum": 38.14
+                "momentum": 42.25
             },
             {
-                "symbol": "KARS",
-                "momentum": 37.51
+                "symbol": "CNRG",
+                "momentum": 42.23
+            },
+            {
+                "symbol": "SLX",
+                "momentum": 42.2
+            },
+            {
+                "symbol": "ICLN",
+                "momentum": 41.83
+            },
+            {
+                "symbol": "FRNW",
+                "momentum": 41.78
+            },
+            {
+                "symbol": "SGDM",
+                "momentum": 41.42
+            },
+            {
+                "symbol": "KEMX",
+                "momentum": 40.98
+            },
+            {
+                "symbol": "EPU",
+                "momentum": 40.95
+            },
+            {
+                "symbol": "PSCE",
+                "momentum": 40.94
+            },
+            {
+                "symbol": "GDX",
+                "momentum": 40.8
+            },
+            {
+                "symbol": "PDBC",
+                "momentum": 40.72
+            },
+            {
+                "symbol": "EMXC",
+                "momentum": 40.49
+            },
+            {
+                "symbol": "AIRR",
+                "momentum": 39.99
+            },
+            {
+                "symbol": "URA",
+                "momentum": 39.82
             },
             {
                 "symbol": "IXN",
-                "momentum": 37.48
+                "momentum": 39.06
             },
             {
-                "symbol": "FAN",
-                "momentum": 37.3
+                "symbol": "PIE",
+                "momentum": 38.88
             },
             {
-                "symbol": "BOAT",
-                "momentum": 37.18
+                "symbol": "AUMI",
+                "momentum": 38.57
             },
             {
                 "symbol": "THNQ",
-                "momentum": 36.96
+                "momentum": 36.71
             },
             {
-                "symbol": "IBRN",
-                "momentum": 35.73
+                "symbol": "FNGG",
+                "momentum": 36.5
             },
             {
                 "symbol": "XNTK",
-                "momentum": 35.68
+                "momentum": 36.49
+            },
+            {
+                "symbol": "FAN",
+                "momentum": 36.4
+            },
+            {
+                "symbol": "XLK",
+                "momentum": 35.97
             },
             {
                 "symbol": "XBI",
                 "momentum": 35.22
             },
             {
-                "symbol": "FNGG",
-                "momentum": 34.76
+                "symbol": "BOAT",
+                "momentum": 35.18
             },
             {
-                "symbol": "ASHS",
-                "momentum": 34.68
+                "symbol": "IBRN",
+                "momentum": 35.18
             },
             {
-                "symbol": "XLK",
-                "momentum": 34.4
-            },
-            {
-                "symbol": "PSCM",
-                "momentum": 34.39
-            },
-            {
-                "symbol": "EIS",
-                "momentum": 33.83
-            },
-            {
-                "symbol": "AGEM",
-                "momentum": 33.59
+                "symbol": "KARS",
+                "momentum": 33.96
             },
             {
                 "symbol": "SPHB",
-                "momentum": 33.38
+                "momentum": 33.87
+            },
+            {
+                "symbol": "EIS",
+                "momentum": 33.58
+            },
+            {
+                "symbol": "PSCM",
+                "momentum": 33.18
             },
             {
                 "symbol": "CRAK",
-                "momentum": 33.22
+                "momentum": 32.8
+            },
+            {
+                "symbol": "AGEM",
+                "momentum": 32.65
             },
             {
                 "symbol": "GRID",
-                "momentum": 32.87
+                "momentum": 32.65
             },
             {
                 "symbol": "FDTS",
-                "momentum": 31.64
-            },
-            {
-                "symbol": "AAXJ",
-                "momentum": 30.5
+                "momentum": 32.25
             },
             {
                 "symbol": "SPUU",
-                "momentum": 30.03
+                "momentum": 31.87
             },
             {
                 "symbol": "SSO",
-                "momentum": 29.62
-            },
-            {
-                "symbol": "UGL",
-                "momentum": 29.2
-            },
-            {
-                "symbol": "LOUP",
-                "momentum": 29.17
-            },
-            {
-                "symbol": "URNM",
-                "momentum": 28.76
-            },
-            {
-                "symbol": "SAA",
-                "momentum": 28.5
+                "momentum": 31.51
             },
             {
                 "symbol": "VNAM",
-                "momentum": 27.83
+                "momentum": 31.11
             },
             {
-                "symbol": "QQQ",
-                "momentum": 25.37
+                "symbol": "ASHS",
+                "momentum": 31.08
             },
             {
-                "symbol": "UYM",
-                "momentum": 25.29
+                "symbol": "AAXJ",
+                "momentum": 30.19
+            },
+            {
+                "symbol": "LOUP",
+                "momentum": 30.17
+            },
+            {
+                "symbol": "SAA",
+                "momentum": 29.97
+            },
+            {
+                "symbol": "UGL",
+                "momentum": 28.53
             },
             {
                 "symbol": "UBR",
-                "momentum": 25.22
+                "momentum": 28.47
+            },
+            {
+                "symbol": "URNM",
+                "momentum": 26.25
+            },
+            {
+                "symbol": "QQQ",
+                "momentum": 25.9
             },
             {
                 "symbol": "XLE",
-                "momentum": 24.43
+                "momentum": 25.42
+            },
+            {
+                "symbol": "UYM",
+                "momentum": 23.78
             },
             {
                 "symbol": "UXI",
-                "momentum": 22.84
+                "momentum": 23.69
             },
             {
                 "symbol": "MVV",
-                "momentum": 22.36
-            },
-            {
-                "symbol": "NLR",
-                "momentum": 21.98
+                "momentum": 23.14
             },
             {
                 "symbol": "IWM",
-                "momentum": 21.9
+                "momentum": 22.6
+            },
+            {
+                "symbol": "NLR",
+                "momentum": 19.64
             },
             {
                 "symbol": "BOTZ",
-                "momentum": 21.23
-            },
-            {
-                "symbol": "EFO",
-                "momentum": 18.73
+                "momentum": 19.3
             },
             {
                 "symbol": "VEA",
-                "momentum": 18.49
-            },
-            {
-                "symbol": "IAU",
-                "momentum": 17.95
-            },
-            {
-                "symbol": "PHYS",
-                "momentum": 17.72
+                "momentum": 18.43
             },
             {
                 "symbol": "VUG",
-                "momentum": 17.17
+                "momentum": 18.35
             },
             {
-                "symbol": "IBB",
-                "momentum": 17.13
+                "symbol": "EFO",
+                "momentum": 18.35
             },
             {
-                "symbol": "EWJ",
-                "momentum": 16.48
+                "symbol": "PHYS",
+                "momentum": 17.4
+            },
+            {
+                "symbol": "IAU",
+                "momentum": 17.36
             },
             {
                 "symbol": "VIOV",
-                "momentum": 16.38
+                "momentum": 17.07
             },
             {
                 "symbol": "VOO",
-                "momentum": 16.13
+                "momentum": 16.96
             },
             {
-                "symbol": "VIOG",
-                "momentum": 15.9
+                "symbol": "IBB",
+                "momentum": 16.94
             },
             {
                 "symbol": "VTI",
-                "momentum": 15.9
+                "momentum": 16.66
             },
             {
-                "symbol": "UPV",
-                "momentum": 15.23
-            },
-            {
-                "symbol": "VWO",
-                "momentum": 15.09
-            },
-            {
-                "symbol": "SRVR",
-                "momentum": 14.61
-            },
-            {
-                "symbol": "XLB",
-                "momentum": 14.48
+                "symbol": "VIOG",
+                "momentum": 16.58
             },
             {
                 "symbol": "DDM",
-                "momentum": 13.96
+                "momentum": 15.82
             },
             {
-                "symbol": "MJ",
-                "momentum": 13.54
+                "symbol": "EWJ",
+                "momentum": 15.52
+            },
+            {
+                "symbol": "UPV",
+                "momentum": 15.24
+            },
+            {
+                "symbol": "VWO",
+                "momentum": 14.78
             },
             {
                 "symbol": "XLI",
-                "momentum": 13.42
+                "momentum": 13.93
+            },
+            {
+                "symbol": "SRVR",
+                "momentum": 13.88
+            },
+            {
+                "symbol": "XLB",
+                "momentum": 13.71
             },
             {
                 "symbol": "VTV",
-                "momentum": 13.21
+                "momentum": 13.61
+            },
+            {
+                "symbol": "MJ",
+                "momentum": 13.47
             },
             {
                 "symbol": "LTL",
-                "momentum": 12.82
-            },
-            {
-                "symbol": "DBA",
-                "momentum": 11.26
-            },
-            {
-                "symbol": "VGK",
-                "momentum": 10.0
-            },
-            {
-                "symbol": "DIA",
-                "momentum": 8.95
+                "momentum": 13.03
             },
             {
                 "symbol": "CIBR",
-                "momentum": 8.83
+                "momentum": 11.62
             },
             {
-                "symbol": "VNQ",
-                "momentum": 8.6
+                "symbol": "VGK",
+                "momentum": 9.95
+            },
+            {
+                "symbol": "DIA",
+                "momentum": 9.8
+            },
+            {
+                "symbol": "DBA",
+                "momentum": 9.74
             },
             {
                 "symbol": "XLC",
-                "momentum": 8.58
-            },
-            {
-                "symbol": "XLRE",
-                "momentum": 8.34
-            },
-            {
-                "symbol": "KRE",
-                "momentum": 7.61
+                "momentum": 8.72
             },
             {
                 "symbol": "HACK",
-                "momentum": 6.36
+                "momentum": 8.63
+            },
+            {
+                "symbol": "KRE",
+                "momentum": 8.49
+            },
+            {
+                "symbol": "VNQ",
+                "momentum": 7.84
+            },
+            {
+                "symbol": "XLRE",
+                "momentum": 7.43
             },
             {
                 "symbol": "UPW",
-                "momentum": 6.01
-            },
-            {
-                "symbol": "XLU",
-                "momentum": 5.63
-            },
-            {
-                "symbol": "XLY",
-                "momentum": 5.62
-            },
-            {
-                "symbol": "UCC",
-                "momentum": 5.22
+                "momentum": 6.16
             },
             {
                 "symbol": "XLP",
-                "momentum": 5.19
+                "momentum": 5.6
+            },
+            {
+                "symbol": "XLU",
+                "momentum": 5.45
+            },
+            {
+                "symbol": "XLY",
+                "momentum": 5.41
+            },
+            {
+                "symbol": "UCC",
+                "momentum": 5.12
             },
             {
                 "symbol": "UTES",
-                "momentum": 3.52
+                "momentum": 3.1
             },
             {
                 "symbol": "TIP",
-                "momentum": 2.4
-            },
-            {
-                "symbol": "BIL",
-                "momentum": 2.18
-            },
-            {
-                "symbol": "MCHI",
-                "momentum": 1.91
+                "momentum": 2.29
             },
             {
                 "symbol": "XLV",
-                "momentum": 1.7
+                "momentum": 2.22
+            },
+            {
+                "symbol": "BIL",
+                "momentum": 2.19
             },
             {
                 "symbol": "BND",
-                "momentum": 1.63
+                "momentum": 1.62
             },
             {
                 "symbol": "IEF",
-                "momentum": 0.87
-            },
-            {
-                "symbol": "CLOU",
-                "momentum": 0.59
+                "momentum": 0.81
             },
             {
                 "symbol": "XLF",
-                "momentum": -0.47
+                "momentum": 0.23
+            },
+            {
+                "symbol": "CLOU",
+                "momentum": -0.41
             },
             {
                 "symbol": "TLT",
-                "momentum": -1.04
+                "momentum": -0.85
+            },
+            {
+                "symbol": "MCHI",
+                "momentum": -1.43
             },
             {
                 "symbol": "XHB",
-                "momentum": -7.28
+                "momentum": -5.91
             },
             {
                 "symbol": "WCLD",
-                "momentum": -15.41
+                "momentum": -14.93
             }
         ],
         "CRYPTOCURRENCY": [
             {
                 "symbol": "LUNC-USD",
-                "momentum": 80.23
+                "momentum": 64.93
             },
             {
                 "symbol": "ZEC-USD",
-                "momentum": 64.06
+                "momentum": 55.07
             },
             {
                 "symbol": "ONDO-USD",
-                "momentum": 48.82
+                "momentum": 39.37
             },
             {
                 "symbol": "AR-USD",
-                "momentum": 23.56
+                "momentum": 15.89
             },
             {
                 "symbol": "TON-USD",
-                "momentum": 18.66
-            },
-            {
-                "symbol": "RENDER-USD",
-                "momentum": 16.48
-            },
-            {
-                "symbol": "DOGE-USD",
-                "momentum": 15.34
-            },
-            {
-                "symbol": "LINK-USD",
-                "momentum": 14.55
+                "momentum": 15.66
             },
             {
                 "symbol": "TRX-USD",
-                "momentum": 13.83
+                "momentum": 13.59
             },
             {
-                "symbol": "XMR-USD",
-                "momentum": 9.92
+                "symbol": "LINK-USD",
+                "momentum": 12.45
             },
             {
-                "symbol": "BTC-USD",
-                "momentum": 9.43
+                "symbol": "RENDER-USD",
+                "momentum": 11.34
+            },
+            {
+                "symbol": "DOGE-USD",
+                "momentum": 9.51
             },
             {
                 "symbol": "BNB-USD",
-                "momentum": 9.13
+                "momentum": 9.23
+            },
+            {
+                "symbol": "XMR-USD",
+                "momentum": 9.17
+            },
+            {
+                "symbol": "BTC-USD",
+                "momentum": 8.7
             },
             {
                 "symbol": "SOL-USD",
-                "momentum": 8.79
+                "momentum": 6.23
             },
             {
                 "symbol": "DOT-USD",
-                "momentum": 7.91
+                "momentum": 6.01
             },
             {
                 "symbol": "LEO-USD",
-                "momentum": 6.26
+                "momentum": 5.5
             },
             {
                 "symbol": "AVAX-USD",
-                "momentum": 5.67
-            },
-            {
-                "symbol": "ADA-USD",
-                "momentum": 5.09
-            },
-            {
-                "symbol": "SHIB-USD",
-                "momentum": 4.5
+                "momentum": 4.23
             },
             {
                 "symbol": "LTC-USD",
-                "momentum": 4.08
-            },
-            {
-                "symbol": "XRP-USD",
-                "momentum": 4.04
-            },
-            {
-                "symbol": "HBAR-USD",
-                "momentum": 3.28
-            },
-            {
-                "symbol": "ETH-USD",
-                "momentum": 2.85
+                "momentum": 4.12
             },
             {
                 "symbol": "CRO-USD",
-                "momentum": 2.22
+                "momentum": 4.03
             },
             {
-                "symbol": "SUI-USD",
-                "momentum": 0.0
+                "symbol": "XRP-USD",
+                "momentum": 2.87
+            },
+            {
+                "symbol": "ADA-USD",
+                "momentum": 2.13
+            },
+            {
+                "symbol": "HBAR-USD",
+                "momentum": 1.75
+            },
+            {
+                "symbol": "ETH-USD",
+                "momentum": 0.58
             },
             {
                 "symbol": "HYPE-USD",
+                "momentum": 0.0
+            },
+            {
+                "symbol": "SUI-USD",
                 "momentum": 0.0
             },
             {
@@ -3017,24 +3053,28 @@
                 "momentum": 0.0
             },
             {
-                "symbol": "XLM-USD",
-                "momentum": -0.06
+                "symbol": "SHIB-USD",
+                "momentum": -0.48
             },
             {
                 "symbol": "M-USD",
-                "momentum": -0.91
+                "momentum": -0.87
+            },
+            {
+                "symbol": "XLM-USD",
+                "momentum": -2.53
             },
             {
                 "symbol": "XAUT-USD",
-                "momentum": -2.6
+                "momentum": -4.53
             },
             {
                 "symbol": "PAXG-USD",
-                "momentum": -2.9
+                "momentum": -4.79
             },
             {
                 "symbol": "BCH-USD",
-                "momentum": -8.47
+                "momentum": -9.28
             }
         ]
     }
