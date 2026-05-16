@@ -1,5 +1,5 @@
 {
-    "update_time": "2026-05-16 15:00:24",
+    "update_time": "2026-05-16 15:41:46",
     "history": {
         "2025-06": {
             "TW_STOCKS_0050": [
@@ -19,15 +19,15 @@
             "TW_ETFS": [
                 {
                     "symbol": "00676R.TW",
-                    "momentum": 313.12
+                    "momentum": 156.39
                 },
                 {
-                    "symbol": "00632R.TW",
-                    "momentum": 177.91
+                    "symbol": "00965.TW",
+                    "momentum": 19.67
                 },
                 {
                     "symbol": "00708L.TW",
-                    "momentum": 37.67
+                    "momentum": 14.96
                 }
             ],
             "US_STOCKS_SP100": [
@@ -46,16 +46,16 @@
             ],
             "US_ETFS": [
                 {
-                    "symbol": "AUMI",
-                    "momentum": 51.98
-                },
-                {
-                    "symbol": "SGDM",
-                    "momentum": 51.19
-                },
-                {
                     "symbol": "URA",
-                    "momentum": 50.26
+                    "momentum": 44.77
+                },
+                {
+                    "symbol": "USD",
+                    "momentum": 43.47
+                },
+                {
+                    "symbol": "DAPP",
+                    "momentum": 39.16
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -70,6 +70,48 @@
                 {
                     "symbol": "M-USD",
                     "momentum": 10.51
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "00676R.TW",
+                    "momentum": 156.39
+                },
+                {
+                    "symbol": "HOOD",
+                    "momentum": 104.97
+                },
+                {
+                    "symbol": "6919.TW",
+                    "momentum": 84.52
+                },
+                {
+                    "symbol": "CRDO",
+                    "momentum": 70.53
+                },
+                {
+                    "symbol": "COIN",
+                    "momentum": 61.37
+                },
+                {
+                    "symbol": "STX",
+                    "momentum": 54.71
+                },
+                {
+                    "symbol": "ATEYY",
+                    "momentum": 50.45
+                },
+                {
+                    "symbol": "CCJ",
+                    "momentum": 49.62
+                },
+                {
+                    "symbol": "NRG",
+                    "momentum": 48.7
+                },
+                {
+                    "symbol": "PLTR",
+                    "momentum": 48.22
                 }
             ]
         },
@@ -91,15 +133,15 @@
             "TW_ETFS": [
                 {
                     "symbol": "00676R.TW",
-                    "momentum": 283.74
+                    "momentum": 144.94
                 },
                 {
-                    "symbol": "00632R.TW",
-                    "momentum": 153.78
+                    "symbol": "00965.TW",
+                    "momentum": 21.59
                 },
                 {
                     "symbol": "00650L.TW",
-                    "momentum": 39.3
+                    "momentum": 19.72
                 }
             ],
             "US_STOCKS_SP100": [
@@ -119,15 +161,15 @@
             "US_ETFS": [
                 {
                     "symbol": "USD",
-                    "momentum": 66.98
+                    "momentum": 60.54
+                },
+                {
+                    "symbol": "ETHA",
+                    "momentum": 56.97
                 },
                 {
                     "symbol": "URA",
-                    "momentum": 44.67
-                },
-                {
-                    "symbol": "ARKX",
-                    "momentum": 43.49
+                    "momentum": 32.18
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -142,6 +184,48 @@
                 {
                     "symbol": "CRO-USD",
                     "momentum": 47.78
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "00676R.TW",
+                    "momentum": 144.94
+                },
+                {
+                    "symbol": "TON-USD",
+                    "momentum": 138.84
+                },
+                {
+                    "symbol": "BE",
+                    "momentum": 84.99
+                },
+                {
+                    "symbol": "HOOD",
+                    "momentum": 74.02
+                },
+                {
+                    "symbol": "CRDO",
+                    "momentum": 72.6
+                },
+                {
+                    "symbol": "SMCI",
+                    "momentum": 68.88
+                },
+                {
+                    "symbol": "2383.TW",
+                    "momentum": 61.2
+                },
+                {
+                    "symbol": "2368.TW",
+                    "momentum": 60.59
+                },
+                {
+                    "symbol": "USD",
+                    "momentum": 60.54
+                },
+                {
+                    "symbol": "GEV",
+                    "momentum": 58.17
                 }
             ]
         },
@@ -162,16 +246,16 @@
             ],
             "TW_ETFS": [
                 {
-                    "symbol": "00632R.TW",
-                    "momentum": 148.54
-                },
-                {
-                    "symbol": "00676R.TW",
-                    "momentum": 125.07
+                    "symbol": "00885.TW",
+                    "momentum": 29.11
                 },
                 {
                     "symbol": "00910.TW",
-                    "momentum": 46.8
+                    "momentum": 27.58
+                },
+                {
+                    "symbol": "00655L.TW",
+                    "momentum": 27.14
                 }
             ],
             "US_STOCKS_SP100": [
@@ -190,16 +274,16 @@
             ],
             "US_ETFS": [
                 {
+                    "symbol": "MJ",
+                    "momentum": 86.94
+                },
+                {
                     "symbol": "ETHA",
-                    "momentum": 82.12
+                    "momentum": 65.84
                 },
                 {
                     "symbol": "REMX",
-                    "momentum": 65.46
-                },
-                {
-                    "symbol": "MJ",
-                    "momentum": 61.58
+                    "momentum": 54.01
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -214,6 +298,48 @@
                 {
                     "symbol": "ETH-USD",
                     "momentum": 30.79
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "SATS",
+                    "momentum": 155.94
+                },
+                {
+                    "symbol": "CRO-USD",
+                    "momentum": 133.89
+                },
+                {
+                    "symbol": "BE",
+                    "momentum": 122.33
+                },
+                {
+                    "symbol": "6919.TW",
+                    "momentum": 99.76
+                },
+                {
+                    "symbol": "2368.TW",
+                    "momentum": 89.84
+                },
+                {
+                    "symbol": "MJ",
+                    "momentum": 86.94
+                },
+                {
+                    "symbol": "SFTBY",
+                    "momentum": 83.97
+                },
+                {
+                    "symbol": "CRDO",
+                    "momentum": 79.12
+                },
+                {
+                    "symbol": "AXTI",
+                    "momentum": 74.28
+                },
+                {
+                    "symbol": "2308.TW",
+                    "momentum": 71.33
                 }
             ]
         },
@@ -234,16 +360,16 @@
             ],
             "TW_ETFS": [
                 {
-                    "symbol": "00632R.TW",
-                    "momentum": 134.12
-                },
-                {
-                    "symbol": "00676R.TW",
-                    "momentum": 112.49
+                    "symbol": "00902.TW",
+                    "momentum": 37.05
                 },
                 {
                     "symbol": "00909.TW",
-                    "momentum": 51.96
+                    "momentum": 36.99
+                },
+                {
+                    "symbol": "00685L.TW",
+                    "momentum": 33.16
                 }
             ],
             "US_STOCKS_SP100": [
@@ -262,16 +388,16 @@
             ],
             "US_ETFS": [
                 {
-                    "symbol": "STCE",
-                    "momentum": 104.47
+                    "symbol": "USD",
+                    "momentum": 80.91
                 },
                 {
                     "symbol": "MNRS",
-                    "momentum": 98.13
+                    "momentum": 76.87
                 },
                 {
-                    "symbol": "USD",
-                    "momentum": 97.09
+                    "symbol": "STCE",
+                    "momentum": 73.3
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -286,6 +412,48 @@
                 {
                     "symbol": "AVAX-USD",
                     "momentum": 30.01
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "BE",
+                    "momentum": 223.96
+                },
+                {
+                    "symbol": "SNDK",
+                    "momentum": 149.97
+                },
+                {
+                    "symbol": "SATS",
+                    "momentum": 136.61
+                },
+                {
+                    "symbol": "AXTI",
+                    "momentum": 131.24
+                },
+                {
+                    "symbol": "WDC",
+                    "momentum": 128.33
+                },
+                {
+                    "symbol": "CRDO",
+                    "momentum": 124.44
+                },
+                {
+                    "symbol": "HOOD",
+                    "momentum": 119.33
+                },
+                {
+                    "symbol": "APP",
+                    "momentum": 112.75
+                },
+                {
+                    "symbol": "STX",
+                    "momentum": 110.04
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 101.75
                 }
             ]
         },
@@ -307,15 +475,15 @@
             "TW_ETFS": [
                 {
                     "symbol": "00673R.TW",
-                    "momentum": 281.74
+                    "momentum": 300.67
                 },
                 {
                     "symbol": "00706L.TW",
-                    "momentum": 254.39
+                    "momentum": 258.39
                 },
                 {
-                    "symbol": "00632R.TW",
-                    "momentum": 119.67
+                    "symbol": "00631L.TW",
+                    "momentum": 54.64
                 }
             ],
             "US_STOCKS_SP100": [
@@ -335,15 +503,15 @@
             "US_ETFS": [
                 {
                     "symbol": "HYDR",
-                    "momentum": 122.19
+                    "momentum": 92.27
                 },
                 {
                     "symbol": "MNRS",
-                    "momentum": 121.54
+                    "momentum": 86.02
                 },
                 {
-                    "symbol": "STCE",
-                    "momentum": 120.41
+                    "symbol": "USD",
+                    "momentum": 84.83
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -358,6 +526,48 @@
                 {
                     "symbol": "BNB-USD",
                     "momentum": 18.51
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "ZEC-USD",
+                    "momentum": 456.63
+                },
+                {
+                    "symbol": "BE",
+                    "momentum": 336.78
+                },
+                {
+                    "symbol": "SNDK",
+                    "momentum": 308.77
+                },
+                {
+                    "symbol": "00673R.TW",
+                    "momentum": 300.67
+                },
+                {
+                    "symbol": "AXTI",
+                    "momentum": 282.64
+                },
+                {
+                    "symbol": "00706L.TW",
+                    "momentum": 258.39
+                },
+                {
+                    "symbol": "2408.TW",
+                    "momentum": 180.99
+                },
+                {
+                    "symbol": "2344.TW",
+                    "momentum": 170.85
+                },
+                {
+                    "symbol": "ATEYY",
+                    "momentum": 136.63
+                },
+                {
+                    "symbol": "SFTBY",
+                    "momentum": 134.88
                 }
             ]
         },
@@ -379,15 +589,15 @@
             "TW_ETFS": [
                 {
                     "symbol": "00673R.TW",
-                    "momentum": 291.41
+                    "momentum": 201.26
                 },
                 {
                     "symbol": "00706L.TW",
-                    "momentum": 233.52
+                    "momentum": 155.8
                 },
                 {
-                    "symbol": "00632R.TW",
-                    "momentum": 121.39
+                    "symbol": "00902.TW",
+                    "momentum": 36.52
                 }
             ],
             "US_STOCKS_SP100": [
@@ -407,15 +617,15 @@
             "US_ETFS": [
                 {
                     "symbol": "AGQ",
-                    "momentum": 136.08
+                    "momentum": 87.63
                 },
                 {
                     "symbol": "BWET",
-                    "momentum": 106.23
+                    "momentum": 80.78
                 },
                 {
-                    "symbol": "SLVP",
-                    "momentum": 93.33
+                    "symbol": "BBC",
+                    "momentum": 58.81
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -430,6 +640,48 @@
                 {
                     "symbol": "PAXG-USD",
                     "momentum": 10.25
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "ZEC-USD",
+                    "momentum": 307.86
+                },
+                {
+                    "symbol": "AXTI",
+                    "momentum": 274.02
+                },
+                {
+                    "symbol": "SNDK",
+                    "momentum": 271.8
+                },
+                {
+                    "symbol": "00673R.TW",
+                    "momentum": 201.26
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 174.97
+                },
+                {
+                    "symbol": "BE",
+                    "momentum": 174.74
+                },
+                {
+                    "symbol": "00706L.TW",
+                    "momentum": 155.8
+                },
+                {
+                    "symbol": "2408.TW",
+                    "momentum": 146.97
+                },
+                {
+                    "symbol": "2344.TW",
+                    "momentum": 146.68
+                },
+                {
+                    "symbol": "SATS",
+                    "momentum": 123.44
                 }
             ]
         },
@@ -451,15 +703,15 @@
             "TW_ETFS": [
                 {
                     "symbol": "00673R.TW",
-                    "momentum": 315.54
+                    "momentum": 219.53
                 },
                 {
                     "symbol": "00706L.TW",
-                    "momentum": 244.11
+                    "momentum": 158.24
                 },
                 {
-                    "symbol": "00676R.TW",
-                    "momentum": 101.52
+                    "symbol": "00738U.TW",
+                    "momentum": 56.26
                 }
             ],
             "US_STOCKS_SP100": [
@@ -479,15 +731,15 @@
             "US_ETFS": [
                 {
                     "symbol": "AGQ",
-                    "momentum": 226.23
+                    "momentum": 118.85
                 },
                 {
-                    "symbol": "SLVP",
-                    "momentum": 108.13
+                    "symbol": "SIVR",
+                    "momentum": 55.6
                 },
                 {
-                    "symbol": "SILJ",
-                    "momentum": 97.85
+                    "symbol": "SLV",
+                    "momentum": 55.46
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -502,6 +754,48 @@
                 {
                     "symbol": "LUNC-USD",
                     "momentum": 13.26
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "AXTI",
+                    "momentum": 321.14
+                },
+                {
+                    "symbol": "00673R.TW",
+                    "momentum": 219.53
+                },
+                {
+                    "symbol": "SNDK",
+                    "momentum": 171.88
+                },
+                {
+                    "symbol": "2344.TW",
+                    "momentum": 168.06
+                },
+                {
+                    "symbol": "00706L.TW",
+                    "momentum": 158.24
+                },
+                {
+                    "symbol": "2408.TW",
+                    "momentum": 156.53
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 143.49
+                },
+                {
+                    "symbol": "ZEC-USD",
+                    "momentum": 125.49
+                },
+                {
+                    "symbol": "AGQ",
+                    "momentum": 118.85
+                },
+                {
+                    "symbol": "SATS",
+                    "momentum": 111.04
                 }
             ]
         },
@@ -522,16 +816,16 @@
             ],
             "TW_ETFS": [
                 {
-                    "symbol": "00673R.TW",
-                    "momentum": 188.57
-                },
-                {
                     "symbol": "00738U.TW",
-                    "momentum": 183.33
+                    "momentum": 125.05
                 },
                 {
-                    "symbol": "00706L.TW",
-                    "momentum": 172.88
+                    "symbol": "00673R.TW",
+                    "momentum": 92.78
+                },
+                {
+                    "symbol": "00715L.TW",
+                    "momentum": 90.81
                 }
             ],
             "US_STOCKS_SP100": [
@@ -550,16 +844,16 @@
             ],
             "US_ETFS": [
                 {
-                    "symbol": "AGQ",
-                    "momentum": 205.26
-                },
-                {
                     "symbol": "BWET",
-                    "momentum": 175.94
+                    "momentum": 136.55
                 },
                 {
-                    "symbol": "SLVR",
-                    "momentum": 121.81
+                    "symbol": "AGQ",
+                    "momentum": 108.18
+                },
+                {
+                    "symbol": "SIVR",
+                    "momentum": 70.23
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -574,6 +868,48 @@
                 {
                     "symbol": "XMR-USD",
                     "momentum": 7.74
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "SNDK",
+                    "momentum": 529.14
+                },
+                {
+                    "symbol": "AXTI",
+                    "momentum": 308.43
+                },
+                {
+                    "symbol": "2408.TW",
+                    "momentum": 287.29
+                },
+                {
+                    "symbol": "2344.TW",
+                    "momentum": 277.76
+                },
+                {
+                    "symbol": "MU",
+                    "momentum": 138.74
+                },
+                {
+                    "symbol": "BWET",
+                    "momentum": 136.55
+                },
+                {
+                    "symbol": "BE",
+                    "momentum": 136.02
+                },
+                {
+                    "symbol": "SATS",
+                    "momentum": 128.46
+                },
+                {
+                    "symbol": "00738U.TW",
+                    "momentum": 125.05
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 117.77
                 }
             ]
         },
@@ -594,16 +930,16 @@
             ],
             "TW_ETFS": [
                 {
+                    "symbol": "00715L.TW",
+                    "momentum": 101.65
+                },
+                {
                     "symbol": "00673R.TW",
-                    "momentum": 163.38
+                    "momentum": 83.79
                 },
                 {
                     "symbol": "00706L.TW",
-                    "momentum": 157.2
-                },
-                {
-                    "symbol": "00715L.TW",
-                    "momentum": 132.24
+                    "momentum": 78.81
                 }
             ],
             "US_STOCKS_SP100": [
@@ -623,15 +959,15 @@
             "US_ETFS": [
                 {
                     "symbol": "BWET",
-                    "momentum": 312.46
+                    "momentum": 189.64
                 },
                 {
                     "symbol": "AGQ",
-                    "momentum": 238.55
+                    "momentum": 86.97
                 },
                 {
                     "symbol": "SLVR",
-                    "momentum": 171.79
+                    "momentum": 73.9
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -646,6 +982,48 @@
                 {
                     "symbol": "XAUT-USD",
                     "momentum": 9.81
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "AXTI",
+                    "momentum": 530.83
+                },
+                {
+                    "symbol": "SNDK",
+                    "momentum": 437.76
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 209.02
+                },
+                {
+                    "symbol": "2344.TW",
+                    "momentum": 202.96
+                },
+                {
+                    "symbol": "2408.TW",
+                    "momentum": 200.79
+                },
+                {
+                    "symbol": "BWET",
+                    "momentum": 189.64
+                },
+                {
+                    "symbol": "CIEN",
+                    "momentum": 126.46
+                },
+                {
+                    "symbol": "WDC",
+                    "momentum": 106.89
+                },
+                {
+                    "symbol": "MU",
+                    "momentum": 105.31
+                },
+                {
+                    "symbol": "00715L.TW",
+                    "momentum": 101.65
                 }
             ]
         },
@@ -667,15 +1045,15 @@
             "TW_ETFS": [
                 {
                     "symbol": "00715L.TW",
-                    "momentum": 346.19
+                    "momentum": 270.96
+                },
+                {
+                    "symbol": "00642U.TW",
+                    "momentum": 73.54
                 },
                 {
                     "symbol": "00706L.TW",
-                    "momentum": 146.51
-                },
-                {
-                    "symbol": "00673R.TW",
-                    "momentum": 92.97
+                    "momentum": 73.07
                 }
             ],
             "US_STOCKS_SP100": [
@@ -695,15 +1073,15 @@
             "US_ETFS": [
                 {
                     "symbol": "BWET",
-                    "momentum": 607.18
+                    "momentum": 363.53
+                },
+                {
+                    "symbol": "USO",
+                    "momentum": 72.38
                 },
                 {
                     "symbol": "DIG",
-                    "momentum": 78.77
-                },
-                {
-                    "symbol": "ERX",
-                    "momentum": 78.53
+                    "momentum": 65.04
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -718,6 +1096,48 @@
                 {
                     "symbol": "TRX-USD",
                     "momentum": 7.95
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "AXTI",
+                    "momentum": 470.39
+                },
+                {
+                    "symbol": "BWET",
+                    "momentum": 363.53
+                },
+                {
+                    "symbol": "00715L.TW",
+                    "momentum": 270.96
+                },
+                {
+                    "symbol": "SNDK",
+                    "momentum": 193.15
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 134.97
+                },
+                {
+                    "symbol": "6640.TWO",
+                    "momentum": 89.29
+                },
+                {
+                    "symbol": "CIEN",
+                    "momentum": 77.22
+                },
+                {
+                    "symbol": "2360.TW",
+                    "momentum": 75.42
+                },
+                {
+                    "symbol": "00642U.TW",
+                    "momentum": 73.54
+                },
+                {
+                    "symbol": "00706L.TW",
+                    "momentum": 73.07
                 }
             ]
         },
@@ -738,16 +1158,16 @@
             ],
             "TW_ETFS": [
                 {
-                    "symbol": "00715L.TW",
-                    "momentum": 485.86
-                },
-                {
                     "symbol": "00674R.TW",
-                    "momentum": 347.14
+                    "momentum": 395.87
                 },
                 {
-                    "symbol": "00631L.TW",
-                    "momentum": 129.43
+                    "symbol": "00715L.TW",
+                    "momentum": 275.52
+                },
+                {
+                    "symbol": "00642U.TW",
+                    "momentum": 75.81
                 }
             ],
             "US_STOCKS_SP100": [
@@ -767,15 +1187,15 @@
             "US_ETFS": [
                 {
                     "symbol": "BWET",
-                    "momentum": 827.2
+                    "momentum": 406.12
                 },
                 {
-                    "symbol": "USD",
-                    "momentum": 122.33
+                    "symbol": "USO",
+                    "momentum": 67.76
                 },
                 {
-                    "symbol": "HYDR",
-                    "momentum": 117.06
+                    "symbol": "PSI",
+                    "momentum": 52.3
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -790,6 +1210,48 @@
                 {
                     "symbol": "ZEC-USD",
                     "momentum": 15.97
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "AXTI",
+                    "momentum": 420.93
+                },
+                {
+                    "symbol": "BWET",
+                    "momentum": 406.12
+                },
+                {
+                    "symbol": "00674R.TW",
+                    "momentum": 395.87
+                },
+                {
+                    "symbol": "00715L.TW",
+                    "momentum": 275.52
+                },
+                {
+                    "symbol": "SNDK",
+                    "momentum": 204.32
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 168.78
+                },
+                {
+                    "symbol": "2383.TW",
+                    "momentum": 156.49
+                },
+                {
+                    "symbol": "2368.TW",
+                    "momentum": 119.51
+                },
+                {
+                    "symbol": "INTC",
+                    "momentum": 117.89
+                },
+                {
+                    "symbol": "WDC",
+                    "momentum": 108.01
                 }
             ]
         },
@@ -810,16 +1272,16 @@
             ],
             "TW_ETFS": [
                 {
-                    "symbol": "00715L.TW",
-                    "momentum": 406.36
-                },
-                {
                     "symbol": "00674R.TW",
-                    "momentum": 341.99
+                    "momentum": 404.14
                 },
                 {
-                    "symbol": "00631L.TW",
-                    "momentum": 133.11
+                    "symbol": "00715L.TW",
+                    "momentum": 233.7
+                },
+                {
+                    "symbol": "00947.TW",
+                    "momentum": 67.12
                 }
             ],
             "US_STOCKS_SP100": [
@@ -839,29 +1301,71 @@
             "US_ETFS": [
                 {
                     "symbol": "BWET",
-                    "momentum": 821.9
+                    "momentum": 377.38
                 },
                 {
-                    "symbol": "HYDR",
-                    "momentum": 138.67
+                    "symbol": "USO",
+                    "momentum": 74.35
                 },
                 {
                     "symbol": "USD",
-                    "momentum": 132.45
+                    "momentum": 64.77
                 }
             ],
             "CRYPTOCURRENCY": [
                 {
                     "symbol": "LUNC-USD",
-                    "momentum": 64.01
+                    "momentum": 64.2
                 },
                 {
                     "symbol": "ZEC-USD",
-                    "momentum": 48.11
+                    "momentum": 48.48
                 },
                 {
                     "symbol": "ONDO-USD",
-                    "momentum": 25.76
+                    "momentum": 26.03
+                }
+            ],
+            "ALL_ASSETS": [
+                {
+                    "symbol": "AXTI",
+                    "momentum": 530.99
+                },
+                {
+                    "symbol": "00674R.TW",
+                    "momentum": 404.14
+                },
+                {
+                    "symbol": "BWET",
+                    "momentum": 377.38
+                },
+                {
+                    "symbol": "00715L.TW",
+                    "momentum": 233.7
+                },
+                {
+                    "symbol": "SNDK",
+                    "momentum": 212.11
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 136.14
+                },
+                {
+                    "symbol": "INTC",
+                    "momentum": 135.39
+                },
+                {
+                    "symbol": "2383.TW",
+                    "momentum": 121.93
+                },
+                {
+                    "symbol": "STX",
+                    "momentum": 116.52
+                },
+                {
+                    "symbol": "MU",
+                    "momentum": 109.59
                 }
             ]
         }
@@ -1099,560 +1603,572 @@
         ],
         "TW_ETFS": [
             {
-                "symbol": "00715L.TW",
-                "momentum": 406.36
-            },
-            {
                 "symbol": "00674R.TW",
-                "momentum": 341.99
+                "momentum": 404.14
             },
             {
-                "symbol": "00631L.TW",
-                "momentum": 133.11
-            },
-            {
-                "symbol": "00685L.TW",
-                "momentum": 132.72
-            },
-            {
-                "symbol": "00675L.TW",
-                "momentum": 131.23
-            },
-            {
-                "symbol": "00735.TW",
-                "momentum": 123.36
+                "symbol": "00715L.TW",
+                "momentum": 233.7
             },
             {
                 "symbol": "00947.TW",
-                "momentum": 114.79
-            },
-            {
-                "symbol": "00928.TWO",
-                "momentum": 110.68
-            },
-            {
-                "symbol": "00892.TW",
-                "momentum": 109.0
-            },
-            {
-                "symbol": "00935.TW",
-                "momentum": 106.88
-            },
-            {
-                "symbol": "00910.TW",
-                "momentum": 102.0
+                "momentum": 67.12
             },
             {
                 "symbol": "00642U.TW",
-                "momentum": 96.95
+                "momentum": 66.02
             },
             {
-                "symbol": "00894.TW",
-                "momentum": 95.67
+                "symbol": "00928.TWO",
+                "momentum": 65.52
             },
             {
-                "symbol": "00904.TW",
-                "momentum": 94.43
+                "symbol": "00892.TW",
+                "momentum": 60.51
             },
             {
-                "symbol": "00830.TW",
-                "momentum": 90.83
-            },
-            {
-                "symbol": "00891.TW",
-                "momentum": 85.96
-            },
-            {
-                "symbol": "00927.TW",
-                "momentum": 84.9
-            },
-            {
-                "symbol": "00881.TW",
-                "momentum": 83.75
-            },
-            {
-                "symbol": "00876.TW",
-                "momentum": 83.29
-            },
-            {
-                "symbol": "00901.TW",
-                "momentum": 81.72
-            },
-            {
-                "symbol": "00690.TW",
-                "momentum": 81.61
-            },
-            {
-                "symbol": "00888.TWO",
-                "momentum": 75.8
-            },
-            {
-                "symbol": "009803.TW",
-                "momentum": 69.39
-            },
-            {
-                "symbol": "00728.TW",
-                "momentum": 68.84
-            },
-            {
-                "symbol": "00923.TW",
-                "momentum": 65.28
-            },
-            {
-                "symbol": "00861.TW",
-                "momentum": 64.99
-            },
-            {
-                "symbol": "00706L.TW",
-                "momentum": 64.75
-            },
-            {
-                "symbol": "0050.TW",
-                "momentum": 64.64
-            },
-            {
-                "symbol": "006208.TW",
-                "momentum": 64.05
-            },
-            {
-                "symbol": "006203.TW",
-                "momentum": 63.11
-            },
-            {
-                "symbol": "009804.TW",
-                "momentum": 62.29
-            },
-            {
-                "symbol": "009802.TW",
-                "momentum": 62.16
-            },
-            {
-                "symbol": "00922.TW",
-                "momentum": 61.59
-            },
-            {
-                "symbol": "00952.TW",
-                "momentum": 61.36
-            },
-            {
-                "symbol": "00738U.TW",
-                "momentum": 61.1
-            },
-            {
-                "symbol": "00850.TW",
-                "momentum": 60.64
-            },
-            {
-                "symbol": "00905.TW",
-                "momentum": 60.57
-            },
-            {
-                "symbol": "00692.TW",
-                "momentum": 59.29
-            },
-            {
-                "symbol": "00951.TW",
-                "momentum": 57.35
-            },
-            {
-                "symbol": "00893.TW",
-                "momentum": 56.84
-            },
-            {
-                "symbol": "00954.TW",
-                "momentum": 56.84
-            },
-            {
-                "symbol": "00912.TW",
-                "momentum": 56.46
-            },
-            {
-                "symbol": "00941.TW",
-                "momentum": 54.18
-            },
-            {
-                "symbol": "00896.TW",
-                "momentum": 52.52
-            },
-            {
-                "symbol": "00733.TW",
-                "momentum": 50.87
-            },
-            {
-                "symbol": "00902.TW",
-                "momentum": 50.66
-            },
-            {
-                "symbol": "0051.TW",
-                "momentum": 49.98
-            },
-            {
-                "symbol": "00909.TW",
-                "momentum": 49.13
-            },
-            {
-                "symbol": "00929.TW",
-                "momentum": 45.27
-            },
-            {
-                "symbol": "00762.TW",
-                "momentum": 43.98
-            },
-            {
-                "symbol": "00670L.TW",
-                "momentum": 43.09
-            },
-            {
-                "symbol": "009805.TW",
-                "momentum": 42.27
-            },
-            {
-                "symbol": "00895.TW",
-                "momentum": 42.25
-            },
-            {
-                "symbol": "009808.TW",
-                "momentum": 40.36
-            },
-            {
-                "symbol": "00640L.TW",
-                "momentum": 40.27
-            },
-            {
-                "symbol": "00946.TW",
-                "momentum": 38.5
-            },
-            {
-                "symbol": "00903.TW",
-                "momentum": 38.17
-            },
-            {
-                "symbol": "00770.TW",
-                "momentum": 35.61
-            },
-            {
-                "symbol": "00643.TW",
-                "momentum": 34.7
-            },
-            {
-                "symbol": "00639.TW",
-                "momentum": 33.86
+                "symbol": "00735.TW",
+                "momentum": 60.27
             },
             {
                 "symbol": "00663L.TW",
-                "momentum": 33.78
+                "momentum": 58.42
+            },
+            {
+                "symbol": "00685L.TW",
+                "momentum": 58.31
+            },
+            {
+                "symbol": "00631L.TW",
+                "momentum": 58.21
+            },
+            {
+                "symbol": "00675L.TW",
+                "momentum": 57.44
+            },
+            {
+                "symbol": "00935.TW",
+                "momentum": 55.7
+            },
+            {
+                "symbol": "00927.TW",
+                "momentum": 53.92
+            },
+            {
+                "symbol": "00891.TW",
+                "momentum": 52.61
+            },
+            {
+                "symbol": "00904.TW",
+                "momentum": 51.13
+            },
+            {
+                "symbol": "00830.TW",
+                "momentum": 50.28
+            },
+            {
+                "symbol": "00894.TW",
+                "momentum": 47.15
+            },
+            {
+                "symbol": "00910.TW",
+                "momentum": 46.6
+            },
+            {
+                "symbol": "00690.TW",
+                "momentum": 44.53
+            },
+            {
+                "symbol": "00888.TWO",
+                "momentum": 44.17
+            },
+            {
+                "symbol": "00901.TW",
+                "momentum": 43.68
+            },
+            {
+                "symbol": "00876.TW",
+                "momentum": 42.95
+            },
+            {
+                "symbol": "00881.TW",
+                "momentum": 42.62
+            },
+            {
+                "symbol": "009802.TW",
+                "momentum": 40.83
+            },
+            {
+                "symbol": "00728.TW",
+                "momentum": 39.95
+            },
+            {
+                "symbol": "00952.TW",
+                "momentum": 36.21
+            },
+            {
+                "symbol": "00929.TW",
+                "momentum": 36.15
+            },
+            {
+                "symbol": "00923.TW",
+                "momentum": 36.0
+            },
+            {
+                "symbol": "009803.TW",
+                "momentum": 35.96
+            },
+            {
+                "symbol": "00861.TW",
+                "momentum": 35.81
+            },
+            {
+                "symbol": "009804.TW",
+                "momentum": 33.74
+            },
+            {
+                "symbol": "00912.TW",
+                "momentum": 33.2
+            },
+            {
+                "symbol": "00850.TW",
+                "momentum": 33.07
+            },
+            {
+                "symbol": "00922.TW",
+                "momentum": 32.63
+            },
+            {
+                "symbol": "00893.TW",
+                "momentum": 32.49
+            },
+            {
+                "symbol": "00905.TW",
+                "momentum": 32.48
+            },
+            {
+                "symbol": "009808.TW",
+                "momentum": 32.38
+            },
+            {
+                "symbol": "0050.TW",
+                "momentum": 31.25
+            },
+            {
+                "symbol": "006203.TW",
+                "momentum": 31.09
+            },
+            {
+                "symbol": "006208.TW",
+                "momentum": 30.98
+            },
+            {
+                "symbol": "00733.TW",
+                "momentum": 30.34
+            },
+            {
+                "symbol": "00692.TW",
+                "momentum": 29.2
+            },
+            {
+                "symbol": "00670L.TW",
+                "momentum": 29.18
+            },
+            {
+                "symbol": "00903.TW",
+                "momentum": 28.39
+            },
+            {
+                "symbol": "00946.TW",
+                "momentum": 28.23
+            },
+            {
+                "symbol": "00896.TW",
+                "momentum": 27.99
+            },
+            {
+                "symbol": "00909.TW",
+                "momentum": 27.89
+            },
+            {
+                "symbol": "00762.TW",
+                "momentum": 27.2
             },
             {
                 "symbol": "00878.TW",
-                "momentum": 33.17
+                "momentum": 25.56
             },
             {
-                "symbol": "00944.TW",
-                "momentum": 31.61
+                "symbol": "0051.TW",
+                "momentum": 25.42
             },
             {
-                "symbol": "00938.TW",
-                "momentum": 31.23
+                "symbol": "00895.TW",
+                "momentum": 24.15
             },
             {
-                "symbol": "00885.TW",
-                "momentum": 30.67
-            },
-            {
-                "symbol": "00661.TW",
-                "momentum": 30.56
-            },
-            {
-                "symbol": "00934.TW",
-                "momentum": 30.32
-            },
-            {
-                "symbol": "0056.TW",
-                "momentum": 29.53
-            },
-            {
-                "symbol": "00939.TW",
-                "momentum": 28.86
-            },
-            {
-                "symbol": "00900.TW",
-                "momentum": 26.83
-            },
-            {
-                "symbol": "009816.TW",
-                "momentum": 26.75
-            },
-            {
-                "symbol": "00662.TW",
-                "momentum": 26.43
-            },
-            {
-                "symbol": "009800.TW",
-                "momentum": 25.92
-            },
-            {
-                "symbol": "00936.TW",
-                "momentum": 24.84
-            },
-            {
-                "symbol": "00960.TW",
-                "momentum": 24.51
-            },
-            {
-                "symbol": "00897.TW",
-                "momentum": 24.18
-            },
-            {
-                "symbol": "00930.TW",
+                "symbol": "00941.TW",
                 "momentum": 23.96
             },
             {
-                "symbol": "00921.TW",
-                "momentum": 23.66
+                "symbol": "00944.TW",
+                "momentum": 23.81
             },
             {
-                "symbol": "00708L.TW",
-                "momentum": 22.62
+                "symbol": "00770.TW",
+                "momentum": 21.52
+            },
+            {
+                "symbol": "009805.TW",
+                "momentum": 21.37
+            },
+            {
+                "symbol": "009816.TW",
+                "momentum": 21.35
+            },
+            {
+                "symbol": "00951.TW",
+                "momentum": 20.69
+            },
+            {
+                "symbol": "00930.TW",
+                "momentum": 20.68
+            },
+            {
+                "symbol": "00939.TW",
+                "momentum": 20.59
+            },
+            {
+                "symbol": "00954.TW",
+                "momentum": 20.37
+            },
+            {
+                "symbol": "0056.TW",
+                "momentum": 19.87
+            },
+            {
+                "symbol": "00900.TW",
+                "momentum": 19.42
+            },
+            {
+                "symbol": "00934.TW",
+                "momentum": 18.16
+            },
+            {
+                "symbol": "009818.TW",
+                "momentum": 17.89
             },
             {
                 "symbol": "00919.TW",
-                "momentum": 22.37
+                "momentum": 16.96
             },
             {
-                "symbol": "00924.TW",
-                "momentum": 22.31
+                "symbol": "00662.TW",
+                "momentum": 16.2
             },
             {
                 "symbol": "00730.TW",
-                "momentum": 20.62
-            },
-            {
-                "symbol": "009801.TW",
-                "momentum": 20.53
-            },
-            {
-                "symbol": "00940.TW",
-                "momentum": 20.06
-            },
-            {
-                "symbol": "00645.TW",
-                "momentum": 19.81
+                "momentum": 16.02
             },
             {
                 "symbol": "00915.TW",
-                "momentum": 19.16
+                "momentum": 16.0
             },
             {
-                "symbol": "00918.TW",
-                "momentum": 19.05
+                "symbol": "00902.TW",
+                "momentum": 15.99
             },
             {
-                "symbol": "00763U.TW",
-                "momentum": 18.99
+                "symbol": "009800.TW",
+                "momentum": 15.89
             },
             {
-                "symbol": "00926.TW",
-                "momentum": 18.85
+                "symbol": "00921.TW",
+                "momentum": 15.44
             },
             {
-                "symbol": "00637L.TW",
-                "momentum": 18.57
+                "symbol": "00938.TW",
+                "momentum": 15.04
             },
             {
-                "symbol": "00757.TW",
-                "momentum": 18.41
+                "symbol": "00639.TW",
+                "momentum": 14.98
             },
             {
-                "symbol": "00965.TW",
-                "momentum": 18.08
+                "symbol": "00643.TW",
+                "momentum": 14.76
             },
             {
-                "symbol": "00961.TW",
-                "momentum": 18.05
+                "symbol": "00738U.TW",
+                "momentum": 14.76
             },
             {
-                "symbol": "00963.TW",
-                "momentum": 18.02
+                "symbol": "00936.TW",
+                "momentum": 14.72
             },
             {
-                "symbol": "00646.TW",
-                "momentum": 17.79
-            },
-            {
-                "symbol": "00701.TW",
-                "momentum": 17.11
-            },
-            {
-                "symbol": "00655L.TW",
-                "momentum": 16.94
-            },
-            {
-                "symbol": "00633L.TW",
-                "momentum": 16.24
-            },
-            {
-                "symbol": "00898.TW",
-                "momentum": 15.6
-            },
-            {
-                "symbol": "00971.TW",
-                "momentum": 15.58
-            },
-            {
-                "symbol": "00932.TW",
-                "momentum": 15.24
-            },
-            {
-                "symbol": "00917.TW",
+                "symbol": "00940.TW",
                 "momentum": 14.69
             },
             {
-                "symbol": "00636.TW",
-                "momentum": 14.67
+                "symbol": "00918.TW",
+                "momentum": 13.81
             },
             {
-                "symbol": "00882.TW",
-                "momentum": 14.15
+                "symbol": "00960.TW",
+                "momentum": 13.62
             },
             {
-                "symbol": "0055.TW",
-                "momentum": 13.5
+                "symbol": "00961.TW",
+                "momentum": 13.46
             },
             {
-                "symbol": "006205.TW",
-                "momentum": 12.42
+                "symbol": "00924.TW",
+                "momentum": 12.7
+            },
+            {
+                "symbol": "009801.TW",
+                "momentum": 11.81
             },
             {
                 "symbol": "009811.TW",
-                "momentum": 12.11
+                "momentum": 11.66
             },
             {
-                "symbol": "00949.TW",
-                "momentum": 11.92
+                "symbol": "00701.TW",
+                "momentum": 11.52
             },
             {
-                "symbol": "00635U.TW",
-                "momentum": 11.5
+                "symbol": "00757.TW",
+                "momentum": 11.27
             },
             {
-                "symbol": "00713.TW",
+                "symbol": "00932.TW",
                 "momentum": 11.18
             },
             {
-                "symbol": "00731.TW",
-                "momentum": 11.17
+                "symbol": "00661.TW",
+                "momentum": 11.05
+            },
+            {
+                "symbol": "00640L.TW",
+                "momentum": 10.45
+            },
+            {
+                "symbol": "00885.TW",
+                "momentum": 10.31
+            },
+            {
+                "symbol": "00763U.TW",
+                "momentum": 10.13
             },
             {
                 "symbol": "009813.TW",
-                "momentum": 9.84
+                "momentum": 9.63
+            },
+            {
+                "symbol": "00926.TW",
+                "momentum": 9.43
+            },
+            {
+                "symbol": "00646.TW",
+                "momentum": 8.89
+            },
+            {
+                "symbol": "00713.TW",
+                "momentum": 7.92
+            },
+            {
+                "symbol": "00971.TW",
+                "momentum": 7.18
+            },
+            {
+                "symbol": "00731.TW",
+                "momentum": 6.99
+            },
+            {
+                "symbol": "00637L.TW",
+                "momentum": 6.96
+            },
+            {
+                "symbol": "00655L.TW",
+                "momentum": 6.6
+            },
+            {
+                "symbol": "00963.TW",
+                "momentum": 6.33
+            },
+            {
+                "symbol": "00633L.TW",
+                "momentum": 6.26
+            },
+            {
+                "symbol": "00645.TW",
+                "momentum": 6.14
+            },
+            {
+                "symbol": "00636.TW",
+                "momentum": 5.81
+            },
+            {
+                "symbol": "0055.TW",
+                "momentum": 5.32
             },
             {
                 "symbol": "00916.TW",
-                "momentum": 9.31
+                "momentum": 4.28
             },
             {
-                "symbol": "006206.TW",
-                "momentum": 7.73
+                "symbol": "00917.TW",
+                "momentum": 4.18
             },
             {
-                "symbol": "00945B.TW",
-                "momentum": 5.59
+                "symbol": "00897.TW",
+                "momentum": 3.32
+            },
+            {
+                "symbol": "00949.TW",
+                "momentum": 2.67
+            },
+            {
+                "symbol": "006205.TW",
+                "momentum": 2.64
+            },
+            {
+                "symbol": "00882.TW",
+                "momentum": 2.44
             },
             {
                 "symbol": "00717.TW",
-                "momentum": 5.45
-            },
-            {
-                "symbol": "00953B.TW",
-                "momentum": 5.0
-            },
-            {
-                "symbol": "00710B.TW",
-                "momentum": 4.47
+                "momentum": 1.99
             },
             {
                 "symbol": "00693U.TW",
-                "momentum": 4.23
+                "momentum": 1.69
             },
             {
-                "symbol": "00712.TW",
-                "momentum": 4.23
+                "symbol": "009819.TW",
+                "momentum": 1.6
+            },
+            {
+                "symbol": "00945B.TW",
+                "momentum": 1.55
+            },
+            {
+                "symbol": "009820.TW",
+                "momentum": 1.5
+            },
+            {
+                "symbol": "00965.TW",
+                "momentum": 1.49
             },
             {
                 "symbol": "00865B.TW",
-                "momentum": 4.15
+                "momentum": 1.45
             },
             {
-                "symbol": "00711B.TW",
-                "momentum": 4.03
+                "symbol": "00710B.TW",
+                "momentum": 1.16
             },
             {
-                "symbol": "00775B.TW",
-                "momentum": 3.81
-            },
-            {
-                "symbol": "00650L.TW",
-                "momentum": 2.33
+                "symbol": "00953B.TW",
+                "momentum": 1.15
             },
             {
                 "symbol": "00985B.TW",
-                "momentum": 1.29
+                "momentum": 0.72
             },
             {
-                "symbol": "00907.TW",
-                "momentum": -1.68
+                "symbol": "00898.TW",
+                "momentum": 0.49
+            },
+            {
+                "symbol": "006206.TW",
+                "momentum": 0.11
+            },
+            {
+                "symbol": "00712.TW",
+                "momentum": -0.47
+            },
+            {
+                "symbol": "00775B.TW",
+                "momentum": -0.88
+            },
+            {
+                "symbol": "00711B.TW",
+                "momentum": -1.2
             },
             {
                 "symbol": "00669R.TW",
-                "momentum": -5.75
+                "momentum": -1.91
+            },
+            {
+                "symbol": "00907.TW",
+                "momentum": -1.97
+            },
+            {
+                "symbol": "00635U.TW",
+                "momentum": -3.12
+            },
+            {
+                "symbol": "00650L.TW",
+                "momentum": -5.09
+            },
+            {
+                "symbol": "00706L.TW",
+                "momentum": -5.78
+            },
+            {
+                "symbol": "00708L.TW",
+                "momentum": -7.6
             },
             {
                 "symbol": "00752.TW",
-                "momentum": -5.95
+                "momentum": -7.82
             },
             {
                 "symbol": "00680L.TW",
-                "momentum": -7.22
+                "momentum": -8.62
             },
             {
                 "symbol": "00688L.TW",
-                "momentum": -7.32
+                "momentum": -8.77
             },
             {
                 "symbol": "00665L.TW",
-                "momentum": -9.58
-            },
-            {
-                "symbol": "00753L.TW",
-                "momentum": -12.2
+                "momentum": -9.82
             },
             {
                 "symbol": "00652.TW",
-                "momentum": -12.45
-            },
-            {
-                "symbol": "00673R.TW",
-                "momentum": -17.82
-            },
-            {
-                "symbol": "00671R.TW",
-                "momentum": -18.64
-            },
-            {
-                "symbol": "00632R.TW",
-                "momentum": -34.46
-            },
-            {
-                "symbol": "00676R.TW",
-                "momentum": -34.51
-            },
-            {
-                "symbol": "00664R.TW",
-                "momentum": -34.59
+                "momentum": -10.29
             },
             {
                 "symbol": "0052.TW",
-                "momentum": -40.03
+                "momentum": -12.77
+            },
+            {
+                "symbol": "00671R.TW",
+                "momentum": -13.41
+            },
+            {
+                "symbol": "00753L.TW",
+                "momentum": -14.57
+            },
+            {
+                "symbol": "00664R.TW",
+                "momentum": -21.08
+            },
+            {
+                "symbol": "00632R.TW",
+                "momentum": -21.2
+            },
+            {
+                "symbol": "00676R.TW",
+                "momentum": -21.41
+            },
+            {
+                "symbol": "00673R.TW",
+                "momentum": -41.75
             }
         ],
         "US_STOCKS_SP100": [
@@ -3908,861 +4424,865 @@
         "US_ETFS": [
             {
                 "symbol": "BWET",
-                "momentum": 821.9
-            },
-            {
-                "symbol": "HYDR",
-                "momentum": 138.67
-            },
-            {
-                "symbol": "USD",
-                "momentum": 132.45
-            },
-            {
-                "symbol": "EWY",
-                "momentum": 112.93
-            },
-            {
-                "symbol": "FLKR",
-                "momentum": 108.88
-            },
-            {
-                "symbol": "PSI",
-                "momentum": 107.51
+                "momentum": 377.38
             },
             {
                 "symbol": "USO",
-                "momentum": 107.15
+                "momentum": 74.35
+            },
+            {
+                "symbol": "USD",
+                "momentum": 64.77
+            },
+            {
+                "symbol": "HYDR",
+                "momentum": 61.87
+            },
+            {
+                "symbol": "PSI",
+                "momentum": 59.3
             },
             {
                 "symbol": "FTXL",
-                "momentum": 106.25
+                "momentum": 58.22
             },
             {
                 "symbol": "XSD",
-                "momentum": 87.99
+                "momentum": 56.3
+            },
+            {
+                "symbol": "EWY",
+                "momentum": 50.4
+            },
+            {
+                "symbol": "FLKR",
+                "momentum": 49.61
             },
             {
                 "symbol": "SOXX",
-                "momentum": 86.63
+                "momentum": 48.88
+            },
+            {
+                "symbol": "DRAM",
+                "momentum": 48.24
             },
             {
                 "symbol": "SOXQ",
-                "momentum": 82.99
-            },
-            {
-                "symbol": "UFO",
-                "momentum": 76.22
-            },
-            {
-                "symbol": "SMH",
-                "momentum": 74.68
-            },
-            {
-                "symbol": "AGQ",
-                "momentum": 73.64
-            },
-            {
-                "symbol": "SHOC",
-                "momentum": 72.74
-            },
-            {
-                "symbol": "SLVR",
-                "momentum": 72.55
-            },
-            {
-                "symbol": "XTL",
-                "momentum": 68.75
+                "momentum": 46.13
             },
             {
                 "symbol": "ROM",
-                "momentum": 67.92
+                "momentum": 44.32
             },
             {
-                "symbol": "REMX",
-                "momentum": 65.2
-            },
-            {
-                "symbol": "XES",
-                "momentum": 63.93
-            },
-            {
-                "symbol": "AIVC",
-                "momentum": 63.76
-            },
-            {
-                "symbol": "TINY",
-                "momentum": 63.05
-            },
-            {
-                "symbol": "BBC",
-                "momentum": 62.16
-            },
-            {
-                "symbol": "PBW",
-                "momentum": 62.11
+                "symbol": "SMH",
+                "momentum": 40.34
             },
             {
                 "symbol": "IGPT",
-                "momentum": 61.52
+                "momentum": 39.43
             },
             {
-                "symbol": "SIVR",
-                "momentum": 61.07
-            },
-            {
-                "symbol": "SLV",
-                "momentum": 60.8
+                "symbol": "SHOC",
+                "momentum": 38.89
             },
             {
                 "symbol": "PTF",
-                "momentum": 60.41
+                "momentum": 37.86
             },
             {
-                "symbol": "SILJ",
-                "momentum": 59.82
+                "symbol": "AIVC",
+                "momentum": 36.53
             },
             {
-                "symbol": "SLVP",
-                "momentum": 59.77
+                "symbol": "UFO",
+                "momentum": 35.14
             },
             {
-                "symbol": "ROKT",
-                "momentum": 58.38
+                "symbol": "TINY",
+                "momentum": 33.92
             },
             {
                 "symbol": "CARZ",
-                "momentum": 57.6
-            },
-            {
-                "symbol": "OIH",
-                "momentum": 55.73
-            },
-            {
-                "symbol": "LIT",
-                "momentum": 55.42
-            },
-            {
-                "symbol": "ERX",
-                "momentum": 55.4
-            },
-            {
-                "symbol": "MNRS",
-                "momentum": 55.33
-            },
-            {
-                "symbol": "DIG",
-                "momentum": 55.3
-            },
-            {
-                "symbol": "PXJ",
-                "momentum": 55.15
-            },
-            {
-                "symbol": "CNXT",
-                "momentum": 54.53
-            },
-            {
-                "symbol": "SIL",
-                "momentum": 53.33
-            },
-            {
-                "symbol": "FLTW",
-                "momentum": 52.93
-            },
-            {
-                "symbol": "CTEC",
-                "momentum": 52.92
-            },
-            {
-                "symbol": "CTEX",
-                "momentum": 52.11
-            },
-            {
-                "symbol": "IEZ",
-                "momentum": 51.5
-            },
-            {
-                "symbol": "QCLN",
-                "momentum": 50.17
-            },
-            {
-                "symbol": "EWT",
-                "momentum": 49.43
-            },
-            {
-                "symbol": "COPX",
-                "momentum": 48.77
-            },
-            {
-                "symbol": "TRFK",
-                "momentum": 48.73
-            },
-            {
-                "symbol": "KNCT",
-                "momentum": 48.0
-            },
-            {
-                "symbol": "PSCT",
-                "momentum": 47.67
+                "momentum": 32.53
             },
             {
                 "symbol": "QQQA",
-                "momentum": 47.6
+                "momentum": 32.43
             },
             {
-                "symbol": "SGDJ",
-                "momentum": 46.93
+                "symbol": "XTL",
+                "momentum": 32.14
             },
             {
-                "symbol": "QLD",
-                "momentum": 46.73
-            },
-            {
-                "symbol": "AIA",
-                "momentum": 44.28
-            },
-            {
-                "symbol": "DRIV",
-                "momentum": 43.71
-            },
-            {
-                "symbol": "EET",
-                "momentum": 43.62
-            },
-            {
-                "symbol": "KSTR",
-                "momentum": 43.59
-            },
-            {
-                "symbol": "PBD",
-                "momentum": 43.44
-            },
-            {
-                "symbol": "DTCR",
-                "momentum": 43.43
-            },
-            {
-                "symbol": "QTUM",
-                "momentum": 43.12
-            },
-            {
-                "symbol": "FPA",
-                "momentum": 42.74
-            },
-            {
-                "symbol": "VLUE",
-                "momentum": 42.37
-            },
-            {
-                "symbol": "ICOP",
-                "momentum": 42.26
-            },
-            {
-                "symbol": "PSCE",
-                "momentum": 42.16
-            },
-            {
-                "symbol": "TAN",
-                "momentum": 41.84
-            },
-            {
-                "symbol": "PDBC",
-                "momentum": 41.3
-            },
-            {
-                "symbol": "CNRG",
-                "momentum": 41.15
-            },
-            {
-                "symbol": "PRN",
-                "momentum": 40.93
-            },
-            {
-                "symbol": "FRDM",
-                "momentum": 40.81
-            },
-            {
-                "symbol": "BITQ",
-                "momentum": 40.43
-            },
-            {
-                "symbol": "XME",
-                "momentum": 40.25
-            },
-            {
-                "symbol": "PPLT",
-                "momentum": 40.24
-            },
-            {
-                "symbol": "FRNW",
-                "momentum": 40.02
-            },
-            {
-                "symbol": "CSD",
-                "momentum": 39.94
-            },
-            {
-                "symbol": "DAPP",
-                "momentum": 39.93
-            },
-            {
-                "symbol": "QQQS",
-                "momentum": 39.67
-            },
-            {
-                "symbol": "PICK",
-                "momentum": 39.42
-            },
-            {
-                "symbol": "ICLN",
-                "momentum": 39.34
-            },
-            {
-                "symbol": "NXTG",
-                "momentum": 38.88
-            },
-            {
-                "symbol": "GOEX",
-                "momentum": 38.62
-            },
-            {
-                "symbol": "SBIO",
-                "momentum": 38.53
-            },
-            {
-                "symbol": "SLX",
-                "momentum": 37.95
-            },
-            {
-                "symbol": "IBLC",
-                "momentum": 37.6
-            },
-            {
-                "symbol": "AIRR",
-                "momentum": 36.41
-            },
-            {
-                "symbol": "GDXJ",
-                "momentum": 36.2
-            },
-            {
-                "symbol": "IXN",
-                "momentum": 35.85
-            },
-            {
-                "symbol": "UWM",
-                "momentum": 35.65
-            },
-            {
-                "symbol": "KEMX",
-                "momentum": 35.01
-            },
-            {
-                "symbol": "EMXC",
-                "momentum": 34.93
-            },
-            {
-                "symbol": "THNQ",
-                "momentum": 34.43
-            },
-            {
-                "symbol": "STCE",
-                "momentum": 34.35
-            },
-            {
-                "symbol": "EPU",
-                "momentum": 34.28
-            },
-            {
-                "symbol": "PIE",
-                "momentum": 34.0
-            },
-            {
-                "symbol": "XNTK",
-                "momentum": 33.84
-            },
-            {
-                "symbol": "CRAK",
-                "momentum": 33.46
-            },
-            {
-                "symbol": "XLK",
-                "momentum": 33.45
-            },
-            {
-                "symbol": "URA",
-                "momentum": 33.28
-            },
-            {
-                "symbol": "RING",
-                "momentum": 33.06
-            },
-            {
-                "symbol": "FAN",
-                "momentum": 32.49
-            },
-            {
-                "symbol": "BIB",
+                "symbol": "TRFK",
                 "momentum": 31.95
             },
             {
-                "symbol": "FNGG",
-                "momentum": 31.94
+                "symbol": "XES",
+                "momentum": 31.21
             },
             {
-                "symbol": "BOAT",
-                "momentum": 31.81
+                "symbol": "DIG",
+                "momentum": 30.91
             },
             {
-                "symbol": "AIQ",
-                "momentum": 31.71
-            },
-            {
-                "symbol": "ARKX",
-                "momentum": 31.49
-            },
-            {
-                "symbol": "SPHB",
-                "momentum": 31.17
-            },
-            {
-                "symbol": "IBRN",
+                "symbol": "ERX",
                 "momentum": 30.8
             },
             {
-                "symbol": "VGT",
-                "momentum": 30.72
+                "symbol": "KNCT",
+                "momentum": 29.98
             },
             {
-                "symbol": "ROBO",
-                "momentum": 30.17
+                "symbol": "QLD",
+                "momentum": 29.86
             },
             {
-                "symbol": "XBI",
-                "momentum": 30.15
+                "symbol": "FLTW",
+                "momentum": 29.75
             },
             {
-                "symbol": "EIS",
-                "momentum": 30.07
+                "symbol": "MNRS",
+                "momentum": 28.73
             },
             {
-                "symbol": "SGDM",
-                "momentum": 29.82
+                "symbol": "EWT",
+                "momentum": 28.17
             },
             {
-                "symbol": "PSCM",
-                "momentum": 29.81
+                "symbol": "PDBC",
+                "momentum": 26.96
             },
             {
-                "symbol": "FDTS",
-                "momentum": 29.72
+                "symbol": "OIH",
+                "momentum": 26.91
             },
             {
-                "symbol": "GDX",
-                "momentum": 29.61
+                "symbol": "PSCT",
+                "momentum": 26.89
             },
             {
-                "symbol": "ASHS",
-                "momentum": 29.28
+                "symbol": "QCLN",
+                "momentum": 26.53
             },
             {
-                "symbol": "KARS",
-                "momentum": 28.93
+                "symbol": "PXJ",
+                "momentum": 26.06
             },
             {
-                "symbol": "LOUP",
-                "momentum": 28.72
+                "symbol": "ROKT",
+                "momentum": 26.05
             },
             {
-                "symbol": "GRID",
-                "momentum": 28.56
+                "symbol": "PBW",
+                "momentum": 26.01
             },
             {
-                "symbol": "XLE",
-                "momentum": 28.18
+                "symbol": "IEZ",
+                "momentum": 25.15
             },
             {
-                "symbol": "SPUU",
-                "momentum": 28.11
+                "symbol": "VLUE",
+                "momentum": 24.84
             },
             {
-                "symbol": "VNAM",
-                "momentum": 28.1
+                "symbol": "QTUM",
+                "momentum": 24.31
             },
             {
-                "symbol": "AGEM",
-                "momentum": 27.94
+                "symbol": "NXTG",
+                "momentum": 23.99
             },
             {
-                "symbol": "SSO",
-                "momentum": 27.81
-            },
-            {
-                "symbol": "AUMI",
-                "momentum": 27.8
-            },
-            {
-                "symbol": "SAA",
-                "momentum": 25.72
-            },
-            {
-                "symbol": "AAXJ",
-                "momentum": 25.5
-            },
-            {
-                "symbol": "QQQ",
+                "symbol": "KSTR",
                 "momentum": 23.95
             },
             {
-                "symbol": "UBR",
-                "momentum": 23.16
+                "symbol": "BITQ",
+                "momentum": 23.69
             },
             {
-                "symbol": "DBB",
-                "momentum": 22.74
+                "symbol": "DRIV",
+                "momentum": 23.33
             },
             {
-                "symbol": "URNM",
-                "momentum": 22.36
+                "symbol": "PRN",
+                "momentum": 23.31
             },
             {
-                "symbol": "UGL",
-                "momentum": 20.63
+                "symbol": "PSCE",
+                "momentum": 22.82
             },
             {
-                "symbol": "FMTL",
-                "momentum": 20.44
+                "symbol": "CNXT",
+                "momentum": 22.77
             },
             {
-                "symbol": "CPER",
-                "momentum": 19.78
+                "symbol": "IXN",
+                "momentum": 22.46
             },
             {
-                "symbol": "IWM",
-                "momentum": 19.36
+                "symbol": "AIA",
+                "momentum": 22.38
             },
             {
-                "symbol": "MVV",
-                "momentum": 18.93
+                "symbol": "XLK",
+                "momentum": 22.13
             },
             {
-                "symbol": "UXI",
-                "momentum": 18.45
+                "symbol": "DTCR",
+                "momentum": 21.94
             },
             {
-                "symbol": "MGK",
-                "momentum": 17.47
+                "symbol": "THNQ",
+                "momentum": 21.75
             },
             {
-                "symbol": "VUG",
-                "momentum": 16.98
+                "symbol": "FNGG",
+                "momentum": 21.73
             },
             {
-                "symbol": "BOTZ",
-                "momentum": 16.77
+                "symbol": "CTEX",
+                "momentum": 21.65
             },
             {
-                "symbol": "UYM",
-                "momentum": 16.38
+                "symbol": "FPA",
+                "momentum": 21.39
             },
             {
-                "symbol": "VEA",
-                "momentum": 15.48
+                "symbol": "DAPP",
+                "momentum": 21.29
             },
             {
-                "symbol": "VOO",
-                "momentum": 15.35
+                "symbol": "CTEC",
+                "momentum": 21.07
             },
             {
-                "symbol": "SPY",
-                "momentum": 15.32
+                "symbol": "XNTK",
+                "momentum": 21.0
             },
             {
-                "symbol": "NLR",
-                "momentum": 15.1
+                "symbol": "CSD",
+                "momentum": 20.9
             },
             {
-                "symbol": "VIOV",
-                "momentum": 15.07
+                "symbol": "AIQ",
+                "momentum": 20.35
             },
             {
-                "symbol": "VTI",
-                "momentum": 15.01
+                "symbol": "TAN",
+                "momentum": 20.26
             },
             {
-                "symbol": "SCHG",
-                "momentum": 14.72
+                "symbol": "VGT",
+                "momentum": 19.97
             },
             {
-                "symbol": "VIOG",
-                "momentum": 14.53
+                "symbol": "ICLN",
+                "momentum": 19.63
             },
             {
-                "symbol": "IAU",
-                "momentum": 13.89
+                "symbol": "IBLC",
+                "momentum": 19.14
             },
             {
-                "symbol": "PHYS",
-                "momentum": 13.78
+                "symbol": "PBD",
+                "momentum": 18.94
             },
             {
-                "symbol": "GLD",
-                "momentum": 13.77
+                "symbol": "FRDM",
+                "momentum": 18.3
             },
             {
-                "symbol": "EWJ",
-                "momentum": 13.76
+                "symbol": "LIT",
+                "momentum": 17.81
             },
             {
-                "symbol": "EFO",
-                "momentum": 13.37
+                "symbol": "QQQS",
+                "momentum": 17.41
             },
             {
-                "symbol": "IBB",
-                "momentum": 12.94
+                "symbol": "EET",
+                "momentum": 17.26
             },
             {
-                "symbol": "DDM",
-                "momentum": 12.81
+                "symbol": "CNRG",
+                "momentum": 17.14
+            },
+            {
+                "symbol": "EMXC",
+                "momentum": 16.91
+            },
+            {
+                "symbol": "SLX",
+                "momentum": 16.61
+            },
+            {
+                "symbol": "FRNW",
+                "momentum": 16.47
+            },
+            {
+                "symbol": "ROBO",
+                "momentum": 16.36
+            },
+            {
+                "symbol": "KEMX",
+                "momentum": 16.22
+            },
+            {
+                "symbol": "AIRR",
+                "momentum": 16.17
+            },
+            {
+                "symbol": "XLE",
+                "momentum": 15.94
             },
             {
                 "symbol": "CIBR",
-                "momentum": 12.23
+                "momentum": 15.75
             },
             {
-                "symbol": "WEAT",
-                "momentum": 12.12
+                "symbol": "REMX",
+                "momentum": 15.61
             },
             {
-                "symbol": "VWO",
-                "momentum": 11.94
+                "symbol": "UWM",
+                "momentum": 15.5
             },
             {
-                "symbol": "VTV",
-                "momentum": 11.86
+                "symbol": "SPHB",
+                "momentum": 15.35
             },
             {
-                "symbol": "XLI",
-                "momentum": 11.45
+                "symbol": "QQQ",
+                "momentum": 15.29
             },
             {
-                "symbol": "LTL",
-                "momentum": 10.71
+                "symbol": "SIVR",
+                "momentum": 15.2
             },
             {
-                "symbol": "PALL",
-                "momentum": 10.41
+                "symbol": "SPUU",
+                "momentum": 15.12
             },
             {
-                "symbol": "SRVR",
-                "momentum": 10.39
+                "symbol": "SLV",
+                "momentum": 15.11
             },
             {
-                "symbol": "XLB",
-                "momentum": 10.29
+                "symbol": "SSO",
+                "momentum": 15.01
             },
             {
-                "symbol": "VEGI",
-                "momentum": 10.09
+                "symbol": "PIE",
+                "momentum": 14.86
             },
             {
-                "symbol": "UPV",
-                "momentum": 9.89
+                "symbol": "SLVR",
+                "momentum": 14.56
             },
             {
-                "symbol": "HACK",
-                "momentum": 9.59
+                "symbol": "BOAT",
+                "momentum": 14.46
             },
             {
-                "symbol": "MOO",
-                "momentum": 8.88
+                "symbol": "PICK",
+                "momentum": 14.2
             },
             {
-                "symbol": "DIA",
-                "momentum": 8.39
+                "symbol": "GRID",
+                "momentum": 13.97
             },
             {
-                "symbol": "SOYB",
-                "momentum": 8.17
+                "symbol": "FAN",
+                "momentum": 13.68
             },
             {
-                "symbol": "DBA",
-                "momentum": 7.89
+                "symbol": "STCE",
+                "momentum": 13.14
             },
             {
-                "symbol": "XLC",
-                "momentum": 7.61
+                "symbol": "FMTL",
+                "momentum": 12.71
             },
             {
-                "symbol": "VGK",
-                "momentum": 7.45
-            },
-            {
-                "symbol": "MJ",
-                "momentum": 7.43
-            },
-            {
-                "symbol": "KRE",
-                "momentum": 7.22
-            },
-            {
-                "symbol": "SKYY",
-                "momentum": 6.83
-            },
-            {
-                "symbol": "VNQ",
-                "momentum": 5.58
-            },
-            {
-                "symbol": "XLRE",
-                "momentum": 5.1
-            },
-            {
-                "symbol": "XLP",
-                "momentum": 4.45
-            },
-            {
-                "symbol": "XLY",
-                "momentum": 3.59
-            },
-            {
-                "symbol": "XLU",
-                "momentum": 2.24
-            },
-            {
-                "symbol": "BIL",
-                "momentum": 2.21
-            },
-            {
-                "symbol": "TIP",
-                "momentum": 1.82
-            },
-            {
-                "symbol": "UCC",
-                "momentum": 1.52
-            },
-            {
-                "symbol": "CORN",
-                "momentum": 1.43
-            },
-            {
-                "symbol": "CLOU",
-                "momentum": 1.32
-            },
-            {
-                "symbol": "BND",
-                "momentum": 0.85
+                "symbol": "AAXJ",
+                "momentum": 12.43
             },
             {
                 "symbol": "BUG",
-                "momentum": 0.71
+                "momentum": 12.35
             },
             {
-                "symbol": "XLV",
-                "momentum": 0.66
+                "symbol": "AGEM",
+                "momentum": 12.18
+            },
+            {
+                "symbol": "WEAT",
+                "momentum": 12.16
+            },
+            {
+                "symbol": "CRAK",
+                "momentum": 11.84
+            },
+            {
+                "symbol": "LOUP",
+                "momentum": 11.8
+            },
+            {
+                "symbol": "HACK",
+                "momentum": 11.75
+            },
+            {
+                "symbol": "PSCM",
+                "momentum": 11.26
+            },
+            {
+                "symbol": "ARKX",
+                "momentum": 11.14
+            },
+            {
+                "symbol": "ASHS",
+                "momentum": 11.06
+            },
+            {
+                "symbol": "SAA",
+                "momentum": 11.05
+            },
+            {
+                "symbol": "EIS",
+                "momentum": 10.86
+            },
+            {
+                "symbol": "BBC",
+                "momentum": 10.73
+            },
+            {
+                "symbol": "MGK",
+                "momentum": 10.66
+            },
+            {
+                "symbol": "VUG",
+                "momentum": 10.47
+            },
+            {
+                "symbol": "CPER",
+                "momentum": 10.46
+            },
+            {
+                "symbol": "ICOP",
+                "momentum": 10.29
+            },
+            {
+                "symbol": "FDTS",
+                "momentum": 10.28
+            },
+            {
+                "symbol": "DBB",
+                "momentum": 10.12
+            },
+            {
+                "symbol": "COPX",
+                "momentum": 9.97
+            },
+            {
+                "symbol": "BOTZ",
+                "momentum": 9.8
+            },
+            {
+                "symbol": "VNAM",
+                "momentum": 9.66
+            },
+            {
+                "symbol": "IBRN",
+                "momentum": 9.24
+            },
+            {
+                "symbol": "MVV",
+                "momentum": 8.88
+            },
+            {
+                "symbol": "IWM",
+                "momentum": 8.77
+            },
+            {
+                "symbol": "KARS",
+                "momentum": 8.71
+            },
+            {
+                "symbol": "SCHG",
+                "momentum": 8.64
+            },
+            {
+                "symbol": "SPY",
+                "momentum": 8.32
+            },
+            {
+                "symbol": "VOO",
+                "momentum": 8.32
+            },
+            {
+                "symbol": "CLOU",
+                "momentum": 8.2
             },
             {
                 "symbol": "CANE",
-                "momentum": 0.52
+                "momentum": 8.1
             },
             {
-                "symbol": "UTES",
-                "momentum": -0.21
+                "symbol": "XME",
+                "momentum": 8.06
             },
             {
-                "symbol": "IEF",
-                "momentum": -0.22
+                "symbol": "VTI",
+                "momentum": 7.93
             },
             {
-                "symbol": "XLF",
-                "momentum": -0.37
+                "symbol": "SKYY",
+                "momentum": 7.62
             },
             {
-                "symbol": "UPW",
-                "momentum": -0.88
+                "symbol": "VIOG",
+                "momentum": 7.38
             },
             {
-                "symbol": "TLT",
-                "momentum": -2.62
+                "symbol": "DBA",
+                "momentum": 6.95
             },
             {
-                "symbol": "MCHI",
-                "momentum": -3.25
+                "symbol": "SIL",
+                "momentum": 6.51
             },
             {
-                "symbol": "UYG",
-                "momentum": -5.22
+                "symbol": "SILJ",
+                "momentum": 6.15
+            },
+            {
+                "symbol": "SRVR",
+                "momentum": 6.1
+            },
+            {
+                "symbol": "EPU",
+                "momentum": 5.91
+            },
+            {
+                "symbol": "SBIO",
+                "momentum": 5.8
+            },
+            {
+                "symbol": "UXI",
+                "momentum": 5.74
+            },
+            {
+                "symbol": "XBI",
+                "momentum": 5.72
+            },
+            {
+                "symbol": "SLVP",
+                "momentum": 5.56
+            },
+            {
+                "symbol": "VIOV",
+                "momentum": 5.51
+            },
+            {
+                "symbol": "PPLT",
+                "momentum": 5.37
+            },
+            {
+                "symbol": "VEA",
+                "momentum": 5.32
+            },
+            {
+                "symbol": "VTV",
+                "momentum": 4.91
+            },
+            {
+                "symbol": "UYM",
+                "momentum": 4.82
+            },
+            {
+                "symbol": "VEGI",
+                "momentum": 4.8
+            },
+            {
+                "symbol": "SGDJ",
+                "momentum": 4.61
+            },
+            {
+                "symbol": "AGQ",
+                "momentum": 4.12
+            },
+            {
+                "symbol": "XLI",
+                "momentum": 4.09
+            },
+            {
+                "symbol": "SOYB",
+                "momentum": 4.04
+            },
+            {
+                "symbol": "EWJ",
+                "momentum": 3.93
+            },
+            {
+                "symbol": "DDM",
+                "momentum": 3.69
+            },
+            {
+                "symbol": "XLP",
+                "momentum": 3.52
+            },
+            {
+                "symbol": "VWO",
+                "momentum": 3.48
+            },
+            {
+                "symbol": "XLB",
+                "momentum": 3.24
+            },
+            {
+                "symbol": "DIA",
+                "momentum": 2.87
+            },
+            {
+                "symbol": "MOO",
+                "momentum": 2.44
+            },
+            {
+                "symbol": "XLRE",
+                "momentum": 2.36
+            },
+            {
+                "symbol": "VNQ",
+                "momentum": 2.28
+            },
+            {
+                "symbol": "XLC",
+                "momentum": 1.83
+            },
+            {
+                "symbol": "LTL",
+                "momentum": 1.58
+            },
+            {
+                "symbol": "CORN",
+                "momentum": 1.5
             },
             {
                 "symbol": "IBIT",
-                "momentum": -8.26
+                "momentum": 1.38
             },
             {
-                "symbol": "XHB",
-                "momentum": -9.63
+                "symbol": "URA",
+                "momentum": 1.38
             },
             {
-                "symbol": "ETHA",
-                "momentum": -11.08
+                "symbol": "BIL",
+                "momentum": 1.0
             },
             {
-                "symbol": "INDA",
-                "momentum": -11.26
+                "symbol": "KRE",
+                "momentum": 0.86
+            },
+            {
+                "symbol": "VGK",
+                "momentum": 0.65
+            },
+            {
+                "symbol": "EFO",
+                "momentum": 0.51
+            },
+            {
+                "symbol": "TIP",
+                "momentum": 0.18
+            },
+            {
+                "symbol": "XLY",
+                "momentum": 0.15
+            },
+            {
+                "symbol": "GDXJ",
+                "momentum": -0.84
+            },
+            {
+                "symbol": "GOEX",
+                "momentum": -0.93
+            },
+            {
+                "symbol": "BND",
+                "momentum": -1.03
+            },
+            {
+                "symbol": "PHYS",
+                "momentum": -1.26
+            },
+            {
+                "symbol": "IAU",
+                "momentum": -1.3
+            },
+            {
+                "symbol": "GLD",
+                "momentum": -1.36
+            },
+            {
+                "symbol": "UPV",
+                "momentum": -1.4
+            },
+            {
+                "symbol": "XLF",
+                "momentum": -1.45
+            },
+            {
+                "symbol": "IEF",
+                "momentum": -1.97
+            },
+            {
+                "symbol": "IBB",
+                "momentum": -2.21
+            },
+            {
+                "symbol": "UCC",
+                "momentum": -2.31
+            },
+            {
+                "symbol": "MJ",
+                "momentum": -2.35
+            },
+            {
+                "symbol": "BIB",
+                "momentum": -2.49
+            },
+            {
+                "symbol": "SGDM",
+                "momentum": -2.54
+            },
+            {
+                "symbol": "RING",
+                "momentum": -2.71
             },
             {
                 "symbol": "WCLD",
-                "momentum": -12.57
+                "momentum": -2.91
+            },
+            {
+                "symbol": "XLU",
+                "momentum": -3.13
+            },
+            {
+                "symbol": "URNM",
+                "momentum": -3.46
+            },
+            {
+                "symbol": "GDX",
+                "momentum": -3.7
+            },
+            {
+                "symbol": "TLT",
+                "momentum": -4.25
+            },
+            {
+                "symbol": "XLV",
+                "momentum": -4.34
+            },
+            {
+                "symbol": "UYG",
+                "momentum": -4.83
+            },
+            {
+                "symbol": "AUMI",
+                "momentum": -5.15
+            },
+            {
+                "symbol": "NLR",
+                "momentum": -5.38
+            },
+            {
+                "symbol": "UTES",
+                "momentum": -5.78
+            },
+            {
+                "symbol": "MCHI",
+                "momentum": -6.09
+            },
+            {
+                "symbol": "UBR",
+                "momentum": -6.41
+            },
+            {
+                "symbol": "UGL",
+                "momentum": -6.58
             },
             {
                 "symbol": "UNG",
-                "momentum": -21.22
+                "momentum": -8.01
+            },
+            {
+                "symbol": "PALL",
+                "momentum": -8.43
+            },
+            {
+                "symbol": "INDA",
+                "momentum": -8.46
+            },
+            {
+                "symbol": "UPW",
+                "momentum": -8.69
+            },
+            {
+                "symbol": "ETHA",
+                "momentum": -9.15
+            },
+            {
+                "symbol": "XHB",
+                "momentum": -11.03
             }
         ],
         "CRYPTOCURRENCY": [
             {
                 "symbol": "LUNC-USD",
-                "momentum": 64.01
+                "momentum": 64.2
             },
             {
                 "symbol": "ZEC-USD",
-                "momentum": 48.11
+                "momentum": 48.48
             },
             {
                 "symbol": "ONDO-USD",
-                "momentum": 25.76
+                "momentum": 26.03
             },
             {
                 "symbol": "TON-USD",
-                "momentum": 14.41
+                "momentum": 14.44
             },
             {
                 "symbol": "TRX-USD",
-                "momentum": 13.16
+                "momentum": 13.39
             },
             {
                 "symbol": "RENDER-USD",
-                "momentum": 9.82
+                "momentum": 10.12
             },
             {
                 "symbol": "XMR-USD",
-                "momentum": 9.12
-            },
-            {
-                "symbol": "BTC-USD",
-                "momentum": 5.54
+                "momentum": 9.3
             },
             {
                 "symbol": "DOGE-USD",
-                "momentum": 5.51
+                "momentum": 6.11
             },
             {
                 "symbol": "LINK-USD",
-                "momentum": 5.48
+                "momentum": 5.85
+            },
+            {
+                "symbol": "BTC-USD",
+                "momentum": 5.73
             },
             {
                 "symbol": "BNB-USD",
-                "momentum": 4.94
+                "momentum": 5.34
             },
             {
                 "symbol": "LEO-USD",
@@ -4770,15 +5290,15 @@
             },
             {
                 "symbol": "AR-USD",
-                "momentum": 1.63
+                "momentum": 2.0
             },
             {
                 "symbol": "LTC-USD",
-                "momentum": 1.07
+                "momentum": 1.21
             },
             {
                 "symbol": "SOL-USD",
-                "momentum": 0.01
+                "momentum": 0.18
             },
             {
                 "symbol": "UNI-USD",
@@ -4794,11 +5314,11 @@
             },
             {
                 "symbol": "ETH-USD",
-                "momentum": -0.75
+                "momentum": -0.67
             },
             {
                 "symbol": "AVAX-USD",
-                "momentum": -0.98
+                "momentum": -0.77
             },
             {
                 "symbol": "HBAR-USD",
@@ -4806,43 +5326,165 @@
             },
             {
                 "symbol": "XRP-USD",
-                "momentum": -2.05
+                "momentum": -1.83
             },
             {
                 "symbol": "CRO-USD",
-                "momentum": -2.22
+                "momentum": -1.84
             },
             {
                 "symbol": "DOT-USD",
-                "momentum": -2.64
+                "momentum": -2.33
             },
             {
                 "symbol": "ADA-USD",
-                "momentum": -3.02
+                "momentum": -2.72
             },
             {
                 "symbol": "M-USD",
-                "momentum": -4.15
+                "momentum": -4.12
             },
             {
                 "symbol": "XAUT-USD",
-                "momentum": -5.24
+                "momentum": -5.17
             },
             {
                 "symbol": "PAXG-USD",
-                "momentum": -5.44
+                "momentum": -5.37
             },
             {
                 "symbol": "SHIB-USD",
-                "momentum": -6.51
+                "momentum": -6.35
             },
             {
                 "symbol": "XLM-USD",
-                "momentum": -8.6
+                "momentum": -8.45
             },
             {
                 "symbol": "BCH-USD",
-                "momentum": -13.47
+                "momentum": -13.18
+            }
+        ],
+        "ALL_ASSETS": [
+            {
+                "symbol": "AXTI",
+                "momentum": 530.99
+            },
+            {
+                "symbol": "00674R.TW",
+                "momentum": 404.14
+            },
+            {
+                "symbol": "BWET",
+                "momentum": 377.38
+            },
+            {
+                "symbol": "00715L.TW",
+                "momentum": 233.7
+            },
+            {
+                "symbol": "SNDK",
+                "momentum": 212.11
+            },
+            {
+                "symbol": "LITE",
+                "momentum": 136.14
+            },
+            {
+                "symbol": "INTC",
+                "momentum": 135.39
+            },
+            {
+                "symbol": "2383.TW",
+                "momentum": 121.93
+            },
+            {
+                "symbol": "STX",
+                "momentum": 116.52
+            },
+            {
+                "symbol": "MU",
+                "momentum": 109.59
+            },
+            {
+                "symbol": "2454.TW",
+                "momentum": 109.35
+            },
+            {
+                "symbol": "2360.TW",
+                "momentum": 103.19
+            },
+            {
+                "symbol": "WDC",
+                "momentum": 103.04
+            },
+            {
+                "symbol": "2303.TW",
+                "momentum": 100.48
+            },
+            {
+                "symbol": "CIEN",
+                "momentum": 96.07
+            },
+            {
+                "symbol": "COHR",
+                "momentum": 91.55
+            },
+            {
+                "symbol": "BE",
+                "momentum": 91.05
+            },
+            {
+                "symbol": "2345.TW",
+                "momentum": 84.92
+            },
+            {
+                "symbol": "ON",
+                "momentum": 84.62
+            },
+            {
+                "symbol": "NOK",
+                "momentum": 81.79
+            },
+            {
+                "symbol": "AMD",
+                "momentum": 80.23
+            },
+            {
+                "symbol": "DELL",
+                "momentum": 75.26
+            },
+            {
+                "symbol": "USO",
+                "momentum": 74.35
+            },
+            {
+                "symbol": "3711.TW",
+                "momentum": 74.22
+            },
+            {
+                "symbol": "2327.TW",
+                "momentum": 71.49
+            },
+            {
+                "symbol": "2308.TW",
+                "momentum": 68.66
+            },
+            {
+                "symbol": "2368.TW",
+                "momentum": 67.82
+            },
+            {
+                "symbol": "00947.TW",
+                "momentum": 67.12
+            },
+            {
+                "symbol": "VRT",
+                "momentum": 66.16
+            },
+            {
+                "symbol": "00642U.TW",
+                "momentum": 66.02
             }
         ]
     }
