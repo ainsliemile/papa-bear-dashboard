@@ -173,10 +173,10 @@ def calculate_historical_momentum(tickers, category_name):
     
     prices = prices.ffill().resample('D').ffill()
     
-    if category_name in ["TW_ETFS", "US_ETFS"]: p1, p2, p3 = 90, 180, 365
-    elif category_name in ["TW_STOCKS_0050", "US_STOCKS_SP100"]: p1, p2, p3 = 30, 90, 180
+    # 🚀 將 ETF 與股票合併，統一使用 1個月(30天), 3個月(90天), 6個月(180天)
+    if category_name in ["TW_ETFS", "US_ETFS", "TW_STOCKS_0050", "US_STOCKS_SP100"]: p1, p2, p3 = 30, 90, 180
     elif category_name == "CRYPTOCURRENCY": p1, p2, p3 = 14, 30, 90
-    else: p1, p2, p3 = 90, 180, 365
+    else: p1, p2, p3 = 30, 90, 180
 
     m1 = prices.pct_change(periods=p1)
     m2 = prices.pct_change(periods=p2)
