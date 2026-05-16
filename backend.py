@@ -97,7 +97,7 @@ US_SECTORS = ["XLK"]
 US_ETFS = ["VOO", "QQQ"]
 
 # ==========================================
-# 2. 核心技術：超穩定 Ticker.history (加入智能上櫃與美股容錯)
+# 2. 核心技術：超穩定 Ticker.history 
 # ==========================================
 def download_robustly(tickers):
     print(f"   -> 準備「超穩定安全下載」 {len(tickers)} 檔標的資料...")
@@ -108,18 +108,13 @@ def download_robustly(tickers):
             tkr = yf.Ticker(ticker)
             with warnings.catch_warnings():
                 warnings.simplefilter("ignore")
-                # 🚀 關鍵修改：強制加入 auto_adjust=True 來還原股票分割與除權息
                 data = tkr.history(period="2y", auto_adjust=True)
             
-            # 🚀 智能備用引擎：如果抓不到資料，自動轉換代碼再試一次
             if data.empty or 'Close' not in data.columns:
                 fallback_ticker = None
                 
-                # 台股陷阱：如果是 .TW (上市) 失敗，自動改成 .TWO (上櫃) 再試一次
                 if ticker.endswith('.TW'):
                     fallback_ticker = ticker.replace('.TW', '.TWO')
-                
-                # 美股陷阱：如果有 . (例如 BRK.B)，自動改成 - (BRK-B) 再試一次
                 elif not ticker.endswith('.TW') and not ticker.endswith('.TWO') and '.' in ticker:
                     fallback_ticker = ticker.replace('.', '-')
 
@@ -127,14 +122,11 @@ def download_robustly(tickers):
                     tkr_fallback = yf.Ticker(fallback_ticker)
                     with warnings.catch_warnings():
                         warnings.simplefilter("ignore")
-                        # 🚀 關鍵修改：備用引擎也要加上 auto_adjust=True
                         data = tkr_fallback.history(period="2y", auto_adjust=True)
                     
-                    # 如果備用代碼成功了，就把顯示的名字換成對的
                     if not data.empty and 'Close' in data.columns:
                         ticker = fallback_ticker
 
-            # 最終確認有無資料
             if not data.empty and 'Close' in data.columns:
                 p = data['Close']
                 if isinstance(p, pd.DataFrame):
@@ -145,7 +137,7 @@ def download_robustly(tickers):
                     
                 all_prices[ticker] = p
             else:
-                pass # Yahoo 真的沒有這檔資料，安靜跳過
+                pass 
                 
         except Exception:
             pass 
@@ -173,7 +165,7 @@ def calculate_historical_momentum(tickers, category_name):
     
     prices = prices.ffill().resample('D').ffill()
     
-    # 🚀 將 ETF 與股票合併，統一使用 1個月(30天), 3個月(90天), 6個月(180天)
+    # 🚀 ETF 與股票合併，統一使用 1個月(30天), 3個月(90天), 6個月(180天)
     if category_name in ["TW_ETFS", "US_ETFS", "TW_STOCKS_0050", "US_STOCKS_SP100"]: p1, p2, p3 = 30, 90, 180
     elif category_name == "CRYPTOCURRENCY": p1, p2, p3 = 14, 30, 90
     else: p1, p2, p3 = 30, 90, 180
@@ -194,9 +186,9 @@ def calculate_historical_momentum(tickers, category_name):
     history_result = {}
     for date, row in last_12_months.iterrows():
         month_str = date.strftime('%Y-%m')
+        # 改為回傳該月「所有」排名的標的，以供後續跨市場統整
         valid_ranks = row.dropna().sort_values(ascending=False)
-        top3 = valid_ranks.head(3)
-        history_result[month_str] = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in top3.items()]
+        history_result[month_str] = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in valid_ranks.items()]
         
     latest_row = avg_momentum.iloc[-1].dropna().sort_values(ascending=False)
     current_all = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in latest_row.items()]
@@ -204,16 +196,16 @@ def calculate_historical_momentum(tickers, category_name):
     return history_result, current_all
 
 # ==========================================
-# 4. 主程式整合
+# 4. 主程式整合 (加入綜合排名邏輯)
 # ==========================================
 def main():
-    print("=== Papa Bear 跨市場動能監控系統 (智能尋找版) ===")
+    print("=== Papa Bear 跨市場動能監控系統 (綜合排名版) ===")
     
     excel_data = get_tickers_from_local_excel()
     fallback_categories = {
         "TW_STOCKS_0050": get_0050_tickers(),
         "TW_ETFS": TW_ETFS,
-        "US_STOCKS_SP100": get_sp100_tickers() + US_SECTORS,
+        "US_STOCKS_SP100": get_sp100_tickers(),
         "US_ETFS": US_ETFS,
         "CRYPTOCURRENCY": get_crypto_tickers()
     }
@@ -232,16 +224,38 @@ def main():
     }
     tickers_list_data = {}
     
+    # 用來收集所有市場數據的變數
+    global_history = {}
+    global_current = []
+    
     for cat_key, tickers in categories.items():
         unique_tickers = sorted(list(set(tickers)))
         tickers_list_data[cat_key] = unique_tickers
         
         history_res, current_all_res = calculate_historical_momentum(unique_tickers, cat_key)
         final_json_data["current_all"][cat_key] = current_all_res
+        global_current.extend(current_all_res)
         
-        for month, top3_list in history_res.items():
-            if month not in final_json_data["history"]: final_json_data["history"][month] = {}
-            final_json_data["history"][month][cat_key] = top3_list
+        for month, all_list in history_res.items():
+            if month not in final_json_data["history"]: 
+                final_json_data["history"][month] = {}
+            if month not in global_history:
+                global_history[month] = []
+                
+            # 各分類只存前 3 名，節省空間
+            final_json_data["history"][month][cat_key] = all_list[:3]
+            # 綜合池存入所有標的
+            global_history[month].extend(all_list)
+
+    # 🚀 計算綜合排名 (ALL_ASSETS)
+    # 當月綜合排行 (取前 30 名供網頁顯示)
+    global_current_sorted = sorted(global_current, key=lambda x: x['momentum'], reverse=True)
+    final_json_data["current_all"]["ALL_ASSETS"] = global_current_sorted[:30] 
+    
+    # 歷史綜合排行 (每個月取前 10 名)
+    for month, items in global_history.items():
+        sorted_items = sorted(items, key=lambda x: x['momentum'], reverse=True)
+        final_json_data["history"][month]["ALL_ASSETS"] = sorted_items[:10]
 
     with open("momentum_history.json", 'w', encoding='utf-8') as f:
         json.dump(final_json_data, f, ensure_ascii=False, indent=4)
