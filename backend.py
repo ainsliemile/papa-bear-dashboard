@@ -196,7 +196,7 @@ def calculate_historical_momentum(tickers, category_name):
     return history_result, current_all
 
 # ==========================================
-# 4. 主程式整合 (加入綜合排名邏輯)
+# 4. 主程式整合 (加入綜合排名與避險濾網邏輯)
 # ==========================================
 def main():
     print("=== Papa Bear 跨市場動能監控系統 (綜合排名版) ===")
@@ -219,6 +219,7 @@ def main():
     
     final_json_data = {
         "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "spy_1_3_momentum": 0.0, # 🔥 預設濾網數值
         "history": {}, 
         "current_all": {}
     }
@@ -256,6 +257,24 @@ def main():
     for month, items in global_history.items():
         sorted_items = sorted(items, key=lambda x: x['momentum'], reverse=True)
         final_json_data["history"][month]["ALL_ASSETS"] = sorted_items[:10]
+
+    # 🔥 新增：計算 SPY(1+3) 避險濾網
+    print("\n=== 計算大盤防護濾網 SPY(1+3) ===")
+    spy_data = download_robustly(["SPY"])
+    spy_fast_mom = 0.0
+    if not spy_data.empty and 'SPY' in spy_data.columns:
+        spy_prices = spy_data['SPY'].ffill().resample('D').ffill()
+        try:
+            # 使用 30天(1個月) 與 90天(3個月) 計算敏銳動能
+            m1_spy = spy_prices.pct_change(periods=30).iloc[-1]
+            m3_spy = spy_prices.pct_change(periods=90).iloc[-1]
+            spy_fast_mom = ((m1_spy + m3_spy) / 2) * 100
+            print(f"🔥 最新 SPY(1+3) 避險濾網數值: {spy_fast_mom:.2f}%")
+        except Exception as e:
+            print(f"SPY 動能計算錯誤: {e}")
+    
+    # 寫入 JSON
+    final_json_data["spy_1_3_momentum"] = round(spy_fast_mom, 2)
 
     with open("momentum_history.json", 'w', encoding='utf-8') as f:
         json.dump(final_json_data, f, ensure_ascii=False, indent=4)
