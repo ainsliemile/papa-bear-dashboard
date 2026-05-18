@@ -9,41 +9,44 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-def get_tickers_from_csv():
+def get_tickers_from_excel():
     """
-    自動讀取目錄下所有 TrackingList.xlsx - [分類].csv 檔案，
-    並依據檔名建立分類字典。
+    自動讀取目錄下 TrackingList 相關的 .xlsx 檔案，
+    並依據工作表 (Sheet) 名稱建立分類字典。
     """
     categories = {}
-    csv_files = glob.glob("*TrackingList*.csv")
+    excel_files = glob.glob("*TrackingList*.xlsx")
     
-    for file in csv_files:
-        # 從檔名萃取分類名稱，例如 'TrackingList.xlsx - 美國股票.csv' -> '美國股票'
-        cat_name = os.path.basename(file).replace('TrackingList.xlsx - ', '').replace('.csv', '').strip()
+    for file in excel_files:
         try:
-            df = pd.read_csv(file)
-            # 尋找包含股票代號的欄位 (支援多種常見命名)
-            col = None
-            for c in ['Symbol', 'Ticker', '代號', 'ticker', 'symbol']:
-                if c in df.columns:
-                    col = c
-                    break
-            if not col:
-                col = df.columns[0] # 若找不到，預設抓第一欄
-            
-            # 清理資料並存入
-            tickers = df[col].dropna().astype(str).str.strip().tolist()
-            categories[cat_name] = [t for t in tickers if t]
+            # 讀取 Excel 檔內的所有工作表 (sheet_name=None 會回傳一個 dict)
+            xls = pd.read_excel(file, sheet_name=None)
+            for sheet_name, df in xls.items():
+                # 尋找包含股票代號的欄位 (支援多種常見命名)
+                col = None
+                for c in ['Symbol', 'Ticker', '代號', 'ticker', 'symbol']:
+                    if c in df.columns:
+                        col = c
+                        break
+                if not col and not df.empty:
+                    col = df.columns[0] # 若找不到，預設抓第一欄
+                
+                if col:
+                    # 清理資料並存入
+                    tickers = df[col].dropna().astype(str).str.strip().tolist()
+                    valid_tickers = [t for t in tickers if t]
+                    if valid_tickers:
+                        categories[sheet_name] = valid_tickers
         except Exception as e:
             print(f"Error reading {file}: {e}")
             
     return categories
 
 def main():
-    print("1. Parsing CSV files...")
-    categories = get_tickers_from_csv()
+    print("1. Parsing Excel files...")
+    categories = get_tickers_from_excel()
     
-    # 若找不到 CSV，嘗試讀取 all_tickers.json 作為備案
+    # 若找不到 Excel，嘗試讀取 all_tickers.json 作為備案
     if not categories and os.path.exists('all_tickers.json'):
         with open('all_tickers.json', 'r', encoding='utf-8') as f:
             categories = json.load(f)
