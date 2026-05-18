@@ -28,7 +28,7 @@
 
     <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
         
-        <header class="mb-8 border-b pb-4 flex flex-col md:flex-row justify-between items-start md:items-end">
+        <header class="mb-6 border-b pb-4 flex flex-col md:flex-row justify-between items-start md:items-end">
             <div>
                 <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">Papa Bear <span class="text-blue-600">動能策略監控</span></h1>
                 <p class="text-gray-500 mt-2 text-sm">自適應多重週期系統 (股票與ETF: 1/3/6月 | 幣圈: 14天/1月/3月)</p>
@@ -37,6 +37,36 @@
                 自動更新狀態：載入中...
             </div>
         </header>
+
+        <!-- 🔥 新增：SPY(1+3) 極限避險預警橫幅 (預設隱藏) -->
+        <div id="spy-alert-banner" class="hidden bg-gradient-to-r from-red-600 to-red-700 text-white p-5 mb-6 rounded-lg shadow-lg shadow-red-500/40 border border-red-800 animate-pulse">
+            <h2 class="text-xl font-bold mb-2 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                系統避險預警：大盤進入危險修正區！
+            </h2>
+            <p class="text-red-100 text-base mb-1">
+                偵測到最新大盤指標 <span class="underline font-bold text-white">SPY(1+3) 敏銳動能已跌破 0</span>。
+            </p>
+            <p class="text-yellow-300 font-bold text-base">
+                根據最佳化量化配置策略：此時市場風險極高，強烈建議啟動防護機制 —— <br class="hidden sm:block">
+                將 50% 資金轉配置於黃金（GC=F）進行對沖，剩餘 50% 資金繼續配置於當月強勢股。
+            </p>
+        </div>
+
+        <!-- 💡 新增：SPY(1+3) 濾網定義說明卡片 -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 rounded-r-md shadow-sm">
+            <h3 class="text-lg font-bold text-blue-800 mb-1 flex items-center">
+                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                核心大盤濾網：SPY(1+3) 敏銳動能
+            </h3>
+            <p class="text-sm text-blue-900 mb-2">
+                <span class="font-semibold">指標定義：</span>大盤（SPY）過去 1 個月與 3 個月的報酬率平均值。<br>
+                <span class="font-semibold">運作機制：</span>當該數值 <span class="text-red-600 font-bold">&lt; 0</span> 時，代表大盤短線急速轉弱。此濾網能有效壓制歷史最大回撤，首選對沖策略為 50% 動能股 + 50% 黃金。
+            </p>
+            <div id="spy-momentum-display" class="hidden mt-2 inline-block bg-white px-3 py-1.5 rounded border border-blue-200 shadow-sm text-sm font-bold text-gray-700">
+                💡 當前 SPY(1+3) 數值：<span id="spy-momentum-value" class="text-lg"></span>
+            </div>
+        </div>
 
         <div class="flex space-x-4 mb-6">
             <button onclick="switchMainTab('dashboard')" id="btn-dashboard" class="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition">動能儀表板</button>
@@ -66,7 +96,7 @@
 
         <div id="view-dashboard" class="view-section active">
             <div class="flex flex-wrap border-b border-gray-200 mb-6 gap-2" id="tabs-nav">
-                <!-- 新增：綜合排名 -->
+                <!-- 綜合排名 -->
                 <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="ALL_ASSETS">🏆 綜合排名</button>
                 <button class="tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 transition-colors" data-target="TW_STOCKS_0050">台灣股票</button>
                 <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="TW_ETFS">台灣 ETF</button>
@@ -140,6 +170,27 @@
                     return; 
                 }
                 
+                // 🔥 新增：解析與呈現 SPY(1+3) 避險預警邏輯
+                if (fullData.spy_1_3_momentum !== undefined) {
+                    const spyMom = fullData.spy_1_3_momentum;
+                    const alertBanner = document.getElementById('spy-alert-banner');
+                    const spyDisplay = document.getElementById('spy-momentum-display');
+                    const spyValueSpan = document.getElementById('spy-momentum-value');
+
+                    // 顯示數值框
+                    spyDisplay.classList.remove('hidden');
+                    spyValueSpan.innerText = `${spyMom.toFixed(2)}%`;
+
+                    // 判斷是否需要發布紅色警報
+                    if (spyMom < 0) {
+                        alertBanner.classList.remove('hidden');
+                        spyValueSpan.className = 'text-lg text-red-600'; // 變紅色
+                    } else {
+                        alertBanner.classList.add('hidden');
+                        spyValueSpan.className = 'text-lg text-green-600'; // 變綠色
+                    }
+                }
+
                 document.getElementById('content-container').style.display = 'block';
                 
                 const months = Object.keys(fullData.history).sort().reverse();
