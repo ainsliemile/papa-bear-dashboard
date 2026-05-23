@@ -1,5 +1,5 @@
 {
-    "update_time": "2026-05-23 19:08:22",
+    "update_time": "2026-05-23 19:20:50",
     "spy_1_3_momentum": 6.37,
     "tw_0050_1_3_momentum": 13.71,
     "history": {
@@ -16,6 +16,14 @@
                 {
                     "symbol": "3131.TWO",
                     "momentum": 41.42
+                },
+                {
+                    "symbol": "2383.TW",
+                    "momentum": 40.77
+                },
+                {
+                    "symbol": "6640.TWO",
+                    "momentum": 39.93
                 }
             ],
             "TW_ETFS": [
@@ -30,6 +38,14 @@
                 {
                     "symbol": "00708L.TW",
                     "momentum": 15.47
+                },
+                {
+                    "symbol": "00910.TW",
+                    "momentum": 13.54
+                },
+                {
+                    "symbol": "00951.TW",
+                    "momentum": 13.08
                 }
             ],
             "US_STOCKS_SP100": [
@@ -44,6 +60,14 @@
                 {
                     "symbol": "COIN",
                     "momentum": 62.26
+                },
+                {
+                    "symbol": "STX",
+                    "momentum": 54.44
+                },
+                {
+                    "symbol": "CCJ",
+                    "momentum": 50.54
                 }
             ],
             "US_ETFS": [
@@ -58,6 +82,14 @@
                 {
                     "symbol": "DAPP",
                     "momentum": 42.55
+                },
+                {
+                    "symbol": "MNRS",
+                    "momentum": 38.24
+                },
+                {
+                    "symbol": "PPLT",
+                    "momentum": 36.47
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -72,6 +104,14 @@
                 {
                     "symbol": "BTC-USD",
                     "momentum": 15.61
+                },
+                {
+                    "symbol": "TRX-USD",
+                    "momentum": 10.83
+                },
+                {
+                    "symbol": "PAXG-USD",
+                    "momentum": 10.83
                 }
             ],
             "ALL_ASSETS": [
@@ -130,6 +170,14 @@
                 {
                     "symbol": "3017.TW",
                     "momentum": 60.85
+                },
+                {
+                    "symbol": "2059.TW",
+                    "momentum": 53.0
+                },
+                {
+                    "symbol": "6919.TW",
+                    "momentum": 51.21
                 }
             ],
             "TW_ETFS": [
@@ -144,6 +192,14 @@
                 {
                     "symbol": "00650L.TW",
                     "momentum": 20.58
+                },
+                {
+                    "symbol": "00753L.TW",
+                    "momentum": 20.01
+                },
+                {
+                    "symbol": "00670L.TW",
+                    "momentum": 19.3
                 }
             ],
             "US_STOCKS_SP100": [
@@ -158,6 +214,14 @@
                 {
                     "symbol": "HOOD",
                     "momentum": 72.75
+                },
+                {
+                    "symbol": "SMCI",
+                    "momentum": 70.73
+                },
+                {
+                    "symbol": "GEV",
+                    "momentum": 60.09
                 }
             ],
             "US_ETFS": [
@@ -172,6 +236,14 @@
                 {
                     "symbol": "URA",
                     "momentum": 32.63
+                },
+                {
+                    "symbol": "DAPP",
+                    "momentum": 29.93
+                },
+                {
+                    "symbol": "IBLC",
+                    "momentum": 28.24
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -186,6 +258,14 @@
                 {
                     "symbol": "CRO-USD",
                     "momentum": 45.14
+                },
+                {
+                    "symbol": "XLM-USD",
+                    "momentum": 37.84
+                },
+                {
+                    "symbol": "BCH-USD",
+                    "momentum": 32.39
                 }
             ],
             "ALL_ASSETS": [
@@ -244,6 +324,14 @@
                 {
                     "symbol": "2308.TW",
                     "momentum": 66.3
+                },
+                {
+                    "symbol": "2360.TW",
+                    "momentum": 62.68
+                },
+                {
+                    "symbol": "2383.TW",
+                    "momentum": 57.48
                 }
             ],
             "TW_ETFS": [
@@ -258,6 +346,14 @@
                 {
                     "symbol": "00655L.TW",
                     "momentum": 23.2
+                },
+                {
+                    "symbol": "00637L.TW",
+                    "momentum": 22.36
+                },
+                {
+                    "symbol": "00633L.TW",
+                    "momentum": 21.57
                 }
             ],
             "US_STOCKS_SP100": [
@@ -272,6 +368,14 @@
                 {
                     "symbol": "SFTBY",
                     "momentum": 80.43
+                },
+                {
+                    "symbol": "CRDO",
+                    "momentum": 78.39
+                },
+                {
+                    "symbol": "AXTI",
+                    "momentum": 70.91
                 }
             ],
             "US_ETFS": [
@@ -286,6 +390,14 @@
                 {
                     "symbol": "REMX",
                     "momentum": 53.17
+                },
+                {
+                    "symbol": "SILJ",
+                    "momentum": 44.83
+                },
+                {
+                    "symbol": "SLVP",
+                    "momentum": 43.31
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -300,6 +412,14 @@
                 {
                     "symbol": "LINK-USD",
                     "momentum": 53.29
+                },
+                {
+                    "symbol": "BCH-USD",
+                    "momentum": 33.54
+                },
+                {
+                    "symbol": "BNB-USD",
+                    "momentum": 28.58
                 }
             ],
             "ALL_ASSETS": [
@@ -358,6 +478,14 @@
                 {
                     "symbol": "3653.TW",
                     "momentum": 75.19
+                },
+                {
+                    "symbol": "2408.TW",
+                    "momentum": 64.36
+                },
+                {
+                    "symbol": "2301.TW",
+                    "momentum": 61.27
                 }
             ],
             "TW_ETFS": [
@@ -372,6 +500,14 @@
                 {
                     "symbol": "00685L.TW",
                     "momentum": 36.44
+                },
+                {
+                    "symbol": "00631L.TW",
+                    "momentum": 36.28
+                },
+                {
+                    "symbol": "00675L.TW",
+                    "momentum": 36.18
                 }
             ],
             "US_STOCKS_SP100": [
@@ -386,6 +522,14 @@
                 {
                     "symbol": "SNDK",
                     "momentum": 132.3
+                },
+                {
+                    "symbol": "AXTI",
+                    "momentum": 129.37
+                },
+                {
+                    "symbol": "CRDO",
+                    "momentum": 112.72
                 }
             ],
             "US_ETFS": [
@@ -400,6 +544,14 @@
                 {
                     "symbol": "MJ",
                     "momentum": 66.27
+                },
+                {
+                    "symbol": "USD",
+                    "momentum": 65.77
+                },
+                {
+                    "symbol": "DAPP",
+                    "momentum": 64.53
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -414,6 +566,14 @@
                 {
                     "symbol": "ETH-USD",
                     "momentum": 62.85
+                },
+                {
+                    "symbol": "AVAX-USD",
+                    "momentum": 51.66
+                },
+                {
+                    "symbol": "BNB-USD",
+                    "momentum": 45.91
                 }
             ],
             "ALL_ASSETS": [
@@ -472,6 +632,14 @@
                 {
                     "symbol": "8996.TW",
                     "momentum": 128.63
+                },
+                {
+                    "symbol": "2360.TW",
+                    "momentum": 106.28
+                },
+                {
+                    "symbol": "3017.TW",
+                    "momentum": 103.6
                 }
             ],
             "TW_ETFS": [
@@ -486,6 +654,14 @@
                 {
                     "symbol": "00631L.TW",
                     "momentum": 57.66
+                },
+                {
+                    "symbol": "00675L.TW",
+                    "momentum": 57.41
+                },
+                {
+                    "symbol": "00685L.TW",
+                    "momentum": 57.16
                 }
             ],
             "US_STOCKS_SP100": [
@@ -500,6 +676,14 @@
                 {
                     "symbol": "AXTI",
                     "momentum": 275.71
+                },
+                {
+                    "symbol": "ATEYY",
+                    "momentum": 144.38
+                },
+                {
+                    "symbol": "CRDO",
+                    "momentum": 144.29
                 }
             ],
             "US_ETFS": [
@@ -514,6 +698,14 @@
                 {
                     "symbol": "MNRS",
                     "momentum": 88.59
+                },
+                {
+                    "symbol": "STCE",
+                    "momentum": 81.1
+                },
+                {
+                    "symbol": "CTEX",
+                    "momentum": 69.39
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -528,6 +720,14 @@
                 {
                     "symbol": "BNB-USD",
                     "momentum": 42.84
+                },
+                {
+                    "symbol": "ETH-USD",
+                    "momentum": 37.11
+                },
+                {
+                    "symbol": "XAUT-USD",
+                    "momentum": 15.57
                 }
             ],
             "ALL_ASSETS": [
@@ -586,6 +786,14 @@
                 {
                     "symbol": "2368.TW",
                     "momentum": 70.11
+                },
+                {
+                    "symbol": "2449.TW",
+                    "momentum": 65.89
+                },
+                {
+                    "symbol": "3653.TW",
+                    "momentum": 63.85
                 }
             ],
             "TW_ETFS": [
@@ -600,6 +808,14 @@
                 {
                     "symbol": "00738U.TW",
                     "momentum": 35.58
+                },
+                {
+                    "symbol": "00902.TW",
+                    "momentum": 35.36
+                },
+                {
+                    "symbol": "00708L.TW",
+                    "momentum": 35.17
                 }
             ],
             "US_STOCKS_SP100": [
@@ -614,6 +830,14 @@
                 {
                     "symbol": "BE",
                     "momentum": 193.48
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 185.34
+                },
+                {
+                    "symbol": "CSIQ",
+                    "momentum": 122.07
                 }
             ],
             "US_ETFS": [
@@ -628,6 +852,14 @@
                 {
                     "symbol": "BBC",
                     "momentum": 63.96
+                },
+                {
+                    "symbol": "SLVP",
+                    "momentum": 55.53
+                },
+                {
+                    "symbol": "BIB",
+                    "momentum": 54.91
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -642,6 +874,14 @@
                 {
                     "symbol": "PAXG-USD",
                     "momentum": 19.01
+                },
+                {
+                    "symbol": "XAUT-USD",
+                    "momentum": 18.65
+                },
+                {
+                    "symbol": "BCH-USD",
+                    "momentum": 10.41
                 }
             ],
             "ALL_ASSETS": [
@@ -700,6 +940,14 @@
                 {
                     "symbol": "8996.TW",
                     "momentum": 71.26
+                },
+                {
+                    "symbol": "2449.TW",
+                    "momentum": 70.39
+                },
+                {
+                    "symbol": "2368.TW",
+                    "momentum": 66.39
                 }
             ],
             "TW_ETFS": [
@@ -714,6 +962,14 @@
                 {
                     "symbol": "00715L.TW",
                     "momentum": 84.78
+                },
+                {
+                    "symbol": "00738U.TW",
+                    "momentum": 59.58
+                },
+                {
+                    "symbol": "00663L.TW",
+                    "momentum": 33.55
                 }
             ],
             "US_STOCKS_SP100": [
@@ -728,6 +984,14 @@
                 {
                     "symbol": "LITE",
                     "momentum": 142.54
+                },
+                {
+                    "symbol": "SATS",
+                    "momentum": 127.7
+                },
+                {
+                    "symbol": "CIEN",
+                    "momentum": 87.54
                 }
             ],
             "US_ETFS": [
@@ -742,6 +1006,14 @@
                 {
                     "symbol": "SLV",
                     "momentum": 58.06
+                },
+                {
+                    "symbol": "BBC",
+                    "momentum": 50.09
+                },
+                {
+                    "symbol": "SLVR",
+                    "momentum": 45.81
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -756,6 +1028,14 @@
                 {
                     "symbol": "XAUT-USD",
                     "momentum": 14.96
+                },
+                {
+                    "symbol": "PAXG-USD",
+                    "momentum": 14.76
+                },
+                {
+                    "symbol": "BCH-USD",
+                    "momentum": 11.95
                 }
             ],
             "ALL_ASSETS": [
@@ -814,6 +1094,14 @@
                 {
                     "symbol": "2449.TW",
                     "momentum": 68.95
+                },
+                {
+                    "symbol": "1303.TW",
+                    "momentum": 64.77
+                },
+                {
+                    "symbol": "8996.TW",
+                    "momentum": 61.38
                 }
             ],
             "TW_ETFS": [
@@ -828,6 +1116,14 @@
                 {
                     "symbol": "00706L.TW",
                     "momentum": 86.62
+                },
+                {
+                    "symbol": "00715L.TW",
+                    "momentum": 85.86
+                },
+                {
+                    "symbol": "00708L.TW",
+                    "momentum": 79.95
                 }
             ],
             "US_STOCKS_SP100": [
@@ -842,6 +1138,14 @@
                 {
                     "symbol": "MU",
                     "momentum": 137.12
+                },
+                {
+                    "symbol": "BE",
+                    "momentum": 131.2
+                },
+                {
+                    "symbol": "LITE",
+                    "momentum": 118.89
                 }
             ],
             "US_ETFS": [
@@ -856,6 +1160,14 @@
                 {
                     "symbol": "SIVR",
                     "momentum": 71.69
+                },
+                {
+                    "symbol": "SLV",
+                    "momentum": 71.64
+                },
+                {
+                    "symbol": "SLVR",
+                    "momentum": 62.43
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -870,6 +1182,14 @@
                 {
                     "symbol": "PAXG-USD",
                     "momentum": 26.41
+                },
+                {
+                    "symbol": "XAUT-USD",
+                    "momentum": 25.7
+                },
+                {
+                    "symbol": "HYPE-USD",
+                    "momentum": 0.0
                 }
             ],
             "ALL_ASSETS": [
@@ -928,6 +1248,14 @@
                 {
                     "symbol": "3711.TW",
                     "momentum": 85.31
+                },
+                {
+                    "symbol": "2360.TW",
+                    "momentum": 82.28
+                },
+                {
+                    "symbol": "8996.TW",
+                    "momentum": 71.83
                 }
             ],
             "TW_ETFS": [
@@ -942,6 +1270,14 @@
                 {
                     "symbol": "00706L.TW",
                     "momentum": 78.96
+                },
+                {
+                    "symbol": "00663L.TW",
+                    "momentum": 62.8
+                },
+                {
+                    "symbol": "00631L.TW",
+                    "momentum": 62.68
                 }
             ],
             "US_STOCKS_SP100": [
@@ -956,6 +1292,14 @@
                 {
                     "symbol": "LITE",
                     "momentum": 207.4
+                },
+                {
+                    "symbol": "CIEN",
+                    "momentum": 126.77
+                },
+                {
+                    "symbol": "WDC",
+                    "momentum": 110.66
                 }
             ],
             "US_ETFS": [
@@ -970,6 +1314,14 @@
                 {
                     "symbol": "SLVR",
                     "momentum": 82.0
+                },
+                {
+                    "symbol": "SIVR",
+                    "momentum": 71.37
+                },
+                {
+                    "symbol": "SLV",
+                    "momentum": 71.16
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -984,6 +1336,14 @@
                 {
                     "symbol": "XAUT-USD",
                     "momentum": 29.83
+                },
+                {
+                    "symbol": "LUNC-USD",
+                    "momentum": 25.54
+                },
+                {
+                    "symbol": "HYPE-USD",
+                    "momentum": 0.0
                 }
             ],
             "ALL_ASSETS": [
@@ -1042,6 +1402,14 @@
                 {
                     "symbol": "3131.TWO",
                     "momentum": 69.02
+                },
+                {
+                    "symbol": "8996.TW",
+                    "momentum": 66.93
+                },
+                {
+                    "symbol": "2383.TW",
+                    "momentum": 58.95
                 }
             ],
             "TW_ETFS": [
@@ -1056,6 +1424,14 @@
                 {
                     "symbol": "00642U.TW",
                     "momentum": 72.64
+                },
+                {
+                    "symbol": "00673R.TW",
+                    "momentum": 35.87
+                },
+                {
+                    "symbol": "00892.TW",
+                    "momentum": 22.36
                 }
             ],
             "US_STOCKS_SP100": [
@@ -1070,6 +1446,14 @@
                 {
                     "symbol": "LITE",
                     "momentum": 140.95
+                },
+                {
+                    "symbol": "CIEN",
+                    "momentum": 81.28
+                },
+                {
+                    "symbol": "DOW",
+                    "momentum": 67.44
                 }
             ],
             "US_ETFS": [
@@ -1084,6 +1468,14 @@
                 {
                     "symbol": "DIG",
                     "momentum": 63.69
+                },
+                {
+                    "symbol": "ERX",
+                    "momentum": 63.53
+                },
+                {
+                    "symbol": "XES",
+                    "momentum": 35.8
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -1098,6 +1490,14 @@
                 {
                     "symbol": "XAUT-USD",
                     "momentum": 5.56
+                },
+                {
+                    "symbol": "PAXG-USD",
+                    "momentum": 5.39
+                },
+                {
+                    "symbol": "TRX-USD",
+                    "momentum": 5.04
                 }
             ],
             "ALL_ASSETS": [
@@ -1156,6 +1556,14 @@
                 {
                     "symbol": "2360.TW",
                     "momentum": 106.63
+                },
+                {
+                    "symbol": "3653.TW",
+                    "momentum": 94.59
+                },
+                {
+                    "symbol": "2345.TW",
+                    "momentum": 88.86
                 }
             ],
             "TW_ETFS": [
@@ -1170,6 +1578,14 @@
                 {
                     "symbol": "00642U.TW",
                     "momentum": 75.81
+                },
+                {
+                    "symbol": "00892.TW",
+                    "momentum": 57.54
+                },
+                {
+                    "symbol": "00631L.TW",
+                    "momentum": 55.75
                 }
             ],
             "US_STOCKS_SP100": [
@@ -1184,6 +1600,14 @@
                 {
                     "symbol": "LITE",
                     "momentum": 168.78
+                },
+                {
+                    "symbol": "INTC",
+                    "momentum": 117.89
+                },
+                {
+                    "symbol": "WDC",
+                    "momentum": 108.01
                 }
             ],
             "US_ETFS": [
@@ -1198,6 +1622,14 @@
                 {
                     "symbol": "PSI",
                     "momentum": 52.3
+                },
+                {
+                    "symbol": "FTXL",
+                    "momentum": 51.56
+                },
+                {
+                    "symbol": "HYDR",
+                    "momentum": 50.71
                 }
             ],
             "CRYPTOCURRENCY": [
@@ -1212,6 +1644,14 @@
                 {
                     "symbol": "LEO-USD",
                     "momentum": 9.97
+                },
+                {
+                    "symbol": "TRX-USD",
+                    "momentum": 9.47
+                },
+                {
+                    "symbol": "TON-USD",
+                    "momentum": 4.84
                 }
             ],
             "ALL_ASSETS": [
@@ -1270,6 +1710,14 @@
                 {
                     "symbol": "2454.TW",
                     "momentum": 109.47
+                },
+                {
+                    "symbol": "7769.TW",
+                    "momentum": 91.01
+                },
+                {
+                    "symbol": "2303.TW",
+                    "momentum": 90.23
                 }
             ],
             "TW_ETFS": [
@@ -1284,6 +1732,14 @@
                 {
                     "symbol": "00928.TWO",
                     "momentum": 58.29
+                },
+                {
+                    "symbol": "00642U.TW",
+                    "momentum": 57.34
+                },
+                {
+                    "symbol": "00947.TW",
+                    "momentum": 57.04
                 }
             ],
             "US_STOCKS_SP100": [
@@ -1298,6 +1754,14 @@
                 {
                     "symbol": "INTC",
                     "momentum": 128.35
+                },
+                {
+                    "symbol": "MU",
+                    "momentum": 115.08
+                },
+                {
+                    "symbol": "STX",
+                    "momentum": 105.1
                 }
             ],
             "US_ETFS": [
@@ -1312,20 +1776,36 @@
                 {
                     "symbol": "USD",
                     "momentum": 61.4
+                },
+                {
+                    "symbol": "XSD",
+                    "momentum": 61.34
+                },
+                {
+                    "symbol": "FTXL",
+                    "momentum": 57.59
                 }
             ],
             "CRYPTOCURRENCY": [
                 {
                     "symbol": "ZEC-USD",
-                    "momentum": 98.6
+                    "momentum": 99.1
                 },
                 {
                     "symbol": "LUNC-USD",
-                    "momentum": 95.41
+                    "momentum": 95.24
                 },
                 {
                     "symbol": "ONDO-USD",
-                    "momentum": 34.01
+                    "momentum": 36.09
+                },
+                {
+                    "symbol": "TRX-USD",
+                    "momentum": 22.17
+                },
+                {
+                    "symbol": "RENDER-USD",
+                    "momentum": 21.38
                 }
             ],
             "ALL_ASSETS": [
@@ -5244,23 +5724,23 @@
         "CRYPTOCURRENCY": [
             {
                 "symbol": "ZEC-USD",
-                "momentum": 98.6
+                "momentum": 99.1
             },
             {
                 "symbol": "LUNC-USD",
-                "momentum": 95.41
+                "momentum": 95.24
             },
             {
                 "symbol": "ONDO-USD",
-                "momentum": 34.01
+                "momentum": 36.09
             },
             {
                 "symbol": "TRX-USD",
-                "momentum": 22.13
+                "momentum": 22.17
             },
             {
                 "symbol": "RENDER-USD",
-                "momentum": 21.0
+                "momentum": 21.38
             },
             {
                 "symbol": "LEO-USD",
@@ -5271,15 +5751,7 @@
                 "momentum": 1.28
             },
             {
-                "symbol": "XMR-USD",
-                "momentum": 0.06
-            },
-            {
                 "symbol": "SUI-USD",
-                "momentum": 0.0
-            },
-            {
-                "symbol": "HYPE-USD",
                 "momentum": 0.0
             },
             {
@@ -5287,84 +5759,92 @@
                 "momentum": 0.0
             },
             {
+                "symbol": "HYPE-USD",
+                "momentum": 0.0
+            },
+            {
+                "symbol": "XMR-USD",
+                "momentum": -0.21
+            },
+            {
                 "symbol": "BTC-USD",
-                "momentum": -1.33
+                "momentum": -1.17
             },
             {
                 "symbol": "AR-USD",
-                "momentum": -2.82
+                "momentum": -2.4
             },
             {
                 "symbol": "XAUT-USD",
-                "momentum": -3.63
+                "momentum": -3.61
             },
             {
                 "symbol": "PAXG-USD",
-                "momentum": -4.06
+                "momentum": -4.01
             },
             {
                 "symbol": "BNB-USD",
-                "momentum": -4.91
+                "momentum": -4.72
             },
             {
                 "symbol": "LINK-USD",
-                "momentum": -6.39
+                "momentum": -6.18
             },
             {
                 "symbol": "DOGE-USD",
-                "momentum": -8.61
+                "momentum": -8.33
             },
             {
                 "symbol": "AVAX-USD",
-                "momentum": -10.04
+                "momentum": -9.75
             },
             {
                 "symbol": "ETH-USD",
-                "momentum": -11.24
+                "momentum": -11.04
             },
             {
                 "symbol": "SOL-USD",
-                "momentum": -11.48
+                "momentum": -11.19
             },
             {
                 "symbol": "LTC-USD",
-                "momentum": -13.84
+                "momentum": -13.64
             },
             {
                 "symbol": "XRP-USD",
-                "momentum": -14.1
+                "momentum": -13.96
             },
             {
                 "symbol": "SHIB-USD",
-                "momentum": -14.29
+                "momentum": -14.14
             },
             {
                 "symbol": "CRO-USD",
-                "momentum": -14.95
+                "momentum": -14.67
             },
             {
                 "symbol": "HBAR-USD",
-                "momentum": -16.29
+                "momentum": -16.18
+            },
+            {
+                "symbol": "ADA-USD",
+                "momentum": -18.49
             },
             {
                 "symbol": "M-USD",
                 "momentum": -18.53
             },
             {
-                "symbol": "ADA-USD",
-                "momentum": -18.66
-            },
-            {
                 "symbol": "XLM-USD",
-                "momentum": -19.47
+                "momentum": -19.16
             },
             {
                 "symbol": "DOT-USD",
-                "momentum": -20.53
+                "momentum": -20.21
             },
             {
                 "symbol": "BCH-USD",
-                "momentum": -26.16
+                "momentum": -26.11
             }
         ],
         "ALL_ASSETS": [
@@ -5414,11 +5894,11 @@
             },
             {
                 "symbol": "ZEC-USD",
-                "momentum": 98.6
+                "momentum": 99.1
             },
             {
                 "symbol": "LUNC-USD",
-                "momentum": 95.41
+                "momentum": 95.24
             },
             {
                 "symbol": "WDC",
