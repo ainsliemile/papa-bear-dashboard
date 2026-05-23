@@ -152,7 +152,7 @@ def download_robustly(tickers):
     return final_prices
 
 # ==========================================
-# 3. 動能計算核心演算法
+# 3. 動能計算核心演算法 (純月線月底結算版)
 # ==========================================
 def calculate_historical_momentum(tickers, category_name):
     print(f"\n[{category_name}] 開始處理...")
@@ -163,24 +163,24 @@ def calculate_historical_momentum(tickers, category_name):
         print(f"⚠️ 警告：{category_name} 抓不到任何價格資料！")
         return {}, []
     
-    prices = prices.ffill().resample('D').ffill()
+    # 🚀 核心改造：直接將資料壓縮為「每月最後一個交易日」的還原收盤價
+    # 這行魔法會自動避開假日，抓取每個月最後一天實際有開盤的數字
+    monthly_prices = prices.resample('ME').last()
     
-    # 🚀 ETF 與股票合併，統一使用 1個月(30天), 3個月(90天), 6個月(180天)
-    if category_name in ["TW_ETFS", "US_ETFS", "TW_STOCKS_0050", "US_STOCKS_SP100"]: p1, p2, p3 = 30, 90, 180
-    elif category_name == "CRYPTOCURRENCY": p1, p2, p3 = 14, 30, 90
-    else: p1, p2, p3 = 30, 90, 180
-
-    m1 = prices.pct_change(periods=p1)
-    m2 = prices.pct_change(periods=p2)
-    m3 = prices.pct_change(periods=p3)
+    # 嚴格計算 1個月、3個月、6個月的「月底對月底」動能
+    m1 = monthly_prices.pct_change(periods=1)
+    m3 = monthly_prices.pct_change(periods=3)
+    m6 = monthly_prices.pct_change(periods=6)
     
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", category=RuntimeWarning)
-        avg_momentum_values = np.nanmean([m1.values, m2.values, m3.values], axis=0)
+        # 將三個週期的動能做平均
+        avg_momentum_values = np.nanmean([m1.values, m3.values, m6.values], axis=0)
         
-    avg_momentum = pd.DataFrame(avg_momentum_values, index=prices.index, columns=prices.columns)
+    # 建立成 DataFrame
+    monthly_momentum = pd.DataFrame(avg_momentum_values, index=monthly_prices.index, columns=monthly_prices.columns)
     
-    monthly_momentum = avg_momentum.resample('ME').last()
+    # 取出最近 12 個月的歷史紀錄
     last_12_months = monthly_momentum.tail(12)
     
     history_result = {}
@@ -190,7 +190,8 @@ def calculate_historical_momentum(tickers, category_name):
         valid_ranks = row.dropna().sort_values(ascending=False)
         history_result[month_str] = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in valid_ranks.items()]
         
-    latest_row = avg_momentum.iloc[-1].dropna().sort_values(ascending=False)
+    # 抓取最新一個月的排行現況
+    latest_row = monthly_momentum.iloc[-1].dropna().sort_values(ascending=False)
     current_all = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in latest_row.items()]
         
     return history_result, current_all
@@ -258,18 +259,19 @@ def main():
         sorted_items = sorted(items, key=lambda x: x['momentum'], reverse=True)
         final_json_data["history"][month]["ALL_ASSETS"] = sorted_items[:10]
 
-    # 🔥 新增：計算 SPY(1+3) 避險濾網
+    # 🔥 新增：計算 SPY(1+3) 避險濾網 (同步升級為純月線月底邏輯)
     print("\n=== 計算大盤防護濾網 SPY(1+3) ===")
     spy_data = download_robustly(["SPY"])
     spy_fast_mom = 0.0
     if not spy_data.empty and 'SPY' in spy_data.columns:
-        spy_prices = spy_data['SPY'].ffill().resample('D').ffill()
+        # 直接轉換為月線，只取每個月最後一天
+        spy_monthly = spy_data['SPY'].resample('ME').last()
         try:
-            # 使用 30天(1個月) 與 90天(3個月) 計算敏銳動能
-            m1_spy = spy_prices.pct_change(periods=30).iloc[-1]
-            m3_spy = spy_prices.pct_change(periods=90).iloc[-1]
+            # 使用 1個月 與 3個月 的月底資料計算敏銳動能
+            m1_spy = spy_monthly.pct_change(periods=1).iloc[-1]
+            m3_spy = spy_monthly.pct_change(periods=3).iloc[-1]
             spy_fast_mom = ((m1_spy + m3_spy) / 2) * 100
-            print(f"🔥 最新 SPY(1+3) 避險濾網數值: {spy_fast_mom:.2f}%")
+            print(f"🔥 最新 SPY(1+3) 月底避險濾網數值: {spy_fast_mom:.2f}%")
         except Exception as e:
             print(f"SPY 動能計算錯誤: {e}")
     
