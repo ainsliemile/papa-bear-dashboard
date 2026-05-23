@@ -23,9 +23,6 @@ session.headers.update({
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 })
 
-# ==========================================
-# 1. 抓取邏輯 (信任 Excel 版)
-# ==========================================
 def get_0050_tickers():
     return ["2330.TW", "2317.TW", "2454.TW", "2382.TW", "2308.TW"]
 
@@ -96,9 +93,6 @@ TW_ETFS = ["0050.TW", "0056.TW"]
 US_SECTORS = ["XLK"]
 US_ETFS = ["VOO", "QQQ"]
 
-# ==========================================
-# 2. 核心技術：超穩定 Ticker.history 
-# ==========================================
 def download_robustly(tickers):
     print(f"   -> 準備「超穩定安全下載」 {len(tickers)} 檔標的資料...")
     all_prices = {}
@@ -151,9 +145,6 @@ def download_robustly(tickers):
     print(f"      ✅ 成功下載 {len(final_prices.columns)} 檔有效歷史數據！")
     return final_prices
 
-# ==========================================
-# 3. 動能計算核心演算法 (純月線月底結算版)
-# ==========================================
 def calculate_historical_momentum(tickers, category_name):
     print(f"\n[{category_name}] 開始處理...")
     
@@ -163,8 +154,7 @@ def calculate_historical_momentum(tickers, category_name):
         print(f"⚠️ 警告：{category_name} 抓不到任何價格資料！")
         return {}, []
     
-    # 🚀 核心改造：直接將資料壓縮為「每月最後一個交易日」的還原收盤價
-    # 這行魔法會自動避開假日，抓取每個月最後一天實際有開盤的數字
+    # 使用「每月最後一個交易日」還原收盤價結算
     monthly_prices = prices.resample('ME').last()
     
     # 嚴格計算 1個月、3個月、6個月的「月底對月底」動能
@@ -174,31 +164,22 @@ def calculate_historical_momentum(tickers, category_name):
     
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", category=RuntimeWarning)
-        # 將三個週期的動能做平均
         avg_momentum_values = np.nanmean([m1.values, m3.values, m6.values], axis=0)
         
-    # 建立成 DataFrame
     monthly_momentum = pd.DataFrame(avg_momentum_values, index=monthly_prices.index, columns=monthly_prices.columns)
-    
-    # 取出最近 12 個月的歷史紀錄
     last_12_months = monthly_momentum.tail(12)
     
     history_result = {}
     for date, row in last_12_months.iterrows():
         month_str = date.strftime('%Y-%m')
-        # 改為回傳該月「所有」排名的標的，以供後續跨市場統整
         valid_ranks = row.dropna().sort_values(ascending=False)
         history_result[month_str] = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in valid_ranks.items()]
         
-    # 抓取最新一個月的排行現況
     latest_row = monthly_momentum.iloc[-1].dropna().sort_values(ascending=False)
     current_all = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in latest_row.items()]
         
     return history_result, current_all
 
-# ==========================================
-# 4. 主程式整合 (加入綜合排名與避險濾網邏輯)
-# ==========================================
 def main():
     print("=== Papa Bear 跨市場動能監控系統 (綜合排名版) ===")
     
@@ -220,13 +201,12 @@ def main():
     
     final_json_data = {
         "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "spy_1_3_momentum": 0.0, # 🔥 預設濾網數值
+        "spy_1_3_momentum": 0.0, 
+        "tw_0050_1_3_momentum": 0.0, # 🔥 新增：台股濾網
         "history": {}, 
         "current_all": {}
     }
     tickers_list_data = {}
-    
-    # 用來收集所有市場數據的變數
     global_history = {}
     global_current = []
     
@@ -243,40 +223,43 @@ def main():
                 final_json_data["history"][month] = {}
             if month not in global_history:
                 global_history[month] = []
-                
-            # 各分類只存前 3 名，節省空間
             final_json_data["history"][month][cat_key] = all_list[:3]
-            # 綜合池存入所有標的
             global_history[month].extend(all_list)
 
-    # 🚀 計算綜合排名 (ALL_ASSETS)
-    # 當月綜合排行 (取前 30 名供網頁顯示)
     global_current_sorted = sorted(global_current, key=lambda x: x['momentum'], reverse=True)
     final_json_data["current_all"]["ALL_ASSETS"] = global_current_sorted[:30] 
     
-    # 歷史綜合排行 (每個月取前 10 名)
     for month, items in global_history.items():
         sorted_items = sorted(items, key=lambda x: x['momentum'], reverse=True)
         final_json_data["history"][month]["ALL_ASSETS"] = sorted_items[:10]
 
-    # 🔥 新增：計算 SPY(1+3) 避險濾網 (同步升級為純月線月底邏輯)
-    print("\n=== 計算大盤防護濾網 SPY(1+3) ===")
+    # 🔥 新增：計算 SPY(1+3) 避險濾網
+    print("\n=== 計算美股大盤防護濾網 SPY(1+3) ===")
     spy_data = download_robustly(["SPY"])
     spy_fast_mom = 0.0
     if not spy_data.empty and 'SPY' in spy_data.columns:
-        # 直接轉換為月線，只取每個月最後一天
         spy_monthly = spy_data['SPY'].resample('ME').last()
         try:
-            # 使用 1個月 與 3個月 的月底資料計算敏銳動能
             m1_spy = spy_monthly.pct_change(periods=1).iloc[-1]
             m3_spy = spy_monthly.pct_change(periods=3).iloc[-1]
             spy_fast_mom = ((m1_spy + m3_spy) / 2) * 100
-            print(f"🔥 最新 SPY(1+3) 月底避險濾網數值: {spy_fast_mom:.2f}%")
-        except Exception as e:
-            print(f"SPY 動能計算錯誤: {e}")
-    
-    # 寫入 JSON
+            print(f"🔥 最新 SPY(1+3) 濾網: {spy_fast_mom:.2f}%")
+        except: pass
     final_json_data["spy_1_3_momentum"] = round(spy_fast_mom, 2)
+
+    # 🔥 新增：計算 0050(1+3) 避險濾網
+    print("\n=== 計算台股大盤防護濾網 0050(1+3) ===")
+    tw_data = download_robustly(["0050.TW"])
+    tw_0050_fast_mom = 0.0
+    if not tw_data.empty and '0050.TW' in tw_data.columns:
+        tw_monthly = tw_data['0050.TW'].resample('ME').last()
+        try:
+            m1_tw = tw_monthly.pct_change(periods=1).iloc[-1]
+            m3_tw = tw_monthly.pct_change(periods=3).iloc[-1]
+            tw_0050_fast_mom = ((m1_tw + m3_tw) / 2) * 100
+            print(f"🔥 最新 0050(1+3) 濾網: {tw_0050_fast_mom:.2f}%")
+        except: pass
+    final_json_data["tw_0050_1_3_momentum"] = round(tw_0050_fast_mom, 2)
 
     with open("momentum_history.json", 'w', encoding='utf-8') as f:
         json.dump(final_json_data, f, ensure_ascii=False, indent=4)
