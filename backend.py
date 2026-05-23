@@ -223,7 +223,7 @@ def main():
                 final_json_data["history"][month] = {}
             if month not in global_history:
                 global_history[month] = []
-            final_json_data["history"][month][cat_key] = all_list[:3]
+            final_json_data["history"][month][cat_key] = all_list[:5]
             global_history[month].extend(all_list)
 
     global_current_sorted = sorted(global_current, key=lambda x: x['momentum'], reverse=True)
