@@ -63,6 +63,7 @@
 
         <div id="view-dashboard" class="view-section active">
             
+            <!-- 🌟 大盤濾網狀態區 (1+3月動能) -->
             <div id="market-filter-section" class="mb-8" style="display: none;">
                 <h2 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
                     <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
@@ -74,8 +75,8 @@
             </div>
 
             <div class="flex flex-wrap border-b border-gray-200 mb-6 gap-2" id="tabs-nav">
-                <button class="tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 transition-colors" data-target="ALL_ASSETS">🏆 綜合排名</button>
-                <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="TW_STOCKS_0050">台灣股票</button>
+                <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="ALL_ASSETS">🏆 綜合排名</button>
+                <button class="tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 transition-colors" data-target="TW_STOCKS_0050">台灣股票</button>
                 <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="TW_ETFS">台灣 ETF</button>
                 <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="US_STOCKS_SP100">美國股票</button>
                 <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="US_ETFS">美國 ETF</button>
@@ -187,6 +188,7 @@
                     filterContainer.innerHTML = filterHtml;
                 }
                 
+                // 預設渲染「台灣股票」
                 renderView('TW_STOCKS_0050');
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -200,6 +202,7 @@
             const historyContainer = document.getElementById('history-area');
             const months = Object.keys(fullData.history || {}).sort().reverse();
             
+            // 🔥 確保一般分類顯示 5 名，綜合排名顯示 10 名
             const maxRanks = categoryKey === 'ALL_ASSETS' ? 10 : 5;
             document.getElementById('history-title').innerText = categoryKey === 'ALL_ASSETS' ? '過去 12 個月前 10 名回測' : '過去 12 個月前 5 名回測';
             
