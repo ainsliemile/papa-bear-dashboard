@@ -1,35 +1,5 @@
 {
-    "update_time": "2026-05-24 16:03:50",
-    "market_filter": [
-        {
-            "id": "^TWII",
-            "name": "台灣加權指數",
-            "price": 42267.97,
-            "ma200": 32793.58,
-            "status": "BULL"
-        },
-        {
-            "id": "^SOX",
-            "name": "費城半導體",
-            "price": 12202.54,
-            "ma200": 8264.99,
-            "status": "BULL"
-        },
-        {
-            "id": "^GSPC",
-            "name": "標普500 (美股)",
-            "price": 7473.47,
-            "ma200": 6897.53,
-            "status": "BULL"
-        },
-        {
-            "id": "BTC-USD",
-            "name": "比特幣 (虛擬貨幣)",
-            "price": 76378.54,
-            "ma200": 80522.77,
-            "status": "BEAR"
-        }
-    ],
+    "update_time": "2026-05-24 16:23:11",
     "history": {
         "2025-06": {
             "TW_ETFS": [
@@ -1177,15 +1147,15 @@
             "CRYPTOCURRENCY": [
                 {
                     "symbol": "ZEC-USD",
-                    "momentum": 91.29
+                    "momentum": 89.55
                 },
                 {
                     "symbol": "LUNC-USD",
-                    "momentum": 54.13
+                    "momentum": 54.12
                 },
                 {
                     "symbol": "ONDO-USD",
-                    "momentum": 50.5
+                    "momentum": 50.72
                 }
             ],
             "ALL_ASSETS": [
@@ -4871,23 +4841,23 @@
         "CRYPTOCURRENCY": [
             {
                 "symbol": "ZEC-USD",
-                "momentum": 91.29
+                "momentum": 89.55
             },
             {
                 "symbol": "LUNC-USD",
-                "momentum": 54.13
+                "momentum": 54.12
             },
             {
                 "symbol": "ONDO-USD",
-                "momentum": 50.5
+                "momentum": 50.72
             },
             {
                 "symbol": "RENDER-USD",
-                "momentum": 17.09
+                "momentum": 16.49
             },
             {
                 "symbol": "TRX-USD",
-                "momentum": 15.53
+                "momentum": 15.59
             },
             {
                 "symbol": "TON-USD",
@@ -4895,27 +4865,27 @@
             },
             {
                 "symbol": "XMR-USD",
-                "momentum": 9.38
+                "momentum": 9.41
             },
             {
                 "symbol": "LEO-USD",
-                "momentum": 7.46
+                "momentum": 7.49
             },
             {
                 "symbol": "BNB-USD",
-                "momentum": 3.94
+                "momentum": 3.88
             },
             {
                 "symbol": "BTC-USD",
-                "momentum": 3.43
+                "momentum": 3.38
             },
             {
                 "symbol": "DOGE-USD",
-                "momentum": 1.57
+                "momentum": 1.5
             },
             {
                 "symbol": "LINK-USD",
-                "momentum": 1.01
+                "momentum": 0.97
             },
             {
                 "symbol": "SUI-USD",
@@ -4931,7 +4901,7 @@
             },
             {
                 "symbol": "AVAX-USD",
-                "momentum": -0.48
+                "momentum": -0.37
             },
             {
                 "symbol": "SOL-USD",
@@ -4939,51 +4909,51 @@
             },
             {
                 "symbol": "AR-USD",
-                "momentum": -0.89
+                "momentum": -0.96
             },
             {
                 "symbol": "ETH-USD",
-                "momentum": -2.51
+                "momentum": -2.57
             },
             {
                 "symbol": "DOT-USD",
-                "momentum": -2.75
+                "momentum": -2.98
             },
             {
                 "symbol": "XRP-USD",
-                "momentum": -4.84
-            },
-            {
-                "symbol": "LTC-USD",
-                "momentum": -5.45
+                "momentum": -4.9
             },
             {
                 "symbol": "CRO-USD",
-                "momentum": -5.47
+                "momentum": -5.49
+            },
+            {
+                "symbol": "LTC-USD",
+                "momentum": -5.57
             },
             {
                 "symbol": "HBAR-USD",
-                "momentum": -5.94
+                "momentum": -5.88
             },
             {
                 "symbol": "PAXG-USD",
-                "momentum": -7.14
+                "momentum": -7.12
             },
             {
                 "symbol": "XAUT-USD",
-                "momentum": -7.18
+                "momentum": -7.17
             },
             {
                 "symbol": "ADA-USD",
-                "momentum": -8.18
+                "momentum": -8.25
             },
             {
                 "symbol": "XLM-USD",
-                "momentum": -10.47
+                "momentum": -10.54
             },
             {
                 "symbol": "SHIB-USD",
-                "momentum": -11.27
+                "momentum": -11.59
             },
             {
                 "symbol": "M-USD",
@@ -4991,7 +4961,7 @@
             },
             {
                 "symbol": "BCH-USD",
-                "momentum": -25.56
+                "momentum": -25.67
             }
         ],
         "ALL_ASSETS": [
@@ -5057,7 +5027,7 @@
             },
             {
                 "symbol": "ZEC-USD",
-                "momentum": 91.29
+                "momentum": 89.55
             },
             {
                 "symbol": "ON",
@@ -5116,5 +5086,9 @@
                 "momentum": 66.34
             }
         ]
-    }
+    },
+    "spy_1_3_momentum": 6.37,
+    "sox_1_3_momentum": 33.43,
+    "tw_0050_1_3_momentum": 13.71,
+    "twii_1_3_momentum": 13.97
 }
