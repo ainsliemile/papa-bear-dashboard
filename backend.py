@@ -104,6 +104,8 @@ def download_robustly(tickers):
                 warnings.simplefilter("ignore")
                 data = tkr.history(period="2y", auto_adjust=True)
             
+            # 🔥 智能後綴轉換與正名機制
+            actual_ticker = ticker
             if data.empty or 'Close' not in data.columns:
                 fallback_ticker = None
                 
@@ -119,7 +121,8 @@ def download_robustly(tickers):
                         data = tkr_fallback.history(period="2y", auto_adjust=True)
                     
                     if not data.empty and 'Close' in data.columns:
-                        ticker = fallback_ticker
+                        # 成功抓到備用代號，將真實代號更新為 .TWO (或其他 fallback)
+                        actual_ticker = fallback_ticker
 
             if not data.empty and 'Close' in data.columns:
                 p = data['Close']
@@ -129,7 +132,8 @@ def download_robustly(tickers):
                 if p.index.tz is not None:
                     p.index = p.index.tz_localize(None)
                     
-                all_prices[ticker] = p
+                # 使用確定有資料的 actual_ticker (.TW 或 .TWO) 儲存
+                all_prices[actual_ticker] = p
             else:
                 pass 
                 
