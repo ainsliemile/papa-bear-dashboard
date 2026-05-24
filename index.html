@@ -36,6 +36,41 @@
             </div>
         </header>
 
+        <!-- SPY(1+3) 極限避險預警橫幅 -->
+        <div id="spy-alert-banner" class="hidden bg-gradient-to-r from-red-600 to-red-700 text-white p-5 mb-6 rounded-lg shadow-lg shadow-red-500/40 border border-red-800 animate-pulse">
+            <h2 class="text-xl font-bold mb-2 flex items-center">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path></svg>
+                系統避險預警：大盤進入危險修正區！
+            </h2>
+            <p class="text-red-100 text-base mb-1">
+                偵測到最新大盤指標 <span class="underline font-bold text-white">SPY(1+3) 敏銳動能已跌破 0</span>。
+            </p>
+            <p class="text-yellow-300 font-bold text-base">
+                根據最佳化量化配置策略：此時市場風險極高，強烈建議啟動防護機制 —— <br class="hidden sm:block">
+                將 50% 資金轉配置於黃金（GC=F）進行對沖，剩餘 50% 資金繼續配置於當月強勢股。
+            </p>
+        </div>
+
+        <!-- 濾網定義說明卡片 -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-6 rounded-r-md shadow-sm">
+            <h3 class="text-lg font-bold text-blue-800 mb-1 flex items-center">
+                <svg class="w-5 h-5 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                核心大盤濾網狀態
+            </h3>
+            <p class="text-sm text-blue-900 mb-2">
+                <span class="font-semibold">運作機制：</span>當濾網數值 <span class="text-red-600 font-bold">&lt; 0</span> 時，代表大盤短線急速轉弱。此濾網能有效壓制歷史最大回撤。
+            </p>
+            <div class="flex gap-4 mt-2">
+                <div id="spy-momentum-display" class="hidden inline-block bg-white px-3 py-1.5 rounded border border-blue-200 shadow-sm text-sm font-bold text-gray-700">
+                    🇺🇸 SPY(1+3)：<span id="spy-momentum-value" class="text-lg"></span>
+                </div>
+                <div id="tw-momentum-display" class="hidden inline-block bg-white px-3 py-1.5 rounded border border-blue-200 shadow-sm text-sm font-bold text-gray-700">
+                    🇹🇼 0050(1+3)：<span id="tw-momentum-value" class="text-lg"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 主導航按鈕 (切換儀表板/標的清單) -->
         <div class="flex space-x-4 mb-6">
             <button onclick="switchMainTab('dashboard')" id="btn-dashboard" class="px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition">動能儀表板</button>
             <button onclick="switchMainTab('tickers')" id="btn-tickers" class="px-4 py-2 bg-white border text-gray-700 rounded shadow hover:bg-gray-50 transition flex items-center">
@@ -51,7 +86,7 @@
                 </svg>
                 <div>
                     <h3 class="text-md font-bold text-red-800">系統警告：資料庫異常或為空</h3>
-                    <p class="text-sm text-red-700 mt-1" id="error-text">無法解析動能數據。請至 GitHub Actions 檢查是否被 Yahoo Finance 暫時阻擋。</p>
+                    <p class="text-sm text-red-700 mt-1" id="error-text">無法解析動能數據。請至 GitHub Actions 檢查是否被暫時阻擋。</p>
                 </div>
             </div>
         </div>
@@ -61,20 +96,10 @@
             正在載入數據...
         </div>
 
+        <!-- 視圖 1：動能儀表板 -->
         <div id="view-dashboard" class="view-section active">
-            
-            <!-- 🌟 大盤濾網狀態區 (1+3月動能) -->
-            <div id="market-filter-section" class="mb-8" style="display: none;">
-                <h2 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
-                    <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
-                    大盤趨勢防護濾網 (1個月與3個月平均動能)
-                </h2>
-                <div id="market-filter-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- Cards injected via JS -->
-                </div>
-            </div>
-
             <div class="flex flex-wrap border-b border-gray-200 mb-6 gap-2" id="tabs-nav">
+                <!-- 🔥 確保只有「綜合排名」帶有藍色預設狀態 -->
                 <button class="tab-btn active px-4 py-2 font-medium text-blue-600 border-b-2 border-blue-600 bg-blue-50 transition-colors" data-target="ALL_ASSETS">🏆 綜合排名</button>
                 <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="TW_STOCKS_0050">台灣股票</button>
                 <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors" data-target="TW_ETFS">台灣 ETF</button>
@@ -95,18 +120,26 @@
             </div>
         </div>
 
+        <!-- 🔥 視圖 2：驗證與匯出標的清單 -->
         <div id="view-tickers" class="view-section">
             <div class="bg-white shadow rounded-lg p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-xl font-bold text-gray-800">目前監控中的標的清單</h2>
-                    <button onclick="copyCSV()" class="px-3 py-1 bg-green-50 text-green-700 border border-green-200 rounded hover:bg-green-100 text-sm font-medium transition">
-                        複製為 CSV 格式 (供 Excel 使用)
+                <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 border-b pb-4">
+                    <div>
+                        <h2 class="text-xl font-bold text-gray-800">目前監控中的標的清單</h2>
+                        <p class="text-sm text-gray-500 mt-1">此資料來自於 TrackingList.xlsx，可用於確認後端引擎抓取狀態。</p>
+                    </div>
+                    <button onclick="copyCSV()" class="mt-4 sm:mt-0 px-4 py-2 bg-green-50 text-green-700 border border-green-200 rounded hover:bg-green-100 text-sm font-medium transition shadow-sm flex items-center">
+                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                        複製為 CSV (供 Excel 使用)
                     </button>
                 </div>
+                <!-- 隱藏的 textarea，用來裝填供複製的 CSV 字串 -->
                 <textarea id="csv-output" class="hidden"></textarea>
+                <!-- 實際顯示標的卡片的區域 -->
                 <div id="tickers-list-area" class="space-y-6"></div>
             </div>
         </div>
+
     </div>
 
     <script>
@@ -117,15 +150,20 @@
         const formatVal = (val) => val !== 0 ? `${val.toFixed(2)}%` : '-';
 
         function switchMainTab(tab) {
+            // 隱藏所有 view-section
             document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            // 顯示被點擊的 view-section
             document.getElementById(`view-${tab}`).classList.add('active');
             
+            // 按鈕視覺切換
             if(tab === 'dashboard') {
                 document.getElementById('btn-dashboard').className = "px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition";
                 document.getElementById('btn-tickers').className = "px-4 py-2 bg-white border text-gray-700 rounded shadow hover:bg-gray-50 transition flex items-center";
             } else {
                 document.getElementById('btn-tickers').className = "px-4 py-2 bg-blue-600 text-white rounded shadow hover:bg-blue-700 transition flex items-center";
                 document.getElementById('btn-dashboard').className = "px-4 py-2 bg-white border text-gray-700 rounded shadow hover:bg-gray-50 transition";
+                
+                // 🚀 當切換到 Tickers 分頁時，觸發渲染邏輯
                 renderTickersList();
             }
         }
@@ -139,7 +177,9 @@
                 ]);
                 
                 fullData = await resMom.json();
-                if(resTickers) tickersData = await resTickers.json();
+                if(resTickers) {
+                    tickersData = await resTickers.json();
+                }
                 
                 document.getElementById('loading').style.display = 'none';
 
@@ -148,48 +188,43 @@
                     return; 
                 }
                 
+                // 處理避險濾網數值
+                if (fullData.spy_1_3_momentum !== undefined) {
+                    const spyMom = fullData.spy_1_3_momentum;
+                    const alertBanner = document.getElementById('spy-alert-banner');
+                    const spyDisplay = document.getElementById('spy-momentum-display');
+                    const spyValueSpan = document.getElementById('spy-momentum-value');
+
+                    spyDisplay.classList.remove('hidden');
+                    spyValueSpan.innerText = `${spyMom.toFixed(2)}%`;
+                    if (spyMom < 0) {
+                        alertBanner.classList.remove('hidden');
+                        spyValueSpan.className = 'text-lg text-red-600';
+                    } else {
+                        alertBanner.classList.add('hidden');
+                        spyValueSpan.className = 'text-lg text-green-600';
+                    }
+                }
+
+                if (fullData.tw_0050_1_3_momentum !== undefined) {
+                    const twMom = fullData.tw_0050_1_3_momentum;
+                    const twDisplay = document.getElementById('tw-momentum-display');
+                    const twValueSpan = document.getElementById('tw-momentum-value');
+                    
+                    twDisplay.classList.remove('hidden');
+                    twValueSpan.innerText = `${twMom.toFixed(2)}%`;
+                    twValueSpan.className = twMom < 0 ? 'text-lg text-red-600' : 'text-lg text-green-600';
+                }
+
                 document.getElementById('content-container').style.display = 'block';
                 
                 const months = Object.keys(fullData.history).sort().reverse();
                 if(months.length > 0) {
                     document.getElementById('last-updated').innerHTML = `資料基準：<span class="text-gray-800 font-bold">${months[0]}</span>`;
                 }
-
-                // 🌟 注入新的四大指數濾網數據
-                if (fullData.spy_1_3_momentum !== undefined) {
-                    document.getElementById('market-filter-section').style.display = 'block';
-                    const filterContainer = document.getElementById('market-filter-cards');
-                    
-                    const filters = [
-                        { name: '標普 500 (SPY)', value: fullData.spy_1_3_momentum },
-                        { name: '台灣 50 (0050)', value: fullData.tw_0050_1_3_momentum },
-                        { name: '費城半導體 (^SOX)', value: fullData.sox_1_3_momentum },
-                        { name: '台灣加權 (^TWII)', value: fullData.twii_1_3_momentum }
-                    ];
-                    
-                    let filterHtml = '';
-                    filters.forEach(item => {
-                        const isBull = item.value >= 0;
-                        const statusColor = isBull ? 'text-green-700 bg-green-50 border-green-200' : 'text-red-700 bg-red-50 border-red-200';
-                        const icon = isBull ? '🟢 多頭 (正報酬)' : '🔴 空頭 (負報酬)';
-                        const sign = item.value > 0 ? '+' : '';
-                        
-                        filterHtml += `
-                            <div class="border rounded-lg p-4 flex flex-col ${statusColor}">
-                                <div class="text-sm font-bold opacity-80 mb-1 truncate">${item.name}</div>
-                                <div class="text-2xl font-extrabold mb-1">${sign}${item.value}%</div>
-                                <div class="text-xs opacity-70 mb-3">1個月與3個月平均</div>
-                                <div class="mt-auto inline-flex items-center text-sm font-bold bg-white/50 px-2 py-1 rounded">
-                                    ${icon}
-                                </div>
-                            </div>
-                        `;
-                    });
-                    filterContainer.innerHTML = filterHtml;
-                }
                 
-                // 預設渲染「台灣股票」
-                renderView('TW_STOCKS_0050');
+                // 預設渲染「綜合排名」
+                renderView('ALL_ASSETS');
             } catch (error) {
                 console.error("Error fetching data:", error);
                 document.getElementById('loading').style.display = 'none';
@@ -202,8 +237,9 @@
             const historyContainer = document.getElementById('history-area');
             const months = Object.keys(fullData.history || {}).sort().reverse();
             
-            // 🔥 確保一般分類顯示 5 名，綜合排名顯示 10 名
+            // 動態決定要顯示幾名 (綜合顯示前10，其他顯示前5)
             const maxRanks = categoryKey === 'ALL_ASSETS' ? 10 : 5;
+            
             document.getElementById('history-title').innerText = categoryKey === 'ALL_ASSETS' ? '過去 12 個月前 10 名回測' : '過去 12 個月前 5 名回測';
             
             if (categoryKey === 'ALL_ASSETS') {
@@ -215,7 +251,7 @@
 
             let html = `<div class="overflow-x-auto pb-4"><table class="min-w-full divide-y divide-gray-200"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">時間</th>`;
             for(let i=1; i<=maxRanks; i++) {
-                html += `<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">第 ${i} 名</th>`;
+                html += `<th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No.${i}</th>`;
             }
             html += `</tr></thead><tbody class="bg-white divide-y divide-gray-200">`;
             
@@ -256,22 +292,52 @@
             currentContainer.innerHTML = currentHtml;
         }
 
+        // 🚀 核心：渲染標的清單的函數
         function renderTickersList() {
             const container = document.getElementById('tickers-list-area');
-            if(Object.keys(tickersData).length === 0) {
-                container.innerHTML = "<p class='text-gray-500'>尚未產生標的清單資料。</p>";
+            
+            if(!tickersData || Object.keys(tickersData).length === 0) {
+                container.innerHTML = `
+                    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
+                        <p class="text-sm text-yellow-700">尚未產生標的清單資料（all_tickers.json），請確認後端引擎是否有成功產出該檔案。</p>
+                    </div>`;
                 return;
             }
-            let html = '', csvContent = "大類別,標的代碼\n";
+
+            let html = '';
+            let csvContent = "分類,標的代碼\n"; // CSV 標題列
+            
+            // 轉換顯示名稱，讓畫面更友善
+            const nameMapping = {
+                "TW_STOCKS_0050": "台灣股票 (0050/自選)",
+                "TW_ETFS": "台灣 ETF",
+                "US_STOCKS_SP100": "美國股票 (S&P 100/自選)",
+                "US_ETFS": "美國 ETF",
+                "CRYPTOCURRENCY": "虛擬貨幣"
+            };
+
             for(const [category, tickers] of Object.entries(tickersData)) {
-                html += `<div><h3 class="text-md font-bold text-gray-700 border-b pb-2 mb-3">${category} <span class="text-xs font-normal text-gray-400">(${tickers.length} 檔)</span></h3><div class="flex flex-wrap gap-2">`;
+                if(!tickers || tickers.length === 0) continue;
+                
+                const displayName = nameMapping[category] || category;
+                
+                html += `
+                    <div class="bg-gray-50 rounded-lg p-4 border border-gray-100">
+                        <h3 class="text-md font-bold text-gray-700 border-b border-gray-200 pb-2 mb-3">
+                            ${displayName} <span class="text-xs font-normal text-blue-500 bg-blue-50 px-2 py-0.5 rounded-full ml-2">${tickers.length} 檔</span>
+                        </h3>
+                        <div class="flex flex-wrap gap-2">`;
+                
                 tickers.forEach(t => {
-                    html += `<span class="px-2 py-1 bg-gray-100 border border-gray-200 rounded text-sm font-mono text-gray-600">${t}</span>`;
+                    html += `<span class="px-2.5 py-1 bg-white border border-gray-200 rounded text-sm font-mono text-gray-600 shadow-sm">${t}</span>`;
                     csvContent += `${category},${t}\n`;
                 });
+                
                 html += `</div></div>`;
             }
+            
             container.innerHTML = html;
+            // 填入隱藏的 textarea 以供複製
             document.getElementById('csv-output').value = csvContent;
         }
 
@@ -281,6 +347,7 @@
                 alert("目前沒有資料可以複製！");
                 return;
             }
+            
             navigator.clipboard.writeText(csvText).then(() => {
                 alert("✅ 已成功複製 CSV 內容！可直接貼上至 Excel。");
             }).catch(err => {
@@ -291,6 +358,7 @@
 
         document.querySelectorAll('.tab-btn').forEach(button => {
             button.addEventListener('click', (e) => {
+                // 確保點擊按鈕時，其他按鈕的藍色會被完美清除
                 document.querySelectorAll('.tab-btn').forEach(btn => {
                     btn.className = "tab-btn px-4 py-2 font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-100 transition-colors";
                 });
@@ -299,6 +367,7 @@
             });
         });
 
+        // 啟動資料抓取
         fetchData();
     </script>
 </body>
