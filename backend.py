@@ -71,7 +71,7 @@ def get_tickers_from_local_excel():
                     val = str(val).strip().upper()
                     if val in ['NAN', '', 'NONE', 'NULL', 'LIST', 'NOTE', '代碼', '標的']: continue
                     
-                    match = re.search(r'[A-Z0-9\.\-]+', val)
+                    match = re.search(r'[A-Z0-9\.\-\^]+', val)
                     if not match: continue
                     ticker = match.group(0)
                     
@@ -97,53 +97,7 @@ US_SECTORS = ["XLK"]
 US_ETFS = ["VOO", "QQQ"]
 
 # ==========================================
-# 2. 核心技術：大盤趨勢濾網 (200MA)
-# ==========================================
-def calculate_market_filter():
-    print("\n[大盤濾網] 開始計算大盤趨勢 (200MA)...")
-    indexes = {
-        "^TWII": "台灣加權指數", 
-        "^SOX": "費城半導體", 
-        "^GSPC": "標普500 (美股)", 
-        "BTC-USD": "比特幣 (虛擬貨幣)"
-    }
-    
-    filter_data = []
-    try:
-        # 下載過去1年半的資料確保有 200 個交易日
-        data = yf.download(list(indexes.keys()), period="2y", progress=False, session=session)
-        if not data.empty:
-            if isinstance(data.columns, pd.MultiIndex):
-                prices = data['Close']
-            else:
-                prices = pd.DataFrame(data['Close'], columns=list(indexes.keys()))
-                
-            prices = prices.ffill()
-            
-            for ticker, name in indexes.items():
-                if ticker in prices.columns:
-                    series = prices[ticker].dropna()
-                    if len(series) >= 200:
-                        current_price = series.iloc[-1]
-                        # 計算 200MA
-                        ma200 = series.tail(200).mean()
-                        status = "BULL" if current_price > ma200 else "BEAR"
-                        
-                        filter_data.append({
-                            "id": ticker,
-                            "name": name,
-                            "price": round(current_price, 2),
-                            "ma200": round(ma200, 2),
-                            "status": status
-                        })
-                        print(f"   -> {name}: {current_price:.2f} (200MA: {ma200:.2f}) -> {status}")
-    except Exception as e:
-        print(f"大盤濾網計算失敗: {e}")
-        
-    return filter_data
-
-# ==========================================
-# 3. 核心技術：超穩定 Ticker.history 
+# 2. 核心技術：超穩定 Ticker.history 
 # ==========================================
 def download_robustly(tickers):
     print(f"   -> 準備「超穩定安全下載」 {len(tickers)} 檔標的資料...")
@@ -198,7 +152,7 @@ def download_robustly(tickers):
     return final_prices
 
 # ==========================================
-# 4. 動能計算核心演算法
+# 3. 動能計算核心演算法
 # ==========================================
 def calculate_historical_momentum(tickers, category_name):
     print(f"\n[{category_name}] 開始處理...")
@@ -211,7 +165,6 @@ def calculate_historical_momentum(tickers, category_name):
     
     prices = prices.ffill().resample('D').ffill()
     
-    # 🚀 ETF 與股票合併，統一使用 1個月(30天), 3個月(90天), 6個月(180天)
     if category_name in ["TW_ETFS", "US_ETFS", "TW_STOCKS_0050", "US_STOCKS_SP100"]: p1, p2, p3 = 30, 90, 180
     elif category_name == "CRYPTOCURRENCY": p1, p2, p3 = 14, 30, 90
     else: p1, p2, p3 = 30, 90, 180
@@ -241,10 +194,29 @@ def calculate_historical_momentum(tickers, category_name):
     return history_result, current_all
 
 # ==========================================
+# 4. 輔助函數：計算大盤濾網 (1+3月動能)
+# ==========================================
+def calc_filter_momentum(ticker, name):
+    print(f"\n=== 計算大盤防護濾網 {name} ({ticker}) ===")
+    data = download_robustly([ticker])
+    fast_mom = 0.0
+    if not data.empty and ticker in data.columns:
+        monthly = data[ticker].resample('ME').last()
+        try:
+            if len(monthly) >= 4:
+                m1 = monthly.pct_change(periods=1).iloc[-1]
+                m3 = monthly.pct_change(periods=3).iloc[-1]
+                fast_mom = ((m1 + m3) / 2) * 100
+                print(f"🔥 最新 {name} 濾網: {fast_mom:.2f}%")
+        except Exception as e:
+            print(f"計算 {name} 發生錯誤: {e}")
+    return round(fast_mom, 2)
+
+# ==========================================
 # 5. 主程式整合
 # ==========================================
 def main():
-    print("=== Papa Bear 跨市場動能監控系統 (大盤濾網版) ===")
+    print("=== Papa Bear 跨市場動能監控系統 (SPY+0050+SOX+TWII 濾網版) ===")
     
     excel_data = get_tickers_from_local_excel()
     fallback_categories = {
@@ -262,15 +234,12 @@ def main():
         else:
             categories[cat_key] = fallback_categories[cat_key]
     
-    # 初始化 JSON 結構，加入 market_filter
     final_json_data = {
         "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "market_filter": calculate_market_filter(),
         "history": {}, 
         "current_all": {}
     }
     tickers_list_data = {}
-    
     global_history = {}
     global_current = []
     
@@ -291,13 +260,18 @@ def main():
             final_json_data["history"][month][cat_key] = all_list[:3]
             global_history[month].extend(all_list)
 
-    # 計算綜合排名 (ALL_ASSETS)
+    # 計算綜合排名
     global_current_sorted = sorted(global_current, key=lambda x: x['momentum'], reverse=True)
     final_json_data["current_all"]["ALL_ASSETS"] = global_current_sorted[:30] 
-    
     for month, items in global_history.items():
         sorted_items = sorted(items, key=lambda x: x['momentum'], reverse=True)
         final_json_data["history"][month]["ALL_ASSETS"] = sorted_items[:10]
+
+    # 🚀 加入四個大盤指標濾網 (1+3月動能)
+    final_json_data["spy_1_3_momentum"] = calc_filter_momentum("SPY", "標普500")
+    final_json_data["sox_1_3_momentum"] = calc_filter_momentum("^SOX", "費城半導體")
+    final_json_data["tw_0050_1_3_momentum"] = calc_filter_momentum("0050.TW", "台灣50")
+    final_json_data["twii_1_3_momentum"] = calc_filter_momentum("^TWII", "台灣加權")
 
     with open("momentum_history.json", 'w', encoding='utf-8') as f:
         json.dump(final_json_data, f, ensure_ascii=False, indent=4)
