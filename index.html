@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 隱私設定：拒絕搜尋引擎收錄 -->
     <meta name="robots" content="noindex, nofollow">
     <title>Papa Bear 跨市場動能儀表板</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -65,11 +64,11 @@
 
         <div id="view-dashboard" class="view-section active">
             
-            <!-- 🌟 新增：大盤濾網狀態區 -->
+            <!-- 🌟 大盤濾網狀態區 (1+3月動能) -->
             <div id="market-filter-section" class="mb-8" style="display: none;">
                 <h2 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
                     <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
-                    大盤趨勢濾網 (價格與 200MA)
+                    大盤趨勢防護濾網 (1個月與3個月平均動能)
                 </h2>
                 <div id="market-filter-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
                     <!-- Cards injected via JS -->
@@ -157,21 +156,30 @@
                     document.getElementById('last-updated').innerHTML = `資料基準：<span class="text-gray-800 font-bold">${months[0]}</span>`;
                 }
 
-                // 🌟 渲染大盤濾網狀態
-                if (fullData.market_filter && fullData.market_filter.length > 0) {
+                // 🌟 動態解析 4 個大盤濾網並顯示
+                if (fullData.spy_1_3_momentum !== undefined) {
                     document.getElementById('market-filter-section').style.display = 'block';
                     const filterContainer = document.getElementById('market-filter-cards');
+                    
+                    const filters = [
+                        { name: '標普 500 (SPY)', value: fullData.spy_1_3_momentum },
+                        { name: '費城半導體 (^SOX)', value: fullData.sox_1_3_momentum },
+                        { name: '台灣 50 (0050)', value: fullData.tw_0050_1_3_momentum },
+                        { name: '台灣加權 (^TWII)', value: fullData.twii_1_3_momentum }
+                    ];
+                    
                     let filterHtml = '';
-                    fullData.market_filter.forEach(item => {
-                        const isBull = item.status === 'BULL';
+                    filters.forEach(item => {
+                        const isBull = item.value >= 0;
                         const statusColor = isBull ? 'text-green-700 bg-green-50 border-green-200' : 'text-red-700 bg-red-50 border-red-200';
-                        const icon = isBull ? '🟢 多頭 (大於 200MA)' : '🔴 空頭 (小於 200MA)';
+                        const icon = isBull ? '🟢 多頭 (動能為正)' : '🔴 空頭 (動能為負)';
+                        const sign = item.value > 0 ? '+' : '';
                         
                         filterHtml += `
                             <div class="border rounded-lg p-4 flex flex-col ${statusColor}">
                                 <div class="text-sm font-bold opacity-80 mb-1 truncate">${item.name}</div>
-                                <div class="text-2xl font-extrabold mb-1">${item.price.toLocaleString()}</div>
-                                <div class="text-xs opacity-70 mb-3">200MA: ${item.ma200.toLocaleString()}</div>
+                                <div class="text-2xl font-extrabold mb-1">${sign}${item.value}%</div>
+                                <div class="text-xs opacity-70 mb-3">1個月與3個月平均報酬</div>
                                 <div class="mt-auto inline-flex items-center text-sm font-bold bg-white/50 px-2 py-1 rounded">
                                     ${icon}
                                 </div>
@@ -181,7 +189,6 @@
                     filterContainer.innerHTML = filterHtml;
                 }
                 
-                // 預設渲染「綜合排名」
                 renderView('ALL_ASSETS');
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -269,7 +276,16 @@
 
         function copyCSV() {
             const csvText = document.getElementById('csv-output').value;
-            navigator.clipboard.writeText(csvText).then(() => alert("✅ 已成功複製 CSV 內容！"));
+            if (!csvText) {
+                alert("目前沒有資料可以複製！");
+                return;
+            }
+            navigator.clipboard.writeText(csvText).then(() => {
+                alert("✅ 已成功複製 CSV 內容！可直接貼上至 Excel。");
+            }).catch(err => {
+                console.error("複製失敗:", err);
+                alert("複製失敗，請手動全選複製。");
+            });
         }
 
         document.querySelectorAll('.tab-btn').forEach(button => {
