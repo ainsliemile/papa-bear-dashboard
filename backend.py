@@ -23,9 +23,6 @@ session.headers.update({
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 })
 
-# ==========================================
-# 1. 抓取邏輯 (信任 Excel 版)
-# ==========================================
 def get_0050_tickers():
     return ["2330.TW", "2317.TW", "2454.TW", "2382.TW", "2308.TW"]
 
@@ -71,7 +68,7 @@ def get_tickers_from_local_excel():
                     val = str(val).strip().upper()
                     if val in ['NAN', '', 'NONE', 'NULL', 'LIST', 'NOTE', '代碼', '標的']: continue
                     
-                    match = re.search(r'[A-Z0-9\.\-\^]+', val)
+                    match = re.search(r'[A-Z0-9\.\-]+', val)
                     if not match: continue
                     ticker = match.group(0)
                     
@@ -96,9 +93,6 @@ TW_ETFS = ["0050.TW", "0056.TW"]
 US_SECTORS = ["XLK"]
 US_ETFS = ["VOO", "QQQ"]
 
-# ==========================================
-# 2. 核心技術：超穩定 Ticker.history 
-# ==========================================
 def download_robustly(tickers):
     print(f"   -> 準備「超穩定安全下載」 {len(tickers)} 檔標的資料...")
     all_prices = {}
@@ -110,6 +104,8 @@ def download_robustly(tickers):
                 warnings.simplefilter("ignore")
                 data = tkr.history(period="2y", auto_adjust=True)
             
+            # 🔥 智能後綴轉換與正名機制
+            actual_ticker = ticker
             if data.empty or 'Close' not in data.columns:
                 fallback_ticker = None
                 
@@ -125,7 +121,8 @@ def download_robustly(tickers):
                         data = tkr_fallback.history(period="2y", auto_adjust=True)
                     
                     if not data.empty and 'Close' in data.columns:
-                        ticker = fallback_ticker
+                        # 成功抓到備用代號，將真實代號更新為 .TWO (或其他 fallback)
+                        actual_ticker = fallback_ticker
 
             if not data.empty and 'Close' in data.columns:
                 p = data['Close']
@@ -135,7 +132,8 @@ def download_robustly(tickers):
                 if p.index.tz is not None:
                     p.index = p.index.tz_localize(None)
                     
-                all_prices[ticker] = p
+                # 使用確定有資料的 actual_ticker (.TW 或 .TWO) 儲存
+                all_prices[actual_ticker] = p
             else:
                 pass 
                 
@@ -151,9 +149,6 @@ def download_robustly(tickers):
     print(f"      ✅ 成功下載 {len(final_prices.columns)} 檔有效歷史數據！")
     return final_prices
 
-# ==========================================
-# 3. 動能計算核心演算法
-# ==========================================
 def calculate_historical_momentum(tickers, category_name):
     print(f"\n[{category_name}] 開始處理...")
     
@@ -163,23 +158,19 @@ def calculate_historical_momentum(tickers, category_name):
         print(f"⚠️ 警告：{category_name} 抓不到任何價格資料！")
         return {}, []
     
-    prices = prices.ffill().resample('D').ffill()
+    # 🌟 完全保留你的原始設定：使用「每月最後一個交易日」還原收盤價結算
+    monthly_prices = prices.resample('ME').last()
     
-    if category_name in ["TW_ETFS", "US_ETFS", "TW_STOCKS_0050", "US_STOCKS_SP100"]: p1, p2, p3 = 30, 90, 180
-    elif category_name == "CRYPTOCURRENCY": p1, p2, p3 = 14, 30, 90
-    else: p1, p2, p3 = 30, 90, 180
-
-    m1 = prices.pct_change(periods=p1)
-    m2 = prices.pct_change(periods=p2)
-    m3 = prices.pct_change(periods=p3)
+    # 🌟 完全保留你的原始設定：嚴格計算 1個月、3個月、6個月的「月底對月底」動能
+    m1 = monthly_prices.pct_change(periods=1)
+    m3 = monthly_prices.pct_change(periods=3)
+    m6 = monthly_prices.pct_change(periods=6)
     
     with warnings.catch_warnings():
         warnings.simplefilter("ignore", category=RuntimeWarning)
-        avg_momentum_values = np.nanmean([m1.values, m2.values, m3.values], axis=0)
+        avg_momentum_values = np.nanmean([m1.values, m3.values, m6.values], axis=0)
         
-    avg_momentum = pd.DataFrame(avg_momentum_values, index=prices.index, columns=prices.columns)
-    
-    monthly_momentum = avg_momentum.resample('ME').last()
+    monthly_momentum = pd.DataFrame(avg_momentum_values, index=monthly_prices.index, columns=monthly_prices.columns)
     last_12_months = monthly_momentum.tail(12)
     
     history_result = {}
@@ -188,14 +179,11 @@ def calculate_historical_momentum(tickers, category_name):
         valid_ranks = row.dropna().sort_values(ascending=False)
         history_result[month_str] = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in valid_ranks.items()]
         
-    latest_row = avg_momentum.iloc[-1].dropna().sort_values(ascending=False)
+    latest_row = monthly_momentum.iloc[-1].dropna().sort_values(ascending=False)
     current_all = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in latest_row.items()]
         
     return history_result, current_all
 
-# ==========================================
-# 4. 輔助函數：計算大盤濾網 (1+3月動能)
-# ==========================================
 def calc_filter_momentum(ticker, name):
     print(f"\n=== 計算大盤防護濾網 {name} ({ticker}) ===")
     data = download_robustly([ticker])
@@ -212,11 +200,8 @@ def calc_filter_momentum(ticker, name):
             print(f"計算 {name} 發生錯誤: {e}")
     return round(fast_mom, 2)
 
-# ==========================================
-# 5. 主程式整合
-# ==========================================
 def main():
-    print("=== Papa Bear 跨市場動能監控系統 (SPY+0050+SOX+TWII 濾網版) ===")
+    print("=== Papa Bear 跨市場動能監控系統 (綜合排名與完整四大濾網版) ===")
     
     excel_data = get_tickers_from_local_excel()
     fallback_categories = {
@@ -256,21 +241,20 @@ def main():
                 final_json_data["history"][month] = {}
             if month not in global_history:
                 global_history[month] = []
-                
-            final_json_data["history"][month][cat_key] = all_list[:3]
+            final_json_data["history"][month][cat_key] = all_list[:5]
             global_history[month].extend(all_list)
 
-    # 計算綜合排名
     global_current_sorted = sorted(global_current, key=lambda x: x['momentum'], reverse=True)
     final_json_data["current_all"]["ALL_ASSETS"] = global_current_sorted[:30] 
+    
     for month, items in global_history.items():
         sorted_items = sorted(items, key=lambda x: x['momentum'], reverse=True)
         final_json_data["history"][month]["ALL_ASSETS"] = sorted_items[:10]
 
-    # 🚀 加入四個大盤指標濾網 (1+3月動能)
+    # 🔥 新增：呼叫自訂函數，計算四大指數 1+3月 避險濾網
     final_json_data["spy_1_3_momentum"] = calc_filter_momentum("SPY", "標普500")
-    final_json_data["sox_1_3_momentum"] = calc_filter_momentum("^SOX", "費城半導體")
     final_json_data["tw_0050_1_3_momentum"] = calc_filter_momentum("0050.TW", "台灣50")
+    final_json_data["sox_1_3_momentum"] = calc_filter_momentum("^SOX", "費城半導體")
     final_json_data["twii_1_3_momentum"] = calc_filter_momentum("^TWII", "台灣加權")
 
     with open("momentum_history.json", 'w', encoding='utf-8') as f:
