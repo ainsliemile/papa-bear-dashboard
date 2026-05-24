@@ -68,7 +68,8 @@ def get_tickers_from_local_excel():
                     val = str(val).strip().upper()
                     if val in ['NAN', '', 'NONE', 'NULL', 'LIST', 'NOTE', '代碼', '標的']: continue
                     
-                    match = re.search(r'[A-Z0-9\.\-]+', val)
+                    # 🔥 修復 1：放寬正規表示式，允許更多種代碼格式（包含 ^ 指數符號）
+                    match = re.search(r'[A-Z0-9\.\-\^]+', val)
                     if not match: continue
                     ticker = match.group(0)
                     
@@ -104,7 +105,6 @@ def download_robustly(tickers):
                 warnings.simplefilter("ignore")
                 data = tkr.history(period="2y", auto_adjust=True)
             
-            # 🔥 智能後綴轉換與正名機制
             actual_ticker = ticker
             if data.empty or 'Close' not in data.columns:
                 fallback_ticker = None
@@ -121,7 +121,6 @@ def download_robustly(tickers):
                         data = tkr_fallback.history(period="2y", auto_adjust=True)
                     
                     if not data.empty and 'Close' in data.columns:
-                        # 成功抓到備用代號，將真實代號更新為 .TWO (或其他 fallback)
                         actual_ticker = fallback_ticker
 
             if not data.empty and 'Close' in data.columns:
@@ -132,7 +131,6 @@ def download_robustly(tickers):
                 if p.index.tz is not None:
                     p.index = p.index.tz_localize(None)
                     
-                # 使用確定有資料的 actual_ticker (.TW 或 .TWO) 儲存
                 all_prices[actual_ticker] = p
             else:
                 pass 
@@ -140,7 +138,8 @@ def download_robustly(tickers):
         except Exception:
             pass 
             
-        time.sleep(0.1) 
+        # 🔥 修復 2：稍微增加延遲，避免台灣股票數量太多被 Yahoo 擋掉而產生空資料
+        time.sleep(0.15) 
         
     if not all_prices:
         return pd.DataFrame()
@@ -184,11 +183,13 @@ def calculate_historical_momentum(tickers, category_name):
         
     return history_result, current_all
 
+# 🔥 新增：模組化大盤濾網計算，支援所有指數
 def calc_filter_momentum(ticker, name):
     print(f"\n=== 計算大盤防護濾網 {name} ({ticker}) ===")
     data = download_robustly([ticker])
     fast_mom = 0.0
     if not data.empty and ticker in data.columns:
+        # 使用月底結算
         monthly = data[ticker].resample('ME').last()
         try:
             if len(monthly) >= 4:
@@ -241,6 +242,7 @@ def main():
                 final_json_data["history"][month] = {}
             if month not in global_history:
                 global_history[month] = []
+            # 🔥 修復 3：將原本的 [:3] 改為 [:5]，確保 JSON 內存有 5 筆歷史資料供網頁讀取
             final_json_data["history"][month][cat_key] = all_list[:5]
             global_history[month].extend(all_list)
 
