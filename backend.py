@@ -50,7 +50,8 @@ def get_tickers_from_local_excel():
         return result
         
     try:
-        excel_data = pd.read_excel(file_path, sheet_name=None, header=None)
+        # 🔥 加入 dtype=str，強制將所有儲存格讀成文字，避免數字被 pandas 加上 .0
+        excel_data = pd.read_excel(file_path, sheet_name=None, header=None, dtype=str)
         
         for cat_key, allowed_names in categories_map.items():
             matched_sheet = None
@@ -66,6 +67,11 @@ def get_tickers_from_local_excel():
                 
                 for val in raw_tickers:
                     val = str(val).strip().upper()
+                    
+                    # 🔥 二重防護：如果發現結尾有 .0，直接切除
+                    if val.endswith('.0'):
+                        val = val[:-2]
+                        
                     if val in ['NAN', '', 'NONE', 'NULL', 'LIST', 'NOTE', '代碼', '標的']: continue
                     
                     match = re.search(r'[A-Z0-9\.\-]+', val)
@@ -184,6 +190,23 @@ def calculate_historical_momentum(tickers, category_name):
         
     return history_result, current_all
 
+
+# 🔥 新增輔助模組：專門用來計算四大指數的 1+3 濾網
+def calc_filter_momentum(ticker, name):
+    print(f"\n=== 計算大盤防護濾網 {name}(1+3月) ===")
+    data = download_robustly([ticker])
+    fast_mom = 0.0
+    if not data.empty and ticker in data.columns:
+        monthly = data[ticker].resample('ME').last()
+        try:
+            m1 = monthly.pct_change(periods=1).iloc[-1]
+            m3 = monthly.pct_change(periods=3).iloc[-1]
+            fast_mom = ((m1 + m3) / 2) * 100
+            print(f"🔥 最新 {name} 濾網: {fast_mom:.2f}%")
+        except: pass
+    return round(fast_mom, 2)
+
+
 def main():
     print("=== Papa Bear 跨市場動能監控系統 (綜合排名版) ===")
     
@@ -206,7 +229,9 @@ def main():
     final_json_data = {
         "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "spy_1_3_momentum": 0.0, 
-        "tw_0050_1_3_momentum": 0.0, # 🔥 新增：台股濾網
+        "tw_0050_1_3_momentum": 0.0,
+        "sox_1_3_momentum": 0.0,  # 🔥 確保 JSON 有這個欄位
+        "twii_1_3_momentum": 0.0, # 🔥 確保 JSON 有這個欄位
         "history": {}, 
         "current_all": {}
     }
@@ -237,33 +262,13 @@ def main():
         sorted_items = sorted(items, key=lambda x: x['momentum'], reverse=True)
         final_json_data["history"][month]["ALL_ASSETS"] = sorted_items[:10]
 
-    # 🔥 新增：計算 SPY(1+3) 避險濾網
-    print("\n=== 計算美股大盤防護濾網 SPY(1+3) ===")
-    spy_data = download_robustly(["SPY"])
-    spy_fast_mom = 0.0
-    if not spy_data.empty and 'SPY' in spy_data.columns:
-        spy_monthly = spy_data['SPY'].resample('ME').last()
-        try:
-            m1_spy = spy_monthly.pct_change(periods=1).iloc[-1]
-            m3_spy = spy_monthly.pct_change(periods=3).iloc[-1]
-            spy_fast_mom = ((m1_spy + m3_spy) / 2) * 100
-            print(f"🔥 最新 SPY(1+3) 濾網: {spy_fast_mom:.2f}%")
-        except: pass
-    final_json_data["spy_1_3_momentum"] = round(spy_fast_mom, 2)
 
-    # 🔥 新增：計算 0050(1+3) 避險濾網
-    print("\n=== 計算台股大盤防護濾網 0050(1+3) ===")
-    tw_data = download_robustly(["0050.TW"])
-    tw_0050_fast_mom = 0.0
-    if not tw_data.empty and '0050.TW' in tw_data.columns:
-        tw_monthly = tw_data['0050.TW'].resample('ME').last()
-        try:
-            m1_tw = tw_monthly.pct_change(periods=1).iloc[-1]
-            m3_tw = tw_monthly.pct_change(periods=3).iloc[-1]
-            tw_0050_fast_mom = ((m1_tw + m3_tw) / 2) * 100
-            print(f"🔥 最新 0050(1+3) 濾網: {tw_0050_fast_mom:.2f}%")
-        except: pass
-    final_json_data["tw_0050_1_3_momentum"] = round(tw_0050_fast_mom, 2)
+    # 🔥 統一呼叫模組，計算四個大盤指標
+    final_json_data["spy_1_3_momentum"] = calc_filter_momentum("SPY", "標普500 (SPY)")
+    final_json_data["tw_0050_1_3_momentum"] = calc_filter_momentum("0050.TW", "台灣50 (0050)")
+    final_json_data["sox_1_3_momentum"] = calc_filter_momentum("^SOX", "費城半導體 (^SOX)")
+    final_json_data["twii_1_3_momentum"] = calc_filter_momentum("^TWII", "台灣加權 (^TWII)")
+
 
     with open("momentum_history.json", 'w', encoding='utf-8') as f:
         json.dump(final_json_data, f, ensure_ascii=False, indent=4)
