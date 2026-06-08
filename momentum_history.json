@@ -1,9 +1,9 @@
 {
-    "update_time": "2026-06-08 04:01:32",
+    "update_time": "2026-06-08 07:22:09",
     "spy_1_3_momentum": 5.45,
-    "tw_0050_1_3_momentum": 18.0,
+    "tw_0050_1_3_momentum": 17.65,
     "sox_1_3_momentum": 28.15,
-    "twii_1_3_momentum": 17.35,
+    "twii_1_3_momentum": 17.19,
     "history": {
         "2025-07": {
             "TW_STOCKS_0050": [
@@ -1703,45 +1703,45 @@
             "TW_STOCKS_0050": [
                 {
                     "symbol": "3189.TW",
-                    "momentum": 145.34
+                    "momentum": 152.58
                 },
                 {
                     "symbol": "2327.TW",
-                    "momentum": 144.77
-                },
-                {
-                    "symbol": "3167.TW",
-                    "momentum": 140.21
-                },
-                {
-                    "symbol": "3037.TW",
-                    "momentum": 136.94
+                    "momentum": 145.1
                 },
                 {
                     "symbol": "4958.TW",
-                    "momentum": 134.34
+                    "momentum": 137.59
+                },
+                {
+                    "symbol": "3037.TW",
+                    "momentum": 135.13
+                },
+                {
+                    "symbol": "3167.TW",
+                    "momentum": 132.68
                 }
             ],
             "TW_ETFS": [
                 {
                     "symbol": "00674R.TW",
-                    "momentum": 272.95
+                    "momentum": 273.08
                 },
                 {
                     "symbol": "00715L.TW",
-                    "momentum": 61.39
+                    "momentum": 63.97
                 },
                 {
                     "symbol": "00685L.TW",
-                    "momentum": 60.55
+                    "momentum": 58.09
                 },
                 {
                     "symbol": "00663L.TW",
-                    "momentum": 60.16
+                    "momentum": 57.82
                 },
                 {
                     "symbol": "00675L.TW",
-                    "momentum": 59.84
+                    "momentum": 57.37
                 }
             ],
             "US_STOCKS_SP100": [
@@ -1791,23 +1791,23 @@
             "CRYPTOCURRENCY": [
                 {
                     "symbol": "TON-USD",
-                    "momentum": 53.18
+                    "momentum": 51.42
                 },
                 {
                     "symbol": "LUNC-USD",
-                    "momentum": 43.42
+                    "momentum": 47.13
                 },
                 {
                     "symbol": "ZEC-USD",
-                    "momentum": 11.14
+                    "momentum": 12.7
                 },
                 {
                     "symbol": "ONDO-USD",
-                    "momentum": 6.47
+                    "momentum": 11.82
                 },
                 {
                     "symbol": "TRX-USD",
-                    "momentum": 4.1
+                    "momentum": 4.11
                 }
             ],
             "ALL_ASSETS": [
@@ -1817,7 +1817,7 @@
                 },
                 {
                     "symbol": "00674R.TW",
-                    "momentum": 272.95
+                    "momentum": 273.08
                 },
                 {
                     "symbol": "SNDK",
@@ -1829,27 +1829,27 @@
                 },
                 {
                     "symbol": "3189.TW",
-                    "momentum": 145.34
+                    "momentum": 152.58
                 },
                 {
                     "symbol": "2327.TW",
-                    "momentum": 144.77
-                },
-                {
-                    "symbol": "3167.TW",
-                    "momentum": 140.21
-                },
-                {
-                    "symbol": "3037.TW",
-                    "momentum": 136.94
+                    "momentum": 145.1
                 },
                 {
                     "symbol": "4958.TW",
-                    "momentum": 134.34
+                    "momentum": 137.59
+                },
+                {
+                    "symbol": "3037.TW",
+                    "momentum": 135.13
+                },
+                {
+                    "symbol": "3167.TW",
+                    "momentum": 132.68
                 },
                 {
                     "symbol": "2454.TW",
-                    "momentum": 119.51
+                    "momentum": 119.24
                 }
             ]
         }
@@ -1858,35 +1858,31 @@
         "TW_STOCKS_0050": [
             {
                 "symbol": "3189.TW",
-                "momentum": 145.34
+                "momentum": 152.58
             },
             {
                 "symbol": "2327.TW",
-                "momentum": 144.77
-            },
-            {
-                "symbol": "3167.TW",
-                "momentum": 140.21
-            },
-            {
-                "symbol": "3037.TW",
-                "momentum": 136.94
+                "momentum": 145.1
             },
             {
                 "symbol": "4958.TW",
-                "momentum": 134.34
+                "momentum": 137.59
+            },
+            {
+                "symbol": "3037.TW",
+                "momentum": 135.13
+            },
+            {
+                "symbol": "3167.TW",
+                "momentum": 132.68
             },
             {
                 "symbol": "2454.TW",
-                "momentum": 119.51
+                "momentum": 119.24
             },
             {
                 "symbol": "8046.TW",
-                "momentum": 102.6
-            },
-            {
-                "symbol": "4764.TW",
-                "momentum": 94.26
+                "momentum": 100.67
             },
             {
                 "symbol": "3481.TW",
@@ -1894,7 +1890,11 @@
             },
             {
                 "symbol": "2360.TW",
-                "momentum": 92.34
+                "momentum": 93.53
+            },
+            {
+                "symbol": "4764.TW",
+                "momentum": 93.19
             },
             {
                 "symbol": "8454.TW",
@@ -1902,7 +1902,7 @@
             },
             {
                 "symbol": "2383.TW",
-                "momentum": 87.68
+                "momentum": 88.87
             },
             {
                 "symbol": "6415.TW",
@@ -1910,43 +1910,43 @@
             },
             {
                 "symbol": "2303.TW",
-                "momentum": 81.94
-            },
-            {
-                "symbol": "8021.TW",
-                "momentum": 77.1
+                "momentum": 81.19
             },
             {
                 "symbol": "3090.TW",
-                "momentum": 76.5
+                "momentum": 78.63
             },
             {
-                "symbol": "6285.TW",
-                "momentum": 75.25
+                "symbol": "8021.TW",
+                "momentum": 77.88
             },
             {
                 "symbol": "7750.TW",
-                "momentum": 75.16
+                "momentum": 74.36
             },
             {
-                "symbol": "6515.TW",
-                "momentum": 72.9
-            },
-            {
-                "symbol": "1727.TW",
-                "momentum": 70.58
+                "symbol": "6285.TW",
+                "momentum": 74.29
             },
             {
                 "symbol": "4916.TW",
+                "momentum": 71.13
+            },
+            {
+                "symbol": "6515.TW",
                 "momentum": 69.66
             },
             {
+                "symbol": "1727.TW",
+                "momentum": 68.05
+            },
+            {
                 "symbol": "7769.TW",
-                "momentum": 64.34
+                "momentum": 63.76
             },
             {
                 "symbol": "3443.TW",
-                "momentum": 63.18
+                "momentum": 63.37
             },
             {
                 "symbol": "6531.TW",
@@ -1961,44 +1961,48 @@
                 "momentum": 57.85
             },
             {
-                "symbol": "2313.TW",
-                "momentum": 55.47
+                "symbol": "3711.TW",
+                "momentum": 56.11
             },
             {
-                "symbol": "3711.TW",
-                "momentum": 55.24
+                "symbol": "2313.TW",
+                "momentum": 55.16
             },
             {
                 "symbol": "2345.TW",
-                "momentum": 54.37
-            },
-            {
-                "symbol": "2467.TW",
-                "momentum": 53.99
-            },
-            {
-                "symbol": "2344.TW",
-                "momentum": 53.84
-            },
-            {
-                "symbol": "6446.TW",
-                "momentum": 53.72
+                "momentum": 54.69
             },
             {
                 "symbol": "8996.TW",
-                "momentum": 51.4
+                "momentum": 54.6
             },
             {
                 "symbol": "2368.TW",
-                "momentum": 50.79
+                "momentum": 53.04
             },
             {
-                "symbol": "2408.TW",
-                "momentum": 50.44
+                "symbol": "2467.TW",
+                "momentum": 52.92
+            },
+            {
+                "symbol": "2344.TW",
+                "momentum": 51.87
             },
             {
                 "symbol": "6196.TW",
-                "momentum": 49.64
+                "momentum": 50.42
+            },
+            {
+                "symbol": "6446.TW",
+                "momentum": 50.31
+            },
+            {
+                "symbol": "2408.TW",
+                "momentum": 48.26
+            },
+            {
+                "symbol": "8271.TW",
+                "momentum": 44.31
             },
             {
                 "symbol": "2356.TW",
@@ -2009,224 +2013,220 @@
                 "momentum": 43.9
             },
             {
-                "symbol": "8271.TW",
-                "momentum": 43.62
+                "symbol": "6239.TW",
+                "momentum": 41.79
             },
             {
                 "symbol": "6789.TW",
-                "momentum": 40.79
+                "momentum": 41.37
             },
             {
                 "symbol": "2357.TW",
-                "momentum": 40.71
-            },
-            {
-                "symbol": "6239.TW",
-                "momentum": 40.42
-            },
-            {
-                "symbol": "3030.TW",
-                "momentum": 38.1
-            },
-            {
-                "symbol": "2399.TW",
-                "momentum": 37.82
-            },
-            {
-                "symbol": "1560.TW",
-                "momentum": 36.37
+                "momentum": 39.55
             },
             {
                 "symbol": "2883.TW",
-                "momentum": 35.84
+                "momentum": 37.64
             },
             {
-                "symbol": "2395.TW",
-                "momentum": 35.09
+                "symbol": "2399.TW",
+                "momentum": 37.52
             },
             {
                 "symbol": "3008.TW",
-                "momentum": 34.91
+                "momentum": 36.46
             },
             {
-                "symbol": "3023.TW",
-                "momentum": 34.8
+                "symbol": "3030.TW",
+                "momentum": 35.78
             },
             {
-                "symbol": "3702.TW",
-                "momentum": 34.02
+                "symbol": "1560.TW",
+                "momentum": 35.53
+            },
+            {
+                "symbol": "2395.TW",
+                "momentum": 35.52
             },
             {
                 "symbol": "6890.TW",
-                "momentum": 33.86
+                "momentum": 34.67
             },
             {
-                "symbol": "3006.TW",
-                "momentum": 33.11
+                "symbol": "2885.TW",
+                "momentum": 33.45
+            },
+            {
+                "symbol": "3702.TW",
+                "momentum": 33.4
+            },
+            {
+                "symbol": "6205.TW",
+                "momentum": 33.1
             },
             {
                 "symbol": "2049.TW",
                 "momentum": 32.92
             },
             {
-                "symbol": "2493.TW",
-                "momentum": 32.76
+                "symbol": "3023.TW",
+                "momentum": 32.75
             },
             {
-                "symbol": "1303.TW",
-                "momentum": 32.71
-            },
-            {
-                "symbol": "2885.TW",
-                "momentum": 32.58
-            },
-            {
-                "symbol": "6205.TW",
-                "momentum": 32.45
-            },
-            {
-                "symbol": "6257.TW",
-                "momentum": 32.43
+                "symbol": "3006.TW",
+                "momentum": 32.47
             },
             {
                 "symbol": "8438.TW",
-                "momentum": 32.23
+                "momentum": 32.06
             },
             {
                 "symbol": "8210.TW",
                 "momentum": 32.05
             },
             {
-                "symbol": "5434.TW",
-                "momentum": 31.84
-            },
-            {
                 "symbol": "3017.TW",
-                "momentum": 30.9
+                "momentum": 31.93
             },
             {
-                "symbol": "2367.TW",
-                "momentum": 30.54
-            },
-            {
-                "symbol": "3131.TWO",
-                "momentum": 30.53
+                "symbol": "6257.TW",
+                "momentum": 31.78
             },
             {
                 "symbol": "3036.TW",
-                "momentum": 30.19
+                "momentum": 31.77
+            },
+            {
+                "symbol": "2367.TW",
+                "momentum": 31.19
+            },
+            {
+                "symbol": "2493.TW",
+                "momentum": 31.16
             },
             {
                 "symbol": "2377.TW",
-                "momentum": 30.14
+                "momentum": 31.14
+            },
+            {
+                "symbol": "1303.TW",
+                "momentum": 31.09
+            },
+            {
+                "symbol": "3131.TWO",
+                "momentum": 30.75
+            },
+            {
+                "symbol": "5434.TW",
+                "momentum": 30.2
+            },
+            {
+                "symbol": "4967.TW",
+                "momentum": 28.94
             },
             {
                 "symbol": "2376.TW",
-                "momentum": 29.98
+                "momentum": 28.86
             },
             {
                 "symbol": "1802.TW",
-                "momentum": 28.79
+                "momentum": 28.38
             },
             {
-                "symbol": "5484.TW",
-                "momentum": 28.35
+                "symbol": "2301.TW",
+                "momentum": 28.24
             },
             {
-                "symbol": "6209.TW",
-                "momentum": 27.93
+                "symbol": "2382.TW",
+                "momentum": 28.22
             },
             {
                 "symbol": "3044.TW",
                 "momentum": 27.84
             },
             {
-                "symbol": "2301.TW",
-                "momentum": 27.66
-            },
-            {
-                "symbol": "2382.TW",
-                "momentum": 27.37
-            },
-            {
                 "symbol": "3661.TW",
-                "momentum": 26.11
+                "momentum": 27.02
             },
             {
-                "symbol": "6770.TW",
-                "momentum": 25.74
+                "symbol": "6209.TW",
+                "momentum": 26.98
             },
             {
                 "symbol": "2324.TW",
-                "momentum": 25.67
+                "momentum": 26.66
+            },
+            {
+                "symbol": "5484.TW",
+                "momentum": 26.44
+            },
+            {
+                "symbol": "2451.TW",
+                "momentum": 25.65
             },
             {
                 "symbol": "4722.TW",
                 "momentum": 25.52
             },
             {
-                "symbol": "2882.TW",
-                "momentum": 24.42
-            },
-            {
-                "symbol": "2451.TW",
-                "momentum": 24.37
-            },
-            {
-                "symbol": "6669.TW",
-                "momentum": 24.31
-            },
-            {
-                "symbol": "2495.TW",
-                "momentum": 24.29
+                "symbol": "3533.TW",
+                "momentum": 24.99
             },
             {
                 "symbol": "2887.TW",
-                "momentum": 24.01
+                "momentum": 24.91
+            },
+            {
+                "symbol": "6669.TW",
+                "momentum": 24.78
+            },
+            {
+                "symbol": "6770.TW",
+                "momentum": 24.63
             },
             {
                 "symbol": "6526.TW",
                 "momentum": 23.99
             },
             {
-                "symbol": "3533.TW",
-                "momentum": 22.8
+                "symbol": "2882.TW",
+                "momentum": 23.77
             },
             {
-                "symbol": "6282.TW",
-                "momentum": 22.66
-            },
-            {
-                "symbol": "2891.TW",
-                "momentum": 22.51
+                "symbol": "2495.TW",
+                "momentum": 23.75
             },
             {
                 "symbol": "1503.TW",
-                "momentum": 21.99
+                "momentum": 23.06
             },
             {
-                "symbol": "4938.TW",
-                "momentum": 21.94
+                "symbol": "6282.TW",
+                "momentum": 22.04
             },
             {
-                "symbol": "2353.TW",
-                "momentum": 21.52
-            },
-            {
-                "symbol": "4967.TW",
-                "momentum": 21.5
-            },
-            {
-                "symbol": "2881.TW",
-                "momentum": 21.39
+                "symbol": "2891.TW",
+                "momentum": 21.95
             },
             {
                 "symbol": "6139.TW",
                 "momentum": 21.22
             },
             {
+                "symbol": "2353.TW",
+                "momentum": 21.18
+            },
+            {
+                "symbol": "2881.TW",
+                "momentum": 20.35
+            },
+            {
+                "symbol": "4938.TW",
+                "momentum": 19.73
+            },
+            {
                 "symbol": "2347.TW",
-                "momentum": 20.84
+                "momentum": 19.72
             },
             {
                 "symbol": "3665.TW",
@@ -2234,359 +2234,363 @@
             },
             {
                 "symbol": "1326.TW",
-                "momentum": 19.46
+                "momentum": 19.34
+            },
+            {
+                "symbol": "1590.TW",
+                "momentum": 19.32
+            },
+            {
+                "symbol": "6442.TW",
+                "momentum": 18.44
             },
             {
                 "symbol": "2233.TW",
                 "momentum": 18.07
             },
             {
-                "symbol": "1590.TW",
-                "momentum": 17.92
-            },
-            {
-                "symbol": "2379.TW",
-                "momentum": 16.83
-            },
-            {
-                "symbol": "6442.TW",
-                "momentum": 16.63
+                "symbol": "6640.TWO",
+                "momentum": 17.44
             },
             {
                 "symbol": "3034.TW",
-                "momentum": 16.63
+                "momentum": 16.76
             },
             {
-                "symbol": "2497.TW",
-                "momentum": 16.39
+                "symbol": "2379.TW",
+                "momentum": 16.44
             },
             {
-                "symbol": "6640.TWO",
-                "momentum": 15.91
-            },
-            {
-                "symbol": "5269.TW",
-                "momentum": 15.46
+                "symbol": "1514.TW",
+                "momentum": 16.13
             },
             {
                 "symbol": "2404.TW",
-                "momentum": 15.04
+                "momentum": 16.09
+            },
+            {
+                "symbol": "3653.TW",
+                "momentum": 15.86
+            },
+            {
+                "symbol": "2497.TW",
+                "momentum": 15.63
+            },
+            {
+                "symbol": "3231.TW",
+                "momentum": 15.09
             },
             {
                 "symbol": "6409.TW",
                 "momentum": 14.65
             },
             {
-                "symbol": "3231.TW",
-                "momentum": 14.38
-            },
-            {
-                "symbol": "3653.TW",
-                "momentum": 13.28
-            },
-            {
-                "symbol": "1514.TW",
-                "momentum": 12.88
-            },
-            {
-                "symbol": "2603.TW",
-                "momentum": 12.03
-            },
-            {
-                "symbol": "2474.TW",
-                "momentum": 11.8
-            },
-            {
-                "symbol": "2385.TW",
-                "momentum": 11.76
-            },
-            {
-                "symbol": "3025.TW",
-                "momentum": 11.32
+                "symbol": "5269.TW",
+                "momentum": 14.24
             },
             {
                 "symbol": "3324.TWO",
-                "momentum": 10.91
+                "momentum": 11.94
             },
             {
-                "symbol": "7799.TW",
-                "momentum": 9.95
+                "symbol": "2603.TW",
+                "momentum": 11.78
             },
             {
-                "symbol": "2027.TW",
-                "momentum": 9.87
-            },
-            {
-                "symbol": "4904.TW",
-                "momentum": 9.8
-            },
-            {
-                "symbol": "2645.TW",
-                "momentum": 9.44
-            },
-            {
-                "symbol": "2105.TW",
-                "momentum": 9.19
+                "symbol": "3025.TW",
+                "momentum": 11.48
             },
             {
                 "symbol": "1513.TW",
-                "momentum": 8.94
+                "momentum": 11.24
             },
             {
-                "symbol": "5871.TW",
-                "momentum": 8.86
+                "symbol": "2027.TW",
+                "momentum": 10.4
             },
             {
-                "symbol": "6805.TW",
-                "momentum": 8.55
+                "symbol": "4904.TW",
+                "momentum": 10.35
             },
             {
-                "symbol": "2542.TW",
-                "momentum": 8.3
+                "symbol": "2474.TW",
+                "momentum": 10.3
+            },
+            {
+                "symbol": "2385.TW",
+                "momentum": 10.14
+            },
+            {
+                "symbol": "2645.TW",
+                "momentum": 10.1
             },
             {
                 "symbol": "2413.TW",
-                "momentum": 7.96
-            },
-            {
-                "symbol": "1605.TW",
-                "momentum": 7.3
+                "momentum": 10.02
             },
             {
                 "symbol": "1319.TW",
-                "momentum": 7.12
+                "momentum": 8.33
+            },
+            {
+                "symbol": "2105.TW",
+                "momentum": 8.22
+            },
+            {
+                "symbol": "2542.TW",
+                "momentum": 8.17
+            },
+            {
+                "symbol": "1605.TW",
+                "momentum": 7.9
+            },
+            {
+                "symbol": "6805.TW",
+                "momentum": 7.7
+            },
+            {
+                "symbol": "5871.TW",
+                "momentum": 7.47
+            },
+            {
+                "symbol": "2890.TW",
+                "momentum": 7.26
+            },
+            {
+                "symbol": "2402.TW",
+                "momentum": 7.16
             },
             {
                 "symbol": "2615.TW",
                 "momentum": 6.75
             },
             {
+                "symbol": "2880.TW",
+                "momentum": 6.27
+            },
+            {
                 "symbol": "3706.TW",
-                "momentum": 6.61
+                "momentum": 5.88
             },
             {
-                "symbol": "2890.TW",
-                "momentum": 6.59
+                "symbol": "7799.TW",
+                "momentum": 5.75
             },
             {
-                "symbol": "2402.TW",
-                "momentum": 6.32
+                "symbol": "6691.TW",
+                "momentum": 5.56
+            },
+            {
+                "symbol": "2449.TW",
+                "momentum": 4.98
             },
             {
                 "symbol": "3045.TW",
                 "momentum": 4.88
             },
             {
-                "symbol": "6691.TW",
-                "momentum": 4.87
-            },
-            {
-                "symbol": "2880.TW",
-                "momentum": 4.84
-            },
-            {
                 "symbol": "1301.TW",
-                "momentum": 4.58
+                "momentum": 4.69
             },
             {
                 "symbol": "2834.TW",
                 "momentum": 4.57
             },
             {
-                "symbol": "2838.TW",
-                "momentum": 4.47
-            },
-            {
-                "symbol": "1528.TW",
-                "momentum": 4.25
-            },
-            {
-                "symbol": "2449.TW",
-                "momentum": 4.25
-            },
-            {
                 "symbol": "2886.TW",
-                "momentum": 4.13
+                "momentum": 4.38
+            },
+            {
+                "symbol": "6937.TW",
+                "momentum": 4.01
             },
             {
                 "symbol": "2412.TW",
                 "momentum": 3.79
             },
             {
-                "symbol": "2801.TW",
-                "momentum": 2.62
+                "symbol": "1528.TW",
+                "momentum": 3.46
             },
             {
-                "symbol": "6505.TW",
-                "momentum": 2.22
+                "symbol": "2838.TW",
+                "momentum": 3.23
+            },
+            {
+                "symbol": "2801.TW",
+                "momentum": 3.11
             },
             {
                 "symbol": "2892.TW",
-                "momentum": 2.2
+                "momentum": 2.73
+            },
+            {
+                "symbol": "6505.TW",
+                "momentum": 2.61
             },
             {
                 "symbol": "2618.TW",
-                "momentum": 2.03
-            },
-            {
-                "symbol": "1402.TW",
-                "momentum": 1.68
-            },
-            {
-                "symbol": "5292.TW",
-                "momentum": 1.62
-            },
-            {
-                "symbol": "2912.TW",
-                "momentum": 1.4
+                "momentum": 2.59
             },
             {
                 "symbol": "2884.TW",
-                "momentum": 1.22
+                "momentum": 2.47
             },
             {
                 "symbol": "1101.TW",
-                "momentum": 1.2
+                "momentum": 1.41
+            },
+            {
+                "symbol": "1519.TW",
+                "momentum": 1.11
+            },
+            {
+                "symbol": "2912.TW",
+                "momentum": 0.95
             },
             {
                 "symbol": "5876.TW",
                 "momentum": 0.95
             },
             {
-                "symbol": "1519.TW",
-                "momentum": 0.87
+                "symbol": "5292.TW",
+                "momentum": 0.89
             },
             {
                 "symbol": "2006.TW",
                 "momentum": 0.76
             },
             {
-                "symbol": "1504.TW",
-                "momentum": 0.71
+                "symbol": "1402.TW",
+                "momentum": 0.74
             },
             {
                 "symbol": "3005.TW",
                 "momentum": 0.67
             },
             {
-                "symbol": "1216.TW",
-                "momentum": 0.13
+                "symbol": "2610.TW",
+                "momentum": 0.16
             },
             {
-                "symbol": "2610.TW",
-                "momentum": -0.11
+                "symbol": "1504.TW",
+                "momentum": 0.01
+            },
+            {
+                "symbol": "1216.TW",
+                "momentum": -0.41
             },
             {
                 "symbol": "2915.TW",
-                "momentum": -0.45
-            },
-            {
-                "symbol": "8464.TW",
-                "momentum": -0.68
-            },
-            {
-                "symbol": "2002.TW",
-                "momentum": -1.31
-            },
-            {
-                "symbol": "8131.TW",
-                "momentum": -1.5
-            },
-            {
-                "symbol": "6937.TW",
-                "momentum": -1.62
+                "momentum": -0.76
             },
             {
                 "symbol": "2845.TW",
-                "momentum": -1.78
+                "momentum": -0.97
+            },
+            {
+                "symbol": "8464.TW",
+                "momentum": -0.98
             },
             {
                 "symbol": "2354.TW",
-                "momentum": -1.78
+                "momentum": -1.43
             },
             {
-                "symbol": "4583.TW",
-                "momentum": -1.87
+                "symbol": "8131.TW",
+                "momentum": -1.66
+            },
+            {
+                "symbol": "2002.TW",
+                "momentum": -1.84
             },
             {
                 "symbol": "5880.TW",
                 "momentum": -1.99
             },
             {
-                "symbol": "1476.TW",
-                "momentum": -3.23
-            },
-            {
-                "symbol": "2258.TW",
-                "momentum": -3.37
+                "symbol": "4583.TW",
+                "momentum": -2.63
             },
             {
                 "symbol": "2609.TW",
-                "momentum": -3.41
+                "momentum": -3.22
             },
             {
                 "symbol": "6191.TW",
-                "momentum": -3.54
+                "momentum": -3.44
             },
             {
-                "symbol": "1102.TW",
-                "momentum": -3.97
-            },
-            {
-                "symbol": "9945.TW",
-                "momentum": -4.1
-            },
-            {
-                "symbol": "2633.TW",
-                "momentum": -4.13
+                "symbol": "1476.TW",
+                "momentum": -3.8
             },
             {
                 "symbol": "2812.TW",
-                "momentum": -4.91
+                "momentum": -4.15
             },
             {
-                "symbol": "6177.TW",
+                "symbol": "1102.TW",
+                "momentum": -4.25
+            },
+            {
+                "symbol": "9945.TW",
+                "momentum": -4.29
+            },
+            {
+                "symbol": "2633.TW",
+                "momentum": -4.7
+            },
+            {
+                "symbol": "2258.TW",
                 "momentum": -5.1
             },
             {
-                "symbol": "2329.TW",
-                "momentum": -5.29
+                "symbol": "6177.TW",
+                "momentum": -5.41
             },
             {
-                "symbol": "3530.TW",
-                "momentum": -5.46
+                "symbol": "1477.TW",
+                "momentum": -5.49
             },
             {
                 "symbol": "3701.TW",
                 "momentum": -5.53
             },
             {
-                "symbol": "2207.TW",
-                "momentum": -5.58
-            },
-            {
-                "symbol": "3257.TW",
-                "momentum": -6.06
+                "symbol": "2329.TW",
+                "momentum": -5.83
             },
             {
                 "symbol": "2009.TW",
-                "momentum": -6.25
+                "momentum": -5.89
+            },
+            {
+                "symbol": "6472.TW",
+                "momentum": -5.94
+            },
+            {
+                "symbol": "2207.TW",
+                "momentum": -6.08
+            },
+            {
+                "symbol": "3530.TW",
+                "momentum": -6.4
             },
             {
                 "symbol": "2371.TW",
                 "momentum": -6.43
             },
             {
-                "symbol": "9904.TW",
-                "momentum": -6.58
-            },
-            {
-                "symbol": "1477.TW",
-                "momentum": -6.75
-            },
-            {
                 "symbol": "1229.TW",
                 "momentum": -6.78
+            },
+            {
+                "symbol": "3257.TW",
+                "momentum": -6.9
+            },
+            {
+                "symbol": "9904.TW",
+                "momentum": -6.94
             },
             {
                 "symbol": "2646.TW",
@@ -2597,36 +2601,32 @@
                 "momentum": -7.1
             },
             {
+                "symbol": "8110.TW",
+                "momentum": -7.56
+            },
+            {
                 "symbol": "9910.TW",
-                "momentum": -7.13
+                "momentum": -7.6
             },
             {
                 "symbol": "8422.TW",
-                "momentum": -7.28
-            },
-            {
-                "symbol": "8110.TW",
-                "momentum": -7.38
+                "momentum": -7.62
             },
             {
                 "symbol": "6176.TW",
-                "momentum": -7.81
-            },
-            {
-                "symbol": "6472.TW",
-                "momentum": -8.1
+                "momentum": -7.91
             },
             {
                 "symbol": "4912.TW",
-                "momentum": -8.51
+                "momentum": -8.92
             },
             {
                 "symbol": "1795.TW",
-                "momentum": -12.52
+                "momentum": -12.07
             },
             {
                 "symbol": "6919.TW",
-                "momentum": -14.26
+                "momentum": -14.63
             },
             {
                 "symbol": "2466.TW",
@@ -2634,152 +2634,148 @@
             },
             {
                 "symbol": "2539.TW",
-                "momentum": -15.7
+                "momentum": -16.04
             }
         ],
         "TW_ETFS": [
             {
                 "symbol": "00674R.TW",
-                "momentum": 272.95
+                "momentum": 273.08
             },
             {
                 "symbol": "00715L.TW",
-                "momentum": 61.39
+                "momentum": 63.97
             },
             {
                 "symbol": "00685L.TW",
-                "momentum": 60.55
+                "momentum": 58.09
             },
             {
                 "symbol": "00663L.TW",
-                "momentum": 60.16
+                "momentum": 57.82
             },
             {
                 "symbol": "00675L.TW",
-                "momentum": 59.84
+                "momentum": 57.37
             },
             {
                 "symbol": "00631L.TW",
-                "momentum": 59.39
+                "momentum": 57.3
             },
             {
                 "symbol": "00735.TW",
-                "momentum": 55.47
+                "momentum": 54.07
             },
             {
                 "symbol": "00935.TW",
-                "momentum": 51.16
-            },
-            {
-                "symbol": "00830.TW",
-                "momentum": 49.24
+                "momentum": 50.64
             },
             {
                 "symbol": "00947.TW",
-                "momentum": 48.89
+                "momentum": 49.02
+            },
+            {
+                "symbol": "00830.TW",
+                "momentum": 48.23
             },
             {
                 "symbol": "00892.TW",
-                "momentum": 45.69
+                "momentum": 45.41
             },
             {
                 "symbol": "00927.TW",
-                "momentum": 44.66
+                "momentum": 44.81
             },
             {
                 "symbol": "00928.TWO",
-                "momentum": 43.94
-            },
-            {
-                "symbol": "00690.TW",
-                "momentum": 43.1
+                "momentum": 44.42
             },
             {
                 "symbol": "00901.TW",
-                "momentum": 42.9
+                "momentum": 43.2
+            },
+            {
+                "symbol": "00690.TW",
+                "momentum": 43.19
             },
             {
                 "symbol": "00891.TW",
-                "momentum": 42.77
+                "momentum": 41.93
             },
             {
                 "symbol": "009802.TW",
-                "momentum": 41.16
+                "momentum": 41.68
             },
             {
                 "symbol": "00904.TW",
-                "momentum": 39.97
-            },
-            {
-                "symbol": "00876.TW",
-                "momentum": 39.79
+                "momentum": 40.11
             },
             {
                 "symbol": "00888.TWO",
-                "momentum": 39.68
+                "momentum": 39.85
             },
             {
-                "symbol": "00881.TW",
-                "momentum": 39.67
+                "symbol": "00876.TW",
+                "momentum": 39.32
             },
             {
                 "symbol": "00894.TW",
-                "momentum": 39.09
+                "momentum": 39.3
             },
             {
-                "symbol": "00923.TW",
-                "momentum": 36.48
+                "symbol": "00881.TW",
+                "momentum": 39.27
             },
             {
                 "symbol": "009803.TW",
-                "momentum": 36.38
+                "momentum": 39.19
             },
             {
                 "symbol": "00642U.TW",
-                "momentum": 36.3
+                "momentum": 37.13
             },
             {
-                "symbol": "009804.TW",
-                "momentum": 35.24
+                "symbol": "00923.TW",
+                "momentum": 36.08
             },
             {
                 "symbol": "00929.TW",
-                "momentum": 34.91
+                "momentum": 35.01
+            },
+            {
+                "symbol": "009804.TW",
+                "momentum": 34.94
             },
             {
                 "symbol": "00946.TW",
-                "momentum": 34.8
+                "momentum": 34.16
             },
             {
                 "symbol": "00850.TW",
-                "momentum": 34.17
-            },
-            {
-                "symbol": "00861.TW",
-                "momentum": 33.71
+                "momentum": 33.94
             },
             {
                 "symbol": "00728.TW",
-                "momentum": 33.56
-            },
-            {
-                "symbol": "00922.TW",
-                "momentum": 33.25
+                "momentum": 33.78
             },
             {
                 "symbol": "00952.TW",
-                "momentum": 33.15
+                "momentum": 33.3
             },
             {
-                "symbol": "0052.TW",
-                "momentum": 32.77
+                "symbol": "00922.TW",
+                "momentum": 33.04
             },
             {
-                "symbol": "00905.TW",
-                "momentum": 32.31
+                "symbol": "00861.TW",
+                "momentum": 32.95
             },
             {
                 "symbol": "00878.TW",
+                "momentum": 32.21
+            },
+            {
+                "symbol": "00905.TW",
                 "momentum": 32.21
             },
             {
@@ -2787,424 +2783,428 @@
                 "momentum": 32.12
             },
             {
+                "symbol": "0052.TW",
+                "momentum": 31.88
+            },
+            {
                 "symbol": "00912.TW",
-                "momentum": 31.63
+                "momentum": 31.51
             },
             {
                 "symbol": "006208.TW",
-                "momentum": 30.92
-            },
-            {
-                "symbol": "0050.TW",
-                "momentum": 30.84
+                "momentum": 30.61
             },
             {
                 "symbol": "006203.TW",
-                "momentum": 30.65
+                "momentum": 30.54
+            },
+            {
+                "symbol": "0050.TW",
+                "momentum": 30.46
             },
             {
                 "symbol": "00692.TW",
-                "momentum": 29.34
+                "momentum": 28.9
             },
             {
                 "symbol": "00896.TW",
-                "momentum": 28.46
+                "momentum": 28.59
             },
             {
                 "symbol": "00930.TW",
-                "momentum": 26.88
-            },
-            {
-                "symbol": "00951.TW",
-                "momentum": 26.54
-            },
-            {
-                "symbol": "00954.TW",
-                "momentum": 26.2
-            },
-            {
-                "symbol": "00900.TW",
-                "momentum": 26.03
-            },
-            {
-                "symbol": "00944.TW",
-                "momentum": 25.88
-            },
-            {
-                "symbol": "00762.TW",
-                "momentum": 25.78
-            },
-            {
-                "symbol": "00733.TW",
-                "momentum": 25.37
-            },
-            {
-                "symbol": "00939.TW",
-                "momentum": 25.36
-            },
-            {
-                "symbol": "0056.TW",
-                "momentum": 25.22
+                "momentum": 26.45
             },
             {
                 "symbol": "0051.TW",
-                "momentum": 25.19
+                "momentum": 25.87
             },
             {
-                "symbol": "00910.TW",
-                "momentum": 25.0
+                "symbol": "00733.TW",
+                "momentum": 25.64
+            },
+            {
+                "symbol": "00900.TW",
+                "momentum": 25.63
+            },
+            {
+                "symbol": "00944.TW",
+                "momentum": 25.57
+            },
+            {
+                "symbol": "00951.TW",
+                "momentum": 25.49
+            },
+            {
+                "symbol": "0056.TW",
+                "momentum": 25.32
+            },
+            {
+                "symbol": "00939.TW",
+                "momentum": 25.23
+            },
+            {
+                "symbol": "00954.TW",
+                "momentum": 25.22
+            },
+            {
+                "symbol": "00762.TW",
+                "momentum": 25.16
             },
             {
                 "symbol": "00961.TW",
-                "momentum": 24.94
-            },
-            {
-                "symbol": "00918.TW",
-                "momentum": 24.49
-            },
-            {
-                "symbol": "00670L.TW",
                 "momentum": 24.45
             },
             {
-                "symbol": "00919.TW",
-                "momentum": 24.23
+                "symbol": "00918.TW",
+                "momentum": 24.32
             },
             {
                 "symbol": "00934.TW",
-                "momentum": 23.78
+                "momentum": 23.87
+            },
+            {
+                "symbol": "00919.TW",
+                "momentum": 23.85
+            },
+            {
+                "symbol": "00910.TW",
+                "momentum": 23.51
+            },
+            {
+                "symbol": "00670L.TW",
+                "momentum": 23.23
             },
             {
                 "symbol": "00893.TW",
-                "momentum": 23.01
+                "momentum": 22.68
             },
             {
                 "symbol": "00903.TW",
-                "momentum": 22.04
+                "momentum": 21.59
             },
             {
                 "symbol": "00909.TW",
-                "momentum": 21.44
-            },
-            {
-                "symbol": "00941.TW",
-                "momentum": 20.73
+                "momentum": 20.9
             },
             {
                 "symbol": "00940.TW",
-                "momentum": 20.56
+                "momentum": 20.46
+            },
+            {
+                "symbol": "00941.TW",
+                "momentum": 20.29
             },
             {
                 "symbol": "009816.TW",
-                "momentum": 20.52
-            },
-            {
-                "symbol": "00915.TW",
-                "momentum": 20.08
+                "momentum": 20.11
             },
             {
                 "symbol": "00938.TW",
-                "momentum": 20.04
+                "momentum": 19.88
+            },
+            {
+                "symbol": "00915.TW",
+                "momentum": 19.88
             },
             {
                 "symbol": "00770.TW",
-                "momentum": 19.01
-            },
-            {
-                "symbol": "00895.TW",
-                "momentum": 18.53
-            },
-            {
-                "symbol": "00730.TW",
-                "momentum": 17.88
-            },
-            {
-                "symbol": "00932.TW",
-                "momentum": 17.58
+                "momentum": 18.29
             },
             {
                 "symbol": "00921.TW",
-                "momentum": 17.55
+                "momentum": 17.92
             },
             {
-                "symbol": "00936.TW",
-                "momentum": 16.06
+                "symbol": "00895.TW",
+                "momentum": 17.87
             },
             {
-                "symbol": "00661.TW",
-                "momentum": 15.86
+                "symbol": "00730.TW",
+                "momentum": 17.71
             },
             {
-                "symbol": "00701.TW",
-                "momentum": 15.73
-            },
-            {
-                "symbol": "009818.TW",
-                "momentum": 15.65
+                "symbol": "00932.TW",
+                "momentum": 16.83
             },
             {
                 "symbol": "0055.TW",
-                "momentum": 15.56
+                "momentum": 16.02
+            },
+            {
+                "symbol": "00936.TW",
+                "momentum": 15.83
+            },
+            {
+                "symbol": "00701.TW",
+                "momentum": 15.76
             },
             {
                 "symbol": "00731.TW",
                 "momentum": 15.56
             },
             {
+                "symbol": "00661.TW",
+                "momentum": 15.37
+            },
+            {
+                "symbol": "009818.TW",
+                "momentum": 15.05
+            },
+            {
                 "symbol": "009805.TW",
-                "momentum": 13.53
+                "momentum": 13.46
             },
             {
                 "symbol": "00916.TW",
-                "momentum": 13.06
+                "momentum": 12.72
             },
             {
                 "symbol": "00662.TW",
-                "momentum": 12.54
+                "momentum": 11.97
             },
             {
                 "symbol": "009800.TW",
-                "momentum": 12.16
+                "momentum": 11.63
             },
             {
                 "symbol": "00640L.TW",
-                "momentum": 11.61
+                "momentum": 10.97
             },
             {
                 "symbol": "00960.TW",
-                "momentum": 10.75
+                "momentum": 10.82
             },
             {
                 "symbol": "00713.TW",
-                "momentum": 10.22
+                "momentum": 10.51
             },
             {
                 "symbol": "00757.TW",
-                "momentum": 10.08
+                "momentum": 9.43
             },
             {
                 "symbol": "00924.TW",
-                "momentum": 9.36
+                "momentum": 9.06
             },
             {
                 "symbol": "009801.TW",
-                "momentum": 9.26
+                "momentum": 8.63
             },
             {
                 "symbol": "00639.TW",
-                "momentum": 8.84
+                "momentum": 8.23
             },
             {
                 "symbol": "009811.TW",
-                "momentum": 8.45
+                "momentum": 8.11
             },
             {
                 "symbol": "00646.TW",
-                "momentum": 7.13
+                "momentum": 6.62
             },
             {
                 "symbol": "00917.TW",
-                "momentum": 6.61
+                "momentum": 6.26
             },
             {
                 "symbol": "00645.TW",
-                "momentum": 6.51
-            },
-            {
-                "symbol": "00763U.TW",
-                "momentum": 6.33
-            },
-            {
-                "symbol": "009813.TW",
-                "momentum": 6.28
-            },
-            {
-                "symbol": "00971.TW",
-                "momentum": 6.12
+                "momentum": 6.22
             },
             {
                 "symbol": "00907.TW",
-                "momentum": 5.94
+                "momentum": 6.14
+            },
+            {
+                "symbol": "009813.TW",
+                "momentum": 6.09
+            },
+            {
+                "symbol": "00763U.TW",
+                "momentum": 5.83
+            },
+            {
+                "symbol": "00971.TW",
+                "momentum": 5.68
             },
             {
                 "symbol": "00926.TW",
-                "momentum": 5.26
+                "momentum": 5.05
             },
             {
                 "symbol": "00897.TW",
-                "momentum": 4.81
+                "momentum": 4.59
             },
             {
                 "symbol": "00949.TW",
-                "momentum": 4.74
-            },
-            {
-                "symbol": "00643.TW",
-                "momentum": 4.7
+                "momentum": 4.38
             },
             {
                 "symbol": "00963.TW",
-                "momentum": 4.2
+                "momentum": 3.95
+            },
+            {
+                "symbol": "00643.TW",
+                "momentum": 3.93
             },
             {
                 "symbol": "00898.TW",
-                "momentum": 3.22
+                "momentum": 2.97
             },
             {
                 "symbol": "00882.TW",
-                "momentum": 3.16
+                "momentum": 2.89
             },
             {
                 "symbol": "00902.TW",
-                "momentum": 2.7
+                "momentum": 2.29
             },
             {
                 "symbol": "00636.TW",
-                "momentum": 2.05
-            },
-            {
-                "symbol": "00885.TW",
-                "momentum": 1.97
-            },
-            {
-                "symbol": "00637L.TW",
-                "momentum": 1.88
-            },
-            {
-                "symbol": "00655L.TW",
-                "momentum": 1.51
-            },
-            {
-                "symbol": "00965.TW",
-                "momentum": 1.36
+                "momentum": 1.58
             },
             {
                 "symbol": "00945B.TW",
                 "momentum": 1.33
             },
             {
-                "symbol": "00633L.TW",
-                "momentum": 1.25
+                "symbol": "00885.TW",
+                "momentum": 1.3
             },
             {
                 "symbol": "00710B.TW",
                 "momentum": 1.03
             },
             {
+                "symbol": "00965.TW",
+                "momentum": 1.03
+            },
+            {
                 "symbol": "00953B.TW",
-                "momentum": 0.83
+                "momentum": 0.94
             },
             {
                 "symbol": "00717.TW",
-                "momentum": 0.83
+                "momentum": 0.7
             },
             {
-                "symbol": "00775B.TW",
-                "momentum": 0.79
+                "symbol": "00637L.TW",
+                "momentum": 0.56
             },
             {
                 "symbol": "00865B.TW",
-                "momentum": 0.46
+                "momentum": 0.5
+            },
+            {
+                "symbol": "00655L.TW",
+                "momentum": 0.42
             },
             {
                 "symbol": "00985B.TW",
-                "momentum": 0.23
+                "momentum": 0.33
+            },
+            {
+                "symbol": "00633L.TW",
+                "momentum": 0.24
+            },
+            {
+                "symbol": "00775B.TW",
+                "momentum": -0.02
             },
             {
                 "symbol": "00711B.TW",
-                "momentum": 0.17
-            },
-            {
-                "symbol": "006205.TW",
-                "momentum": -0.46
+                "momentum": -0.08
             },
             {
                 "symbol": "009819.TW",
-                "momentum": -0.58
+                "momentum": -0.48
             },
             {
                 "symbol": "00712.TW",
-                "momentum": -0.72
+                "momentum": -0.6
+            },
+            {
+                "symbol": "006205.TW",
+                "momentum": -1.14
             },
             {
                 "symbol": "006206.TW",
-                "momentum": -1.91
+                "momentum": -2.4
             },
             {
                 "symbol": "009820.TW",
-                "momentum": -2.79
+                "momentum": -2.89
             },
             {
                 "symbol": "00693U.TW",
-                "momentum": -3.07
+                "momentum": -3.26
             },
             {
                 "symbol": "00706L.TW",
-                "momentum": -3.76
-            },
-            {
-                "symbol": "00650L.TW",
-                "momentum": -4.02
+                "momentum": -3.61
             },
             {
                 "symbol": "00680L.TW",
-                "momentum": -4.04
+                "momentum": -4.18
+            },
+            {
+                "symbol": "00650L.TW",
+                "momentum": -4.26
             },
             {
                 "symbol": "00688L.TW",
-                "momentum": -4.19
+                "momentum": -4.33
             },
             {
                 "symbol": "00635U.TW",
-                "momentum": -4.76
-            },
-            {
-                "symbol": "00665L.TW",
-                "momentum": -5.09
-            },
-            {
-                "symbol": "00752.TW",
-                "momentum": -5.15
+                "momentum": -4.7
             },
             {
                 "symbol": "00669R.TW",
-                "momentum": -5.49
+                "momentum": -5.32
+            },
+            {
+                "symbol": "00752.TW",
+                "momentum": -5.36
+            },
+            {
+                "symbol": "00665L.TW",
+                "momentum": -5.5
             },
             {
                 "symbol": "00652.TW",
-                "momentum": -6.38
+                "momentum": -6.08
             },
             {
                 "symbol": "00738U.TW",
-                "momentum": -8.9
-            },
-            {
-                "symbol": "00753L.TW",
-                "momentum": -10.13
+                "momentum": -8.82
             },
             {
                 "symbol": "00671R.TW",
-                "momentum": -10.21
+                "momentum": -9.85
+            },
+            {
+                "symbol": "00753L.TW",
+                "momentum": -10.7
             },
             {
                 "symbol": "00708L.TW",
-                "momentum": -11.01
-            },
-            {
-                "symbol": "00632R.TW",
-                "momentum": -19.35
+                "momentum": -10.9
             },
             {
                 "symbol": "00676R.TW",
-                "momentum": -19.6
+                "momentum": -19.19
+            },
+            {
+                "symbol": "00632R.TW",
+                "momentum": -19.28
             },
             {
                 "symbol": "00664R.TW",
-                "momentum": -19.76
+                "momentum": -19.3
             },
             {
                 "symbol": "00673R.TW",
-                "momentum": -31.67
+                "momentum": -32.22
             }
         ],
         "US_STOCKS_SP100": [
@@ -6274,27 +6274,27 @@
         "CRYPTOCURRENCY": [
             {
                 "symbol": "TON-USD",
-                "momentum": 53.18
+                "momentum": 51.42
             },
             {
                 "symbol": "LUNC-USD",
-                "momentum": 43.42
+                "momentum": 47.13
             },
             {
                 "symbol": "ZEC-USD",
-                "momentum": 11.14
+                "momentum": 12.7
             },
             {
                 "symbol": "ONDO-USD",
-                "momentum": 6.47
+                "momentum": 11.82
             },
             {
                 "symbol": "TRX-USD",
-                "momentum": 4.1
+                "momentum": 4.11
             },
             {
                 "symbol": "RENDER-USD",
-                "momentum": 0.69
+                "momentum": 1.61
             },
             {
                 "symbol": "HYPE-USD",
@@ -6306,51 +6306,51 @@
             },
             {
                 "symbol": "XLM-USD",
-                "momentum": -0.84
+                "momentum": -0.17
             },
             {
                 "symbol": "LEO-USD",
                 "momentum": -2.04
             },
             {
-                "symbol": "XAUT-USD",
-                "momentum": -4.49
+                "symbol": "PAXG-USD",
+                "momentum": -4.5
             },
             {
-                "symbol": "PAXG-USD",
-                "momentum": -4.51
+                "symbol": "XAUT-USD",
+                "momentum": -4.73
             },
             {
                 "symbol": "HBAR-USD",
-                "momentum": -14.81
-            },
-            {
-                "symbol": "AR-USD",
                 "momentum": -14.84
             },
             {
-                "symbol": "BNB-USD",
-                "momentum": -16.09
+                "symbol": "AR-USD",
+                "momentum": -15.15
             },
             {
                 "symbol": "DOGE-USD",
-                "momentum": -16.38
+                "momentum": -16.36
             },
             {
                 "symbol": "BTC-USD",
-                "momentum": -16.81
+                "momentum": -16.47
             },
             {
                 "symbol": "XMR-USD",
-                "momentum": -17.99
+                "momentum": -16.75
+            },
+            {
+                "symbol": "BNB-USD",
+                "momentum": -16.77
             },
             {
                 "symbol": "CRO-USD",
-                "momentum": -18.12
+                "momentum": -18.98
             },
             {
                 "symbol": "LINK-USD",
-                "momentum": -20.2
+                "momentum": -19.61
             },
             {
                 "symbol": "M-USD",
@@ -6358,23 +6358,23 @@
             },
             {
                 "symbol": "XRP-USD",
-                "momentum": -22.09
+                "momentum": -21.93
             },
             {
                 "symbol": "SHIB-USD",
-                "momentum": -25.56
+                "momentum": -25.24
             },
             {
                 "symbol": "ETH-USD",
-                "momentum": -26.98
+                "momentum": -26.86
             },
             {
                 "symbol": "LTC-USD",
-                "momentum": -28.29
+                "momentum": -27.52
             },
             {
                 "symbol": "SOL-USD",
-                "momentum": -29.13
+                "momentum": -29.27
             },
             {
                 "symbol": "DOT-USD",
@@ -6382,15 +6382,15 @@
             },
             {
                 "symbol": "AVAX-USD",
-                "momentum": -32.57
+                "momentum": -32.26
             },
             {
                 "symbol": "ADA-USD",
-                "momentum": -38.01
+                "momentum": -38.28
             },
             {
                 "symbol": "BCH-USD",
-                "momentum": -47.52
+                "momentum": -47.38
             }
         ],
         "ALL_ASSETS": [
@@ -6400,7 +6400,7 @@
             },
             {
                 "symbol": "00674R.TW",
-                "momentum": 272.95
+                "momentum": 273.08
             },
             {
                 "symbol": "SNDK",
@@ -6412,27 +6412,27 @@
             },
             {
                 "symbol": "3189.TW",
-                "momentum": 145.34
+                "momentum": 152.58
             },
             {
                 "symbol": "2327.TW",
-                "momentum": 144.77
-            },
-            {
-                "symbol": "3167.TW",
-                "momentum": 140.21
-            },
-            {
-                "symbol": "3037.TW",
-                "momentum": 136.94
+                "momentum": 145.1
             },
             {
                 "symbol": "4958.TW",
-                "momentum": 134.34
+                "momentum": 137.59
+            },
+            {
+                "symbol": "3037.TW",
+                "momentum": 135.13
+            },
+            {
+                "symbol": "3167.TW",
+                "momentum": 132.68
             },
             {
                 "symbol": "2454.TW",
-                "momentum": 119.51
+                "momentum": 119.24
             },
             {
                 "symbol": "DELL",
@@ -6448,7 +6448,7 @@
             },
             {
                 "symbol": "8046.TW",
-                "momentum": 102.6
+                "momentum": 100.67
             },
             {
                 "symbol": "LNVGY",
@@ -6463,20 +6463,20 @@
                 "momentum": 94.28
             },
             {
-                "symbol": "4764.TW",
-                "momentum": 94.26
-            },
-            {
                 "symbol": "3481.TW",
                 "momentum": 93.7
+            },
+            {
+                "symbol": "2360.TW",
+                "momentum": 93.53
             },
             {
                 "symbol": "INTC",
                 "momentum": 93.32
             },
             {
-                "symbol": "2360.TW",
-                "momentum": 92.34
+                "symbol": "4764.TW",
+                "momentum": 93.19
             },
             {
                 "symbol": "8454.TW",
@@ -6484,7 +6484,7 @@
             },
             {
                 "symbol": "2383.TW",
-                "momentum": 87.68
+                "momentum": 88.87
             },
             {
                 "symbol": "6415.TW",
@@ -6492,27 +6492,27 @@
             },
             {
                 "symbol": "2303.TW",
-                "momentum": 81.94
+                "momentum": 81.19
             },
             {
                 "symbol": "AMD",
                 "momentum": 79.13
             },
             {
-                "symbol": "8021.TW",
-                "momentum": 77.1
+                "symbol": "3090.TW",
+                "momentum": 78.63
             },
             {
-                "symbol": "3090.TW",
-                "momentum": 76.5
+                "symbol": "8021.TW",
+                "momentum": 77.88
             },
             {
                 "symbol": "HPE",
                 "momentum": 75.7
             },
             {
-                "symbol": "6285.TW",
-                "momentum": 75.25
+                "symbol": "7750.TW",
+                "momentum": 74.36
             }
         ]
     }
