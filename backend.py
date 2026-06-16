@@ -1,3 +1,4 @@
+
 import yfinance as yf
 import pandas as pd
 import numpy as np
@@ -183,10 +184,20 @@ def calculate_historical_momentum(tickers, category_name):
     for date, row in last_12_months.iterrows():
         month_str = date.strftime('%Y-%m')
         valid_ranks = row.dropna().sort_values(ascending=False)
-        history_result[month_str] = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in valid_ranks.items()]
+        month_data = []
+        for s, v in valid_ranks.items():
+            price = monthly_prices.at[date, s]
+            price_val = round(price, 2) if pd.notna(price) else 0.0
+            month_data.append({"symbol": s, "momentum": round(v * 100, 2), "price": price_val})
+        history_result[month_str] = month_data
         
     latest_row = monthly_momentum.iloc[-1].dropna().sort_values(ascending=False)
-    current_all = [{"symbol": s, "momentum": round(v * 100, 2)} for s, v in latest_row.items()]
+    latest_date = monthly_momentum.index[-1]
+    current_all = []
+    for s, v in latest_row.items():
+        price = monthly_prices.at[latest_date, s]
+        price_val = round(price, 2) if pd.notna(price) else 0.0
+        current_all.append({"symbol": s, "momentum": round(v * 100, 2), "price": price_val})
         
     return history_result, current_all
 
