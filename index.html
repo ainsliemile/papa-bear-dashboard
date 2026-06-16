@@ -228,7 +228,8 @@
                 html += `<tr class="hover:bg-gray-50"><td class="px-6 py-4 text-sm font-medium text-gray-900">${month}</td>`;
                 for(let i=0; i<maxRanks; i++) {
                     const item = row[i] || {symbol:'-',momentum:0};
-                    html += `<td class="px-6 py-4 text-sm whitespace-nowrap"><span class="font-bold text-gray-800">${item.symbol}</span> <span class="${getColorClass(item.momentum)}">(${formatVal(item.momentum)})</span></td>`;
+                    const priceText = item.price !== undefined ? `<span class="text-xs text-gray-500 ml-1 bg-gray-100 px-1.5 py-0.5 rounded-md">$${item.price}</span>` : '';
+                    html += `<td class="px-6 py-4 text-sm whitespace-nowrap"><span class="font-bold text-gray-800">${item.symbol}</span> <span class="${getColorClass(item.momentum)}">(${formatVal(item.momentum)})</span>${priceText}</td>`;
                 }
                 html += `</tr>`;
             });
