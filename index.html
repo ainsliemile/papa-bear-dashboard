@@ -32,7 +32,7 @@
                 <p class="text-gray-500 mt-2 text-sm">自適應多重週期系統 (股票與ETF: 1/3/6月 | 幣圈: 14天/1月/3月)</p>
             </div>
             <div class="text-sm text-gray-400 mt-4 md:mt-0 pb-1 font-mono" id="last-updated">
-                自動更新狀態：載入中...
+                最後更新時間：載入中...
             </div>
         </header>
 
@@ -63,15 +63,13 @@
 
         <div id="view-dashboard" class="view-section active">
             
-            <!-- 🌟 大盤濾網狀態區 (1+3月動能) -->
             <div id="market-filter-section" class="mb-8" style="display: none;">
                 <h2 class="text-lg font-bold text-gray-800 mb-3 flex items-center">
                     <svg class="w-5 h-5 mr-2 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path></svg>
                     大盤趨勢防護濾網 (1個月與3個月平均動能)
                 </h2>
                 <div id="market-filter-cards" class="grid grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- Cards injected via JS -->
-                </div>
+                    </div>
             </div>
 
             <div class="flex flex-wrap border-b border-gray-200 mb-6 gap-2" id="tabs-nav">
@@ -150,9 +148,11 @@
                 
                 document.getElementById('content-container').style.display = 'block';
                 
-                const months = Object.keys(fullData.history).sort().reverse();
-                if(months.length > 0) {
-                    document.getElementById('last-updated').innerHTML = `資料基準：<span class="text-gray-800 font-bold">${months[0]}</span>`;
+                // 🌟 讀取並顯示從後端傳來的精確更新時間
+                if (fullData.update_time) {
+                    document.getElementById('last-updated').innerHTML = `最後更新時間：<span class="text-gray-800 font-bold">${fullData.update_time}</span>`;
+                } else {
+                    document.getElementById('last-updated').innerHTML = `最後更新時間：<span class="text-gray-800 font-bold">未提供</span>`;
                 }
 
                 // 🌟 注入新的四大指數濾網數據
@@ -210,7 +210,7 @@
                 document.getElementById('current-grid-title').innerHTML = `當月綜合動能排行 <span class="text-sm font-normal text-gray-500">(跨市場前 30 名)</span>`;
             } else {
                 const latestMonth = months.length > 0 ? months[0] : '';
-                document.getElementById('current-grid-title').innerHTML = `當月完整動能排行 <span class="text-sm font-normal text-gray-500">(截至 ${latestMonth})</span>`;
+                document.getElementById('current-grid-title').innerHTML = `當月完整動能排行 <span class="text-sm font-normal text-gray-500">(資料基準月份：${latestMonth})</span>`;
             }
 
             let html = `<div class="overflow-x-auto pb-4"><table class="min-w-full divide-y divide-gray-200"><thead class="bg-gray-50"><tr><th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">時間</th>`;
@@ -228,6 +228,7 @@
                 html += `<tr class="hover:bg-gray-50"><td class="px-6 py-4 text-sm font-medium text-gray-900">${month}</td>`;
                 for(let i=0; i<maxRanks; i++) {
                     const item = row[i] || {symbol:'-',momentum:0};
+                    // 🌟 加入股價顯示邏輯 (歷史表格)
                     const priceText = item.price !== undefined ? `<span class="text-xs text-gray-500 ml-1 bg-gray-100 px-1.5 py-0.5 rounded-md">$${item.price}</span>` : '';
                     html += `<td class="px-6 py-4 text-sm whitespace-nowrap"><span class="font-bold text-gray-800">${item.symbol}</span> <span class="${getColorClass(item.momentum)}">(${formatVal(item.momentum)})</span>${priceText}</td>`;
                 }
@@ -252,7 +253,9 @@
             currentData.forEach((item, index) => {
                 const rank = index + 1;
                 const badge = rank===1?'rank-1':rank===2?'rank-2':rank===3?'rank-3':'rank-other';
-                currentHtml += `<div class="border rounded-md p-3 flex flex-col items-center hover:shadow-md transition-shadow bg-gray-50"><div class="flex items-center w-full justify-between mb-2"><span class="rank-badge ${badge}">${rank}</span><span class="text-sm font-bold truncate text-gray-700" title="${item.symbol}">${item.symbol}</span></div><div class="text-lg ${getColorClass(item.momentum)}">${formatVal(item.momentum)}</div></div>`;
+                // 🌟 加入股價顯示邏輯 (當月方格)
+                const priceHtml = item.price !== undefined ? `<div class="text-xs text-gray-500 mt-1.5 font-mono bg-gray-200 px-2 py-0.5 rounded-full">$${item.price}</div>` : '';
+                currentHtml += `<div class="border rounded-md p-3 flex flex-col items-center hover:shadow-md transition-shadow bg-gray-50"><div class="flex items-center w-full justify-between mb-2"><span class="rank-badge ${badge}">${rank}</span><span class="text-sm font-bold truncate text-gray-700" title="${item.symbol}">${item.symbol}</span></div><div class="text-lg ${getColorClass(item.momentum)}">${formatVal(item.momentum)}</div>${priceHtml}</div>`;
             });
             currentContainer.innerHTML = currentHtml;
         }
