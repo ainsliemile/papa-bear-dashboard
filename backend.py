@@ -1,4 +1,3 @@
-
 import yfinance as yf
 import pandas as pd
 import numpy as np
@@ -201,7 +200,6 @@ def calculate_historical_momentum(tickers, category_name):
         
     return history_result, current_all
 
-
 # 🔥 新增輔助模組：專門用來計算四大指數的 1+3 濾網
 def calc_filter_momentum(ticker, name):
     print(f"\n=== 計算大盤防護濾網 {name}(1+3月) ===")
@@ -216,7 +214,6 @@ def calc_filter_momentum(ticker, name):
             print(f"🔥 最新 {name} 濾網: {fast_mom:.2f}%")
         except: pass
     return round(fast_mom, 2)
-
 
 def main():
     print("=== Papa Bear 跨市場動能監控系統 (綜合排名版) ===")
@@ -238,11 +235,11 @@ def main():
             categories[cat_key] = fallback_categories[cat_key]
     
     final_json_data = {
-        "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "update_time": datetime.now().strftime("%Y-%m-%d %H:%M"), # 設定精確到分的時間格式
         "spy_1_3_momentum": 0.0, 
         "tw_0050_1_3_momentum": 0.0,
-        "sox_1_3_momentum": 0.0,  # 🔥 確保 JSON 有這個欄位
-        "twii_1_3_momentum": 0.0, # 🔥 確保 JSON 有這個欄位
+        "sox_1_3_momentum": 0.0,  
+        "twii_1_3_momentum": 0.0, 
         "history": {}, 
         "current_all": {}
     }
@@ -273,22 +270,15 @@ def main():
         sorted_items = sorted(items, key=lambda x: x['momentum'], reverse=True)
         final_json_data["history"][month]["ALL_ASSETS"] = sorted_items[:10]
 
-
     # 🔥 統一呼叫模組，計算四個大盤指標
     final_json_data["spy_1_3_momentum"] = calc_filter_momentum("SPY", "標普500 (SPY)")
     final_json_data["tw_0050_1_3_momentum"] = calc_filter_momentum("0050.TW", "台灣50 (0050)")
     final_json_data["sox_1_3_momentum"] = calc_filter_momentum("^SOX", "費城半導體 (^SOX)")
     final_json_data["twii_1_3_momentum"] = calc_filter_momentum("^TWII", "台灣加權 (^TWII)")
 
-    # 將原本的資料與更新時間打包在一起
-    output_data = {
-    "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
-    "categories": data_result  # 這裡的 data_result 請替換成你程式碼中原本要寫入的變數名稱
-    }
-
+    # 寫入更新後的 JSON 資料
     with open("momentum_history.json", 'w', encoding='utf-8') as f:
         json.dump(final_json_data, f, ensure_ascii=False, indent=4)
-    
         
     with open("all_tickers.json", 'w', encoding='utf-8') as f:
         json.dump(tickers_list_data, f, ensure_ascii=False, indent=4)
