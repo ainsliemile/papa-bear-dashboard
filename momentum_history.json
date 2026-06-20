@@ -1,5 +1,5 @@
 {
-    "update_time": "2026-06-20 03:40:02",
+    "update_time": "2026-06-20 07:13",
     "spy_1_3_momentum": 7.04,
     "tw_0050_1_3_momentum": 25.05,
     "sox_1_3_momentum": 50.39,
@@ -2179,8 +2179,8 @@
                 },
                 {
                     "symbol": "TSXU",
-                    "momentum": 85.3,
-                    "price": 62.28
+                    "momentum": 106.67,
+                    "price": 69.46
                 },
                 {
                     "symbol": "USD",
@@ -2201,23 +2201,23 @@
                 },
                 {
                     "symbol": "LUNC-USD",
-                    "momentum": 41.47,
+                    "momentum": 42.79,
                     "price": 0.0
                 },
                 {
                     "symbol": "ZEC-USD",
-                    "momentum": 20.89,
-                    "price": 468.68
+                    "momentum": 20.8,
+                    "price": 468.33
                 },
                 {
                     "symbol": "ONDO-USD",
-                    "momentum": 7.54,
+                    "momentum": 7.32,
                     "price": 0.35
                 },
                 {
                     "symbol": "RENDER-USD",
-                    "momentum": 7.05,
-                    "price": 1.75
+                    "momentum": 6.44,
+                    "price": 1.74
                 }
             ],
             "ALL_ASSETS": [
@@ -4492,8 +4492,8 @@
             },
             {
                 "symbol": "HUM",
-                "momentum": 56.45,
-                "price": 362.0
+                "momentum": 55.87,
+                "price": 360.65
             },
             {
                 "symbol": "NOK",
@@ -4521,6 +4521,11 @@
                 "price": 322.86
             },
             {
+                "symbol": "SFTBY",
+                "momentum": 52.59,
+                "price": 23.41
+            },
+            {
                 "symbol": "LITE",
                 "momentum": 50.33,
                 "price": 850.0
@@ -4529,6 +4534,11 @@
                 "symbol": "DSCSY",
                 "momentum": 49.78,
                 "price": 54.98
+            },
+            {
+                "symbol": "GNRC",
+                "momentum": 49.35,
+                "price": 279.15
             },
             {
                 "symbol": "ASML",
@@ -4554,16 +4564,6 @@
                 "symbol": "CNC",
                 "momentum": 45.68,
                 "price": 61.02
-            },
-            {
-                "symbol": "GNRC",
-                "momentum": 43.49,
-                "price": 268.2
-            },
-            {
-                "symbol": "SFTBY",
-                "momentum": 42.49,
-                "price": 21.86
             },
             {
                 "symbol": "DVA",
@@ -4662,8 +4662,8 @@
             },
             {
                 "symbol": "CMI",
-                "momentum": 28.79,
-                "price": 717.78
+                "momentum": 28.62,
+                "price": 716.86
             },
             {
                 "symbol": "FFIV",
@@ -4674,6 +4674,11 @@
                 "symbol": "STLD",
                 "momentum": 27.61,
                 "price": 249.91
+            },
+            {
+                "symbol": "IRM",
+                "momentum": 27.59,
+                "price": 127.83
             },
             {
                 "symbol": "HST",
@@ -4694,11 +4699,6 @@
                 "symbol": "CARR",
                 "momentum": 25.79,
                 "price": 71.81
-            },
-            {
-                "symbol": "IRM",
-                "momentum": 25.21,
-                "price": 125.44
             },
             {
                 "symbol": "STT",
@@ -4726,11 +4726,6 @@
                 "price": 1365.41
             },
             {
-                "symbol": "HWM",
-                "momentum": 23.64,
-                "price": 283.23
-            },
-            {
                 "symbol": "MS",
                 "momentum": 23.57,
                 "price": 223.17
@@ -4751,14 +4746,29 @@
                 "price": 387.39
             },
             {
+                "symbol": "JBHT",
+                "momentum": 22.15,
+                "price": 271.22
+            },
+            {
                 "symbol": "HOOD",
                 "momentum": 22.12,
                 "price": 108.15
             },
             {
+                "symbol": "WSM",
+                "momentum": 21.46,
+                "price": 226.92
+            },
+            {
                 "symbol": "C",
                 "momentum": 21.4,
                 "price": 143.06
+            },
+            {
+                "symbol": "HWM",
+                "momentum": 21.21,
+                "price": 277.66
             },
             {
                 "symbol": "GS",
@@ -4776,9 +4786,9 @@
                 "price": 163.96
             },
             {
-                "symbol": "JBHT",
-                "momentum": 20.36,
-                "price": 267.24
+                "symbol": "ROK",
+                "momentum": 20.01,
+                "price": 473.79
             },
             {
                 "symbol": "EQIX",
@@ -4814,11 +4824,6 @@
                 "symbol": "PFG",
                 "momentum": 18.49,
                 "price": 109.57
-            },
-            {
-                "symbol": "WSM",
-                "momentum": 18.38,
-                "price": 221.15
             },
             {
                 "symbol": "MAR",
@@ -4861,6 +4866,11 @@
                 "price": 326.2
             },
             {
+                "symbol": "WST",
+                "momentum": 17.31,
+                "price": 327.95
+            },
+            {
                 "symbol": "EME",
                 "momentum": 17.15,
                 "price": 836.59
@@ -4876,14 +4886,14 @@
                 "price": 413.01
             },
             {
-                "symbol": "BK",
-                "momentum": 16.73,
-                "price": 143.98
-            },
-            {
                 "symbol": "DOC",
                 "momentum": 16.5,
                 "price": 19.56
+            },
+            {
+                "symbol": "BK",
+                "momentum": 16.44,
+                "price": 143.63
             },
             {
                 "symbol": "PSA",
@@ -4899,11 +4909,6 @@
                 "symbol": "RNW",
                 "momentum": 16.25,
                 "price": 6.32
-            },
-            {
-                "symbol": "ROK",
-                "momentum": 16.19,
-                "price": 458.69
             },
             {
                 "symbol": "TT",
@@ -4924,11 +4929,6 @@
                 "symbol": "MAS",
                 "momentum": 15.98,
                 "price": 74.38
-            },
-            {
-                "symbol": "WST",
-                "momentum": 15.75,
-                "price": 323.59
             },
             {
                 "symbol": "TRGP",
@@ -4986,6 +4986,11 @@
                 "price": 94.97
             },
             {
+                "symbol": "JCI",
+                "momentum": 13.62,
+                "price": 144.82
+            },
+            {
                 "symbol": "DE",
                 "momentum": 13.41,
                 "price": 589.24
@@ -5006,14 +5011,14 @@
                 "price": 45.63
             },
             {
+                "symbol": "NDSN",
+                "momentum": 12.88,
+                "price": 295.92
+            },
+            {
                 "symbol": "ROST",
                 "momentum": 12.7,
                 "price": 232.8
-            },
-            {
-                "symbol": "JCI",
-                "momentum": 12.68,
-                "price": 143.62
             },
             {
                 "symbol": "XYZ",
@@ -5039,11 +5044,6 @@
                 "symbol": "CFG",
                 "momentum": 12.29,
                 "price": 67.08
-            },
-            {
-                "symbol": "KIM",
-                "momentum": 12.17,
-                "price": 24.49
             },
             {
                 "symbol": "SW",
@@ -5074,6 +5074,11 @@
                 "symbol": "AKAM",
                 "momentum": 11.82,
                 "price": 124.91
+            },
+            {
+                "symbol": "KIM",
+                "momentum": 11.66,
+                "price": 24.38
             },
             {
                 "symbol": "EMR",
@@ -5146,19 +5151,9 @@
                 "price": 213.45
             },
             {
-                "symbol": "PNC",
-                "momentum": 10.58,
-                "price": 233.13
-            },
-            {
                 "symbol": "CHRW",
                 "momentum": 10.54,
                 "price": 185.04
-            },
-            {
-                "symbol": "NDSN",
-                "momentum": 10.39,
-                "price": 289.4
             },
             {
                 "symbol": "KDP",
@@ -5179,6 +5174,11 @@
                 "symbol": "ADM",
                 "momentum": 10.2,
                 "price": 75.1
+            },
+            {
+                "symbol": "PNC",
+                "momentum": 10.06,
+                "price": 232.04
             },
             {
                 "symbol": "BBY",
@@ -5306,24 +5306,14 @@
                 "price": 28.14
             },
             {
-                "symbol": "CINF",
-                "momentum": 7.84,
-                "price": 171.47
-            },
-            {
-                "symbol": "CHD",
-                "momentum": 7.83,
-                "price": 97.41
+                "symbol": "TDY",
+                "momentum": 7.89,
+                "price": 619.58
             },
             {
                 "symbol": "SYY",
                 "momentum": 7.79,
                 "price": 78.7
-            },
-            {
-                "symbol": "ALL",
-                "momentum": 7.73,
-                "price": 221.66
             },
             {
                 "symbol": "ETR",
@@ -5341,6 +5331,11 @@
                 "price": 298.01
             },
             {
+                "symbol": "IFF",
+                "momentum": 7.61,
+                "price": 76.72
+            },
+            {
                 "symbol": "DD",
                 "momentum": 7.58,
                 "price": 47.71
@@ -5351,9 +5346,9 @@
                 "price": 102.32
             },
             {
-                "symbol": "PM",
-                "momentum": 7.52,
-                "price": 179.44
+                "symbol": "ALL",
+                "momentum": 7.49,
+                "price": 221.17
             },
             {
                 "symbol": "TECH",
@@ -5371,11 +5366,6 @@
                 "price": 1098.57
             },
             {
-                "symbol": "TDY",
-                "momentum": 7.16,
-                "price": 615.35
-            },
-            {
                 "symbol": "RF",
                 "momentum": 7.15,
                 "price": 28.62
@@ -5391,9 +5381,14 @@
                 "price": 79.39
             },
             {
-                "symbol": "RJF",
-                "momentum": 6.78,
-                "price": 158.77
+                "symbol": "CINF",
+                "momentum": 7.04,
+                "price": 170.2
+            },
+            {
+                "symbol": "PM",
+                "momentum": 6.9,
+                "price": 178.4
             },
             {
                 "symbol": "PCAR",
@@ -5436,11 +5431,6 @@
                 "price": 196.58
             },
             {
-                "symbol": "EVRG",
-                "momentum": 6.4,
-                "price": 82.85
-            },
-            {
                 "symbol": "FAST",
                 "momentum": 6.28,
                 "price": 45.89
@@ -5481,14 +5471,24 @@
                 "price": 73.0
             },
             {
-                "symbol": "IFF",
-                "momentum": 6.11,
-                "price": 75.65
+                "symbol": "GRMN",
+                "momentum": 6.12,
+                "price": 234.2
+            },
+            {
+                "symbol": "EVRG",
+                "momentum": 5.95,
+                "price": 82.5
             },
             {
                 "symbol": "WELL",
                 "momentum": 5.88,
                 "price": 206.65
+            },
+            {
+                "symbol": "CHD",
+                "momentum": 5.86,
+                "price": 95.63
             },
             {
                 "symbol": "PLD",
@@ -5551,19 +5551,9 @@
                 "price": 104.86
             },
             {
-                "symbol": "CI",
-                "momentum": 5.21,
-                "price": 285.09
-            },
-            {
                 "symbol": "MDLZ",
                 "momentum": 5.08,
                 "price": 60.12
-            },
-            {
-                "symbol": "GRMN",
-                "momentum": 5.07,
-                "price": 231.89
             },
             {
                 "symbol": "OKE",
@@ -5576,24 +5566,14 @@
                 "price": 28.41
             },
             {
-                "symbol": "PRU",
-                "momentum": 4.92,
-                "price": 107.01
-            },
-            {
-                "symbol": "APD",
-                "momentum": 4.78,
-                "price": 281.75
+                "symbol": "RJF",
+                "momentum": 4.83,
+                "price": 155.86
             },
             {
                 "symbol": "AFL",
                 "momentum": 4.78,
                 "price": 115.47
-            },
-            {
-                "symbol": "CF",
-                "momentum": 4.74,
-                "price": 105.85
             },
             {
                 "symbol": "CNP",
@@ -5646,6 +5626,11 @@
                 "price": 195.0
             },
             {
+                "symbol": "PRU",
+                "momentum": 4.45,
+                "price": 106.53
+            },
+            {
                 "symbol": "FSLR",
                 "momentum": 4.43,
                 "price": 257.7
@@ -5661,6 +5646,11 @@
                 "price": 24.18
             },
             {
+                "symbol": "APD",
+                "momentum": 4.21,
+                "price": 280.21
+            },
+            {
                 "symbol": "EW",
                 "momentum": 4.2,
                 "price": 87.36
@@ -5669,6 +5659,11 @@
                 "symbol": "FANG",
                 "momentum": 4.2,
                 "price": 183.5
+            },
+            {
+                "symbol": "CTVA",
+                "momentum": 4.17,
+                "price": 78.59
             },
             {
                 "symbol": "AMCR",
@@ -5681,19 +5676,9 @@
                 "price": 20.44
             },
             {
-                "symbol": "CB",
-                "momentum": 4.06,
-                "price": 327.96
-            },
-            {
                 "symbol": "HBAN",
                 "momentum": 3.91,
                 "price": 16.86
-            },
-            {
-                "symbol": "MAA",
-                "momentum": 3.86,
-                "price": 133.11
             },
             {
                 "symbol": "AEP",
@@ -5734,6 +5719,11 @@
                 "symbol": "BF-B",
                 "momentum": 3.39,
                 "price": 26.64
+            },
+            {
+                "symbol": "MAA",
+                "momentum": 3.38,
+                "price": 132.5
             },
             {
                 "symbol": "DECK",
@@ -5781,6 +5771,11 @@
                 "price": 264.64
             },
             {
+                "symbol": "CI",
+                "momentum": 3.06,
+                "price": 279.27
+            },
+            {
                 "symbol": "AES",
                 "momentum": 3.04,
                 "price": 14.62
@@ -5811,19 +5806,9 @@
                 "price": 112.58
             },
             {
-                "symbol": "WEC",
-                "momentum": 2.64,
-                "price": 112.54
-            },
-            {
-                "symbol": "INCY",
-                "momentum": 2.57,
-                "price": 98.99
-            },
-            {
-                "symbol": "CTVA",
-                "momentum": 2.55,
-                "price": 77.37
+                "symbol": "CB",
+                "momentum": 2.61,
+                "price": 323.4
             },
             {
                 "symbol": "SNPS",
@@ -5846,16 +5831,6 @@
                 "price": 334.28
             },
             {
-                "symbol": "WRB",
-                "momentum": 2.37,
-                "price": 68.09
-            },
-            {
-                "symbol": "WAT",
-                "momentum": 2.31,
-                "price": 357.0
-            },
-            {
                 "symbol": "JNJ",
                 "momentum": 2.3,
                 "price": 228.39
@@ -5864,6 +5839,11 @@
                 "symbol": "ZBRA",
                 "momentum": 2.3,
                 "price": 235.98
+            },
+            {
+                "symbol": "WEC",
+                "momentum": 2.3,
+                "price": 112.17
             },
             {
                 "symbol": "SO",
@@ -5916,6 +5896,16 @@
                 "price": 951.45
             },
             {
+                "symbol": "WAT",
+                "momentum": 1.87,
+                "price": 355.44
+            },
+            {
+                "symbol": "CF",
+                "momentum": 1.85,
+                "price": 102.93
+            },
+            {
                 "symbol": "GPC",
                 "momentum": 1.81,
                 "price": 108.7
@@ -5924,6 +5914,11 @@
                 "symbol": "SHW",
                 "momentum": 1.8,
                 "price": 320.79
+            },
+            {
+                "symbol": "INCY",
+                "momentum": 1.78,
+                "price": 98.22
             },
             {
                 "symbol": "HAL",
@@ -5944,6 +5939,11 @@
                 "symbol": "AVB",
                 "momentum": 1.53,
                 "price": 177.32
+            },
+            {
+                "symbol": "IR",
+                "momentum": 1.47,
+                "price": 77.91
             },
             {
                 "symbol": "CDW",
@@ -5976,14 +5976,19 @@
                 "price": 79.89
             },
             {
-                "symbol": "TEL",
-                "momentum": 0.94,
-                "price": 217.64
+                "symbol": "WRB",
+                "momentum": 1.01,
+                "price": 67.18
             },
             {
                 "symbol": "CMS",
-                "momentum": 0.9,
-                "price": 73.31
+                "momentum": 0.99,
+                "price": 73.38
+            },
+            {
+                "symbol": "TEL",
+                "momentum": 0.94,
+                "price": 217.64
             },
             {
                 "symbol": "BRK-B",
@@ -6079,11 +6084,6 @@
                 "symbol": "WMT",
                 "momentum": 0.43,
                 "price": 117.18
-            },
-            {
-                "symbol": "IR",
-                "momentum": 0.38,
-                "price": 77.07
             },
             {
                 "symbol": "DIS",
@@ -6281,6 +6281,11 @@
                 "price": 8.75
             },
             {
+                "symbol": "HMC",
+                "momentum": -1.87,
+                "price": 26.26
+            },
+            {
                 "symbol": "WM",
                 "momentum": -1.93,
                 "price": 214.6
@@ -6294,16 +6299,6 @@
                 "symbol": "ADP",
                 "momentum": -2.08,
                 "price": 218.41
-            },
-            {
-                "symbol": "HIG",
-                "momentum": -2.1,
-                "price": 129.64
-            },
-            {
-                "symbol": "HMC",
-                "momentum": -2.13,
-                "price": 26.19
             },
             {
                 "symbol": "COP",
@@ -6384,6 +6379,11 @@
                 "symbol": "LOW",
                 "momentum": -2.95,
                 "price": 222.2
+            },
+            {
+                "symbol": "HIG",
+                "momentum": -3.15,
+                "price": 128.25
             },
             {
                 "symbol": "AON",
@@ -6596,6 +6596,11 @@
                 "price": 22.86
             },
             {
+                "symbol": "AOS",
+                "momentum": -6.86,
+                "price": 58.22
+            },
+            {
                 "symbol": "AZN",
                 "momentum": -6.98,
                 "price": 174.93
@@ -6614,11 +6619,6 @@
                 "symbol": "SATS",
                 "momentum": -7.27,
                 "price": 109.17
-            },
-            {
-                "symbol": "AOS",
-                "momentum": -7.4,
-                "price": 57.88
             },
             {
                 "symbol": "XYL",
@@ -6664,11 +6664,6 @@
                 "symbol": "IBM",
                 "momentum": -9.21,
                 "price": 249.1
-            },
-            {
-                "symbol": "VRSK",
-                "momentum": -9.35,
-                "price": 175.35
             },
             {
                 "symbol": "SONY",
@@ -6726,9 +6721,9 @@
                 "price": 330.26
             },
             {
-                "symbol": "IQV",
-                "momentum": -10.18,
-                "price": 170.67
+                "symbol": "VRSK",
+                "momentum": -10.15,
+                "price": 173.8
             },
             {
                 "symbol": "TMO",
@@ -6801,6 +6796,11 @@
                 "price": 13.2
             },
             {
+                "symbol": "IQV",
+                "momentum": -11.71,
+                "price": 167.77
+            },
+            {
                 "symbol": "DPZ",
                 "momentum": -11.78,
                 "price": 312.47
@@ -6831,19 +6831,9 @@
                 "price": 48.72
             },
             {
-                "symbol": "WB",
-                "momentum": -12.37,
-                "price": 7.42
-            },
-            {
                 "symbol": "PYPL",
                 "momentum": -12.37,
                 "price": 42.51
-            },
-            {
-                "symbol": "HII",
-                "momentum": -12.41,
-                "price": 296.89
             },
             {
                 "symbol": "PNR",
@@ -6884,6 +6874,11 @@
                 "symbol": "CPRT",
                 "momentum": -13.16,
                 "price": 30.23
+            },
+            {
+                "symbol": "WB",
+                "momentum": -13.43,
+                "price": 7.33
             },
             {
                 "symbol": "ICE",
@@ -6946,6 +6941,11 @@
                 "price": 77.38
             },
             {
+                "symbol": "HII",
+                "momentum": -15.79,
+                "price": 285.43
+            },
+            {
                 "symbol": "ULTA",
                 "momentum": -15.9,
                 "price": 456.13
@@ -6986,9 +6986,19 @@
                 "price": 17.2
             },
             {
+                "symbol": "GDDY",
+                "momentum": -18.32,
+                "price": 77.04
+            },
+            {
                 "symbol": "VEEV",
                 "momentum": -18.71,
                 "price": 153.3
+            },
+            {
+                "symbol": "JKHY",
+                "momentum": -19.01,
+                "price": 126.23
             },
             {
                 "symbol": "FOXA",
@@ -7016,11 +7026,6 @@
                 "price": 128.47
             },
             {
-                "symbol": "GDDY",
-                "momentum": -19.31,
-                "price": 76.11
-            },
-            {
                 "symbol": "FISV",
                 "momentum": -19.45,
                 "price": 47.86
@@ -7034,11 +7039,6 @@
                 "symbol": "LI",
                 "momentum": -19.96,
                 "price": 13.21
-            },
-            {
-                "symbol": "JKHY",
-                "momentum": -20.3,
-                "price": 124.22
             },
             {
                 "symbol": "BR",
@@ -7116,14 +7116,14 @@
                 "price": 18.51
             },
             {
-                "symbol": "CSGP",
-                "momentum": -28.2,
-                "price": 30.46
-            },
-            {
                 "symbol": "BSX",
                 "momentum": -28.86,
                 "price": 45.29
+            },
+            {
+                "symbol": "CSGP",
+                "momentum": -29.0,
+                "price": 30.12
             },
             {
                 "symbol": "LDOS",
@@ -7199,8 +7199,8 @@
             },
             {
                 "symbol": "TSXU",
-                "momentum": 85.3,
-                "price": 62.28
+                "momentum": 106.67,
+                "price": 69.46
             },
             {
                 "symbol": "USD",
@@ -7313,6 +7313,16 @@
                 "price": 109.99
             },
             {
+                "symbol": "KNCT",
+                "momentum": 39.91,
+                "price": 215.28
+            },
+            {
+                "symbol": "HYDR",
+                "momentum": 38.72,
+                "price": 56.8
+            },
+            {
                 "symbol": "EET",
                 "momentum": 38.63,
                 "price": 126.99
@@ -7328,19 +7338,9 @@
                 "price": 27.83
             },
             {
-                "symbol": "HYDR",
-                "momentum": 36.28,
-                "price": 55.8
-            },
-            {
                 "symbol": "CARZ",
                 "momentum": 34.32,
                 "price": 119.94
-            },
-            {
-                "symbol": "KNCT",
-                "momentum": 34.18,
-                "price": 206.46
             },
             {
                 "symbol": "PSCT",
@@ -7383,6 +7383,11 @@
                 "price": 57.63
             },
             {
+                "symbol": "IXN",
+                "momentum": 29.32,
+                "price": 146.33
+            },
+            {
                 "symbol": "NXTG",
                 "momentum": 29.26,
                 "price": 158.11
@@ -7396,6 +7401,11 @@
                 "symbol": "DTCR",
                 "momentum": 28.52,
                 "price": 31.92
+            },
+            {
+                "symbol": "BITQ",
+                "momentum": 28.34,
+                "price": 27.87
             },
             {
                 "symbol": "KEMX",
@@ -7448,14 +7458,14 @@
                 "price": 60.54
             },
             {
-                "symbol": "BITQ",
-                "momentum": 25.21,
-                "price": 27.19
+                "symbol": "SAA",
+                "momentum": 25.14,
+                "price": 35.36
             },
             {
-                "symbol": "IXN",
-                "momentum": 24.65,
-                "price": 141.04
+                "symbol": "IBLC",
+                "momentum": 24.72,
+                "price": 53.58
             },
             {
                 "symbol": "AIQ",
@@ -7488,11 +7498,6 @@
                 "price": 123.3
             },
             {
-                "symbol": "IBLC",
-                "momentum": 21.71,
-                "price": 52.29
-            },
-            {
                 "symbol": "VGT",
                 "momentum": 21.44,
                 "price": 120.04
@@ -7516,11 +7521,6 @@
                 "symbol": "UXI",
                 "momentum": 20.99,
                 "price": 60.72
-            },
-            {
-                "symbol": "SAA",
-                "momentum": 20.79,
-                "price": 34.13
             },
             {
                 "symbol": "LOUP",
@@ -7568,14 +7568,29 @@
                 "price": 194.68
             },
             {
+                "symbol": "QQQS",
+                "momentum": 15.65,
+                "price": 42.43
+            },
+            {
                 "symbol": "ROBO",
                 "momentum": 15.59,
                 "price": 86.0
             },
             {
+                "symbol": "SPUU",
+                "momentum": 15.21,
+                "price": 215.95
+            },
+            {
                 "symbol": "USO",
                 "momentum": 15.12,
                 "price": 114.87
+            },
+            {
+                "symbol": "CNRG",
+                "momentum": 15.06,
+                "price": 113.3
             },
             {
                 "symbol": "SSO",
@@ -7593,14 +7608,14 @@
                 "price": 117.58
             },
             {
+                "symbol": "HACK",
+                "momentum": 14.64,
+                "price": 96.0
+            },
+            {
                 "symbol": "IWM",
                 "momentum": 14.02,
                 "price": 295.59
-            },
-            {
-                "symbol": "HACK",
-                "momentum": 13.9,
-                "price": 95.38
             },
             {
                 "symbol": "ASHS",
@@ -7616,16 +7631,6 @@
                 "symbol": "EWJ",
                 "momentum": 12.87,
                 "price": 96.26
-            },
-            {
-                "symbol": "SPUU",
-                "momentum": 12.84,
-                "price": 211.52
-            },
-            {
-                "symbol": "QQQS",
-                "momentum": 12.79,
-                "price": 41.38
             },
             {
                 "symbol": "EPU",
@@ -7698,16 +7703,6 @@
                 "price": 114.85
             },
             {
-                "symbol": "OIH",
-                "momentum": 10.88,
-                "price": 397.12
-            },
-            {
-                "symbol": "CNRG",
-                "momentum": 10.56,
-                "price": 108.87
-            },
-            {
                 "symbol": "PICK",
                 "momentum": 10.55,
                 "price": 62.91
@@ -7721,6 +7716,11 @@
                 "symbol": "VEA",
                 "momentum": 10.43,
                 "price": 72.31
+            },
+            {
+                "symbol": "PBD",
+                "momentum": 10.36,
+                "price": 20.3
             },
             {
                 "symbol": "XES",
@@ -7753,11 +7753,6 @@
                 "price": 85.48
             },
             {
-                "symbol": "PBD",
-                "momentum": 9.22,
-                "price": 20.09
-            },
-            {
                 "symbol": "FMTL",
                 "momentum": 9.14,
                 "price": 36.05
@@ -7773,6 +7768,11 @@
                 "price": 216.5
             },
             {
+                "symbol": "UPV",
+                "momentum": 8.74,
+                "price": 99.0
+            },
+            {
                 "symbol": "VTI",
                 "momentum": 8.45,
                 "price": 369.99
@@ -7781,11 +7781,6 @@
                 "symbol": "MGK",
                 "momentum": 8.32,
                 "price": 88.57
-            },
-            {
-                "symbol": "UPV",
-                "momentum": 8.26,
-                "price": 98.56
             },
             {
                 "symbol": "KRE",
@@ -7813,6 +7808,11 @@
                 "price": 86.98
             },
             {
+                "symbol": "OIH",
+                "momentum": 7.64,
+                "price": 385.49
+            },
+            {
                 "symbol": "FDTS",
                 "momentum": 7.56,
                 "price": 68.65
@@ -7831,6 +7831,11 @@
                 "symbol": "FRNW",
                 "momentum": 7.24,
                 "price": 24.87
+            },
+            {
+                "symbol": "IBRN",
+                "momentum": 7.06,
+                "price": 36.02
             },
             {
                 "symbol": "DIA",
@@ -7866,11 +7871,6 @@
                 "symbol": "SCHG",
                 "momentum": 5.65,
                 "price": 33.9
-            },
-            {
-                "symbol": "IBRN",
-                "momentum": 5.59,
-                "price": 35.52
             },
             {
                 "symbol": "VNQ",
@@ -8098,11 +8098,6 @@
                 "price": 83.09
             },
             {
-                "symbol": "SGDM",
-                "momentum": -4.08,
-                "price": 70.1
-            },
-            {
                 "symbol": "XLC",
                 "momentum": -4.46,
                 "price": 109.45
@@ -8156,6 +8151,11 @@
                 "symbol": "SLVP",
                 "momentum": -6.65,
                 "price": 33.05
+            },
+            {
+                "symbol": "SGDM",
+                "momentum": -6.86,
+                "price": 68.07
             },
             {
                 "symbol": "MCHI",
@@ -8251,32 +8251,32 @@
             },
             {
                 "symbol": "LUNC-USD",
-                "momentum": 41.47,
+                "momentum": 42.79,
                 "price": 0.0
             },
             {
                 "symbol": "ZEC-USD",
-                "momentum": 20.89,
-                "price": 468.68
+                "momentum": 20.8,
+                "price": 468.33
             },
             {
                 "symbol": "ONDO-USD",
-                "momentum": 7.54,
+                "momentum": 7.32,
                 "price": 0.35
             },
             {
                 "symbol": "RENDER-USD",
-                "momentum": 7.05,
-                "price": 1.75
+                "momentum": 6.44,
+                "price": 1.74
             },
             {
                 "symbol": "XLM-USD",
-                "momentum": 4.83,
-                "price": 0.21
+                "momentum": 6.35,
+                "price": 0.22
             },
             {
                 "symbol": "TRX-USD",
-                "momentum": 2.7,
+                "momentum": 2.61,
                 "price": 0.32
             },
             {
@@ -8291,38 +8291,48 @@
             },
             {
                 "symbol": "LEO-USD",
-                "momentum": -3.2,
+                "momentum": -3.19,
                 "price": 9.56
             },
             {
                 "symbol": "XAUT-USD",
-                "momentum": -7.86,
-                "price": 4145.32
+                "momentum": -7.84,
+                "price": 4146.18
             },
             {
                 "symbol": "PAXG-USD",
                 "momentum": -7.94,
-                "price": 4152.04
+                "price": 4152.03
             },
             {
                 "symbol": "AR-USD",
-                "momentum": -13.92,
-                "price": 1.97
+                "momentum": -11.85,
+                "price": 2.01
             },
             {
                 "symbol": "BTC-USD",
-                "momentum": -16.14,
-                "price": 63416.02
-            },
-            {
-                "symbol": "XMR-USD",
-                "momentum": -16.67,
-                "price": 311.17
+                "momentum": -15.86,
+                "price": 63621.44
             },
             {
                 "symbol": "HBAR-USD",
-                "momentum": -17.14,
+                "momentum": -16.68,
                 "price": 0.08
+            },
+            {
+                "symbol": "XMR-USD",
+                "momentum": -17.11,
+                "price": 309.52
+            },
+            {
+                "symbol": "DOGE-USD",
+                "momentum": -17.78,
+                "price": 0.08
+            },
+            {
+                "symbol": "BNB-USD",
+                "momentum": -18.11,
+                "price": 586.3
             },
             {
                 "symbol": "M-USD",
@@ -8330,69 +8340,59 @@
                 "price": 0.0
             },
             {
-                "symbol": "DOGE-USD",
-                "momentum": -18.67,
-                "price": 0.08
-            },
-            {
-                "symbol": "BNB-USD",
-                "momentum": -18.93,
-                "price": 580.4
-            },
-            {
                 "symbol": "LINK-USD",
-                "momentum": -19.73,
-                "price": 7.88
+                "momentum": -18.93,
+                "price": 7.96
             },
             {
                 "symbol": "CRO-USD",
-                "momentum": -22.46,
+                "momentum": -21.89,
                 "price": 0.06
             },
             {
                 "symbol": "XRP-USD",
-                "momentum": -22.55,
-                "price": 1.14
+                "momentum": -22.06,
+                "price": 1.15
             },
             {
                 "symbol": "SOL-USD",
-                "momentum": -24.87,
-                "price": 69.96
-            },
-            {
-                "symbol": "SHIB-USD",
-                "momentum": -25.4,
-                "price": 0.0
+                "momentum": -23.09,
+                "price": 71.62
             },
             {
                 "symbol": "ETH-USD",
-                "momentum": -25.44,
-                "price": 1706.02
+                "momentum": -24.67,
+                "price": 1723.65
+            },
+            {
+                "symbol": "SHIB-USD",
+                "momentum": -25.24,
+                "price": 0.0
             },
             {
                 "symbol": "LTC-USD",
-                "momentum": -25.7,
-                "price": 43.88
+                "momentum": -25.26,
+                "price": 44.14
             },
             {
                 "symbol": "DOT-USD",
-                "momentum": -29.87,
+                "momentum": -29.43,
                 "price": 0.96
             },
             {
                 "symbol": "ADA-USD",
-                "momentum": -38.43,
+                "momentum": -38.05,
                 "price": 0.16
             },
             {
                 "symbol": "AVAX-USD",
-                "momentum": -39.59,
-                "price": 5.94
+                "momentum": -38.37,
+                "price": 6.06
             },
             {
                 "symbol": "BCH-USD",
-                "momentum": -53.11,
-                "price": 197.53
+                "momentum": -52.67,
+                "price": 199.4
             }
         ],
         "ALL_ASSETS": [
@@ -8532,6 +8532,11 @@
                 "price": 543.0
             },
             {
+                "symbol": "TSXU",
+                "momentum": 106.67,
+                "price": 69.46
+            },
+            {
                 "symbol": "AMD",
                 "momentum": 106.4,
                 "price": 537.37
@@ -8540,11 +8545,6 @@
                 "symbol": "LNVGY",
                 "momentum": 103.64,
                 "price": 60.95
-            },
-            {
-                "symbol": "8996.TW",
-                "momentum": 103.15,
-                "price": 1590.0
             }
         ]
     }
