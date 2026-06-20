@@ -280,9 +280,15 @@ def main():
     final_json_data["sox_1_3_momentum"] = calc_filter_momentum("^SOX", "費城半導體 (^SOX)")
     final_json_data["twii_1_3_momentum"] = calc_filter_momentum("^TWII", "台灣加權 (^TWII)")
 
+    # 將原本的資料與更新時間打包在一起
+    output_data = {
+    "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M"),
+    "categories": data_result  # 這裡的 data_result 請替換成你程式碼中原本要寫入的變數名稱
+    }
 
     with open("momentum_history.json", 'w', encoding='utf-8') as f:
         json.dump(final_json_data, f, ensure_ascii=False, indent=4)
+    
         
     with open("all_tickers.json", 'w', encoding='utf-8') as f:
         json.dump(tickers_list_data, f, ensure_ascii=False, indent=4)
