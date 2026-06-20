@@ -10,7 +10,7 @@ import re
 import time
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
-from datetime import datetime
+from datetime import datetime, timezone, timedelta
 
 warnings.filterwarnings('ignore')
 
@@ -234,8 +234,12 @@ def main():
         else:
             categories[cat_key] = fallback_categories[cat_key]
     
+    # 強制設定為台灣時間 (UTC+8)
+    tw_tz = timezone(timedelta(hours=8))
+    
     final_json_data = {
-        "update_time": datetime.now().strftime("%Y-%m-%d %H:%M"), # 設定精確到分的時間格式
+        "update_time": datetime.now(tw_tz).strftime("%Y-%m-%d %H:%M"), 
+        "spy_1_3_momentum": 0.0,
         "spy_1_3_momentum": 0.0, 
         "tw_0050_1_3_momentum": 0.0,
         "sox_1_3_momentum": 0.0,  
