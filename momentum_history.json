@@ -1,5 +1,5 @@
 {
-    "update_time": "2026-07-11 10:36",
+    "update_time": "2026-07-12 10:44",
     "spy_1_3_momentum": 3.21,
     "tw_0050_1_3_momentum": 7.53,
     "sox_1_3_momentum": 7.24,
@@ -2146,14 +2146,14 @@
                     "price": 434.97
                 },
                 {
+                    "symbol": "LNVGY",
+                    "momentum": 97.57,
+                    "price": 62.9
+                },
+                {
                     "symbol": "SNDK",
                     "momentum": 97.16,
                     "price": 1915.92
-                },
-                {
-                    "symbol": "LNVGY",
-                    "momentum": 96.69,
-                    "price": 62.62
                 },
                 {
                     "symbol": "MU",
@@ -2179,7 +2179,7 @@
                 },
                 {
                     "symbol": "TSXU",
-                    "momentum": 44.07,
+                    "momentum": 44.08,
                     "price": 62.84
                 },
                 {
@@ -2196,27 +2196,27 @@
             "CRYPTOCURRENCY": [
                 {
                     "symbol": "ZEC-USD",
-                    "momentum": 45.57,
-                    "price": 504.41
+                    "momentum": 47.73,
+                    "price": 511.89
                 },
                 {
                     "symbol": "LUNC-USD",
-                    "momentum": 21.78,
+                    "momentum": 21.81,
                     "price": 0.0
                 },
                 {
                     "symbol": "TON-USD",
-                    "momentum": 18.04,
+                    "momentum": 19.55,
                     "price": 0.01
                 },
                 {
                     "symbol": "ONDO-USD",
-                    "momentum": 15.08,
-                    "price": 0.33
+                    "momentum": 14.01,
+                    "price": 0.32
                 },
                 {
                     "symbol": "MNT-USD",
-                    "momentum": 11.34,
+                    "momentum": 11.05,
                     "price": 1.2
                 }
             ],
@@ -2252,14 +2252,14 @@
                     "price": 65.3
                 },
                 {
+                    "symbol": "LNVGY",
+                    "momentum": 97.57,
+                    "price": 62.9
+                },
+                {
                     "symbol": "SNDK",
                     "momentum": 97.16,
                     "price": 1915.92
-                },
-                {
-                    "symbol": "LNVGY",
-                    "momentum": 96.69,
-                    "price": 62.62
                 },
                 {
                     "symbol": "2059.TW",
@@ -4381,14 +4381,14 @@
                 "price": 434.97
             },
             {
+                "symbol": "LNVGY",
+                "momentum": 97.57,
+                "price": 62.9
+            },
+            {
                 "symbol": "SNDK",
                 "momentum": 97.16,
                 "price": 1915.92
-            },
-            {
-                "symbol": "LNVGY",
-                "momentum": 96.69,
-                "price": 62.62
             },
             {
                 "symbol": "MU",
@@ -4472,8 +4472,8 @@
             },
             {
                 "symbol": "TOELY",
-                "momentum": 39.14,
-                "price": 228.25
+                "momentum": 39.15,
+                "price": 228.26
             },
             {
                 "symbol": "MRNA",
@@ -4721,14 +4721,14 @@
                 "price": 49.41
             },
             {
+                "symbol": "ODFL",
+                "momentum": 14.72,
+                "price": 227.63
+            },
+            {
                 "symbol": "GEV",
                 "momentum": 14.72,
                 "price": 1091.57
-            },
-            {
-                "symbol": "ODFL",
-                "momentum": 14.72,
-                "price": 227.62
             },
             {
                 "symbol": "TRGP",
@@ -5831,6 +5831,11 @@
                 "price": 487.28
             },
             {
+                "symbol": "LSRCY",
+                "momentum": 2.72,
+                "price": 55.49
+            },
+            {
                 "symbol": "BIIB",
                 "momentum": 2.7,
                 "price": 199.15
@@ -5844,11 +5849,6 @@
                 "symbol": "PKG",
                 "momentum": 2.66,
                 "price": 228.77
-            },
-            {
-                "symbol": "LSRCY",
-                "momentum": 2.65,
-                "price": 55.45
             },
             {
                 "symbol": "SPOT",
@@ -6526,11 +6526,6 @@
                 "price": 445.5
             },
             {
-                "symbol": "NTTYY",
-                "momentum": -4.05,
-                "price": 22.85
-            },
-            {
                 "symbol": "LMT",
                 "momentum": -4.05,
                 "price": 523.22
@@ -6546,14 +6541,19 @@
                 "price": 385.1
             },
             {
-                "symbol": "RCL",
-                "momentum": -4.18,
-                "price": 285.37
+                "symbol": "NTTYY",
+                "momentum": -4.13,
+                "price": 22.83
             },
             {
                 "symbol": "DSCSY",
-                "momentum": -4.19,
-                "price": 45.41
+                "momentum": -4.17,
+                "price": 45.42
+            },
+            {
+                "symbol": "RCL",
+                "momentum": -4.18,
+                "price": 285.37
             },
             {
                 "symbol": "SLB",
@@ -6636,14 +6636,14 @@
                 "price": 200.36
             },
             {
+                "symbol": "TCEHY",
+                "momentum": -5.24,
+                "price": 59.31
+            },
+            {
                 "symbol": "VICI",
                 "momentum": -5.25,
                 "price": 26.01
-            },
-            {
-                "symbol": "TCEHY",
-                "momentum": -5.25,
-                "price": 59.3
             },
             {
                 "symbol": "EFX",
@@ -6866,6 +6866,11 @@
                 "price": 95.29
             },
             {
+                "symbol": "NSANY",
+                "momentum": -9.03,
+                "price": 3.92
+            },
+            {
                 "symbol": "CRH",
                 "momentum": -9.08,
                 "price": 104.71
@@ -6879,11 +6884,6 @@
                 "symbol": "BIDU",
                 "momentum": -9.18,
                 "price": 117.53
-            },
-            {
-                "symbol": "NSANY",
-                "momentum": -9.26,
-                "price": 3.91
             },
             {
                 "symbol": "VNET",
@@ -7072,8 +7072,8 @@
             },
             {
                 "symbol": "CPRT",
-                "momentum": -17.16,
-                "price": 27.51
+                "momentum": -17.15,
+                "price": 27.52
             },
             {
                 "symbol": "BLDR",
@@ -7157,7 +7157,7 @@
             },
             {
                 "symbol": "CBAT",
-                "momentum": -29.07,
+                "momentum": -28.68,
                 "price": 0.51
             },
             {
@@ -7179,7 +7179,7 @@
             },
             {
                 "symbol": "TSXU",
-                "momentum": 44.07,
+                "momentum": 44.08,
                 "price": 62.84
             },
             {
@@ -7304,7 +7304,7 @@
             },
             {
                 "symbol": "KNCT",
-                "momentum": 18.83,
+                "momentum": 18.82,
                 "price": 201.49
             },
             {
@@ -7320,11 +7320,11 @@
             {
                 "symbol": "BBC",
                 "momentum": 17.39,
-                "price": 53.16
+                "price": 53.17
             },
             {
                 "symbol": "BIB",
-                "momentum": 17.37,
+                "momentum": 17.36,
                 "price": 102.92
             },
             {
@@ -7410,7 +7410,7 @@
             {
                 "symbol": "SKYY",
                 "momentum": 12.96,
-                "price": 139.76
+                "price": 139.77
             },
             {
                 "symbol": "CLOU",
@@ -7454,7 +7454,7 @@
             },
             {
                 "symbol": "PIE",
-                "momentum": 11.09,
+                "momentum": 11.11,
                 "price": 32.81
             },
             {
@@ -7814,12 +7814,12 @@
             },
             {
                 "symbol": "ASHS",
-                "momentum": 1.1,
+                "momentum": 1.11,
                 "price": 45.88
             },
             {
                 "symbol": "UPW",
-                "momentum": 0.88,
+                "momentum": 0.89,
                 "price": 23.95
             },
             {
@@ -7889,7 +7889,7 @@
             },
             {
                 "symbol": "FDTS",
-                "momentum": -0.33,
+                "momentum": -0.32,
                 "price": 66.0
             },
             {
@@ -7964,8 +7964,8 @@
             },
             {
                 "symbol": "PSCM",
-                "momentum": -2.57,
-                "price": 97.47
+                "momentum": -2.56,
+                "price": 97.48
             },
             {
                 "symbol": "BOTZ",
@@ -8054,12 +8054,12 @@
             },
             {
                 "symbol": "UBR",
-                "momentum": -6.06,
+                "momentum": -6.05,
                 "price": 31.93
             },
             {
                 "symbol": "CTEX",
-                "momentum": -6.44,
+                "momentum": -6.43,
                 "price": 38.32
             },
             {
@@ -8104,7 +8104,7 @@
             },
             {
                 "symbol": "GOEX",
-                "momentum": -9.97,
+                "momentum": -9.98,
                 "price": 70.59
             },
             {
@@ -8226,43 +8226,43 @@
         "CRYPTOCURRENCY": [
             {
                 "symbol": "ZEC-USD",
-                "momentum": 45.57,
-                "price": 504.41
+                "momentum": 47.73,
+                "price": 511.89
             },
             {
                 "symbol": "LUNC-USD",
-                "momentum": 21.78,
+                "momentum": 21.81,
                 "price": 0.0
             },
             {
                 "symbol": "TON-USD",
-                "momentum": 18.04,
+                "momentum": 19.55,
                 "price": 0.01
             },
             {
                 "symbol": "ONDO-USD",
-                "momentum": 15.08,
-                "price": 0.33
+                "momentum": 14.01,
+                "price": 0.32
             },
             {
                 "symbol": "MNT-USD",
-                "momentum": 11.34,
+                "momentum": 11.05,
                 "price": 1.2
             },
             {
-                "symbol": "XLM-USD",
-                "momentum": 9.51,
-                "price": 0.19
-            },
-            {
                 "symbol": "TRX-USD",
-                "momentum": 6.97,
+                "momentum": 6.8,
                 "price": 0.33
             },
             {
+                "symbol": "XLM-USD",
+                "momentum": 6.25,
+                "price": 0.19
+            },
+            {
                 "symbol": "LEO-USD",
-                "momentum": 1.06,
-                "price": 9.51
+                "momentum": 1.27,
+                "price": 9.53
             },
             {
                 "symbol": "UNI-USD",
@@ -8276,108 +8276,108 @@
             },
             {
                 "symbol": "RENDER-USD",
-                "momentum": -0.04,
-                "price": 1.57
+                "momentum": -2.26,
+                "price": 1.54
             },
             {
                 "symbol": "AR-USD",
-                "momentum": -5.66,
-                "price": 2.0
+                "momentum": -6.57,
+                "price": 1.98
             },
             {
                 "symbol": "LINK-USD",
-                "momentum": -7.19,
+                "momentum": -7.28,
                 "price": 7.97
             },
             {
                 "symbol": "XAUT-USD",
-                "momentum": -7.6,
-                "price": 4106.32
+                "momentum": -7.9,
+                "price": 4093.38
             },
             {
                 "symbol": "PAXG-USD",
-                "momentum": -7.75,
-                "price": 4109.58
+                "momentum": -8.02,
+                "price": 4097.42
             },
             {
                 "symbol": "BTC-USD",
-                "momentum": -8.38,
-                "price": 64066.41
-            },
-            {
-                "symbol": "SOL-USD",
-                "momentum": -9.08,
-                "price": 77.64
+                "momentum": -8.44,
+                "price": 64025.6
             },
             {
                 "symbol": "BNB-USD",
-                "momentum": -9.34,
-                "price": 573.86
+                "momentum": -9.35,
+                "price": 573.79
+            },
+            {
+                "symbol": "SOL-USD",
+                "momentum": -10.15,
+                "price": 76.73
             },
             {
                 "symbol": "ETH-USD",
-                "momentum": -11.05,
-                "price": 1791.83
+                "momentum": -10.48,
+                "price": 1803.32
             },
             {
                 "symbol": "M-USD",
-                "momentum": -11.49,
+                "momentum": -10.84,
                 "price": 0.0
             },
             {
-                "symbol": "LTC-USD",
-                "momentum": -12.44,
-                "price": 44.65
-            },
-            {
                 "symbol": "XMR-USD",
-                "momentum": -13.4,
-                "price": 321.22
+                "momentum": -12.49,
+                "price": 324.59
             },
             {
-                "symbol": "HBAR-USD",
-                "momentum": -13.79,
-                "price": 0.07
+                "symbol": "LTC-USD",
+                "momentum": -12.5,
+                "price": 44.62
             },
             {
                 "symbol": "CRO-USD",
-                "momentum": -14.6,
+                "momentum": -14.82,
                 "price": 0.06
             },
             {
                 "symbol": "XRP-USD",
-                "momentum": -15.23,
+                "momentum": -15.95,
                 "price": 1.1
             },
             {
-                "symbol": "SHIB-USD",
-                "momentum": -18.31,
-                "price": 0.0
-            },
-            {
-                "symbol": "DOGE-USD",
-                "momentum": -18.72,
+                "symbol": "HBAR-USD",
+                "momentum": -17.58,
                 "price": 0.07
             },
             {
-                "symbol": "AVAX-USD",
-                "momentum": -18.87,
-                "price": 6.72
+                "symbol": "DOGE-USD",
+                "momentum": -19.8,
+                "price": 0.07
+            },
+            {
+                "symbol": "SHIB-USD",
+                "momentum": -19.99,
+                "price": 0.0
             },
             {
                 "symbol": "ADA-USD",
-                "momentum": -20.05,
+                "momentum": -20.72,
                 "price": 0.17
             },
             {
+                "symbol": "AVAX-USD",
+                "momentum": -21.64,
+                "price": 6.49
+            },
+            {
                 "symbol": "DOT-USD",
-                "momentum": -20.88,
-                "price": 0.88
+                "momentum": -23.13,
+                "price": 0.86
             },
             {
                 "symbol": "BCH-USD",
-                "momentum": -24.4,
-                "price": 245.05
+                "momentum": -24.21,
+                "price": 245.65
             }
         ],
         "ALL_ASSETS": [
@@ -8412,14 +8412,14 @@
                 "price": 65.3
             },
             {
+                "symbol": "LNVGY",
+                "momentum": 97.57,
+                "price": 62.9
+            },
+            {
                 "symbol": "SNDK",
                 "momentum": 97.16,
                 "price": 1915.92
-            },
-            {
-                "symbol": "LNVGY",
-                "momentum": 96.69,
-                "price": 62.62
             },
             {
                 "symbol": "2059.TW",
