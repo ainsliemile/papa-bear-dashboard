@@ -12,6 +12,7 @@ from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from datetime import datetime, timezone, timedelta
 
+
 warnings.filterwarnings('ignore')
 
 session = requests.Session()
