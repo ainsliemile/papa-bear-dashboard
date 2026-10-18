@@ -1,7 +1,7 @@
 {
-    "update_time": "2026-10-17 11:12",
+    "update_time": "2026-10-18 11:15",
     "spy_1_3_momentum": 1.25,
-    "tw_0050_1_3_momentum": 1.54,
+    "tw_0050_1_3_momentum": 1.63,
     "sox_1_3_momentum": -6.67,
     "twii_1_3_momentum": 3.76,
     "history": {
@@ -2115,28 +2115,28 @@
             "TW_ETFS": [
                 {
                     "symbol": "00715L.TW",
-                    "momentum": 29.3,
-                    "price": 75.3
-                },
-                {
-                    "symbol": "0055.TW",
-                    "momentum": 24.52,
-                    "price": 51.35
-                },
-                {
-                    "symbol": "00918.TW",
-                    "momentum": 23.43,
-                    "price": 34.15
-                },
-                {
-                    "symbol": "00960.TW",
-                    "momentum": 23.35,
-                    "price": 23.58
+                    "momentum": 31.62,
+                    "price": 76.65
                 },
                 {
                     "symbol": "00897.TW",
-                    "momentum": 23.3,
-                    "price": 14.0
+                    "momentum": 26.47,
+                    "price": 14.36
+                },
+                {
+                    "symbol": "0055.TW",
+                    "momentum": 25.73,
+                    "price": 51.85
+                },
+                {
+                    "symbol": "00918.TW",
+                    "momentum": 24.81,
+                    "price": 34.53
+                },
+                {
+                    "symbol": "00939.TW",
+                    "momentum": 24.03,
+                    "price": 25.09
                 }
             ],
             "US_STOCKS_SP100": [
@@ -2196,28 +2196,28 @@
             "CRYPTOCURRENCY": [
                 {
                     "symbol": "ZEC-USD",
-                    "momentum": 118.75,
-                    "price": 1144.71
+                    "momentum": 118.74,
+                    "price": 1144.62
                 },
                 {
                     "symbol": "AR-USD",
-                    "momentum": 74.39,
-                    "price": 3.88
+                    "momentum": 71.56,
+                    "price": 3.82
                 },
                 {
                     "symbol": "XMR-USD",
-                    "momentum": 34.73,
-                    "price": 556.71
+                    "momentum": 44.54,
+                    "price": 597.27
                 },
                 {
                     "symbol": "ONDO-USD",
-                    "momentum": 26.21,
-                    "price": 0.45
+                    "momentum": 22.99,
+                    "price": 0.44
                 },
                 {
                     "symbol": "LINK-USD",
-                    "momentum": 23.53,
-                    "price": 12.27
+                    "momentum": 20.82,
+                    "price": 12.0
                 }
             ],
             "ALL_ASSETS": [
@@ -2243,8 +2243,8 @@
                 },
                 {
                     "symbol": "ZEC-USD",
-                    "momentum": 118.75,
-                    "price": 1144.71
+                    "momentum": 118.74,
+                    "price": 1144.62
                 },
                 {
                     "symbol": "3008.TW",
@@ -2252,14 +2252,14 @@
                     "price": 6400.0
                 },
                 {
-                    "symbol": "AR-USD",
-                    "momentum": 74.39,
-                    "price": 3.88
-                },
-                {
                     "symbol": "6505.TW",
                     "momentum": 73.69,
                     "price": 122.5
+                },
+                {
+                    "symbol": "AR-USD",
+                    "momentum": 71.56,
+                    "price": 3.82
                 },
                 {
                     "symbol": "MPC",
@@ -3255,223 +3255,278 @@
         "TW_ETFS": [
             {
                 "symbol": "00715L.TW",
-                "momentum": 29.3,
-                "price": 75.3
-            },
-            {
-                "symbol": "0055.TW",
-                "momentum": 24.52,
-                "price": 51.35
-            },
-            {
-                "symbol": "00918.TW",
-                "momentum": 23.43,
-                "price": 34.15
-            },
-            {
-                "symbol": "00960.TW",
-                "momentum": 23.35,
-                "price": 23.58
+                "momentum": 31.62,
+                "price": 76.65
             },
             {
                 "symbol": "00897.TW",
-                "momentum": 23.3,
-                "price": 14.0
+                "momentum": 26.47,
+                "price": 14.36
+            },
+            {
+                "symbol": "0055.TW",
+                "momentum": 25.73,
+                "price": 51.85
+            },
+            {
+                "symbol": "00918.TW",
+                "momentum": 24.81,
+                "price": 34.53
             },
             {
                 "symbol": "00939.TW",
-                "momentum": 22.94,
-                "price": 24.87
-            },
-            {
-                "symbol": "0056.TW",
-                "momentum": 22.13,
-                "price": 58.25
-            },
-            {
-                "symbol": "00731.TW",
-                "momentum": 20.56,
-                "price": 101.85
-            },
-            {
-                "symbol": "00919.TW",
-                "momentum": 20.44,
-                "price": 32.38
-            },
-            {
-                "symbol": "00875.TW",
-                "momentum": 20.36,
-                "price": 58.5
-            },
-            {
-                "symbol": "00701.TW",
-                "momentum": 20.21,
-                "price": 42.31
+                "momentum": 24.03,
+                "price": 25.09
             },
             {
                 "symbol": "00898.TW",
-                "momentum": 20.18,
-                "price": 11.46
+                "momentum": 23.75,
+                "price": 11.8
+            },
+            {
+                "symbol": "0056.TW",
+                "momentum": 23.18,
+                "price": 58.75
+            },
+            {
+                "symbol": "00960.TW",
+                "momentum": 22.88,
+                "price": 23.49
+            },
+            {
+                "symbol": "00875.TW",
+                "momentum": 22.41,
+                "price": 59.5
+            },
+            {
+                "symbol": "00919.TW",
+                "momentum": 21.78,
+                "price": 32.74
+            },
+            {
+                "symbol": "00731.TW",
+                "momentum": 21.57,
+                "price": 102.7
+            },
+            {
+                "symbol": "00701.TW",
+                "momentum": 20.92,
+                "price": 42.56
             },
             {
                 "symbol": "00878.TW",
-                "momentum": 19.34,
-                "price": 35.09
+                "momentum": 20.84,
+                "price": 35.53
             },
             {
                 "symbol": "00733.TW",
-                "momentum": 18.81,
-                "price": 76.1
+                "momentum": 18.49,
+                "price": 75.9
             },
             {
                 "symbol": "00929.TW",
-                "momentum": 17.8,
-                "price": 29.72
-            },
-            {
-                "symbol": "00915.TW",
-                "momentum": 16.86,
-                "price": 33.45
-            },
-            {
-                "symbol": "00944.TW",
-                "momentum": 16.83,
-                "price": 22.52
-            },
-            {
-                "symbol": "00938.TW",
-                "momentum": 16.61,
-                "price": 27.39
+                "momentum": 18.27,
+                "price": 29.84
             },
             {
                 "symbol": "00961.TW",
-                "momentum": 16.4,
-                "price": 13.47
+                "momentum": 18.04,
+                "price": 13.66
+            },
+            {
+                "symbol": "00938.TW",
+                "momentum": 17.85,
+                "price": 27.68
+            },
+            {
+                "symbol": "00915.TW",
+                "momentum": 17.77,
+                "price": 33.71
+            },
+            {
+                "symbol": "00944.TW",
+                "momentum": 17.51,
+                "price": 22.65
             },
             {
                 "symbol": "00934.TW",
-                "momentum": 16.22,
-                "price": 30.01
-            },
-            {
-                "symbol": "00940.TW",
-                "momentum": 15.7,
-                "price": 13.38
+                "momentum": 17.38,
+                "price": 30.31
             },
             {
                 "symbol": "00907.TW",
-                "momentum": 15.3,
-                "price": 18.46
+                "momentum": 16.98,
+                "price": 18.73
             },
             {
                 "symbol": "00946.TW",
-                "momentum": 14.88,
-                "price": 15.46
+                "momentum": 16.66,
+                "price": 15.7
+            },
+            {
+                "symbol": "00940.TW",
+                "momentum": 16.56,
+                "price": 13.48
             },
             {
                 "symbol": "00900.TW",
-                "momentum": 14.45,
-                "price": 19.84
+                "momentum": 14.8,
+                "price": 19.9
             },
             {
                 "symbol": "00713.TW",
-                "momentum": 13.84,
-                "price": 65.5
+                "momentum": 14.37,
+                "price": 65.8
             },
             {
                 "symbol": "00685L.TW",
-                "momentum": 13.15,
-                "price": 12.26
+                "momentum": 13.7,
+                "price": 12.32
             },
             {
                 "symbol": "00927.TW",
-                "momentum": 13.12,
-                "price": 38.05
+                "momentum": 13.62,
+                "price": 38.22
             },
             {
                 "symbol": "00675L.TW",
-                "momentum": 12.75,
-                "price": 323.9
+                "momentum": 13.42,
+                "price": 325.8
             },
             {
                 "symbol": "00663L.TW",
-                "momentum": 12.68,
-                "price": 107.0
+                "momentum": 13.32,
+                "price": 107.6
             },
             {
                 "symbol": "00943.TW",
-                "momentum": 12.38,
-                "price": 21.61
-            },
-            {
-                "symbol": "00921.TW",
-                "momentum": 12.34,
-                "price": 24.02
-            },
-            {
-                "symbol": "00631L.TW",
-                "momentum": 11.76,
-                "price": 37.14
+                "momentum": 13.27,
+                "price": 21.78
             },
             {
                 "symbol": "009802.TW",
-                "momentum": 11.58,
-                "price": 19.62
+                "momentum": 12.66,
+                "price": 19.81
             },
             {
-                "symbol": "00400A.TW",
-                "momentum": 11.49,
-                "price": 14.94
-            },
-            {
-                "symbol": "009809.TW",
-                "momentum": 11.47,
-                "price": 18.22
-            },
-            {
-                "symbol": "00947.TW",
-                "momentum": 11.41,
-                "price": 35.34
-            },
-            {
-                "symbol": "00913.TW",
-                "momentum": 11.31,
-                "price": 48.25
+                "symbol": "00921.TW",
+                "momentum": 12.25,
+                "price": 24.0
             },
             {
                 "symbol": "009804.TW",
-                "momentum": 11.28,
-                "price": 23.21
+                "momentum": 12.05,
+                "price": 23.37
+            },
+            {
+                "symbol": "00913.TW",
+                "momentum": 12.05,
+                "price": 48.57
+            },
+            {
+                "symbol": "00400A.TW",
+                "momentum": 12.01,
+                "price": 15.01
+            },
+            {
+                "symbol": "00631L.TW",
+                "momentum": 11.79,
+                "price": 37.15
+            },
+            {
+                "symbol": "009809.TW",
+                "momentum": 11.78,
+                "price": 18.27
+            },
+            {
+                "symbol": "00642U.TW",
+                "momentum": 11.71,
+                "price": 33.56
             },
             {
                 "symbol": "00962.TW",
-                "momentum": 11.26,
-                "price": 14.67
+                "momentum": 11.56,
+                "price": 14.71
             },
             {
-                "symbol": "00891.TW",
-                "momentum": 11.01,
-                "price": 35.75
-            },
-            {
-                "symbol": "009816.TW",
-                "momentum": 10.92,
-                "price": 16.19
+                "symbol": "00757.TW",
+                "momentum": 11.5,
+                "price": 146.3
             },
             {
                 "symbol": "00850.TW",
-                "momentum": 10.57,
-                "price": 93.3
+                "momentum": 11.4,
+                "price": 94.0
+            },
+            {
+                "symbol": "00947.TW",
+                "momentum": 11.28,
+                "price": 35.3
             },
             {
                 "symbol": "00896.TW",
-                "momentum": 10.47,
-                "price": 27.22
+                "momentum": 11.08,
+                "price": 27.37
+            },
+            {
+                "symbol": "00678.TW",
+                "momentum": 11.02,
+                "price": 43.81
+            },
+            {
+                "symbol": "009816.TW",
+                "momentum": 10.99,
+                "price": 16.2
+            },
+            {
+                "symbol": "0051.TW",
+                "momentum": 10.95,
+                "price": 150.85
+            },
+            {
+                "symbol": "00891.TW",
+                "momentum": 10.89,
+                "price": 35.71
             },
             {
                 "symbol": "00980A.TW",
-                "momentum": 10.41,
-                "price": 24.5
+                "momentum": 10.77,
+                "price": 24.58
+            },
+            {
+                "symbol": "00922.TW",
+                "momentum": 10.59,
+                "price": 42.48
+            },
+            {
+                "symbol": "00930.TW",
+                "momentum": 10.53,
+                "price": 23.58
+            },
+            {
+                "symbol": "00912.TW",
+                "momentum": 10.47,
+                "price": 34.97
+            },
+            {
+                "symbol": "00984A.TW",
+                "momentum": 10.42,
+                "price": 16.0
+            },
+            {
+                "symbol": "00949.TW",
+                "momentum": 10.39,
+                "price": 22.96
+            },
+            {
+                "symbol": "00992A.TW",
+                "momentum": 10.36,
+                "price": 18.42
+            },
+            {
+                "symbol": "00985A.TW",
+                "momentum": 10.32,
+                "price": 23.14
             },
             {
                 "symbol": "00728.TW",
@@ -3479,99 +3534,69 @@
                 "price": 66.75
             },
             {
-                "symbol": "00922.TW",
-                "momentum": 10.15,
-                "price": 42.31
-            },
-            {
-                "symbol": "00757.TW",
-                "momentum": 9.86,
-                "price": 144.15
-            },
-            {
-                "symbol": "00985A.TW",
-                "momentum": 9.85,
-                "price": 23.04
-            },
-            {
-                "symbol": "00912.TW",
-                "momentum": 9.74,
-                "price": 34.74
-            },
-            {
-                "symbol": "00930.TW",
-                "momentum": 9.54,
-                "price": 23.37
-            },
-            {
-                "symbol": "00992A.TW",
-                "momentum": 9.52,
-                "price": 18.28
-            },
-            {
                 "symbol": "00690.TW",
-                "momentum": 9.42,
-                "price": 78.35
-            },
-            {
-                "symbol": "00984A.TW",
-                "momentum": 9.39,
-                "price": 15.85
-            },
-            {
-                "symbol": "009808.TW",
-                "momentum": 9.18,
-                "price": 31.41
-            },
-            {
-                "symbol": "0051.TW",
-                "momentum": 9.14,
-                "price": 148.4
-            },
-            {
-                "symbol": "00692.TW",
-                "momentum": 8.98,
-                "price": 94.4
-            },
-            {
-                "symbol": "00678.TW",
-                "momentum": 8.77,
-                "price": 42.92
-            },
-            {
-                "symbol": "00905.TW",
-                "momentum": 8.75,
-                "price": 26.72
-            },
-            {
-                "symbol": "00730.TW",
-                "momentum": 8.72,
-                "price": 29.74
-            },
-            {
-                "symbol": "006204.TW",
-                "momentum": 8.72,
-                "price": 234.9
-            },
-            {
-                "symbol": "00638R.TW",
-                "momentum": 8.7,
-                "price": 7.36
-            },
-            {
-                "symbol": "00634R.TW",
-                "momentum": 8.69,
-                "price": 3.44
+                "momentum": 10.12,
+                "price": 78.85
             },
             {
                 "symbol": "00401A.TW",
-                "momentum": 8.62,
-                "price": 13.68
+                "momentum": 9.74,
+                "price": 13.82
+            },
+            {
+                "symbol": "009818.TW",
+                "momentum": 9.41,
+                "price": 21.1
+            },
+            {
+                "symbol": "00964.TW",
+                "momentum": 9.4,
+                "price": 15.13
+            },
+            {
+                "symbol": "00905.TW",
+                "momentum": 9.36,
+                "price": 26.87
+            },
+            {
+                "symbol": "009808.TW",
+                "momentum": 9.35,
+                "price": 31.46
+            },
+            {
+                "symbol": "00770.TW",
+                "momentum": 9.22,
+                "price": 64.95
+            },
+            {
+                "symbol": "006204.TW",
+                "momentum": 9.18,
+                "price": 235.9
             },
             {
                 "symbol": "00932.TW",
-                "momentum": 8.6,
-                "price": 17.93
+                "momentum": 9.09,
+                "price": 18.01
+            },
+            {
+                "symbol": "00983A.TW",
+                "momentum": 8.93,
+                "price": 12.88
+            },
+            {
+                "symbol": "00692.TW",
+                "momentum": 8.92,
+                "price": 94.35
+            },
+            {
+                "symbol": "00956.TW",
+                "momentum": 8.81,
+                "price": 13.79
+            },
+            {
+                "symbol": "00730.TW",
+                "momentum": 8.65,
+                "price": 29.72
             },
             {
                 "symbol": "00982T.TW",
@@ -3579,684 +3604,684 @@
                 "price": 14.85
             },
             {
-                "symbol": "00656R.TW",
-                "momentum": 8.52,
-                "price": 6.48
-            },
-            {
                 "symbol": "006208.TW",
-                "momentum": 8.48,
-                "price": 250.1
-            },
-            {
-                "symbol": "009818.TW",
-                "momentum": 8.27,
-                "price": 20.88
-            },
-            {
-                "symbol": "00642U.TW",
-                "momentum": 8.21,
-                "price": 32.51
-            },
-            {
-                "symbol": "00770.TW",
-                "momentum": 8.21,
-                "price": 64.35
-            },
-            {
-                "symbol": "00904.TW",
-                "momentum": 8.2,
-                "price": 39.02
-            },
-            {
-                "symbol": "00894.TW",
-                "momentum": 8.06,
-                "price": 47.78
-            },
-            {
-                "symbol": "0050.TW",
-                "momentum": 8.04,
-                "price": 108.9
-            },
-            {
-                "symbol": "00964.TW",
-                "momentum": 8.03,
-                "price": 14.94
-            },
-            {
-                "symbol": "00949.TW",
-                "momentum": 7.93,
-                "price": 22.45
-            },
-            {
-                "symbol": "006203.TW",
-                "momentum": 7.92,
-                "price": 196.95
-            },
-            {
-                "symbol": "0057.TW",
-                "momentum": 7.91,
-                "price": 324.95
-            },
-            {
-                "symbol": "00923.TW",
-                "momentum": 7.89,
-                "price": 39.9
-            },
-            {
-                "symbol": "00851.TW",
-                "momentum": 7.77,
-                "price": 69.35
-            },
-            {
-                "symbol": "00996A.TW",
-                "momentum": 7.67,
-                "price": 14.19
-            },
-            {
-                "symbol": "00936.TW",
-                "momentum": 7.57,
-                "price": 21.35
-            },
-            {
-                "symbol": "00901.TW",
-                "momentum": 7.53,
-                "price": 45.53
-            },
-            {
-                "symbol": "00956.TW",
-                "momentum": 7.46,
-                "price": 13.62
-            },
-            {
-                "symbol": "00935.TW",
-                "momentum": 7.42,
-                "price": 56.85
-            },
-            {
-                "symbol": "0052.TW",
-                "momentum": 7.4,
-                "price": 63.15
-            },
-            {
-                "symbol": "009803.TW",
-                "momentum": 7.18,
-                "price": 21.02
-            },
-            {
-                "symbol": "00982A.TW",
-                "momentum": 6.81,
-                "price": 22.25
-            },
-            {
-                "symbol": "0053.TW",
-                "momentum": 6.8,
-                "price": 243.75
-            },
-            {
-                "symbol": "00971.TW",
-                "momentum": 6.62,
-                "price": 18.08
-            },
-            {
-                "symbol": "00881.TW",
-                "momentum": 6.62,
-                "price": 49.95
-            },
-            {
-                "symbol": "00981A.TW",
-                "momentum": 6.58,
-                "price": 29.4
+                "momentum": 8.58,
+                "price": 250.35
             },
             {
                 "symbol": "00647L.TW",
-                "momentum": 6.51,
-                "price": 140.0
+                "momentum": 8.53,
+                "price": 142.65
             },
             {
-                "symbol": "00926.TW",
-                "momentum": 6.46,
-                "price": 27.25
+                "symbol": "00996A.TW",
+                "momentum": 8.5,
+                "price": 14.3
+            },
+            {
+                "symbol": "00936.TW",
+                "momentum": 8.43,
+                "price": 21.52
             },
             {
                 "symbol": "00737.TW",
-                "momentum": 6.23,
-                "price": 40.33
+                "momentum": 8.29,
+                "price": 41.11
             },
             {
-                "symbol": "00983A.TW",
-                "momentum": 5.97,
-                "price": 12.53
+                "symbol": "00923.TW",
+                "momentum": 8.24,
+                "price": 40.03
             },
             {
-                "symbol": "009811.TW",
-                "momentum": 5.83,
-                "price": 13.65
+                "symbol": "00851.TW",
+                "momentum": 8.24,
+                "price": 69.65
             },
             {
-                "symbol": "00952.TW",
-                "momentum": 5.82,
-                "price": 17.86
+                "symbol": "00894.TW",
+                "momentum": 8.17,
+                "price": 47.83
             },
             {
-                "symbol": "00999A.TW",
-                "momentum": 5.81,
-                "price": 10.85
+                "symbol": "0050.TW",
+                "momentum": 8.14,
+                "price": 109.0
+            },
+            {
+                "symbol": "00901.TW",
+                "momentum": 8.08,
+                "price": 45.76
+            },
+            {
+                "symbol": "00926.TW",
+                "momentum": 7.83,
+                "price": 27.6
+            },
+            {
+                "symbol": "00638R.TW",
+                "momentum": 7.81,
+                "price": 7.3
+            },
+            {
+                "symbol": "00971.TW",
+                "momentum": 7.75,
+                "price": 18.27
+            },
+            {
+                "symbol": "00935.TW",
+                "momentum": 7.7,
+                "price": 57.0
+            },
+            {
+                "symbol": "00904.TW",
+                "momentum": 7.67,
+                "price": 38.83
+            },
+            {
+                "symbol": "0052.TW",
+                "momentum": 7.66,
+                "price": 63.3
+            },
+            {
+                "symbol": "00656R.TW",
+                "momentum": 7.35,
+                "price": 6.41
+            },
+            {
+                "symbol": "0057.TW",
+                "momentum": 7.33,
+                "price": 323.2
+            },
+            {
+                "symbol": "006203.TW",
+                "momentum": 7.32,
+                "price": 195.85
+            },
+            {
+                "symbol": "00634R.TW",
+                "momentum": 7.11,
+                "price": 3.39
+            },
+            {
+                "symbol": "00981A.TW",
+                "momentum": 7.05,
+                "price": 29.53
+            },
+            {
+                "symbol": "009803.TW",
+                "momentum": 7.03,
+                "price": 20.99
             },
             {
                 "symbol": "00916.TW",
-                "momentum": 5.49,
-                "price": 27.57
+                "momentum": 7.02,
+                "price": 27.97
             },
             {
-                "symbol": "00924.TW",
-                "momentum": 5.45,
-                "price": 33.93
+                "symbol": "00952.TW",
+                "momentum": 7.01,
+                "price": 18.06
             },
             {
-                "symbol": "009800.TW",
-                "momentum": 5.14,
-                "price": 13.35
+                "symbol": "00982A.TW",
+                "momentum": 7.0,
+                "price": 22.29
             },
             {
-                "symbol": "00892.TW",
-                "momentum": 4.96,
-                "price": 40.76
+                "symbol": "009811.TW",
+                "momentum": 6.92,
+                "price": 13.79
             },
             {
-                "symbol": "00662.TW",
-                "momentum": 4.93,
-                "price": 123.25
-            },
-            {
-                "symbol": "00670L.TW",
-                "momentum": 4.89,
-                "price": 200.25
-            },
-            {
-                "symbol": "00991A.TW",
-                "momentum": 4.67,
-                "price": 17.17
-            },
-            {
-                "symbol": "00646.TW",
-                "momentum": 4.67,
-                "price": 78.15
-            },
-            {
-                "symbol": "009813.TW",
-                "momentum": 4.64,
-                "price": 11.65
-            },
-            {
-                "symbol": "009812.TW",
-                "momentum": 4.61,
-                "price": 12.99
-            },
-            {
-                "symbol": "009810.TW",
-                "momentum": 4.4,
-                "price": 21.62
-            },
-            {
-                "symbol": "00683L.TW",
-                "momentum": 4.37,
-                "price": 22.66
-            },
-            {
-                "symbol": "00651R.TW",
-                "momentum": 4.35,
-                "price": 5.47
+                "symbol": "00881.TW",
+                "momentum": 6.73,
+                "price": 50.0
             },
             {
                 "symbol": "00903.TW",
-                "momentum": 4.27,
-                "price": 21.09
+                "momentum": 6.7,
+                "price": 21.58
             },
             {
-                "symbol": "00989A.TW",
-                "momentum": 4.22,
-                "price": 17.26
+                "symbol": "0053.TW",
+                "momentum": 6.69,
+                "price": 243.5
             },
             {
-                "symbol": "00987A.TW",
-                "momentum": 4.2,
-                "price": 16.21
+                "symbol": "00999A.TW",
+                "momentum": 6.69,
+                "price": 10.94
             },
             {
-                "symbol": "00762.TW",
-                "momentum": 4.16,
-                "price": 113.35
+                "symbol": "00670L.TW",
+                "momentum": 6.57,
+                "price": 203.45
             },
             {
-                "symbol": "00403A.TW",
-                "momentum": 4.11,
-                "price": 10.38
+                "symbol": "009800.TW",
+                "momentum": 6.48,
+                "price": 13.52
             },
             {
-                "symbol": "00654R.TW",
-                "momentum": 4.03,
-                "price": 7.17
+                "symbol": "00924.TW",
+                "momentum": 6.47,
+                "price": 34.26
             },
             {
-                "symbol": "00995A.TW",
-                "momentum": 3.91,
-                "price": 16.9
-            },
-            {
-                "symbol": "00666R.TW",
-                "momentum": 3.85,
-                "price": 9.44
-            },
-            {
-                "symbol": "00993A.TW",
-                "momentum": 3.85,
-                "price": 13.21
+                "symbol": "00662.TW",
+                "momentum": 6.38,
+                "price": 124.95
             },
             {
                 "symbol": "00640L.TW",
-                "momentum": 3.7,
-                "price": 104.8
+                "momentum": 6.32,
+                "price": 107.45
             },
             {
-                "symbol": "00895.TW",
-                "momentum": 3.63,
-                "price": 50.45
+                "symbol": "009812.TW",
+                "momentum": 6.3,
+                "price": 13.2
             },
             {
-                "symbol": "00876.TW",
-                "momentum": 3.49,
-                "price": 86.05
+                "symbol": "00646.TW",
+                "momentum": 6.27,
+                "price": 79.35
+            },
+            {
+                "symbol": "00987A.TW",
+                "momentum": 6.19,
+                "price": 16.52
+            },
+            {
+                "symbol": "00989A.TW",
+                "momentum": 6.03,
+                "price": 17.56
+            },
+            {
+                "symbol": "009813.TW",
+                "momentum": 5.8,
+                "price": 11.78
+            },
+            {
+                "symbol": "00991A.TW",
+                "momentum": 5.77,
+                "price": 17.35
+            },
+            {
+                "symbol": "00892.TW",
+                "momentum": 5.73,
+                "price": 41.06
+            },
+            {
+                "symbol": "00762.TW",
+                "momentum": 5.68,
+                "price": 115.0
+            },
+            {
+                "symbol": "009810.TW",
+                "momentum": 5.46,
+                "price": 21.84
+            },
+            {
+                "symbol": "00993A.TW",
+                "momentum": 4.87,
+                "price": 13.34
+            },
+            {
+                "symbol": "00995A.TW",
+                "momentum": 4.65,
+                "price": 17.02
             },
             {
                 "symbol": "009820.TW",
-                "momentum": 3.33,
-                "price": 10.24
-            },
-            {
-                "symbol": "009801.TW",
-                "momentum": 3.24,
-                "price": 11.49
-            },
-            {
-                "symbol": "00994A.TW",
-                "momentum": 2.94,
-                "price": 16.41
-            },
-            {
-                "symbol": "00689R.TW",
-                "momentum": 2.92,
-                "price": 23.6
+                "momentum": 4.64,
+                "price": 10.37
             },
             {
                 "symbol": "00668.TW",
-                "momentum": 2.9,
-                "price": 61.05
-            },
-            {
-                "symbol": "00830.TW",
-                "momentum": 2.87,
-                "price": 83.35
+                "momentum": 4.5,
+                "price": 62.0
             },
             {
                 "symbol": "00657.TW",
-                "momentum": 2.85,
-                "price": 76.9
+                "momentum": 4.45,
+                "price": 78.1
             },
             {
-                "symbol": "00674R.TW",
-                "momentum": 2.82,
-                "price": 29.64
+                "symbol": "00403A.TW",
+                "momentum": 4.41,
+                "price": 10.41
             },
             {
-                "symbol": "00661.TW",
-                "momentum": 2.81,
-                "price": 84.2
-            },
-            {
-                "symbol": "00681R.TW",
-                "momentum": 2.77,
-                "price": 22.49
-            },
-            {
-                "symbol": "00682U.TW",
-                "momentum": 2.69,
-                "price": 21.03
-            },
-            {
-                "symbol": "00693U.TW",
-                "momentum": 2.63,
-                "price": 23.22
-            },
-            {
-                "symbol": "00645.TW",
-                "momentum": 2.59,
-                "price": 57.1
-            },
-            {
-                "symbol": "00893.TW",
-                "momentum": 2.38,
-                "price": 44.18
-            },
-            {
-                "symbol": "00657K.TW",
-                "momentum": 2.31,
-                "price": 23.78
-            },
-            {
-                "symbol": "00763U.TW",
-                "momentum": 2.17,
-                "price": 34.42
-            },
-            {
-                "symbol": "00911.TW",
-                "momentum": 2.05,
-                "price": 52.6
-            },
-            {
-                "symbol": "00865B.TW",
-                "momentum": 1.8,
-                "price": 49.75
-            },
-            {
-                "symbol": "00735.TW",
-                "momentum": 1.79,
-                "price": 96.65
-            },
-            {
-                "symbol": "00668K.TW",
-                "momentum": 1.77,
-                "price": 18.88
+                "symbol": "00895.TW",
+                "momentum": 4.35,
+                "price": 50.8
             },
             {
                 "symbol": "00852L.TW",
-                "momentum": 1.5,
-                "price": 33.2
+                "momentum": 4.25,
+                "price": 34.1
             },
             {
-                "symbol": "00861.TW",
-                "momentum": 1.46,
-                "price": 83.8
+                "symbol": "00661.TW",
+                "momentum": 4.21,
+                "price": 85.35
+            },
+            {
+                "symbol": "00683L.TW",
+                "momentum": 4.14,
+                "price": 22.61
+            },
+            {
+                "symbol": "009801.TW",
+                "momentum": 3.96,
+                "price": 11.57
+            },
+            {
+                "symbol": "00645.TW",
+                "momentum": 3.84,
+                "price": 57.8
+            },
+            {
+                "symbol": "00657K.TW",
+                "momentum": 3.69,
+                "price": 24.1
+            },
+            {
+                "symbol": "00735.TW",
+                "momentum": 3.69,
+                "price": 98.45
+            },
+            {
+                "symbol": "00830.TW",
+                "momentum": 3.61,
+                "price": 83.95
+            },
+            {
+                "symbol": "00876.TW",
+                "momentum": 3.55,
+                "price": 86.1
+            },
+            {
+                "symbol": "00994A.TW",
+                "momentum": 3.5,
+                "price": 16.5
+            },
+            {
+                "symbol": "00763U.TW",
+                "momentum": 3.15,
+                "price": 34.75
+            },
+            {
+                "symbol": "00651R.TW",
+                "momentum": 3.02,
+                "price": 5.4
+            },
+            {
+                "symbol": "00911.TW",
+                "momentum": 2.93,
+                "price": 53.05
+            },
+            {
+                "symbol": "00893.TW",
+                "momentum": 2.77,
+                "price": 44.35
+            },
+            {
+                "symbol": "00668K.TW",
+                "momentum": 2.74,
+                "price": 19.06
+            },
+            {
+                "symbol": "00682U.TW",
+                "momentum": 2.74,
+                "price": 21.04
+            },
+            {
+                "symbol": "00654R.TW",
+                "momentum": 2.73,
+                "price": 7.08
+            },
+            {
+                "symbol": "00689R.TW",
+                "momentum": 2.66,
+                "price": 23.54
+            },
+            {
+                "symbol": "00681R.TW",
+                "momentum": 2.55,
+                "price": 22.44
+            },
+            {
+                "symbol": "00666R.TW",
+                "momentum": 2.42,
+                "price": 9.31
+            },
+            {
+                "symbol": "00865B.TW",
+                "momentum": 2.19,
+                "price": 49.94
             },
             {
                 "symbol": "00736.TW",
-                "momentum": 1.45,
-                "price": 31.24
+                "momentum": 2.0,
+                "price": 31.41
             },
             {
-                "symbol": "00985B.TW",
-                "momentum": 1.19,
-                "price": 10.2
+                "symbol": "00674R.TW",
+                "momentum": 1.95,
+                "price": 29.39
+            },
+            {
+                "symbol": "00693U.TW",
+                "momentum": 1.75,
+                "price": 23.02
             },
             {
                 "symbol": "00945B.TW",
-                "momentum": 1.08,
-                "price": 14.39
+                "momentum": 1.71,
+                "price": 14.48
             },
             {
                 "symbol": "00981T.TW",
-                "momentum": 1.08,
-                "price": 11.66
+                "momentum": 1.68,
+                "price": 11.73
             },
             {
-                "symbol": "00954.TW",
-                "momentum": 1.05,
-                "price": 18.05
-            },
-            {
-                "symbol": "00986A.TW",
-                "momentum": 0.94,
-                "price": 14.29
-            },
-            {
-                "symbol": "00953B.TW",
-                "momentum": 0.89,
-                "price": 9.54
-            },
-            {
-                "symbol": "00710B.TW",
-                "momentum": 0.87,
-                "price": 18.72
+                "symbol": "00861.TW",
+                "momentum": 1.64,
+                "price": 83.95
             },
             {
                 "symbol": "00963.TW",
-                "momentum": 0.58,
-                "price": 12.67
+                "momentum": 1.61,
+                "price": 12.8
             },
             {
-                "symbol": "00706L.TW",
-                "momentum": 0.47,
-                "price": 19.12
+                "symbol": "00953B.TW",
+                "momentum": 1.53,
+                "price": 9.6
+            },
+            {
+                "symbol": "00985B.TW",
+                "momentum": 1.39,
+                "price": 10.22
             },
             {
                 "symbol": "00660.TW",
-                "momentum": 0.44,
-                "price": 45.21
+                "momentum": 1.2,
+                "price": 45.55
             },
             {
-                "symbol": "00941.TW",
-                "momentum": 0.16,
-                "price": 25.1
-            },
-            {
-                "symbol": "00983D.TW",
-                "momentum": -0.16,
-                "price": 9.79
-            },
-            {
-                "symbol": "00669R.TW",
-                "momentum": -0.35,
-                "price": 5.42
-            },
-            {
-                "symbol": "00702.TW",
-                "momentum": -0.56,
-                "price": 23.74
-            },
-            {
-                "symbol": "00951.TW",
-                "momentum": -0.66,
-                "price": 16.65
-            },
-            {
-                "symbol": "00882.TW",
-                "momentum": -0.75,
-                "price": 15.05
-            },
-            {
-                "symbol": "00982D.TW",
-                "momentum": -0.98,
-                "price": 9.51
-            },
-            {
-                "symbol": "00707R.TW",
-                "momentum": -1.0,
-                "price": 31.9
+                "symbol": "00710B.TW",
+                "momentum": 1.19,
+                "price": 18.78
             },
             {
                 "symbol": "00709.TW",
-                "momentum": -1.09,
-                "price": 38.97
+                "momentum": 1.17,
+                "price": 39.86
             },
             {
-                "symbol": "00984D.TW",
-                "momentum": -1.16,
-                "price": 9.65
+                "symbol": "00702.TW",
+                "momentum": 1.16,
+                "price": 24.15
             },
             {
-                "symbol": "00908.TW",
-                "momentum": -1.19,
-                "price": 14.55
+                "symbol": "00986A.TW",
+                "momentum": 1.15,
+                "price": 14.32
             },
             {
-                "symbol": "00775B.TW",
-                "momentum": -1.41,
-                "price": 30.54
+                "symbol": "00941.TW",
+                "momentum": 0.72,
+                "price": 25.24
+            },
+            {
+                "symbol": "00983D.TW",
+                "momentum": 0.45,
+                "price": 9.85
+            },
+            {
+                "symbol": "00706L.TW",
+                "momentum": 0.42,
+                "price": 19.11
+            },
+            {
+                "symbol": "00882.TW",
+                "momentum": 0.31,
+                "price": 15.21
             },
             {
                 "symbol": "00917.TW",
-                "momentum": -1.52,
-                "price": 22.33
+                "momentum": 0.11,
+                "price": 22.7
             },
             {
-                "symbol": "00684R.TW",
-                "momentum": -1.64,
-                "price": 14.79
+                "symbol": "00951.TW",
+                "momentum": -0.18,
+                "price": 16.73
             },
             {
-                "symbol": "00652.TW",
-                "momentum": -1.72,
-                "price": 32.0
+                "symbol": "00954.TW",
+                "momentum": -0.18,
+                "price": 17.83
+            },
+            {
+                "symbol": "00775B.TW",
+                "momentum": -0.22,
+                "price": 30.91
+            },
+            {
+                "symbol": "00908.TW",
+                "momentum": -0.3,
+                "price": 14.68
+            },
+            {
+                "symbol": "00707R.TW",
+                "momentum": -0.53,
+                "price": 32.05
+            },
+            {
+                "symbol": "00984D.TW",
+                "momentum": -0.54,
+                "price": 9.71
             },
             {
                 "symbol": "00711B.TW",
-                "momentum": -1.74,
-                "price": 15.08
+                "momentum": -0.64,
+                "price": 15.25
             },
             {
-                "symbol": "009819.TW",
-                "momentum": -1.97,
-                "price": 9.68
+                "symbol": "00982D.TW",
+                "momentum": -0.66,
+                "price": 9.54
             },
             {
-                "symbol": "00717.TW",
-                "momentum": -1.99,
-                "price": 14.44
-            },
-            {
-                "symbol": "00625K.TW",
-                "momentum": -2.28,
-                "price": 8.33
-            },
-            {
-                "symbol": "00714.TW",
-                "momentum": -2.32,
-                "price": 20.96
-            },
-            {
-                "symbol": "00920.TW",
-                "momentum": -2.76,
-                "price": 24.23
-            },
-            {
-                "symbol": "00641R.TW",
-                "momentum": -2.8,
-                "price": 3.7
-            },
-            {
-                "symbol": "00700.TW",
-                "momentum": -2.94,
-                "price": 16.93
-            },
-            {
-                "symbol": "00648R.TW",
-                "momentum": -2.95,
-                "price": 3.93
-            },
-            {
-                "symbol": "00771.TW",
-                "momentum": -3.1,
-                "price": 14.9
-            },
-            {
-                "symbol": "00997A.TW",
-                "momentum": -3.33,
-                "price": 10.87
-            },
-            {
-                "symbol": "00671R.TW",
-                "momentum": -3.6,
-                "price": 2.42
-            },
-            {
-                "symbol": "006206.TW",
-                "momentum": -3.61,
-                "price": 36.16
-            },
-            {
-                "symbol": "00885.TW",
-                "momentum": -3.61,
-                "price": 17.64
+                "symbol": "00652.TW",
+                "momentum": -0.71,
+                "price": 32.33
             },
             {
                 "symbol": "00965.TW",
-                "momentum": -3.64,
-                "price": 24.37
+                "momentum": -1.19,
+                "price": 24.99
+            },
+            {
+                "symbol": "009819.TW",
+                "momentum": -1.26,
+                "price": 9.75
+            },
+            {
+                "symbol": "00717.TW",
+                "momentum": -1.38,
+                "price": 14.53
+            },
+            {
+                "symbol": "00684R.TW",
+                "momentum": -1.51,
+                "price": 14.81
+            },
+            {
+                "symbol": "00700.TW",
+                "momentum": -1.62,
+                "price": 17.16
+            },
+            {
+                "symbol": "00669R.TW",
+                "momentum": -1.64,
+                "price": 5.35
+            },
+            {
+                "symbol": "00714.TW",
+                "momentum": -1.76,
+                "price": 21.08
+            },
+            {
+                "symbol": "00920.TW",
+                "momentum": -2.36,
+                "price": 24.33
+            },
+            {
+                "symbol": "00771.TW",
+                "momentum": -2.45,
+                "price": 15.0
+            },
+            {
+                "symbol": "006206.TW",
+                "momentum": -2.54,
+                "price": 36.56
+            },
+            {
+                "symbol": "00997A.TW",
+                "momentum": -2.89,
+                "price": 10.92
             },
             {
                 "symbol": "00635U.TW",
-                "momentum": -3.85,
-                "price": 42.6
+                "momentum": -3.02,
+                "price": 42.97
             },
             {
-                "symbol": "009805.TW",
-                "momentum": -4.15,
-                "price": 14.7
+                "symbol": "00885.TW",
+                "momentum": -3.28,
+                "price": 17.7
+            },
+            {
+                "symbol": "00641R.TW",
+                "momentum": -3.33,
+                "price": 3.68
             },
             {
                 "symbol": "00752.TW",
-                "momentum": -4.97,
-                "price": 22.2
+                "momentum": -3.48,
+                "price": 22.55
             },
             {
-                "symbol": "00990A.TW",
-                "momentum": -5.35,
-                "price": 14.95
-            },
-            {
-                "symbol": "00688L.TW",
-                "momentum": -5.57,
-                "price": 6.01
-            },
-            {
-                "symbol": "006205.TW",
-                "momentum": -5.64,
-                "price": 38.18
-            },
-            {
-                "symbol": "00680L.TW",
-                "momentum": -5.8,
-                "price": 6.03
+                "symbol": "00648R.TW",
+                "momentum": -3.69,
+                "price": 3.9
             },
             {
                 "symbol": "00703.TW",
-                "momentum": -6.06,
-                "price": 18.51
+                "momentum": -3.93,
+                "price": 18.93
             },
             {
-                "symbol": "009817.TW",
-                "momentum": -6.19,
-                "price": 8.58
+                "symbol": "006205.TW",
+                "momentum": -4.13,
+                "price": 38.79
             },
             {
-                "symbol": "00653L.TW",
-                "momentum": -6.79,
-                "price": 41.68
+                "symbol": "00990A.TW",
+                "momentum": -4.21,
+                "price": 15.13
+            },
+            {
+                "symbol": "009805.TW",
+                "momentum": -4.28,
+                "price": 14.68
+            },
+            {
+                "symbol": "00671R.TW",
+                "momentum": -4.39,
+                "price": 2.4
             },
             {
                 "symbol": "00909.TW",
-                "momentum": -7.48,
-                "price": 41.64
+                "momentum": -4.53,
+                "price": 42.97
+            },
+            {
+                "symbol": "00688L.TW",
+                "momentum": -4.79,
+                "price": 6.06
+            },
+            {
+                "symbol": "00680L.TW",
+                "momentum": -5.02,
+                "price": 6.08
+            },
+            {
+                "symbol": "009817.TW",
+                "momentum": -5.31,
+                "price": 8.66
+            },
+            {
+                "symbol": "00653L.TW",
+                "momentum": -5.4,
+                "price": 42.3
+            },
+            {
+                "symbol": "00625K.TW",
+                "momentum": -5.56,
+                "price": 8.05
             },
             {
                 "symbol": "0061.TW",
-                "momentum": -7.58,
-                "price": 22.33
-            },
-            {
-                "symbol": "006207.TW",
-                "momentum": -7.61,
-                "price": 29.83
+                "momentum": -5.67,
+                "price": 22.79
             },
             {
                 "symbol": "00988A.TW",
-                "momentum": -7.85,
-                "price": 15.38
+                "momentum": -6.47,
+                "price": 15.61
+            },
+            {
+                "symbol": "00665L.TW",
+                "momentum": -6.54,
+                "price": 8.88
+            },
+            {
+                "symbol": "006207.TW",
+                "momentum": -6.65,
+                "price": 30.14
+            },
+            {
+                "symbol": "00636K.TW",
+                "momentum": -6.75,
+                "price": 8.04
             },
             {
                 "symbol": "00636.TW",
-                "momentum": -7.99,
-                "price": 25.49
+                "momentum": -6.8,
+                "price": 25.82
+            },
+            {
+                "symbol": "00650L.TW",
+                "momentum": -6.9,
+                "price": 15.84
+            },
+            {
+                "symbol": "00708L.TW",
+                "momentum": -6.95,
+                "price": 72.05
+            },
+            {
+                "symbol": "00739.TW",
+                "momentum": -7.5,
+                "price": 25.6
             },
             {
                 "symbol": "00676R.TW",
@@ -4264,29 +4289,14 @@
                 "price": 5.35
             },
             {
-                "symbol": "00636K.TW",
-                "momentum": -8.03,
-                "price": 7.93
-            },
-            {
-                "symbol": "00632R.TW",
-                "momentum": -8.09,
-                "price": 9.68
-            },
-            {
                 "symbol": "00664R.TW",
                 "momentum": -8.26,
                 "price": 1.56
             },
             {
-                "symbol": "00708L.TW",
-                "momentum": -8.44,
-                "price": 70.9
-            },
-            {
-                "symbol": "00665L.TW",
-                "momentum": -8.96,
-                "price": 8.65
+                "symbol": "00632R.TW",
+                "momentum": -8.37,
+                "price": 9.65
             },
             {
                 "symbol": "00686R.TW",
@@ -4294,29 +4304,29 @@
                 "price": 0.95
             },
             {
-                "symbol": "00739.TW",
-                "momentum": -9.06,
-                "price": 25.17
-            },
-            {
-                "symbol": "00650L.TW",
-                "momentum": -9.61,
-                "price": 15.38
-            },
-            {
                 "symbol": "00899.TW",
-                "momentum": -9.82,
-                "price": 21.45
-            },
-            {
-                "symbol": "00673R.TW",
-                "momentum": -10.91,
-                "price": 10.38
+                "momentum": -9.06,
+                "price": 21.63
             },
             {
                 "symbol": "00783.TW",
-                "momentum": -11.24,
-                "price": 24.88
+                "momentum": -9.95,
+                "price": 25.24
+            },
+            {
+                "symbol": "00738U.TW",
+                "momentum": -10.12,
+                "price": 45.68
+            },
+            {
+                "symbol": "00902.TW",
+                "momentum": -11.33,
+                "price": 12.2
+            },
+            {
+                "symbol": "00753L.TW",
+                "momentum": -11.58,
+                "price": 8.44
             },
             {
                 "symbol": "00643K.TW",
@@ -4324,54 +4334,44 @@
                 "price": 3.37
             },
             {
-                "symbol": "00902.TW",
-                "momentum": -12.28,
-                "price": 12.07
-            },
-            {
-                "symbol": "00738U.TW",
-                "momentum": -12.88,
-                "price": 44.28
-            },
-            {
-                "symbol": "00753L.TW",
-                "momentum": -13.26,
-                "price": 8.28
+                "symbol": "00910.TW",
+                "momentum": -12.12,
+                "price": 51.65
             },
             {
                 "symbol": "00643.TW",
-                "momentum": -13.4,
-                "price": 15.96
+                "momentum": -12.2,
+                "price": 16.18
             },
             {
                 "symbol": "00639.TW",
-                "momentum": -13.8,
-                "price": 14.11
-            },
-            {
-                "symbol": "00910.TW",
-                "momentum": -15.1,
-                "price": 49.9
+                "momentum": -12.64,
+                "price": 14.3
             },
             {
                 "symbol": "00712.TW",
-                "momentum": -15.19,
-                "price": 6.99
+                "momentum": -12.88,
+                "price": 7.18
+            },
+            {
+                "symbol": "00673R.TW",
+                "momentum": -13.14,
+                "price": 10.12
             },
             {
                 "symbol": "00637L.TW",
-                "momentum": -16.33,
-                "price": 16.68
+                "momentum": -14.48,
+                "price": 17.05
             },
             {
                 "symbol": "00633L.TW",
-                "momentum": -16.64,
-                "price": 40.1
+                "momentum": -14.98,
+                "price": 40.9
             },
             {
                 "symbol": "00655L.TW",
-                "momentum": -17.04,
-                "price": 27.83
+                "momentum": -15.13,
+                "price": 28.47
             }
         ],
         "US_STOCKS_SP100": [
@@ -8216,83 +8216,78 @@
         "CRYPTOCURRENCY": [
             {
                 "symbol": "ZEC-USD",
-                "momentum": 118.75,
-                "price": 1144.71
+                "momentum": 118.74,
+                "price": 1144.62
             },
             {
                 "symbol": "AR-USD",
-                "momentum": 74.39,
-                "price": 3.88
+                "momentum": 71.56,
+                "price": 3.82
             },
             {
                 "symbol": "XMR-USD",
-                "momentum": 34.73,
-                "price": 556.71
+                "momentum": 44.54,
+                "price": 597.27
             },
             {
                 "symbol": "ONDO-USD",
-                "momentum": 26.21,
-                "price": 0.45
+                "momentum": 22.99,
+                "price": 0.44
             },
             {
                 "symbol": "LINK-USD",
-                "momentum": 23.53,
-                "price": 12.27
+                "momentum": 20.82,
+                "price": 12.0
             },
             {
                 "symbol": "SOL-USD",
-                "momentum": 19.13,
-                "price": 104.32
+                "momentum": 18.45,
+                "price": 103.73
             },
             {
                 "symbol": "AVAX-USD",
-                "momentum": 18.65,
-                "price": 9.94
+                "momentum": 17.3,
+                "price": 9.82
             },
             {
                 "symbol": "RENDER-USD",
-                "momentum": 17.11,
-                "price": 1.9
-            },
-            {
-                "symbol": "DOT-USD",
-                "momentum": 15.34,
-                "price": 1.17
-            },
-            {
-                "symbol": "BNB-USD",
-                "momentum": 11.21,
-                "price": 720.12
+                "momentum": 14.33,
+                "price": 1.85
             },
             {
                 "symbol": "BTC-USD",
-                "momentum": 11.12,
-                "price": 81319.7
+                "momentum": 11.64,
+                "price": 81701.31
+            },
+            {
+                "symbol": "BNB-USD",
+                "momentum": 11.31,
+                "price": 720.77
+            },
+            {
+                "symbol": "DOT-USD",
+                "momentum": 9.81,
+                "price": 1.11
             },
             {
                 "symbol": "LTC-USD",
-                "momentum": 10.57,
-                "price": 59.65
+                "momentum": 9.31,
+                "price": 58.96
             },
             {
                 "symbol": "ETH-USD",
-                "momentum": 9.1,
-                "price": 2418.43
+                "momentum": 8.96,
+                "price": 2415.38
             },
             {
                 "symbol": "ADA-USD",
-                "momentum": 4.93,
+                "momentum": 3.4,
                 "price": 0.22
             },
             {
-                "symbol": "XRP-USD",
-                "momentum": 1.87,
-                "price": 1.3
-            },
-            {
-                "symbol": "TRX-USD",
-                "momentum": 1.63,
-                "price": 0.34
+                "symbol": "HBAR-USD",
+                "momentum": 1.79,
+                "price": 0.09
             },
             {
                 "symbol": "M-USD",
@@ -8300,58 +8295,63 @@
                 "price": 0.0
             },
             {
-                "symbol": "HBAR-USD",
-                "momentum": -0.83,
-                "price": 0.08
+                "symbol": "XRP-USD",
+                "momentum": 1.4,
+                "price": 1.3
+            },
+            {
+                "symbol": "TRX-USD",
+                "momentum": 0.97,
+                "price": 0.33
             },
             {
                 "symbol": "XLM-USD",
-                "momentum": -1.06,
+                "momentum": -2.04,
                 "price": 0.18
             },
             {
                 "symbol": "XAUT-USD",
-                "momentum": -2.38,
-                "price": 4154.44
+                "momentum": -2.48,
+                "price": 4150.41
             },
             {
                 "symbol": "PAXG-USD",
-                "momentum": -2.4,
-                "price": 4158.98
+                "momentum": -2.53,
+                "price": 4153.41
             },
             {
                 "symbol": "BCH-USD",
-                "momentum": -3.69,
-                "price": 280.59
+                "momentum": -5.0,
+                "price": 276.76
             },
             {
                 "symbol": "LEO-USD",
-                "momentum": -6.65,
+                "momentum": -6.66,
                 "price": 9.03
             },
             {
-                "symbol": "CRO-USD",
-                "momentum": -7.38,
-                "price": 0.06
-            },
-            {
                 "symbol": "DOGE-USD",
-                "momentum": -8.37,
+                "momentum": -8.92,
                 "price": 0.08
             },
             {
+                "symbol": "CRO-USD",
+                "momentum": -9.33,
+                "price": 0.06
+            },
+            {
                 "symbol": "SHIB-USD",
-                "momentum": -10.04,
+                "momentum": -11.64,
                 "price": 0.0
             },
             {
                 "symbol": "LUNC-USD",
-                "momentum": -14.95,
+                "momentum": -16.87,
                 "price": 0.0
             },
             {
                 "symbol": "TON-USD",
-                "momentum": -36.71,
+                "momentum": -37.55,
                 "price": 0.0
             },
             {
@@ -8383,8 +8383,8 @@
             },
             {
                 "symbol": "ZEC-USD",
-                "momentum": 118.75,
-                "price": 1144.71
+                "momentum": 118.74,
+                "price": 1144.62
             },
             {
                 "symbol": "3008.TW",
@@ -8392,14 +8392,14 @@
                 "price": 6400.0
             },
             {
-                "symbol": "AR-USD",
-                "momentum": 74.39,
-                "price": 3.88
-            },
-            {
                 "symbol": "6505.TW",
                 "momentum": 73.69,
                 "price": 122.5
+            },
+            {
+                "symbol": "AR-USD",
+                "momentum": 71.56,
+                "price": 3.82
             },
             {
                 "symbol": "MPC",
@@ -8445,6 +8445,11 @@
                 "symbol": "VLO",
                 "momentum": 44.81,
                 "price": 444.71
+            },
+            {
+                "symbol": "XMR-USD",
+                "momentum": 44.54,
+                "price": 597.27
             },
             {
                 "symbol": "LNVGY",
@@ -8505,11 +8510,6 @@
                 "symbol": "2881.TW",
                 "momentum": 38.91,
                 "price": 161.5
-            },
-            {
-                "symbol": "2883.TW",
-                "momentum": 38.53,
-                "price": 39.1
             }
         ]
     }
